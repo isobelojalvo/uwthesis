@@ -11,6 +11,8 @@
 
 %%%% Import uwthesis.sty to get official formatting, then set your variables.
 \usepackage{uwthesis}
+\usepackage{graphicx}
+\usepackage{mathtools}
 
 \settitle{Bosons and b-Quark Jets}
 \setauthor{Isobel Rose Ojalvo}
@@ -73,7 +75,7 @@ This is where any acknowledgements would go.
 \maxtocdepth{subsection}
 \tableofcontents* % the * means that there isn't an entry for the TOC itself
 % \clearpage
-% \listoffigures  % if you have any figures
+ \listoffigures*  % if you have any figures
 % \clearpage
 % \listoftables   % if you have any tables
 
@@ -96,12 +98,13 @@ This is where any acknowledgements would go.
 \section{Operating Conditions 2011 and 2012 Runs}
 
 \chapter{The Compact Muon Solenoid Experiment}
-\section{Coordinate System}
+\include{CoordinateSystem}
+
 \section{Magnet}
 \section{Tracking System}
 The tracker is CMS's inner most detector. The purpose of the tracker is to reconstruct the
 trajectories of charged particles coming from the LHC collisions and measure the charged particle momenta.
-These charged particles leave a path hitherto refered to as a 'track'.%fix
+These charged particles leave a path hitherto referred to as a 'track'.%fix
 These tracks are then used in the reconstruction of electrons, muons, taus, hadrons and jets 
 and are also used to determine the primary vertex of an interaction. Additionally,
 the tracker can be used in the identification of a 'secondary vertex' with in a jet,
@@ -112,7 +115,7 @@ The CMS tracker consists of two main detectors: an inner silicon pixel detector 
 silicon strip detector.%%reference tracker figure 
 Efficient reconstruction of collisions require a low hit occupancy, a high hit redundancy and a
 fast response such that tracks can be identified reliably and attributed to the correct bunch crossing.
-Low hit occupancy can be achieved with high granularity while high hit redundnancy requires
+Low hit occupancy can be achieved with high granularity while high hit redundancy requires
 many detector layers. These former two requirements are only achieved with a 
 high power density of on detector electronics which require efficient cooling. %fix?
 Unfortunately, this is directly conflicting with the goal to limit the material 
@@ -124,6 +127,14 @@ The aforementioned objectives and constraints resulted in a tracker design
 based entirely on silicon detector technology. 
 At 5.4 m in length and 2.2 m in diameter, the CMS tracker is the largest inner
 detector ever built in a high energy physics experiment.
+\begin{figure}[hb]
+  \centering
+	\includegraphics[width=1\textwidth]{trackerImages/trackerLayout.png}
+  	\caption[CMS Tracker Layout]
+   	{CMS Tracker layout}
+	\label{fig:trackerLayout}
+\end{figure}
+
 
 The material budget of the tracker can be characterized by the rate at which a particle
 passing through it loses energy. The radiation length, $X_{0}$, is the 
@@ -153,7 +164,7 @@ The endcap disks extend from 4.8 to 14.4 cm in radii are located at a mean dista
 of $z=\pm35.5$cm and $z=\pm48.5$cm from the interaction point. 
 As can be seen in figure XX this arrangement allows for 3 tracking points over %%add figure
 almost the full $\eta$-range of the pixel system. Due to the geometric effect 
-of particles entering the detector at an average angle of $20\circ$%check this
+of particles entering the detector at an average angle of $20^{\circ}$ %check this
 charge-sharing between pixels is achieved which improves position resolution.
 
 The pixel system has a zero-suppressed read out scheme with analog pulse
@@ -170,7 +181,7 @@ the order of 100 times less than what is seen by the inner most layers of
 the pixel detector. It is a complementary system to the inner pixel
 detector and has a lower granularity. The silicon strip detector 
 has 9.3 million active elements over a total surface area of 198$m^{2}$
-and consists of 3 large subsystems. As can be seen in figure XXXX %reference figure-----
+and consists of 3 large subsystems. As can be seen in figure \ref{fig:trackerLayout}
 The Tracker Inner Barrel and Disks (TIB/TID) extend in radius to
 55cm and are composed of four barrel layers with three disks at each.
 %%%%Mention Pitch here?????
