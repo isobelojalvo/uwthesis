@@ -24,7 +24,24 @@ the light is emitted in 25ns.
 The energy resolution in the ECAL can be parameterized as in the following equation:
 \begin{displaymath}
 \left(\frac{\sigma}{E}\right)^{2}=\left(\frac{S}{\sqrt{E}})^{2}\right)+\left(\frac{N}{E}^{2}\right)+C^{2}
+%%%cite equation
 \end{displaymath}
 where $S$ is the stochastic term, $N$ the noise term, and $C$ the constant term. 
 The individual contributions are described in the following paragraphs.
 
+The stochastic term in equation ____ has three primary contributions:%\ref
+A random event-to-event fluctuation in the lateral containement of the
+electromagnetic decay and subsequent photon and electron-positron production,
+a photostatistics contribution of $2.1\%$ and fluctuations in the energy
+deposited in the preshower absorber. %%%double check this
+This shower containment term is expected to be 1.5\% when energy is 
+reconstructed by summing an array of 5 $\times$ 5 crystals and 2\%
+when using 3 $\times$ 3 crystals. 
+%%finish
+
+The noise term has three main contributions: electronics noise, digitization 
+noise, and pileup noise. 
+The digitization and electronics noise was measured in the test beam and 
+found to be $\approx$ 40 MeV/channel. 
+Pileup noise occurs if additional particles from pileup events reach the 
+calorimeter causing signals that overlap. 
