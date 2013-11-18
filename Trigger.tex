@@ -11,10 +11,32 @@ and the High Level Trigger (HLT).
 The Level 1 trigger uses coarsely segmented
 data from only the calorimeters and the muon system to make initial
 data selections while holding high resolution data in pipelined memories
-in front-end electronics. 
+in front-end electronics. The Level 1 Trigger hardware is implemented in customized
+programmable memory look up tables (LUTs), FPGAs and asics.
 The Level 1 trigger must reduce rates by at least a factor of 10$^{6}$, 
 resulting in a final output of approximately 30kHz,
 before high resolution data is passed to the HLT.
+The HLT has access to the complete readout of the event and can use
+complex algorithms to filter events. For particularly interesting events, 
+the algorithms used in this process are often similar to what is done in 
+offline analysis. 
   \subsection{Level 1 Trigger}
+The purpose of the Level 1 trigger is to reduce rates from the input
+crossing rate of 40MHz to a maximum output rate of 100kHz. 
+The first step in this process is to create
+calorimeter trigger primitives using a calorimeter trigger primitive generator (TPG).
+For the purpose of providing compact, fast information the calorimeters
+are divided into trigger towers; the TPG sums the transverse energy the
+ECAL crystals or HCAL read-out towers to obtain a trigger tower E$_{T}$.
+For $|\eta|<$2.1, trigger towers have a granularity
+in $\eta \times \phi$ of 0.087$\times$0.087, the granularity decreases at higher
+$\eta$ values. 
+The TPG electronics are integrated with calorimeter readout and trigger primitives
+are transported to then transported to the Regional Calorimeter Trigger (RCT) using
+high-speed serial links.
+An electron or photon candidate is expected to be narrow in $\eta$
+and broader in $\phi$ therefore, an additional bit is used to indicate whether 
+an electron candidate  
+After that, the RCT
   \subsection{Regional Calorimeter Trigger}
   \subsection{High Level Trigger}
