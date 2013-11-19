@@ -31,12 +31,30 @@ ECAL crystals or HCAL read-out towers to obtain a trigger tower E$_{T}$.
 For $|\eta|<$2.1, trigger towers have a granularity
 in $\eta \times \phi$ of 0.087$\times$0.087, the granularity decreases at higher
 $\eta$ values. 
-The TPG electronics are integrated with calorimeter readout and trigger primitives
-are transported to then transported to the Regional Calorimeter Trigger (RCT) using
+The TPG electronics are integrated with the calorimeter readout; the trigger primitives
+are then transported to the Regional Calorimeter Trigger (RCT) using
 high-speed serial links.
 An electron or photon candidate is expected to be narrow in $\eta$
 and broader in $\phi$ therefore, an additional bit is used to indicate whether 
 an electron candidate  
-After that, the RCT
+After that, the RCT combines tower information to form electron and 
+photon candidates. The RCT also sums ECAL and HCAL towers into broader
+regions which are used in the GCT to form jets. These regions also have a 
+$\tau$-veto bit which determines how compatible a region is with a
+$\tau$ lepton. After the GCT has combined regions to form jets, the GCT
+then sorts the electron/photon candidates and jets and passes them onto
+the Global Trigger.
+
+The Muon Trigger uses all three muon systems (DTs,RPCs,CSCs) for triggering.
+The DT system has excellent timing resolution and is used to reconstruct tracks
+and associate tracks to bunch crossings. At a regional level, the DT and CSC track finders
+combine segments to build muon tracks and assign transverse momentum using
+LUTs. All regional information from the three muon systems are then forwarded
+to the Global Muon Trigger (GMT) where it is then combined to proved track
+information with equal or better resolution than the regional systems. The tracks
+are then ranked and forwarded to the Global Trigger (GT).
   \subsection{Regional Calorimeter Trigger}
   \subsection{High Level Trigger}
+After events pass the Level 1 trigger they are sent to the High Level Trigger (HLT). The
+HLT uses a filter farm of processes to reduce rates by a factor of 10$^{6}$ from 
+100 kHz to a final output rate of approximately 300 Hz. 
