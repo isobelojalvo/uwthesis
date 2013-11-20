@@ -54,7 +54,41 @@ to the Global Muon Trigger (GMT) where it is then combined to proved track
 information with equal or better resolution than the regional systems. The tracks
 are then ranked and forwarded to the Global Trigger (GT).
   \subsection{Regional Calorimeter Trigger}
+The Regional Calorimeter Trigger handles triggering for the %%%fix wording
+ECAL and HCAL barrel and 
+endcap and for the HF forward detector.
+The RCT consists of 18 crates installed in nine racks
+in the CMS underground counting room, which is 
+adjacent to and shielded from the CMS cavern.
+For triggering purposes, the HCAL and ECAL are subdivided into regions in 
+$(\eta,\phi)$, the RCT has 7 receiver cards per crate and one jet summary card
+for the 18 crates. A total of 24 bits is received from each trigger tower, 
+two 8-bit calorimeter energies each from the ECAL and the HCAL,
+two energy characterization bits, 5 bits of error detection and 1 LHC bunch crossing bit.
+Good electron/photon efficiency at a low rate is essential. Electron/photon
+identification in the RCT takes place as follows: starting from the trigger towers
+the RCT sums of ECAL and HCAL energies and also calculates the
+the ratio of HCAL to ECAL energy, $(H/E)$. The $(H/E)$ ratio is used to
+discriminate electrons and photons from pions and electromagnetic deposits
+in jets. 
+The L1 $e/\gamma$ algorithm is applied to trigger towers that have an energy
+higher than their four immediate neighbors.
+A further requirement for all $e/\gamma$ candidates
+is that the seeding tower must have an energy deposit which is contained within 
+2$\times$5 crystals, this is known as the fine grain requirement and, if this is true,
+a fine grain bit is set by the TPGs. 
+Then, the tower energy is combined with the nearest highest energy neighbor,
+this accounts for particles that deposit energy in two towers; this sum is then
+associated with the $e/\gamma$ candidate.
+The RCT also determines if the $e/\gamma$ 
+is isolated. 
+
+A calibration factor that is measured offline as a function of 
+$\eta$ is stored in the Look-Up tables and applied to the electron/photon candidates.
+
+
   \subsection{High Level Trigger}
 After events pass the Level 1 trigger they are sent to the High Level Trigger (HLT). The
 HLT uses a filter farm of processes to reduce rates by a factor of 10$^{6}$ from 
-100 kHz to a final output rate of less than 300 Hz. 
+100 kHz to a final output rate of less than 300 Hz. Since the Level 1 trigger reduces
+the rate sufficiently the HLT is 
