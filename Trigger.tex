@@ -80,13 +80,15 @@ a fine grain bit is set by the TPGs.
 Then, the tower energy is combined with the nearest highest energy neighbor,
 this accounts for particles that deposit energy in two towers; this sum is then
 associated with the $e/\gamma$ candidate.
-The RCT also determines if the $e/\gamma$ 
-is isolated. 
+To further separate from jets, the RCT also determines if the $e/\gamma$ candidate
+is isolated. As can be seen in figure %%%
+the 8 towers around the central are divided into L-shaped quiet corners,
+for an electron to be considered isolated two of these must have an energy
+below a configurable threshold; those towers must also not have the fine grain
+bit set.
 
-A calibration factor that is measured offline as a function of 
-$\eta$ is stored in the Look-Up tables and applied to the electron/photon candidates.
-
-
+%A calibration factor that is measured offline as a function of 
+%$\eta$ is stored in the Look-Up tables and applied to the electron/photon candidates.
   \subsection{High Level Trigger}
 After events pass the Level 1 trigger they are sent to the High Level Trigger (HLT). The
 HLT uses a filter farm of processes to reduce rates by a factor of 10$^{6}$ from 
