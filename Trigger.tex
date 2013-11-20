@@ -107,6 +107,17 @@ the emulator response with the hardware response for the event.
 %$\eta$ is stored in the Look-Up tables and applied to the electron/photon candidates.
   \subsection{High Level Trigger}
 After events pass the Level 1 trigger they are sent to the High Level Trigger (HLT). The
-HLT uses a filter farm of processes to reduce rates by a factor of 10$^{6}$ from 
-100 kHz to a final output rate of less than 300 Hz. Since the Level 1 trigger reduces
-the rate sufficiently the HLT is 
+HLT uses a filter farm of processors to reduce rates by a factor of 10$^{6}$ from 
+100 kHz to a final output rate of less than 300 Hz. This filter farm takes as input
+data that is processed by the Data Acquisition (DAQ) system. The DAQ system is responsible
+for taking data which is pushed into the DAQ by Front-End Drivers (FEDs) at a maximum input 
+rate of 100kHz which corresponds to a data flow of $\approx$100 GByte/s from approximately
+650 data sources. An event builder assembles the event fragments from all FEDs
+which belong to the same Level 1 output; this data is then sent from underground to the surface %%%change
+building, SCX where the HLT is located.
+Algorithms for data selection are implemented in the HLT are written in
+C++ and are similar to or exactly the same as algorithms that are used in offline selection. This 
+further helps to ensure a high efficiency of interesting physics events.
+The HLT processing time depends primarily on the algorithm complexity,
+therefore, simple algorithms are processed first and if an event fails a selection
+step then a node is free for the next event.
