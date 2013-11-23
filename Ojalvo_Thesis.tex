@@ -6,6 +6,31 @@
 %%%% You should be using the memoir class anyway; it makes life easier:
 %%%% http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
 \def\bbbar{\ensuremath{\mathrm{b\bar{b}}}}
+\newcommand{\PZ}{\cPZ\xspace}
+\newcommand{\ZZ}{\cPZ\cPZ\xspace}
+\newcommand{\WW}{\PWp\PWm\xspace}
+\newcommand{\WZ}{\PW\cPZ\xspace}
+\newcommand{\pp}{\Pp\Pp\xspace}
+\newcommand{\Wjets}{\ensuremath{\PW+\text{jets}}\xspace}
+\def\Wmnbb{\ensuremath{\mathrm{W}(\Pgm\cPgn)+\bbbar}}
+\def\WmnH{\ensuremath{\mathrm{W}(\Pgm\cPgn)\mathrm{H}}}
+\def\Wbb{\ensuremath{\mathrm{W+\bbbar}}}
+\def\Wc{\ensuremath{\mathrm{W+c}}}
+\def\Wmn{\ensuremath{\mathrm{W}\rightarrow \mu\nu}}
+\def\Wln{\ensuremath{\mathrm{W}\rightarrow \ell\nu}}
+\def\Wcc{\ensuremath{\mathrm{W+\ccbar}}}
+\def\Zll{\ensuremath{\mathrm{Z\rightarrow\ell\ell}}}
+\def\MT{M_\mathrm{T}}
+\def\pt{p_\mathrm{T}}
+\newcommand{\Lint}{\ensuremath{{\cal L}_{\mathrm{int}}}}
+\newcommand{\dytt}{\ensuremath{\cPZ/\Pgg^*\to\tau^+\tau^-}}
+\newcommand{\dyll}{\ensuremath{\cPZ/\Pgg^*\to \ell^+\ell^-}}
+\newcommand{\lumi}{\ensuremath{\,\mathrm{(lum.)}}\xspace}
+\newcommand{\theo}{\ensuremath{\,\mathrm{(theo.)}}\xspace}
+\providecommand{\vecEtm}{\ensuremath{\vec{E}_\mathrm{T}^{\mathrm{miss}}}\xspace}
+\providecommand{\vecPtmu}{\ensuremath{\vec{P}_\mathrm{T}^{\mu}}\xspace}
+
+
 
 \documentclass[oneside, letterpaper, 12pt, oldfontcommands]{memoir}
 
@@ -13,6 +38,7 @@
 \usepackage{uwthesis}
 \usepackage{graphicx}
 \usepackage{mathtools}
+\usepackage{subcaption}
 
 \settitle{Search for an MSSM Higgs Boson and Measurement of W+$b\bar{b}$, an Important Electroweak Background Process}
 \setauthor{Isobel Rose Ojalvo}
@@ -103,7 +129,7 @@ This is where any acknowledgements would go.
  \include{TrackingSystem}
  \include{ElectromagneticCalorimeter}
  \include{HadronicCalorimeter}
- \section{Muon System}
+ \include{MuonSystem}
   %\subsection{Drift Tube Chambers}
   %\subsection{Cathode Strip Chambers}
   %\subsection{Resistive Plate Chambers}
@@ -121,12 +147,14 @@ This is where any acknowledgements would go.
  \section{Missing Transverse Energy}
 
 \chapter{Event Simulation}
-\chapter{Measurement of W plus \bbbar Pair Production}
-\section{Initial Event Selection}
-\section{Irreducible Backgrounds}
-\section{Systematic Uncertainty}
-\section{Signal Extraction}
-\section{Results}
+
+\include{Wbb/SMP-12-026}
+%\chapter{Measurement of W plus \bbbar Pair Production}
+%\section{Initial Event Selection}
+%\section{Irreducible Backgrounds}
+%\section{Systematic Uncertainty}
+%\section{Signal Extraction}
+%\section{Results}
 
 \chapter{Search for MSSM Higgs Boson}
 \section{Initial Event Selection}

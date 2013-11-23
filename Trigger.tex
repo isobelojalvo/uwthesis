@@ -54,16 +54,14 @@ to the Global Muon Trigger (GMT) where it is then combined to proved track
 information with equal or better resolution than the regional systems. The tracks
 are then ranked and forwarded to the Global Trigger (GT).
   \subsection{Regional Calorimeter Trigger}
-The Regional Calorimeter Trigger handles triggering for the %%%fix wording
-ECAL and HCAL barrel and 
-endcap and for the HF forward detector.
-The RCT consists of 18 crates installed in nine racks
-in the CMS underground counting room, which is 
-adjacent to and shielded from the CMS cavern.
+The Regional Calorimeter Trigger is responsible for level 1 triggering of the 
+Electromagnetic and Hadronic calorimeters in barrel, endcap and the HF forward detector.
+The RCT consists of 18 crates installed in nine racks in the CMS underground 
+counting room, which is adjacent to and shielded from the CMS cavern.
 For triggering purposes, the HCAL and ECAL are subdivided into regions  in 
-$(\eta,\phi)$, the RCT has 7 receiver cards per crate and one jet summary card
-for the 18 crates; a region consists of of 4$\times$4 trigger towers. 
-A total of 24 bits is received from each trigger tower, 
+$(\eta,\phi)$, a region consists of of 4$\times$4 trigger towers; 
+the RCT has 7 receiver cards per crate and one jet summary card for the 18 crates. 
+A total of 24 bits is received from each trigger tower: 
 two 8-bit calorimeter energies each from the ECAL and the HCAL,
 two energy characterization bits, 5 bits of error detection and 1 LHC bunch crossing bit.
 Good electron/photon efficiency at a low rate is essential. Electron/photon
@@ -72,36 +70,51 @@ the RCT sums of ECAL and HCAL energies and also calculates the
 the ratio of HCAL to ECAL energy, $(H/E)$. The $(H/E)$ ratio is used to
 discriminate electrons and photons from pions and electromagnetic deposits
 in jets. 
-The L1 $e/\gamma$ algorithm is applied to trigger towers that have an energy%%%%e/g is ecal only
-higher than their four immediate neighbors.
-A further requirement for all $e/\gamma$ candidates
-is that the seeding tower must have an energy deposit which is contained within 
-2$\times$5 crystals, this is known as the fine grain requirement and, if this is true,
+The RCT $e/\gamma$ algorithm is applied to ECAL trigger towers that have an energy
+higher than their four immediate neighbors. The seeding tower must also 
+have an energy deposit which is contained within 2$\times$5 crystals, 
+this is known as the fine grain requirement and, if this is true,
 a fine grain bit is set by the TPGs. 
 Then, the tower energy is combined with the nearest highest energy neighbor,
 this accounts for particles that deposit energy in two towers; this sum is then
 associated with the $e/\gamma$ candidate.
 To further separate from jets, the RCT also determines if the $e/\gamma$ candidate
-is isolated. As can be seen in figure %%%ADD FIGURE
+is isolated. As can be seen in figure \ref{fig:emRCTalgo}.
+\begin{figure}[hb]
+  \centering
+	\includegraphics[width=0.75\textwidth]{images/emRCTalgo.png}
+  	\caption[e/$\gamma$ Fine Grain and Isolation]
+   	{The fine grain veto bit is set if an $e/\gamma$ deposit is not contained
+	within a 2$\times$5 ECAL crystal area (as can be seen in red). An Isolated
+	electron is required to have a at least twi of the L-Shaped corners (in tan) 
+	to below a certain threshold}
+	\label{fig:emRCTalgo}
+\end{figure}
 the 8 towers around the central are divided into L-shaped quiet corners,
 for an electron to be considered isolated two of these must have an energy
 below a configurable threshold; those towers must also not have the fine grain
 bit set.
 The RCT then ranks the isolated and the non-isolated $e/\gamma$ candidates
 and passes the highest four to the GCT. These collections of isolated and non-isolated
-candidates are mutually exclusive.
+candidates are mutually exclusive. Due to having a sufficiently low rate, all isolated
+and electrons with a transverse momentum greater than 63.5 GeV
+are accepted as isolated for the 2011 and 2012 runs. 
 
-The RCT also sums ECAL and HCAL energies in to regions, these are passed
-to the GCT for jet reconstruction. During this process the RCT examines the
+For the purpose of jet reconstruction, the RCT also sums ECAL and HCAL 
+energies in clusters of 4$\times$4 towers (as can be seen in figure%%ieta RCT figure
+) in to regions. During this process the RCT examines the
 energy profile to see if the region is compatible with a hadronic $\tau$ lepton.
 A $\tau$-veto bit is set unless the pattern of active towers corresponds to at
 most 2$\times$2 contiguous towers. The patterns are detailed in figure %%%%Tau veto figure
 This $\tau$ veto bit is included when the jet transverse energy is sent to the GCT.
-Good performance of the RCT is essential therefore the performance of the RCT%%%changeeeee
-is monitored during and after data-taking by constantly comparing the trigger 
+The RCT is an essential system for data acquisition at a high efficiency and
+a low rate, therefore good performance must be continually monitored during and
+between runs.
+Using the RCT emulator, the performance of the RCT is monitored during 
+and after data-taking by constantly comparing the trigger 
 output with the expected output from the RCT Emulator. The RCT data quality monitoring 
 software package runs the RCT emulator on a subset of events and compares
-the emulator response with the hardware response for the event.
+the emulator response with the hardware response for each event.
 
 %A calibration factor that is measured offline as a function of 
 %$\eta$ is stored in the Look-Up tables and applied to the electron/photon candidates.
