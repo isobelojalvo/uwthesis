@@ -58,13 +58,22 @@ The Regional Calorimeter Trigger is responsible for level 1 triggering of the
 Electromagnetic and Hadronic calorimeters in barrel, endcap and the HF forward detector.
 The RCT consists of 18 crates installed in nine racks in the CMS underground 
 counting room, which is adjacent to and shielded from the CMS cavern.
-For triggering purposes, the HCAL and ECAL are subdivided into regions  in 
-$(\eta,\phi)$, a region consists of of 4$\times$4 trigger towers; 
+For triggering purposes, the HCAL and ECAL are subdivided into regions in 
+$(\eta,\phi)$. As illustrated in figure \ref{fig:rctTowerIetaIphi}%%%
+a region consists of of 4$\times$4 trigger towers; 
 the RCT has 7 receiver cards per crate and one jet summary card for the 18 crates. 
 A total of 24 bits is received from each trigger tower: 
 two 8-bit calorimeter energies each from the ECAL and the HCAL,
 two energy characterization bits, 5 bits of error detection and 1 LHC bunch crossing bit.
-Good electron/photon efficiency at a low rate is essential. Electron/photon
+\begin{figure}[hb]
+  \centering
+	\includegraphics[width=0.6\textwidth]{images/towers_ieta_iphi.png}
+  	\caption[RCT Layout]
+   	{RCT layout}
+	\label{fig:rctTowerIetaIphi}
+\end{figure}
+
+Good $e/\gamma$ selection efficiency at a low rate is essential. $e/\gamma$
 identification in the RCT takes place as follows: starting from the trigger towers
 the RCT sums of ECAL and HCAL energies and also calculates the
 the ratio of HCAL to ECAL energy, $(H/E)$. The $(H/E)$ ratio is used to
