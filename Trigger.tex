@@ -31,8 +31,8 @@ ECAL crystals or HCAL read-out towers to obtain a trigger tower E$_{T}$.
 For $|\eta|<$2.1, trigger towers have a granularity
 in $\eta \times \phi$ of 0.087$\times$0.087, the granularity decreases at higher
 $\eta$ values. 
-The TPG electronics are integrated with the calorimeter readout; the trigger primitives
-are then passed to the Regional Calorimeter Trigger (RCT) using
+The TPG electronics are integrated with the calorimeter readout and the trigger primitives
+are passed to the Regional Calorimeter Trigger (RCT) using
 high-speed serial links.
 An electron or photon candidate is expected to be narrow in $\eta$
 and broader in $\phi$ therefore, an additional bit is used to indicate whether 
@@ -59,7 +59,7 @@ Electromagnetic and Hadronic calorimeters in barrel, endcap and the HF forward d
 The RCT consists of 18 crates installed in nine racks in the CMS underground 
 counting room, which is adjacent to and shielded from the CMS cavern.
 For triggering purposes, the HCAL and ECAL are subdivided into regions in 
-$(\eta,\phi)$. As illustrated in figure \ref{fig:rctTowerIetaIphi}%%%
+$(\eta,\phi)$. As illustrated in figure \ref{fig:rctTowerIetaIphi}
 a region consists of of 4$\times$4 trigger towers; 
 the RCT has 7 receiver cards per crate and one jet summary card for the 18 crates. 
 A total of 24 bits is received from each trigger tower: 
@@ -67,7 +67,7 @@ two 8-bit calorimeter energies each from the ECAL and the HCAL,
 two energy characterization bits, 5 bits of error detection and 1 LHC bunch crossing bit.
 \begin{figure}[hb]
   \centering
-	\includegraphics[width=0.6\textwidth]{images/towers_ieta_iphi.png}
+	\includegraphics[trim = 0mm 80mm 0mm 42mm, clip, width=0.75\textwidth]{images/towers_ieta_iphi.png}
   	\caption[RCT Layout]
    	{RCT layout}
 	\label{fig:rctTowerIetaIphi}
@@ -109,12 +109,19 @@ candidates are mutually exclusive. Due to having a sufficiently low rate, all is
 and electrons with a transverse momentum greater than 63.5 GeV
 are accepted as isolated for the 2011 and 2012 runs. 
 
+\begin{figure}[hb]
+  \centering
+	\includegraphics[width=0.75\textwidth]{images/RCTTauAlgo.png}
+  	\caption[RCT Tau ID Algorithm]
+   	{RCT Tau Identification Algorithm}
+	\label{fig:RCTTauAlgo}
+\end{figure}
 For the purpose of jet reconstruction, the RCT also sums ECAL and HCAL 
-energies in clusters of 4$\times$4 towers (as can be seen in figure%%ieta RCT figure
+energies in clusters of 4$\times$4 towers (as can be seen in figure \ref{fig:rctTowerIetaIphi}
 ) in to regions. During this process the RCT examines the
 energy profile to see if the region is compatible with a hadronic $\tau$ lepton.
 A $\tau$-veto bit is set unless the pattern of active towers corresponds to at
-most 2$\times$2 contiguous towers. The patterns are detailed in figure %%%%Tau veto figure
+most 2$\times$2 contiguous towers. The patterns are detailed in figure \ref{fig:RCTTauAlgo}
 This $\tau$ veto bit is included when the jet transverse energy is sent to the GCT.
 The RCT is an essential system for data acquisition at a high efficiency and
 a low rate, therefore good performance must be continually monitored during and
