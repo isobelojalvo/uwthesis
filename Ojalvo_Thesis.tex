@@ -6,10 +6,11 @@
 %%%% You should be using the memoir class anyway; it makes life easier:
 %%%% http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
 \def\bbbar{\ensuremath{\mathrm{b\bar{b}}}}
-\newcommand{\PZ}{\cPZ\xspace}
-\newcommand{\ZZ}{\cPZ\cPZ\xspace}
-\newcommand{\WW}{\PWp\PWm\xspace}
-\newcommand{\WZ}{\PW\cPZ\xspace}
+\def\ccbar{\ensuremath{\mathrm{c\bar{c}}}}
+\newcommand{\PZ}{Z}
+\newcommand{\ZZ}{ZZ}
+\newcommand{\WW}{WW}
+\newcommand{\WZ}{WZ}
 \newcommand{\pp}{\Pp\Pp\xspace}
 \newcommand{\Wjets}{\ensuremath{\PW+\text{jets}}\xspace}
 \def\Wmnbb{\ensuremath{\mathrm{W}(\Pgm\cPgn)+\bbbar}}
@@ -21,14 +22,31 @@
 \def\Wcc{\ensuremath{\mathrm{W+\ccbar}}}
 \def\Zll{\ensuremath{\mathrm{Z\rightarrow\ell\ell}}}
 \def\MT{M_\mathrm{T}}
+\def\ET{$E_\mathrm{T}$}
 \def\pt{p_\mathrm{T}}
+\def\GeV{\mathrm{GeV}}
+\def\TeV{$\mathrm{TeV}$}
+\def\PYTHIA{$\mathtt{PYTHIA}$}
+\def\POWHEG{$\mathtt{POWHEG}$}
+\def\MADGRAPH{$\mathtt{MADGRAPH}$}
+\def\GEANTfour{$\mathtt{GEANT4}$}
+\def\fbinv{fb^\mathrm{-1}}
+%\def\vecEtm{\overline{\slash{E_{T}}}}
+%\def\vecPtmu{\overline{p_{T}(\mu)}}
+%\def\MET{\slash{E_{T}}}
+\def\ttbar{\ensuremath{t\bar{t}}}
+\def\vecEtm{\ensuremath{\vec{E}_\mathrm{T}^{\mathrm{miss}}}\;}
+\def\MET{\ensuremath{E_\mathrm{T}^{\mathrm{miss}}}\;}
+\def\vecPtmu{\ensuremath{\vec{P}_\mathrm{T}^{\mu}}\;}
+
 \newcommand{\Lint}{\ensuremath{{\cal L}_{\mathrm{int}}}}
 \newcommand{\dytt}{\ensuremath{\cPZ/\Pgg^*\to\tau^+\tau^-}}
 \newcommand{\dyll}{\ensuremath{\cPZ/\Pgg^*\to \ell^+\ell^-}}
-\newcommand{\lumi}{\ensuremath{\,\mathrm{(lum.)}}\xspace}
-\newcommand{\theo}{\ensuremath{\,\mathrm{(theo.)}}\xspace}
-\providecommand{\vecEtm}{\ensuremath{\vec{E}_\mathrm{T}^{\mathrm{miss}}}\xspace}
-\providecommand{\vecPtmu}{\ensuremath{\vec{P}_\mathrm{T}^{\mu}}\xspace}
+\newcommand{\stat}{\ensuremath{\,\mathrm{(stat.)\;}}}
+\newcommand{\syst}{\ensuremath{\,\mathrm{(syst.)\;}}}
+\newcommand{\lumi}{\ensuremath{\,\mathrm{(lum.)\;}}}
+\newcommand{\theo}{\ensuremath{\,\mathrm{(theo.)}}\;}
+
 
 
 
@@ -39,7 +57,12 @@
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 
+%Search for an MSSM Higgs Boson and Measurement of W+b b
+%with the CMS Detector at the LHC.
 \settitle{Search for an MSSM Higgs Boson and Measurement of W+$b\bar{b}$, an Important Electroweak Background Process}
 \setauthor{Isobel Rose Ojalvo}
 \setdepartment{Physics}
@@ -103,13 +126,13 @@ This is where any acknowledgements would go.
 % \clearpage
  \listoffigures*  % if you have any figures
 % \clearpage
-% \listoftables   % if you have any tables
+ \listoftables   % if you have any tables
 
 % Tell the memoir class to set up normal pagination, etc. for the main doc
 \mainmatter
 
 \chapter{The Standard Model}
-\section{A Historical Approach to High Energy Physics}
+\include{History}
 \section{Quarks, Leptons and Gauge Bosons}
 \section{The Standard Model Higgs Boson}
 \section{\bbbar Production at the LHC}
@@ -123,7 +146,7 @@ This is where any acknowledgements would go.
 \section{Layout and Operation}
 \section{Operating Conditions 2011 and 2012 Runs}
 
-\chapter{The Compact Muon Solenoid Experiment}
+\include{CMS}
  \include{CoordinateSystem}
  \include{Magnet}
  \include{TrackingSystem}
