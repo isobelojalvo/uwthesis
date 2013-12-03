@@ -1,16 +1,40 @@
 \chapter{The Compact Muon Solenoid Experiment}
-Located on the french side of the LHC ring at interaction Point 5, a few miles from the 
-Jura mountains, is the Compact Muon Solenoid (CMS) Detector. 
-The CMS detector is located on the LHC ring and therefore must be designed to
-operate at %%fix
-a center of mass energy of 14 TeV and _____ bunch crossings which cause high pileup.
+Located in the shadow of the Jura mountains
+at LHC interaction Point 5 is the Compact Muon Solenoid (CMS) Detector. 
+The CMS detector is designed with the purpose of detecting and reconstructing
+proton-proton and Heavy Ion interactions delivered by the LHC accelerator.
+CMS is designed to collect and analyze the full physics reach of the LHC and 
+therefore will operate at very high luminosity conditions. Due to the very high
+crossing rate (40MHz) and variety of physics processes, very high speed electronics
+that have a large set of channels capable of operating in close synchronization are required.
 
-Furthermore, the CMS detector was designed to mee the following requirements,
-Good measurement of track $p_T$ and 
 
-Another important and unique aspect of CMS is its moving-ring-based structure,
-allowing for very good access to the detector elements for maintenance and upgrade.
+The CMS detector was designed to meet the following requirements:
+\begin{itemize}
+\item Good muon identification, momentum resolution asnd charge identification over a wide range of momentum 
+\item Good charged particle momentum resolution and reconstruction efficiency within the inner tracker. Efficient
+triggering and offline tagging of $\tau$-leptons and b-jets, requiring pixel detectors close to the interaction point
+\item Good electromagnetic energy resolution: diphoton and dielectron mass resolution should
+be $\approx$1$\%$ at 100 GeV
+\item Di-jet mass resolution and missing transverse energy measurement: requires hadron
+calorimeters with a wide coverage and fine segmentation
+\end{itemize}
+\begin{figure}[hb]
+  \centering
+	\includegraphics[width=1\textwidth]{images/CMSLayout.png}
+  	\caption[CMS Layout]
+   	{CMS Layout}
+	\label{fig:CMSLayout}
+\end{figure}
 
-These design aspects has forced the individual subdetectors to support designs which
-are able to withstand a large magnetic field, on the order of a few Tesla, and (depending on their location)
-are able to withstand large doses of radiation (i.e are radiation hard). 
+To achieve these goals CMS uses a large superconducting solenoid magnet which contains
+the largest silicon tracker ever built and both the electromagnetic and hadronic calorimeters;
+their layout and the overall scale of CMS can be seen in figure \ref{fig:CMSLayout}.
+Outside the solenoid there is an iron magnetic return yoke with multiple layers of muon
+detectors installed in it.
+These detectors and their front-end electronics must be capable of withstanding
+large magnetic fields on the order of a few Tesla and
+must also be able to withstand large doses of radiation (i.e radiation hard). 
+Finally, an important and unique aspect of CMS is its moving-ring-based structure,
+allowing for very good access to the detector elements for 
+maintenance and upgrade to meet future running conditions.

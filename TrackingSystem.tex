@@ -33,10 +33,10 @@ At 5.4 m in length and 2.2 m in diameter, the CMS tracker is the largest inner
 detector ever built in a high energy physics experiment.
 \begin{figure}[hb]
   \centering
-  \begin{subfigure}{.5\textwidth}
+  \begin{subfigure}[b]{.45\textwidth}
 	\includegraphics[width=\textwidth]{images/Tracker_Materials_x_vs_eta.eps} 
 	\end{subfigure}	
-   \begin{subfigure}{.5\textwidth}
+   \begin{subfigure}[b]{.45\textwidth}
 	\includegraphics[width=\textwidth]{images/Tracker_SubDetectors_x_vs_eta.eps}
     \end{subfigure}	
   	\caption[Tracker Material Budget]
@@ -65,14 +65,22 @@ tracking points in $r-\phi$ and $z$ and is therefore responsible for a small imp
 parameter resolution that is important for b and c-jet secondary
 vertex reconstruction and $\tau$-lepton secondary vertex reconstruction.
 
-The pixel detector is composed of individual pixel cells with a size of 
+\begin{figure}[hb]
+  \centering
+	\includegraphics[width=0.7\textwidth]{images/pixelLayout.png}
+  	\caption[Pixel System Layout]
+   	{Pixel System Layout}
+	\label{fig:pixelLayout}
+\end{figure}
+
+The pixel detector is made up of individual pixel cells with a size of 
 100 $\times$ 150 $\mu m^{2}$; it has 66 million active elements and covers
 a surface area of 1 $m^{2}$. The pixel detector is composed of three barrel 
 layers and two endcap disks which the pseudorapidity range from $-2.5<\eta<2.5$.
 The three barrel layers are located at mean radii of 4.3, 7.3, and 10.2 cm. 
 The endcap disks extend from 4.8 to 14.4 cm in radii are located at a mean distance
 of $z=\pm35.5$cm and $z=\pm48.5$cm from the interaction point. 
-As can be seen in figure XX this arrangement allows for 3 tracking points over %%add figure
+As can be seen in figure \ref{fig:pixelLayout} this arrangement allows for 3 tracking points over 
 almost the full $\eta$-range of the pixel system. Due to 
 particles entering the detector at an average angle of $20^{\circ}$ 
 charge-sharing between pixels is achieved which improves position resolution.
