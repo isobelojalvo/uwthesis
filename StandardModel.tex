@@ -21,29 +21,55 @@ describe the motion of a particle or system of particles. %%ref goldstein
 If we consider the generalized coordinates of a system, $q_{i}$,
 and it's derivative as a function of time, $\dot{q_{i}}$, the equation
 of motion can be written as,
-\begin{displaymath}
+\begin{equation}
 0=\frac{d}{dt}\left(\frac{\partial L}{\partial\dot{q_{i}}}\right) - \frac{\partial L}{\partial q_{i}}
-\end{displaymath}
+\end{equation}
 where $L$ is defined as the difference of the kinetic and the potential energy, $L\equiv T-V$.
 This equation equation can be formally extended to act on a wave function with %%I don't like "act on"
 continuously varying coordinates $\phi({\bf x},t)$
 where {\bf x} is the spatial coordinates and t is time.
 In this regime, the Lagrangian equation of motion becomes
-\begin{displaymath}
+\begin{equation}
 0=\frac{\partial}{\partial x_{\mu}}\left( \frac{\La}{\partial\left(\partial\phi/\partial x_{\mu}\right)}\right)-\frac{\partial\La}{\partial\phi}
-\end{displaymath}
+\end{equation}
 In the subsequent sections, following the standard methodology, $\La$ is referred to as the Lagrangian
 despite it actually being the Lagrangian density,
-\begin{displaymath}
-L=\int{\La d^{3}x}.
-\end{displaymath}
+\begin{equation}
+L=\int{\La d^{3}x}
+\end{equation}
 As was stated in section XXX,%ref StandardModel Section 1
-To derive the Lagrangians for the SM we start by stating
-the Feynman rules:
+To derive the Lagrangian equation of motion for a given interaction
+one can easily start from the Feynman Rules %%REF Srednicki
+For a more formal approach, we begin by stating Noether's
+Theorem that 
 
-\subsection{The Higgs Boson and Electroweak Symmetry Breaking}
+\subsection{The Higgs Mechanism and Electroweak Symmetry Breaking}
+First we illustrate the Higgs Mechanism of a global gauge symmetry, 
+which the mechanism that generates mass for the gauge bosons. 
+We start by writing the Lagrangian, 
+\begin{equation}
+\label{eq:LU1}
+\La=(\partial_{\mu}\phi)*(\partial^{\mu}\phi) - \mu^{2}\phi*\phi - \lambda (\phi*\phi)^{2}
+\end{equation}
+which describes the complex scalar field, $\phi=(\phi_{1}+i\phi_{2})/\sqrt(2)$.
+This Lagrangian is invariant under the phase transformation $\phi\rightarrow e^{i\alpha}\phi$
+(which is equivalent to stating that the (\ref{eq:LU1}) possesses a $U(1)$ global gauge symmetry).
+Here, we consider the case where $\lambda>0$ and $\mu^{2}<0$. To illustrate the importance of (\ref{eq:LU1})
+it is rewritten in the form
+\begin{equation}
+\La \equiv T-V = \frac{1}{2}(\partial_{\mu}\phi_{1})^{2}+\frac{1}{2}(\partial_{\mu}\phi_{2})^{2}-\frac{1}{2}\mu^{2}(\phi_{1}^{2}+\phi_{2}^{2})-\frac{1}{4}\lambda(\phi_{1}^{2}+\phi_{2}^{2})^{2}.
+\label{eq:LU2}
+\end{equation}
+In (\ref{eq:LU2}) the potential term is
+\begin{equation}
+V=\frac{1}{2}\mu^{2}(\phi_{1}^{2}+\phi_{2}^{2})+\frac{1}{4}\lambda(\phi_{1}^{2}+\phi_{2}^{2})^{2}.
+\end{equation}
+Evaluating $\partial V/ \partial \phi = 0$ it is seen that the local minima
+of the potential $V(\phi)$ is a circle in the $\phi_{1},\phi_{2}$ plane of radius $v$ where,
+$\phi_{1}^{2}+\phi_{2}^{2}=v^{2}$ with $v^{2}= - \mu^{2}/\lambda$
+
 \subsection{\bbbar Production at the LHC}
 
 
 \subsection{Jet Hadronization and b-quarks}%%??
-quarks only live for $10^{-15}$ seconds
+%quarks only live for $10^{-15}$ seconds
