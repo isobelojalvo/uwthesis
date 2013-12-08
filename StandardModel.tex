@@ -6,14 +6,25 @@ where each generation has two particles.
 These 6 quarks and 6 leptons
 are then mediated by the photon, $\gamma$, the W$^{+/-}$, the gluon
 
-The Standard Model of particle physics follows an %%%
-symmetry. As can be seen in figure %%figure
+The Standard Model of particle physics follows a $SU(3)\times SU(2)_{L}\times U(1)$ %under field theory??
+symmetry. The $SU(2)_{L}\times U(1)$ describes electroweak interactions.
+The $SU(3)$ group describes color and the interactions
+between gluons and quarks. In the unbroken $SU(2)_{L}\times U(1)$ symmetry
+gauge bosons and fermions are massless. However, the recent
+discovery of particle that closely resembles the Standard Model Higgs
+Boson provides a Mechanism by which the symmetry is broken
+and the $W^{\pm}$ and Z bosons, the quarks and leptons acquire mass. 
+In the following sections the Higgs Mechanism is described in greater detail.
+The extension of the Higgs to the Minimally Supersymmetric Standard Model
+is described in the following chapter and the search for it along with
+a measurement of the $\Wbb$ cross-section is the main purpose of this
+thesis.
 \subsection{The Standard Model}%%%Change name?
 The idea that interactions are dictated by symmetry is of central
 importance to the formulation of theoretical particle physics. 
 Currently, it is the general belief that all particle interactions are
 described by local gauge theories and that 
-physical quantities (charge, color, lepton number, ect.) are 
+physical quantities (charge, color, weakspin, hyper charge) are 
 always conserved.
 To start the description of SM theory we remember that in classical 
 mechanics Lagrange's equations of motion are used to
@@ -25,7 +36,7 @@ of motion can be written as,
 0=\frac{d}{dt}\left(\frac{\partial L}{\partial\dot{q_{i}}}\right) - \frac{\partial L}{\partial q_{i}}
 \end{equation}
 where $L$ is defined as the difference of the kinetic and the potential energy, $L\equiv T-V$.
-This equation equation can be formally extended to act on a wave function with %%I don't like "act on"
+This equation can be formally extended to act on a wave function with %%I don't like "act on"
 continuously varying coordinates $\phi({\bf x},t)$
 where {\bf x} is the spatial coordinates and t is time.
 In this regime, the Lagrangian equation of motion becomes
@@ -37,25 +48,25 @@ despite it actually being the Lagrangian density,
 \begin{equation}
 L=\int{\La d^{3}x}
 \end{equation}
-As was stated in section XXX,%ref StandardModel Section 1
 To derive the Lagrangian equation of motion for a given interaction
-one can easily start from the Feynman Rules %%REF Srednicki
-For a more formal approach, we begin by stating Noether's
-Theorem that 
+one can easily start from the Feynman Rules.
+However, in the following section we take a more formal approach.
 
 \subsection{The Higgs Mechanism and Electroweak Symmetry Breaking}
-First we illustrate the Higgs Mechanism of a global gauge symmetry, 
+In this section we illustrate the Higgs Mechanism and partially derive the
+Standard Model Lagrangian. For an even more detailed approach see .%%%Ref Srednicki
+First we consider the Higgs Mechanism of a global gauge symmetry, 
 which the mechanism that generates mass for the gauge bosons. 
 We start by writing the Lagrangian, 
 \begin{equation}
-\label{eq:LU1}
 \La=(\partial_{\mu}\phi)*(\partial^{\mu}\phi) - \mu^{2}\phi*\phi - \lambda (\phi*\phi)^{2}
+\label{eq:LU1}
 \end{equation}
-which describes the complex scalar field, $\phi=(\phi_{1}+i\phi_{2})/\sqrt(2)$.
+which describes the complex scalar field, $\phi=(\phi_{1}+i\phi_{2})/\sqrt{2}$.
 This Lagrangian is invariant under the phase transformation $\phi\rightarrow e^{i\alpha}\phi$
-(which is equivalent to stating that the (\ref{eq:LU1}) possesses a $U(1)$ global gauge symmetry).
+(which is equivalent to stating that (\ref{eq:LU1}) possesses a $U(1)$ global gauge symmetry).
 Here, we consider the case where $\lambda>0$ and $\mu^{2}<0$. To illustrate the importance of (\ref{eq:LU1})
-it is rewritten in the form
+this Lagrangian is rewritten in the form
 \begin{equation}
 \La \equiv T-V = \frac{1}{2}(\partial_{\mu}\phi_{1})^{2}+\frac{1}{2}(\partial_{\mu}\phi_{2})^{2}-\frac{1}{2}\mu^{2}(\phi_{1}^{2}+\phi_{2}^{2})-\frac{1}{4}\lambda(\phi_{1}^{2}+\phi_{2}^{2})^{2}.
 \label{eq:LU2}
@@ -66,9 +77,56 @@ V=\frac{1}{2}\mu^{2}(\phi_{1}^{2}+\phi_{2}^{2})+\frac{1}{4}\lambda(\phi_{1}^{2}+
 \end{equation}
 Evaluating $\partial V/ \partial \phi = 0$ it is seen that the local minima
 of the potential $V(\phi)$ is a circle in the $\phi_{1},\phi_{2}$ plane of radius $v$ where,
-$\phi_{1}^{2}+\phi_{2}^{2}=v^{2}$ with $v^{2}= - \mu^{2}/\lambda$
+$\phi_{1}^{2}+\phi_{2}^{2}=v^{2}$ with $v^{2}= - \mu^{2}/\lambda$. This 
+is of great importance as $(\phi_{1},\phi_{2})=(0,0)$ is not the ground state, as can be seen in figure .%%%%add mexican hat figure
+Particle physics uses perturbation theory to calculate fluctuations 
+about the minimum energy so, without loss of generality, the field $\phi$ is translated to a minimum
+energy position $\phi_{1}=v$, $\phi_{2}=0$. The Lagrangian (\ref{eq:LU2}) is
+expanded about the vacuum in terms of the fields $\eta$, $\xi$ by substituting
+\begin{equation}
+\phi(x)=\sqrt{\frac{1}{2}}[v+\eta(x)+i\xi(x)]
+\label{eq:VTerms}
+\end{equation}
+into (\ref{eq:LU2}) and obtaining,
+\begin{equation}
+\La'=\frac{1}{2}(\partial_{\mu}\xi)^{2}+\frac{1}{2}(\partial_{\mu}\eta)^2+\mu^{2}+const.+\vartheta(\eta^{3},\xi^{3},\eta^{4},\xi^{4}).
+\label{eq:LU3}
+\end{equation}
+The third term of this new Lagrangian, \ref{eq:LU3}, is a mass term
+for the $\eta$-field, $m_{\eta}=\sqrt{-2\mu^{2}}$. The $\xi$-field has
+a kinetic term (the first term in \ref{eq:LU3}) but no mass term
+for $\xi$. This is a consequence of the Goldstone theorem which states
+that whenever a symmetry is spontaneously broken, massless scalars occur.
 
-\subsection{\bbbar Production at the LHC}
+Now that we have evaluated spontaneous breaking of 
+a global gauge symmetry we can extend the formalism to the local $U(1)$ gauge symmetry.
+First, we make the Lagrangian (\ref{eq:LU1}) invariant under a $U(1)$ 
+local gauge transformation: $\phi\rightarrow e^{i\alpha(x)}\phi$
+This is done by choosing a modified derivative, $D_{\mu}$, which will
+transform covariantly under phase transformations, namely, 
+$D_{\mu}\rightarrow e^{i\alpha(x)}D_{\mu}\psi$. Thus $\partial_{\mu}$
+is replaced by $D_{\mu} = \partial_{\mu}-ieA_{\mu}$.
+The gauge invariant Lagrangian in this instance is thus,
+\begin{equation}
+\La=(\partial^{\mu}+ieA^{\mu})\phi*(\partial_{\mu}-ieA_{\mu})\phi - \mu^{2} \phi*\phi - \lambda(\phi*\phi)^{2}-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+To avoid off diagonal terms instead of making the transformation \ref{eq:VTerms} 
+we substitute in
+\begin{equation}
+\phi\rightarrow\sqrt{\frac{1}{2}}(\nu+h(x))e^{i\Theta(x)/\nu}
+\end{equation}
+and%%%be more verbose
+\begin{equation}
+A_{\mu}\rightarrow A_{\mu}+\frac{1}{e\nu}\partial_{\mu}\Theta
+\end{equation}
+Then by translating this field to a true global minimum
+and, again, considering the solution where $\mu^{2}<0$ this Lagrangian becomes 
+\begin{equation}
+\La'=\frac{1}{2}(\partial_{\mu}h)^{2}-\lambda \nu^{2}h^{2}+\frac{1}{2}e^{2}\nu^{2}A_{\mu}^{2}-\lambda\nu h^{3}-
+\frac{1}{4}\lambda h^{4} + \frac{1}{2}e^{2}A_{\mu}^{2}h^{2}+\nu e^{2}A_{\mu}^{2}h-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
+\end{equation}
+%For the purpose of perturbative calculations a local minimum 
+%\subsection{\bbbar Production at the LHC}
 
 
 \subsection{Jet Hadronization and b-quarks}%%??
