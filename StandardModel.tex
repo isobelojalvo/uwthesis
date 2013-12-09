@@ -1,10 +1,40 @@
 \section{Quarks, Leptons and Gauge Bosons}
-Following the advances of the 20th century the fundamental
-particles in the SM are composed of 3 generations of quarks and leptons
+Following the advances of the 20th century it has been experimentally 
+determined that the fundamental
+particles in the SM consists of 3 generations of quarks and leptons
 where each generation has two particles. 
+\begin{figure}[hb]
+  \centering
+	\includegraphics[width=\textwidth]{images/SMParticles2.png}
+  	\caption[SM Particles]
+   	{Standard Model Particles}
+	\label{fig:SMParticles}
+\end{figure}
+Starting with the third 
+generation which consists of the heaviest quarks, the top (t) and bottom (b),
+and the $\tau$ lepton and $\tau$ neutrino ($\nu_{\tau}$).
+The second generation consists of the charm (c) and strange (s) quarks,
+the charged muon ($\mu$) and neutral muon neutrino ($\nu_{\mu}$).
+Finally, the first generation which is composed of the lightest 
+quarks, the up (u) and down (d) quarks,
+and the lightest charged lepton with the longest lifetime, the electron (e), and its neutral 
+neutrino partner, the electron neutrino ($\nu_{e}$). 
+The mass, charge and spin can be seen in figure \ref{fig:SMParticles}.
+%%%properties, mass, spin, charge, 
 
-These 6 quarks and 6 leptons
-are then mediated by the photon, $\gamma$, the W$^{+/-}$, the gluon
+Each fundamental force is associated with spin 1 mediator particles.
+The weak interactions are mediated by the $W^{\pm}$ and $Z$;
+electromagnetic interactions are mediated by the photon and the strong interactions
+are mediated by the 8 colored gluons. The Higgs Mechanism (described in the next section) 
+is responsible for giving mass to the $W^{\pm}$, $Z$ and the fermions. 
+The SM of particle physics describes very successfully the electroweak and strong
+interaction of elementary particles over a wide range of energies.
+
+The discovery of a Standard Model Higgs-like boson was announced jointly 
+by the CMS and ATLAS collaborations in July of 2012. %%%Cite
+As of the writing of this thesis the Higgs Boson has been observed at CMS via
+its decay to $ZZ^{*}$, $\gamma\gamma$ and $\tau\tau$. The mass of this
+Higgs Boson, as measured by CMS, is 125.6 $\pm$ 0.4(stat.) $\pm$ 0.2(syst.).
 
 The Standard Model of particle physics follows a $SU(3)\times SU(2)_{L}\times U(1)$ %under field theory??
 symmetry. The $SU(2)_{L}\times U(1)$ describes electroweak interactions.
@@ -125,9 +155,60 @@ and, again, considering the solution where $\mu^{2}<0$ this Lagrangian becomes
 \La'=\frac{1}{2}(\partial_{\mu}h)^{2}-\lambda \nu^{2}h^{2}+\frac{1}{2}e^{2}\nu^{2}A_{\mu}^{2}-\lambda\nu h^{3}-
 \frac{1}{4}\lambda h^{4} + \frac{1}{2}e^{2}A_{\mu}^{2}h^{2}+\nu e^{2}A_{\mu}^{2}h-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
 \end{equation}
-%For the purpose of perturbative calculations a local minimum 
-%\subsection{\bbbar Production at the LHC}
+This equation describes the interaction between a vector gauge boson,
+$A_{\mu}$, and a massive scalar, h. 
+It is of importance to not that when examining this equation 
+we see that the second term relates the mass 
+of the higgs as $m_{h}=\sqrt{2\lambda v^{2}}$; along with this
+the vector gauge boson acquires the mass, XXX.%%check this
+To summarize this example of spontaneous breaking of a $U(1)$ gauge symmetry
+results in a massless Goldstone boson which has been converted to an
+additional longitudinal polarization degree of freedom. This results
+in a Lagrangian with a massive scalar particle, a massive field and interaction terms.
+This procedure is known as the Higgs mechanism. 
 
+Next we consider spontaneous breaking of a $SU(2)$ gauge symmetry;
+We begin with \ref{eq:LU1} and define $\phi$ as a $SU(2)$ doublet 
+of a complex scalar field, %%fix wording
+\begin{equation}
+\phi=\left(
+    \begin{array}{c}
+      \phi_{\alpha} \\
+      \phi_{\beta}
+    \end{array}
+  \right) =
+  \sqrt{\frac{1}{2}} 
+  \left(
+    \begin{array}{c}
+      \phi_{1}+i\phi_{2} \\
+      \phi_{3}+i\phi_{4}
+    \end{array}
+  \right) .
+\end{equation}
+%\subsection{\bbbar Production at the LHC}
+Three gauge fields $W_{\mu}^{a}$ with a = 1,2,3 are put in place for the three gauge bosons, $W^{\pm}$ and Z. %%check
+We must replace $\partial_{\mu}$ by the covariant derivative,
+\begin{equation}
+D_{\mu}=\partial_{\mu}+ig\frac{\tau_{a}}{2}W_{\mu}^{a},
+\end{equation}
+The gauge invariant Lagrangian becomes,
+\begin{equation}
+\La=
+\left(\partial_{\mu}\phi + ig \frac{1}{2} \tau \cdot W_{\mu}\phi  \right)^{\dagger}
+\left(\partial^{\mu}\phi + ig \frac{1}{2} \tau \cdot W^{\mu}\phi  \right)
+-\mu^{2}\phi^{\dagger}\phi
+-\lambda (\phi^{\dagger}\phi)^{2}
+-\frac{1}{4}W_{\mu\nu}W^{\mu\nu}.
+\end{equation}
+The potential in this Lagrangian is $V(\phi)=\mu^{2}\phi^{\dagger}\phi+\lambda (\phi^{\dagger}\phi)^{2}$.
+As before, we are interested in the global minimum of this potential
+in the case where $\mu^{2}<0$ and $\lambda>0$, which is
+$\phi^{\dagger}\phi=-\mu^{2}/2\lambda$.
+The final relevant term in the Standard Model Lagrangian that gives
+the $W^{\pm}$ and $Z$ bosons their mass is,
+\begin{equation} 
+\left| \left( i\partial_{\mu}+gT_{a}W_{\mu}^{1}+g'B_{\mu}\frac{Y}{2}\right)\phi \right|^{2} - V(\phi)
+\end{equation}
 
 \subsection{Jet Hadronization and b-quarks}%%??
 %quarks only live for $10^{-15}$ seconds
