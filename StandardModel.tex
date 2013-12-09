@@ -204,11 +204,64 @@ The potential in this Lagrangian is $V(\phi)=\mu^{2}\phi^{\dagger}\phi+\lambda (
 As before, we are interested in the global minimum of this potential
 in the case where $\mu^{2}<0$ and $\lambda>0$, which is
 $\phi^{\dagger}\phi=-\mu^{2}/2\lambda$.
-The final relevant term in the Standard Model Lagrangian that gives
-the $W^{\pm}$ and $Z$ bosons their mass is,
-\begin{equation} 
-\left| \left( i\partial_{\mu}+gT_{a}W_{\mu}^{1}+g'B_{\mu}\frac{Y}{2}\right)\phi \right|^{2} - V(\phi)
-\end{equation}
 
+Finally, we need to formulate the Higgs mechanism in an $SU(2)\times U(1)$ 
+gauge invariant Lagrangian so that the $W^{\pm}$ and $Z$ become massive. 
+
+\begin{equation} %%link this to 14.65
+\left| \left( i\partial_{\mu}+gT_{a}W_{\mu}^{1}+g'B_{\mu}\frac{Y}{2}\right)\phi \right|^{2} - \mu^{2}\left| \phi \right| ^{2}
++\lambda\left| \phi \right| ^{4}
+\label{eq:L2}
+\end{equation}
+If we wish for \ref{eq:L2} to remain gauge invariant and 
+for this Lagrangian to break the symmetries of $SU(2)$ and $U(1)_{Y}$
+but leave $U(1)_{em}$ with generator, $Q=T^{3}+\frac{Y}{2}$, unbroken then
+we choose $\phi$ such that,
+\begin{equation}
+\phi = 
+\left(
+\begin{array}{c}
+      \phi^{+} \\
+      \phi^{0}
+    \end{array}
+\right)
+\mathrm{where,}
+\begin{array}{c}
+      \phi^{+}\equiv (\phi_{1}+i\phi_{2})/\sqrt{2} \\
+      \phi^{0}\equiv (\phi_{3}+i\phi_{4})/\sqrt{2}
+    \end{array}
+\end{equation}
+Again, we are interested in the case where $\mu^{2}<0$ and $\lambda>0$
+and choose a point in $\phi(x)$ that is a global minimum,
+\begin{equation}
+\phi_{0}=\sqrt{\frac{1}{2}}
+\left(
+\begin{array}{c}
+      0 \\
+      \nu
+    \end{array}
+\right)
+\label{eq:min}
+\end{equation}
+Expanding the kinetic term of \ref{eq:L2} we have,
+\begin{equation}
+\left| \left(-g\frac{\tau}{2}\cdot W_{\mu}-i\frac{g'}{2}B_{\mu}\right)\phi\right|^{2}
+\end{equation}
+Then evaluating at \ref{eq:min},
+\begin{equation}
+=\frac{1}{8}\left|\left(   
+
+\right) 
+\left( 
+	\begin{array}{c}
+	gW_{\mu}^{3}+g'B_{\mu}&g(W_{\mu}^{1}-iW_{\mu}^{2})
+	g(W_{\mu}^{1}+iW_{\mu}^{2})&-gW_{\mu}^{3}+g'B_{\mu}
+	\end{array}
+\right)
+\right|^{2}
+=
+\frac{1}{8}\nu^{2}g^{2}\left[\left(W_{\mu}^{1} \right)^{2} \left(W_{\mu}^{2} \right)^{2} \right]
++\frac{1}{8}\nu^{2}(g'B_{\mu}-gW_{\mu}^{3})(g'B^{\mu}-gW^{3\mu}) 
+\end{equation}
 \subsection{Jet Hadronization and b-quarks}%%??
 %quarks only live for $10^{-15}$ seconds
