@@ -49,7 +49,7 @@ The extension of the Higgs to the Minimally Supersymmetric Standard Model
 is described in the following chapter and the search for it along with
 a measurement of the $\Wbb$ cross-section is the main purpose of this
 thesis.
-\subsection{The Standard Model}%%%Change name?
+\subsection{Background to Lagrangian Construction}%%%Change name?
 The idea that interactions are dictated by symmetry is of central
 importance to the formulation of theoretical particle physics. 
 Currently, it is the general belief that all particle interactions are
@@ -184,9 +184,9 @@ of a complex scalar field, %%fix wording
       \phi_{3}+i\phi_{4}
     \end{array}
   \right) .
+  \label{eq:phidoublet}
 \end{equation}
 %\subsection{\bbbar Production at the LHC}
-Three gauge fields $W_{\mu}^{a}$ with a = 1,2,3 are put in place for the three gauge bosons, $W^{\pm}$ and Z. %%check
 We must replace $\partial_{\mu}$ by the covariant derivative,
 \begin{equation}
 D_{\mu}=\partial_{\mu}+ig\frac{\tau_{a}}{2}W_{\mu}^{a},
@@ -199,40 +199,14 @@ The gauge invariant Lagrangian becomes,
 -\mu^{2}\phi^{\dagger}\phi
 -\lambda (\phi^{\dagger}\phi)^{2}
 -\frac{1}{4}W_{\mu\nu}W^{\mu\nu}.
+\label{eq:SU2L}
 \end{equation}
+Three gauge fields $W_{\mu}^{a}$ with a = 1,2,3 are included.
 The potential in this Lagrangian is $V(\phi)=\mu^{2}\phi^{\dagger}\phi+\lambda (\phi^{\dagger}\phi)^{2}$.
 As before, we are interested in the global minimum of this potential
 in the case where $\mu^{2}<0$ and $\lambda>0$, which is
-$\phi^{\dagger}\phi=-\mu^{2}/2\lambda$.
-
-Finally, we need to formulate the Higgs mechanism in an $SU(2)\times U(1)$ 
-gauge invariant Lagrangian so that the $W^{\pm}$ and $Z$ become massive. 
-
-\begin{equation} %%link this to 14.65
-\left| \left( i\partial_{\mu}+gT_{a}W_{\mu}^{1}+g'B_{\mu}\frac{Y}{2}\right)\phi \right|^{2} - \mu^{2}\left| \phi \right| ^{2}
-+\lambda\left| \phi \right| ^{4}
-\label{eq:L2}
-\end{equation}
-If we wish for \ref{eq:L2} to remain gauge invariant and 
-for this Lagrangian to break the symmetries of $SU(2)$ and $U(1)_{Y}$
-but leave $U(1)_{em}$ with generator, $Q=T^{3}+\frac{Y}{2}$, unbroken then
-we choose $\phi$ such that,
-\begin{equation}
-\phi = 
-\left(
-\begin{array}{c}
-      \phi^{+} \\
-      \phi^{0}
-    \end{array}
-\right)
-\mathrm{where,}
-\begin{array}{c}
-      \phi^{+}\equiv (\phi_{1}+i\phi_{2})/\sqrt{2} \\
-      \phi^{0}\equiv (\phi_{3}+i\phi_{4})/\sqrt{2}
-    \end{array}
-\end{equation}
-Again, we are interested in the case where $\mu^{2}<0$ and $\lambda>0$
-and choose a point in $\phi(x)$ that is a global minimum,
+$\phi^{\dagger}\phi=-\mu^{2}/2\lambda$. Again, we are interested in the case where $\mu^{2}<0$ and $\lambda>0$
+and expand about a point in $\phi(x)$ that is a global minimum,
 \begin{equation}
 \phi_{0}=\sqrt{\frac{1}{2}}
 \left(
@@ -243,25 +217,86 @@ and choose a point in $\phi(x)$ that is a global minimum,
 \right)
 \label{eq:min}
 \end{equation}
-Expanding the kinetic term of \ref{eq:L2} we have,
+Due to gauge invariance, on can simply substitute,
+\begin{equation}
+\phi(x)=\sqrt{\frac{1}{2}}
+\left(
+\begin{array}{c}
+      0 \\
+      \nu+h(x)
+    \end{array}
+\right)
+\label{eq:min}
+\end{equation}
+And in fact, if we substitute ($\ref{eq:min}$) into the Lagrangian (\ref{eq:SU2L}).
+and find that the three bosons acquire a mass of $M=\frac{1}{2}g\nu$.
+
+Finally, we need to formulate the Higgs mechanism in an $SU(2)\times U(1)$ 
+gauge invariant Lagrangian so that the $W^{\pm}$ and $Z$ become massive. 
+\begin{equation} %%link this to 14.65
+\left| \left( i\partial_{\mu}+gT_{a}W_{\mu}^{1}+g'B_{\mu}\frac{Y}{2}\right)\phi \right|^{2} - \mu^{2}\left| \phi \right| ^{2}
++\lambda\left| \phi \right| ^{4}
+\label{eq:L2}
+\end{equation}
+%%%%delete
+We wish for (\ref{eq:L2}) to remain gauge invariant and 
+for this Lagrangian to break the symmetries of $SU(2)$ and $U(1)_{Y}$
+but leave $U(1)_{em}$, with generator $Q=T^{3}+\frac{Y}{2}$, unbroken. 
+We can then make the same choice of \ref{eq:phidoublet} and a vacuum 
+expectation value of \ref{eq:min}.
+%then
+%we choose $\phi$ such that,
+%\begin{equation}
+%\phi = 
+%\left(
+%\begin{array}{c}
+%      \phi^{+} \\
+%      \phi^{0}
+%    \end{array}
+%\right)
+%\mathrm{where,}
+%\begin{array}{c}
+%      \phi^{+}\equiv (\phi_{1}+i\phi_{2})/\sqrt{2} \\
+%      \phi^{0}\equiv (\phi_{3}+i\phi_{4})/\sqrt{2}
+%    \end{array}
+%\end{equation}
+%%%deleted
+Expanding the kinetic term of (\ref{eq:L2}) we have,
 \begin{equation}
 \left| \left(-g\frac{\tau}{2}\cdot W_{\mu}-i\frac{g'}{2}B_{\mu}\right)\phi\right|^{2}
 \end{equation}
-Then evaluating at \ref{eq:min},
+Then evaluating at (\ref{eq:min}),
 \begin{equation}
-=\frac{1}{8}\left|\left(   
-
-\right) 
-\left( 
-	\begin{array}{c}
-	gW_{\mu}^{3}+g'B_{\mu}&g(W_{\mu}^{1}-iW_{\mu}^{2})
-	g(W_{\mu}^{1}+iW_{\mu}^{2})&-gW_{\mu}^{3}+g'B_{\mu}
-	\end{array}
-\right)
+=\frac{1}{8}\left|
+\begin{pmatrix}
+		gW_{\mu}^{3}+g'B_{\mu} & g(W_{\mu}^{1}-iW_{\mu}^{2})\\
+		g(W_{\mu}^{1}+iW_{\mu}^{2}) & -gW_{\mu}^{3}+g'B_{\mu}
+\end{pmatrix}
+\begin{pmatrix}
+0\\
+\nu
+\end{pmatrix}
 \right|^{2}
+\end{equation}
+\begin{equation}
 =
 \frac{1}{8}\nu^{2}g^{2}\left[\left(W_{\mu}^{1} \right)^{2} \left(W_{\mu}^{2} \right)^{2} \right]
 +\frac{1}{8}\nu^{2}(g'B_{\mu}-gW_{\mu}^{3})(g'B^{\mu}-gW^{3\mu}) 
 \end{equation}
+\begin{equation}
+=(\frac{1}{2}\nu g)W_{\mu}^{+}W^{-\mu}+\frac{1}{8}(W_{\mu}^{3},B_{\mu})
+\begin{pmatrix}
+g^{2} & -gg'\\
+-gg'  & g'^{2}
+\end{pmatrix}
+\begin{pmatrix}
+W^{3\mu}\\
+B^{\mu}
+\end{pmatrix}
+\end{equation}
+
+We then can obtain the masses of the vector bosons.
+
+
 \subsection{Jet Hadronization and b-quarks}%%??
 %quarks only live for $10^{-15}$ seconds
