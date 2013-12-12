@@ -306,17 +306,30 @@ g^{2} & -gg'\\
 W^{3\mu}\\
 B^{\mu}
 \end{pmatrix}
+\label{eq:finalH}
 \end{equation}
 We then can obtain the masses of the vector bosons.
-From the terms in \ref{} we can then determine the 
-%mass w
-%mass Z
-%mention mass fermions
-
+From the first term in in (\ref{eq:finalH}) we can then determine the 
+mass of the $W$ boson, 
+\begin{equation}
+M_{W}=\frac{1}{2}\nu g.
+\end{equation}
+By diagonalizing the matrix on the last term of (\ref{eq:finalH}), we find that
+the field associated to $Z_{\mu}$ is,
+\begin{equation}
+Z_{\mu}= \frac{gW_{\mu}^{3}-g'B_{\mu}}{\sqrt{g^{2}+g'^{2}}}
+\end{equation}
+and therefore we have,
+\begin{equation}
+M_{Z}=\frac{1}{2}\nu\sqrt{g^{2}g'^{2}}.
+\end{equation}
+While it is not required in the standard model that the higgs boson 
+also gives mass to the fermions it is possible and would be a nice
+feature. 
 \subsection{W Boson Production}
 In a hadron collider, such as the LHC, W bosons are primarily produced
 through the annihilation of a quark and anti-quark. 
-The Cabibbo Kobayashi Maskawa (CKM) matrix tells us that
+The Cabibbo Kobayashi Maskawa (CKM) matrix tells us that%%More on CKM matrix
 couplings of quarks to $W^{\pm}$ is favored within quark generations (for example, $u\bar{d}\rightarrow W^{+}$)
 and suppressed if there is mixing across generations ($s\bar{u}\rightarrow W^{-}$).
 This comes into huge affect when considering W production at hadron colliders and in b quark physics. %%fix
@@ -344,19 +357,32 @@ where production is enhanced in association with b-quarks as well as many other 
 model searches where the final state includes a single lepton and b-quarks. 
 
 %W decays to mu nu about 10% of the time
-A measurement of $\Wbb$ via the $W$\s decay to $\mu$ + $\nu$ is presented as a 
+A measurement of $\Wbb$ via the $W$ decay to $\mu$ + $\nu$ is presented as a 
 central focus of this thesis.
 
 \subsection{Jet Hadronization and b-quarks}%%??
 During an interaction involving quarks in the final state (for instance $g\rightarrow q\bar{q}$)
 the final state quarks fly off as individual particles for a very brief moment, after they reach
-a distance of ~$10^{-15}m$ confinement.
+a distance of ~$10^{-15}m$ the strong interaction is so great that new quarks and anti-quarks
+are produced. These new quarks and anti-quarks are then combine in many different combinations
+to form baryons and mesons. This process is known as hadronization. Although many QCD
+next to leading order calculations have been performed, hadronization can not yet be directly calculated.
+Instead monte carlo event generators simulate this hadronic production using parton showering with various fragmentation models.%%%P170 QCD and collider physics book Parton showering produces partons of successively lower energy
 
-The average b-meson lifetime is $1.55\pm 0.06 ps$, this corresponds to a proper lifetime of
+If we consider a high energy parton, b, with with energy $E_{b}$ which produces a hadron, B, with energy $E_{B}$
+then the hadron's energy fraction is $z=E_{B}/E_{b}$. The probability of finding B in the range
+$z$ to $dz$ for a heavy b quark is,
+\begin{equation}
+\int{D_{b}^{B}(z)dz}=\int{\frac{Constant}{z(1-\frac{1}{z}-\frac{\epsilon_{b}}{1-z})}dz}
+\end{equation}
+Here $\epsilon_{b}=\langle m_{b}^{2}+ p_{T,b}^{2} \rangle/\langle m_{B}^{2}+ p_{T,B}^{2} \rangle$ and is expected to be proportional to $m_{b}^{-2}$.
+In the case where the fragmenting parton is a b quark, it loses only a very small amount
+of its energy to materialize a number of light quark pairs and a majority of the energy is
+carried off by the B Hadron.  
+For comparison, the average b-meson lifetime is $1.55\pm 0.06 ps$, this corresponds to a proper lifetime of
 $c\tau=463\mu m$. For a b-meson with 20$GeV$ momentum this would correspond to
 1.9 $mm$ in the lab frame. The fact that $V_{cb}$ is so small allows for detection of a separated vertex. 
 This long lifetime is extremely helpful in distinguishing jets which
-originate from b-quarks from jets that originate from lighter quarks or gluons. 
-%quarks only live for $10^{-15}$ seconds
+originate from b quarks from jets that originate from lighter quarks or gluons that do not produce heavy quarks. 
 
 %\subsection{Wbb Diagrams}
