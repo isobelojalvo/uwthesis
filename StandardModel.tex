@@ -1,4 +1,5 @@
-\section{Quarks, Leptons and Gauge Bosons}
+\section{Quarks, Leptons and Gauge Bosons}%Z radiates a higgs, gluon fushion is dominent production mechanism
+%gluons from the colliding beam couple to a heavy quark loop from which the higgs boson is emitted
 Following the advances of the 20th century it has been experimentally 
 determined that the fundamental
 particles in the SM consists of 3 generations of quarks and leptons
@@ -15,7 +16,10 @@ There are 6 flavors of quarks, these are grouped into three generations:
 t (top) and b (bottom), c (charm) and s (strange), u (up) and d (down). 
 The (u,c,t) quarks have a charge of $\frac{2}{3}$ while the (d,s,b) have 
 a charge of $-\frac{1}{3}$.
-Each quark has an anti-quark partner that has the same mass but opposite charge.
+The fermions (e,$\mu$,$\tau$) all have a charge of -1 while their neutrino 
+partners are neutral. Recent experiments in neutrino oscillation have hinted
+that neutrinos have a very small mass.
+Each fermion has an anti-particle partner with the same mass but opposite charge.
 %Starting with the third 
 %generation which consists of the heaviest quarks, the top (t) and bottom (b),
 %and the $\tau$ lepton and $\tau$ neutrino ($\nu_{\tau}$).
@@ -128,9 +132,9 @@ into (\ref{eq:LU2}) and obtaining,
 \La'=\frac{1}{2}(\partial_{\mu}\xi)^{2}+\frac{1}{2}(\partial_{\mu}\eta)^2+\mu^{2}+const.+\vartheta(\eta^{3},\xi^{3},\eta^{4},\xi^{4}).
 \label{eq:LU3}
 \end{equation}
-The third term of this new Lagrangian, \ref{eq:LU3}, is a mass term
+The third term of this new Lagrangian (\ref{eq:LU3}), is a mass term
 for the $\eta$-field, $m_{\eta}=\sqrt{-2\mu^{2}}$. The $\xi$-field has
-a kinetic term (the first term in \ref{eq:LU3}) but no mass term
+a kinetic term, the first term in (\ref{eq:LU3}), but no mass term
 for $\xi$. This is a consequence of the Goldstone theorem which states
 that whenever a symmetry is spontaneously broken, massless scalars occur.
 \begin{figure}[hb]
@@ -153,17 +157,17 @@ The gauge invariant Lagrangian in this instance is thus,
 \begin{equation}
 \La=(\partial^{\mu}+ieA^{\mu})\phi*(\partial_{\mu}-ieA_{\mu})\phi - \mu^{2} \phi*\phi - \lambda(\phi*\phi)^{2}-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
 \end{equation}
-To avoid off diagonal terms instead of making the transformation \ref{eq:VTerms} 
-we substitute in
+To avoid off diagonal terms, instead of making the transformation (\ref{eq:VTerms})
+we transform $\phi$ as,
 \begin{equation}
 \phi\rightarrow\sqrt{\frac{1}{2}}(\nu+h(x))e^{i\Theta(x)/\nu}
 \end{equation}
-and%%%be more verbose
+and for the field $A_{\mu}$,
 \begin{equation}
 A_{\mu}\rightarrow A_{\mu}+\frac{1}{e\nu}\partial_{\mu}\Theta
 \end{equation}
 Then by translating this field to a true global minimum
-and, again, considering the solution where $\mu^{2}<0$ this Lagrangian becomes 
+and, again, considering the solution where $\mu^{2}<0$ $\lambda>0$ this Lagrangian becomes 
 \begin{equation}
 \La'=\frac{1}{2}(\partial_{\mu}h)^{2}-\lambda \nu^{2}h^{2}+\frac{1}{2}e^{2}\nu^{2}A_{\mu}^{2}-\lambda\nu h^{3}-
 \frac{1}{4}\lambda h^{4} + \frac{1}{2}e^{2}A_{\mu}^{2}h^{2}+\nu e^{2}A_{\mu}^{2}h-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
@@ -172,17 +176,16 @@ This equation describes the interaction between a vector gauge boson,
 $A_{\mu}$, and a massive scalar, h. 
 It is of importance to not that when examining this equation 
 we see that the second term relates the mass 
-of the higgs as $m_{h}=\sqrt{2\lambda v^{2}}$; along with this
-the vector gauge boson acquires the mass, XXX.%%check this
-To summarize this example of spontaneous breaking of a $U(1)$ gauge symmetry
+of the higgs as $m_{h}=\sqrt{2\lambda v^{2}}$. 
+To summarize, this example of spontaneous breaking of a $U(1)$ gauge symmetry
 results in a massless Goldstone boson which has been converted to an
 additional longitudinal polarization degree of freedom. This results
 in a Lagrangian with a massive scalar particle, a massive field and interaction terms.
 This procedure is known as the Higgs mechanism. 
 
-Next we consider spontaneous breaking of a $SU(2)$ gauge symmetry;
-We begin with \ref{eq:LU1} and define $\phi$ as a $SU(2)$ doublet 
-of a complex scalar field, %%fix wording
+Next we consider spontaneous breaking of a $SU(2)$ gauge symmetry.
+We begin with (\ref{eq:LU1}) and define $\phi$ as an $SU(2)$ doublet 
+of a complex scalar field, 
 \begin{equation}
 \phi=\left(
     \begin{array}{c}
@@ -199,12 +202,11 @@ of a complex scalar field, %%fix wording
   \right) .
   \label{eq:phidoublet}
 \end{equation}
-%\subsection{\bbbar Production at the LHC}
 We must replace $\partial_{\mu}$ by the covariant derivative,
 \begin{equation}
-D_{\mu}=\partial_{\mu}+ig\frac{\tau_{a}}{2}W_{\mu}^{a},
+D_{\mu}=\partial_{\mu}+ig\frac{\tau_{a}}{2}W_{\mu}^{a}.
 \end{equation}
-The gauge invariant Lagrangian becomes,
+The gauge invariant Lagrangian finally becomes,
 \begin{equation}
 \La=
 \left(\partial_{\mu}\phi + ig \frac{1}{2} \tau \cdot W_{\mu}\phi  \right)^{\dagger}
@@ -214,12 +216,11 @@ The gauge invariant Lagrangian becomes,
 -\frac{1}{4}W_{\mu\nu}W^{\mu\nu}.
 \label{eq:SU2L}
 \end{equation}
-Three gauge fields $W_{\mu}^{a}$ with a = 1,2,3 are included.
+Here, three gauge fields $W_{\mu}^{a}$ with a = 1,2,3 are included.
 The potential in this Lagrangian is $V(\phi)=\mu^{2}\phi^{\dagger}\phi+\lambda (\phi^{\dagger}\phi)^{2}$.
 As before, we are interested in the global minimum of this potential
 in the case where $\mu^{2}<0$ and $\lambda>0$, which is
-$\phi^{\dagger}\phi=-\mu^{2}/2\lambda$. Again, we are interested in the case where $\mu^{2}<0$ and $\lambda>0$
-and expand about a point in $\phi(x)$ that is a global minimum,
+$\phi^{\dagger}\phi=-\mu^{2}/2\lambda$, and then we expand about a point in $\phi(x)$ that is a global minimum,
 \begin{equation}
 \phi_{0}=\sqrt{\frac{1}{2}}
 \left(
@@ -230,7 +231,7 @@ and expand about a point in $\phi(x)$ that is a global minimum,
 \right)
 \label{eq:min}
 \end{equation}
-Due to gauge invariance, on can simply substitute,
+Due to gauge invariance, one can simply substitute,
 \begin{equation}
 \phi(x)=\sqrt{\frac{1}{2}}
 \left(
@@ -242,7 +243,7 @@ Due to gauge invariance, on can simply substitute,
 \label{eq:min}
 \end{equation}
 And in fact, if we substitute ($\ref{eq:min}$) into the Lagrangian (\ref{eq:SU2L}).
-and find that the three bosons acquire a mass of $M=\frac{1}{2}g\nu$.
+we find that the three bosons acquire a mass of $M=\frac{1}{2}g\nu$.
 
 Finally, we need to formulate the Higgs mechanism in an $SU(2)\times U(1)$ 
 gauge invariant Lagrangian so that the $W^{\pm}$ and $Z$ become massive. 
@@ -255,8 +256,8 @@ gauge invariant Lagrangian so that the $W^{\pm}$ and $Z$ become massive.
 We wish for (\ref{eq:L2}) to remain gauge invariant and 
 for this Lagrangian to break the symmetries of $SU(2)$ and $U(1)_{Y}$
 but leave $U(1)_{em}$, with generator $Q=T^{3}+\frac{Y}{2}$, unbroken. 
-We can then make the same choice of \ref{eq:phidoublet} and a vacuum 
-expectation value of \ref{eq:min}.
+We can then make the same choice of (\ref{eq:phidoublet}) and require a vacuum 
+expectation value of (\ref{eq:min}).
 %then
 %we choose $\phi$ such that,
 %\begin{equation}
@@ -293,11 +294,11 @@ Then evaluating at (\ref{eq:min}),
 \end{equation}
 \begin{equation}
 =
-\frac{1}{8}\nu^{2}g^{2}\left[\left(W_{\mu}^{1} \right)^{2} \left(W_{\mu}^{2} \right)^{2} \right]
-+\frac{1}{8}\nu^{2}(g'B_{\mu}-gW_{\mu}^{3})(g'B^{\mu}-gW^{3\mu}) 
+\frac{1}{8}v^{2}g^{2}\left[\left(W_{\mu}^{1} \right)^{2} \left(W_{\mu}^{2} \right)^{2} \right]
++\frac{1}{8}v^{2}(g'B_{\mu}-gW_{\mu}^{3})(g'B^{\mu}-gW^{3\mu}) 
 \end{equation}
 \begin{equation}
-=(\frac{1}{2}\nu g)W_{\mu}^{+}W^{-\mu}+\frac{1}{8}(W_{\mu}^{3},B_{\mu})
+=(\frac{1}{2}v g)W_{\mu}^{+}W^{-\mu}+\frac{1}{8}(W_{\mu}^{3},B_{\mu})
 \begin{pmatrix}
 g^{2} & -gg'\\
 -gg'  & g'^{2}
@@ -312,7 +313,7 @@ We then can obtain the masses of the vector bosons.
 From the first term in in (\ref{eq:finalH}) we can then determine the 
 mass of the $W$ boson, 
 \begin{equation}
-M_{W}=\frac{1}{2}\nu g.
+M_{W}=\frac{1}{2}v g.
 \end{equation}
 By diagonalizing the matrix on the last term of (\ref{eq:finalH}), we find that
 the field associated to $Z_{\mu}$ is,
@@ -321,53 +322,120 @@ Z_{\mu}= \frac{gW_{\mu}^{3}-g'B_{\mu}}{\sqrt{g^{2}+g'^{2}}}
 \end{equation}
 and therefore we have,
 \begin{equation}
-M_{Z}=\frac{1}{2}\nu\sqrt{g^{2}g'^{2}}.
+M_{Z}=\frac{1}{2}v\sqrt{g^{2}g'^{2}}.
 \end{equation}
 While it is not required in the standard model that the higgs boson 
-also gives mass to the fermions it is possible and would be a nice
-feature. 
-\subsection{W Boson Production}
-In a hadron collider, such as the LHC, W bosons are primarily produced
-through the annihilation of a quark and anti-quark. 
-The Cabibbo Kobayashi Maskawa (CKM) matrix tells us that%%More on CKM matrix
-couplings of quarks to $W^{\pm}$ is favored within quark generations (for example, $u\bar{d}\rightarrow W^{+}$)
-and suppressed if there is mixing across generations ($s\bar{u}\rightarrow W^{-}$).
-This comes into huge affect when considering W production at hadron colliders and in b quark physics. %%fix
+also gives mass to the fermions, it is possible and would be a nice
+feature. If this were true then the coupling strength to each of the fermions
+to the higgs boson would be proportional to their mass.
 
-At leading order
-%include two leading order diagrams one NLO diagram
+To generate (for example) the $\tau$ mass we construct a 
+Lagrangian that is $SU(2)\times U(1)$ gauge invariant,
 
-The differential cross for W production at parton level is,
 \begin{equation}
-\sigma=\frac{\pi}{3}\sqrt{2}G_{F}M_{W}^{2}|V_{qq'}|^{2}\delta(s=M_{W}^{2})
+\La = -G_{\tau}\left[
+      (\bar{\nu_{\tau}},\bar{\tau})_{L}
+	\left( \begin{array}{c}
+      \phi^{+} \\
+      \phi^{-}
+      \end{array}\right)\tau_{R} 
+    +
+      \bar{\tau}_{R}(\phi^{-},\bar{\phi^{0}})
+	\left( \begin{array}{c}
+      \nu_{e} \\
+      e
+      \end{array}\right)_{L}
+    \right]
 \end{equation}
-Importantly, one can see that incoming quarks are required to have an invariant
-mass equal to the mass of the W. 
-At lowest center of mass energy in
-lepton colliders $W$ bosons are produced in pairs when the energy reaches a threshold of 161 $GeV$. 
+Substituting in
+\begin{equation}
+\phi=\sqrt{\frac{1}{2}}
+\left( \begin{array}{c}
+      0 \\
+      \nu + h(x)
+      \end{array}\right)
+\end{equation}
+This leads to,
+\begin{equation}
+\La = -\frac{G_{\tau}}{\sqrt{2}}\nu(\bar{\tau}_{L}\tau_{R}+\bar{\tau}_{R}\tau_{L})
+-\frac{G_{\tau}}{\sqrt{2}}(\bar{\tau}_{L}\tau_{R}+\bar{\tau}_{R}\tau_{L})h.
+\end{equation}
+Then the masses of the fermions can be obtained by choosing $G_{e}$ such that,
+\begin{equation}
+m_{e}=\frac{G_{e}\nu}{\sqrt{2}}
+\end{equation}
+The recent evidence of $h$ coupling to $\tau\tau$ (REFERENCE PAPER) suggests
+that the higgs mechanism could be used to give mass to the fermions, however,
+it is not required and more measurements will need to be performed.
 
+%%%%%subsection
+\subsection{W Boson Production}
+\begin{figure}[hb]
+\centering
+  \begin{subfigure}[b]{.35\textwidth}
+	\includegraphics[width=\textwidth]{images/Wbb1.png} 
+	\end{subfigure}	
+   \begin{subfigure}[b]{.35\textwidth}
+	\includegraphics[width=\textwidth]{images/Wbb2.png}
+    \end{subfigure}	
+  	\caption[Leading Order $\Wbb$ diagrams]
+   	{Leading Order $\Wbb$ diagrams}
+
+	\label{fig:WbbLO}
+\end{figure}
+
+In a hadron collider, such as the LHC, W bosons are primarily produced
+through the annihilation of a quark and an anti-quark. 
+The Cabibbo Kobayashi Maskawa (CKM) matrix tells us that%%More on CKM matrix
+couplings of quarks to $W^{\pm}$ is favored within quark generations, for example
+$u\bar{d}\rightarrow W^{+}$,
+and suppressed if there is mixing across generations, $s\bar{u}\rightarrow W^{-}$.
+%This effect is extremely important
+%when considering W production at hadron colliders and in b quark physics. 
+Neglecting the mass of the quarks, spins and the W polarization, the matrix element
+for W production is,
+\begin{equation}
+\Sigma|M|^{2}=|V_{qq'}|^{2}\frac{8G_{F}}{\sqrt{2}}M_{W}^{4}
+\end{equation}
+The cross section for W production is,
+\begin{equation}
+\sigma=2\times2\pi\fac{G_{F}}{\sqrt{2}}M_{W}^{2}|V_{qq'}|^{2}\delta(s-M_{W}^{2})
+\end{equation}
+Where s is the center of mass energy squared of the two partons, $s=(p_{1}+p_{2})^{2}$.
+Importantly, the term $\delta(s-M_{W}^{2})$ leads us to the 
+conclusion that incoming quarks are required to have a center of mass energy
+equal to the mass of the W. 
+In 2011 at the LHC protons were collided with an energy of $\sqrt{S}=7$ TeV.
+For a W boson to be created two interacting partons must have suitable
+momentum fractions $x, y$ such that $(x+y)S=s$.
+In lepton-positron colliders, $W$ bosons are produced in pairs when 
+the center of mass energy reaches a threshold of 161 $GeV$. 
 \begin{equation}
 \sigma=2\times\frac{2\pi G_{F}}{3\sqrt{2}}\int{dxdy \sum{V_{q,\bar{q}'}}xyS f_{q}(x)f_{\bar{q}'}(y)}
 \end{equation}
-The branching ratio of the $W$ to $\mu$ $\nu$, as predicted by theory, is about 0.11. 
-$\Wbb$ is an important background to many searches including:
-$Wh$ where a W is produced and a higgs boson is produced in Bremstrahlung %fix wording
-and then decaying to a b-quark pair, minimally supersymmetric $H,h,A\rightarrow \tau\tau$
-where production is enhanced in association with b-quarks as well as many other beyond the standard
-model searches where the final state includes a single lepton and b-quarks. 
+The branching ratio of the $W$ to $\mu$ $\nu$, as predicted by theory, is approximately 0.11. 
 
-%W decays to mu nu about 10% of the time
+As shown in Figure \ref{fig:WbbLO}, the $\Wbb$ process at leading order requires that one of the initial partons
+radiates a gluon and the gluon then splits into a $\bbbar$ pair. Each additional
+vertex involving the gluon adds a factor of order $\alpha_{s}$. A full
+calculation of the theoretical $\Wbb$ cross section at NLO can be found here \cite{Campbell:2010ff, Badger:2010mg}.
+$\Wbb$ is an irreducible background to many searches including
+$hW$ where a W is produced and a higgs boson is radiated from the W
+and then decays to a b quark pair, minimally supersymmetric $H,h,A\rightarrow \tau\tau$
+where production is enhanced in association with b-quarks and many other beyond the standard
+model searches where the final state includes a single lepton and b quarks. 
 A measurement of $\Wbb$ via the $W$ decay to $\mu$ + $\nu$ is presented as a 
 central focus of this thesis.
 
-\subsection{Jet Hadronization and b-quarks}%%??
-During an interaction involving quarks in the final state (for instance $g\rightarrow q\bar{q}$)
-the final state quarks fly off as individual particles for a very brief moment, after they reach
+\subsection{Jet Hadronization and b-quarks}
+During a high energy interaction involving quarks in the final state (for instance $g\rightarrow q\bar{q}$)
+the final state quarks fly off as individual particles for a very brief moment. After they reach
 a distance of ~$10^{-15}m$ the strong interaction is so great that new quarks and anti-quarks
-are produced. These new quarks and anti-quarks are then combine in many different combinations
+are produced. These new quarks and anti-quarks then combine in many different combinations
 to form baryons and mesons. This process is known as hadronization. Although many QCD
 next to leading order calculations have been performed, hadronization can not yet be directly calculated.
-Instead monte carlo event generators simulate this hadronic production using parton showering with various fragmentation models.%%%P170 QCD and collider physics book Parton showering produces partons of successively lower energy
+Instead monte carlo event generators simulate this hadronic production using parton 
+showering with various fragmentation models.%%%P170 QCD and collider physics book Parton showering produces partons of successively lower energy
 
 If we consider a high energy parton, b, with with energy $E_{b}$ which produces a hadron, B, with energy $E_{B}$
 then the hadron's energy fraction is $z=E_{B}/E_{b}$. The probability of finding B in the range
@@ -375,13 +443,13 @@ $z$ to $dz$ for a heavy b quark is,
 \begin{equation}
 \int{D_{b}^{B}(z)dz}=\int{\frac{Constant}{z(1-\frac{1}{z}-\frac{\epsilon_{b}}{1-z})}dz}
 \end{equation}
-Here $\epsilon_{b}=\langle m_{b}^{2}+ p_{T,b}^{2} \rangle/\langle m_{B}^{2}+ p_{T,B}^{2} \rangle$ and is expected to be proportional to $m_{b}^{-2}$.
+Here $\epsilon_{b}=\langle m_{b}^{2}+ p_{T,b}^{2} \rangle/\langle m_{B}^{2}+ p_{T,B}^{2} \rangle$, and is expected to be proportional to $m_{b}^{-2}$.
 In the case where the fragmenting parton is a b quark, it loses only a very small amount
 of its energy to materialize a number of light quark pairs and a majority of the energy is
-carried off by the B Hadron.  
+carried off by the B hadron.  
 For comparison, the average b-meson lifetime is $1.55\pm 0.06 ps$, this corresponds to a proper lifetime of
 $c\tau=463\mu m$. For a b-meson with 20$GeV$ momentum this would correspond to
-1.9 $mm$ in the lab frame. The fact that $V_{cb}$ is so small allows for detection of a separated vertex. 
+1.9 $mm$ in the lab frame. Therefore a small $V_{cb}$ allows for detection of a separated vertex. 
 This long lifetime is extremely helpful in distinguishing jets which
 originate from b quarks from jets that originate from lighter quarks or gluons that do not produce heavy quarks. 
 
