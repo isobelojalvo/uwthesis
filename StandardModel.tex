@@ -6,7 +6,7 @@ particles in the SM consists of 3 generations of quarks and leptons
 where each generation has two particles. 
 \begin{figure}[hb]
   \centering
-	\includegraphics[width=\textwidth]{images/SMParticles2.png}
+	\includegraphics[width=0.6\textwidth]{images/SMParticles2.png}
   	\caption[SM Particles]
    	{Standard Model Particles}
 	\label{fig:SMParticles}
@@ -94,7 +94,7 @@ However, in the following section we take a more formal approach.
 
 \subsection{The Higgs Mechanism and Electroweak Symmetry Breaking}
 In this section we illustrate the Higgs Mechanism and partially derive the
-Standard Model Lagrangian. For an even more detailed approach see .%%%Ref Srednicki
+Standard Model Lagrangian. 
 First we consider the Higgs Mechanism of a global gauge symmetry, 
 which the mechanism that generates mass for the gauge bosons. 
 We start by writing the Lagrangian, 
@@ -373,10 +373,10 @@ it is not required and more measurements will need to be performed.
 \begin{figure}[hb]
 \centering
   \begin{subfigure}[b]{.35\textwidth}
-	\includegraphics[width=\textwidth]{images/Wbb1.png} 
+	\marginbox{-10mm 0pt 10mm 0pt}{\includegraphics[width=\textwidth]{images/Wbb1.png} }
 	\end{subfigure}	
    \begin{subfigure}[b]{.35\textwidth}
-	\includegraphics[width=\textwidth]{images/Wbb2.png}
+	\marginbox{10mm 0pt -10mm 0pt}{\includegraphics[width=\textwidth]{images/Wbb2.png}}
     \end{subfigure}	
   	\caption[Leading Order $\Wbb$ diagrams]
    	{Leading Order $\Wbb$ diagrams}
@@ -385,28 +385,84 @@ it is not required and more measurements will need to be performed.
 \end{figure}
 
 In a hadron collider, such as the LHC, W bosons are primarily produced
-through the annihilation of a quark and an anti-quark. 
-The Cabibbo Kobayashi Maskawa (CKM) matrix tells us that%%More on CKM matrix
-couplings of quarks to $W^{\pm}$ is favored within quark generations, for example
+through the annihilation of a quark (Q=$\pm\frac{2}{3}$) and an anti-quark (Q=$\mp\frac{1}{3}$). 
+%The coupling of quarks and leptons to $W^{\pm}$ has a pure V-A form.
+Experimentally it has been determined that W coupling is favored within quark generations,
 $u\bar{d}\rightarrow W^{+}$,
-and suppressed if there is mixing across generations, $s\bar{u}\rightarrow W^{-}$.
+and suppressed, although not 0, across generations, $s\bar{u}\rightarrow W^{-}$.
+This has been paramaterized by introducing 'Cabibbo-rotated' states, 
+\begin{equation}
+\left(
+    \begin{array}{c}
+      u \\
+      d' 
+    \end{array}
+  \right),
+  \left(
+    \begin{array}{c}
+      c \\
+      s' 
+    \end{array}
+  \right),
+\left(
+    \begin{array}{c}
+      t \\
+      b' 
+    \end{array}
+  \right)  
+\end{equation}
+where there is no mixing across states and ($d',s',b'$) are composites
+of ($d,s,b$). Namely,
+\begin{equation}
+\left(
+    \begin{array}{c}
+      d' \\
+      s'  \\
+      b'
+    \end{array}
+  \right)
+  =
+  \begin{pmatrix}
+  V_{ud} & V_{us} & V_{ub}\\
+  V_{cd} & V_{cs} & V_{cb}\\
+  V_{td} & V_{ts} & V_{tb}
+  \end{pmatrix}
+  =
+  \left(
+    \begin{array}{c}
+      d \\
+      s  \\
+      b
+    \end{array}
+  \right)
+\end{equation}
+%\begin{equation}
+%J^{\mu}=(\bar{u},\bar{c},\bar{t})\frac{\gamma_}{}
+%\end{equation}
+%This has been neatly summarized into a $3\times3$ matrix, 
+%the Cabbibo-Kobayashi-Maskawa matrix which relates
+%the coupling strength of the quarks via the charged current.
+%The Cabibbo Kobayashi Maskawa (CKM) matrix tells us that%%More on CKM matrix
+The matrix {\bf V} is written in terms of three generalized Cabbibo angles.
+The standard model provides no way to calculate the weak mixing angles, instead they
+are taken from data.
 %This effect is extremely important
 %when considering W production at hadron colliders and in b quark physics. 
-Neglecting the mass of the quarks, spins and the W polarization, the matrix element
-for W production is,
+With this effect in mind we can write the matrix element for W production through quark fusion.
+Neglecting the mass of the quarks, spins and the W polarization, the matrix element is,
 \begin{equation}
-\Sigma|M|^{2}=|V_{qq'}|^{2}\frac{8G_{F}}{\sqrt{2}}M_{W}^{4}
+\sum|M|^{2}=|V_{qq'}|^{2}\frac{8G_{F}}{\sqrt{2}}M_{W}^{4}
 \end{equation}
-The cross section for W production is,
+The above equation is summed over all quarks, $qq'$. The cross section for W production is,
 \begin{equation}
-\sigma=2\times2\pi\fac{G_{F}}{\sqrt{2}}M_{W}^{2}|V_{qq'}|^{2}\delta(s-M_{W}^{2})
+\sigma=2\times2\pi\frac{G_{F}}{\sqrt{2}}M_{W}^{2}|V_{qq'}|^{2}\delta(s-M_{W}^{2})
 \end{equation}
 Where s is the center of mass energy squared of the two partons, $s=(p_{1}+p_{2})^{2}$.
 Importantly, the term $\delta(s-M_{W}^{2})$ leads us to the 
 conclusion that incoming quarks are required to have a center of mass energy
 equal to the mass of the W. 
-In 2011 at the LHC protons were collided with an energy of $\sqrt{S}=7$ TeV.
-For a W boson to be created two interacting partons must have suitable
+In 2011 at the LHC protons were collided with an energy of $\sqrt{S}=7$ TeV, and 8 TeV in 2012.
+for a W boson to be created two interacting partons must have suitable
 momentum fractions $x, y$ such that $(x+y)S=s$.
 In lepton-positron colliders, $W$ bosons are produced in pairs when 
 the center of mass energy reaches a threshold of 161 $GeV$. 
