@@ -1,4 +1,5 @@
 \chapter{Supersymmetry and MSSM}
+
 We have already seen the the standard model 
 performs fantastically well in describing experimental observations. The
 recent discovery of a standard model-like higgs boson brings with it
@@ -44,7 +45,7 @@ and leptons is accompanied by 2 complex scalars the $\Lambda_{UV}^{2}$ terms wil
   \centering
   \begin{subfigure}[trim = 0mm 0mm 0mm 0mm, clip, width=3cm]{.4\textwidth}
 	\marginbox{0mm 0pt 0mm 0pt}{\includegraphics[width=\textwidth]{images/fermionLoop.png}}
-                %\marginbox{-10mm 0pt 10mm 0pt}{
+                %\marginbox{-10mm 0pt 10mm 0pt}{}
                 \caption{}
                 \label{fig:fermionLoop}
 \end{subfigure}
@@ -60,7 +61,7 @@ and leptons is accompanied by 2 complex scalars the $\Lambda_{UV}^{2}$ terms wil
 
 A supersymmetry transformation changes a fermionic state into a bosonic state and vice versa,
 \begin{equation}
-Q|Boson\rangle=|Fermion\rangle \qquad Q|Fermion\rangle=|Boson\rangle
+Q|\mathrm{Boson}\rangle=|\mathrm{Fermion}\rangle \qquad Q|\mathrm{Fermion}\rangle=|\mathrm{Boson}\rangle
 \end{equation}
 
 \begin{equation}
@@ -72,5 +73,72 @@ Q|Boson\rangle=|Fermion\rangle \qquad Q|Fermion\rangle=|Boson\rangle
 \begin{equation}
 [p^{\mu},Q ]=[p^{\mu},Q^{\dagger}]=0
 \end{equation}
+
+In the simplest supersymmetric extension of the standard model,
+this hierarchy problem could be solved by having two higgs doublet 
+with an $SU(2)_{L}$ symmetry,
+\begin{equation}
+\Phi_{1}=
+\left(
+    \begin{array}{c}
+      \phi_{1}^{0*} \\
+      -\phi_{1}^{-}
+    \end{array}
+  \right) 
+ \qquad
+\Phi_{2}=
+\left(
+    \begin{array}{c}
+      \phi_{2}^{+} \\
+      -\phi_{2}^{0}
+    \end{array}
+  \right) 
+\end{equation}
+which gives mass to the quarks and charged leptons. The extra doublet
+is needed to cancel out the corresponding supersymmetric higgs fermion
+contributions.
+$H_{1}^{0}$ and $H_{2}^{0}$ acquire vacuum expectation values $v_{1}$ and $v_{2}$ where
+\begin{equation}
+v = \sqrt{2}(v_{1}^{2}+v_{2}^{2})^{\frac{1}{2}}.
+\end{equation}
+The ratios of $v_{1}$ and $v_{2}$ is traditionally written as,
+\begin{equation}
+tan(\beta)=\frac{v_{2}}{v_{1}}
+\end{equation}
+%%% something about shifting the neutral scalar fields by their vevs and diagonalization 
+%The following higgs boson states are attained
+\begin{equation}
+\left(
+    \begin{array}{c}
+      H^{0}_{1} \\
+     H^{0}_{2}
+    \end{array}
+  \right) 
+  =
+  \sqrt{2}
+  \begin{pmatrix}
+  \cos{\alpha} & \sin{\alpha}\\
+  -\sin{\alpha}& \cos{\alpha}\\
+  \end{pmatrix}
+      \begin{array}{c}
+      Re{\phi}_{1}^{0*}-v_{1} \\
+     Re{\phi}_{2}^{0}-v_{2}
+    \end{array}
+  \right) 
+\end{equation}
+\begin{equation}
+H_{3}^{0}=\{}
+\end{equation}
+In the supersymmetric model the standard model and supersymmetric particles are arranged
+into supermultiplets. These supermultiplets must contain both the fermion
+and the boson superpartner. In the simplest approach, a spin spin $\frac{1}{2} 
+weyl fermion ($for example, e$) must have %%%check this
+a spin-0 superpartner $\tilde{e}$, likewise, a supermultiplet with a spin-1 vector boson would have
+ a spin $\frac{1}{2}$ weyl fermion superpartner.
+ If supersymmetry remained unbroken
+then $m_{e}=m_{\tilde{e}}$, as sparticles like $\tilde{e}$ have not 
+yet been discovered this implies that supersymmetry must be a broken
+symmetry.
+
 
 \section{MSSM Higgs Production}
