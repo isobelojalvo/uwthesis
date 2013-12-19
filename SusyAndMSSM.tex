@@ -1,20 +1,21 @@
 \chapter{Supersymmetry and MSSM}
 
-We have already seen the the standard model 
+We have already seen that the the standard model 
 performs fantastically well in describing experimental observations. The
 recent discovery of a standard model-like higgs boson brings with it
-more confidence of the model. 
+more confidence of the model. Questions arise when this model is seen as 
+a part of a grand unified theory.
 As seen in the previous chapter, the potential of the standard model higgs 
-field is,
+field (now written in terms of the higgs mass, $m_{h}$) is,
 \begin{equation}
 V=m_{h}^{2}(\phi)+\lambda(\phi)^{2}
 \end{equation}
 where $\phi$ is a complex scalar.
-A non vanishing vacuum expectation 
-value of $246 \GeV$ is required for spontaneous symmetry breaking.
-However, a problem arises when 
-considering higher order loop corrections to the mass of the higgs as shown in
-figure \ref{fig:fermionLoop} 
+The standard model higgs field must have a non-vanishing vacuum expectation 
+value of $246 \GeV$ to derive the masses of the W/Z and h.
+True problems arise when
+considering higher order radiative corrections to the mass of the higgs. For example, 
+considering a fermion loop correction seen in figure \ref{fig:fermionLoop}. 
 If a fermion couples to the higgs with a term in the Lagrangian $-\lambda_{f}\phi \bar{f}f$
 then figure \ref{fig:fermionLoop} 
 yields a correction the the higgs mass,
@@ -22,12 +23,16 @@ yields a correction the the higgs mass,
 \Delta m_{H}^{2}=-\frac{|\lambda_{f}|^{2}}{8\pi^{2}}\Lambda_{UV}^{2}+...
 \label{eq:SUS1}
 \end{equation}
-where $\Lambda_{UV}$ is an ultraviolet cutoff to regulate the loop. $\Lambda_{UV}$
-is also the energy scale at which new physics should enter.
-Accordingly, we have quantum corrections from the virtual 
+The loops represent terms which are proportional to $m_{f}^{2}$.
+Since the standard model is a renormalizable theory, $\lambda_{f}^{2}$ can
+be picked so that $\Lambda_{UV}$ is an ultraviolet cutoff to regulate the loop. 
+
+$\Lambda_{UV}$ is also the energy scale at which new physics should enter.
+Accordingly, there are quantum corrections from the radiative
 effects of every particle that couples to the higgs. Furthermore if each of these 
 particles gain their mass through the higgs mechanism the entire standard model 
 mass spectrum is sensitive to the ultraviolet cutoff.
+
 %Since the electroweak gauge bosons, and possibly the quarks and leptons gain their
 %mass from the Higgs Mechanism 
 However, suppose there exists a massive scalar particle S, mass $m_{S}$, that couples
@@ -103,7 +108,7 @@ v = \sqrt{2}(v_{1}^{2}+v_{2}^{2})^{\frac{1}{2}}.
 \end{equation}
 The ratios of $v_{1}$ and $v_{2}$ is traditionally written as,
 \begin{equation}
-tan(\beta)=\frac{v_{2}}{v_{1}}
+\tan(\beta)=\frac{v_{2}}{v_{1}}
 \end{equation}
 %%% something about shifting the neutral scalar fields by their vevs and diagonalization 
 %The following higgs boson states are attained
@@ -120,6 +125,7 @@ tan(\beta)=\frac{v_{2}}{v_{1}}
   \cos{\alpha} & \sin{\alpha}\\
   -\sin{\alpha}& \cos{\alpha}\\
   \end{pmatrix}
+\left(
       \begin{array}{c}
       Re{\phi}_{1}^{0*}-v_{1} \\
      Re{\phi}_{2}^{0}-v_{2}
@@ -127,12 +133,15 @@ tan(\beta)=\frac{v_{2}}{v_{1}}
   \right) 
 \end{equation}
 \begin{equation}
-H_{3}^{0}=\{}
+H_{3}^{0}=\sqrt{2}(\sin{\beta}Im\phi_{1}^{0*}+\cos{\beta}Im\phi^{0}_{2})
+\end{equation}
+\begin{equation}
+H^{-}=(H^{+})^{*}=-\phi_{1}^{-}\sin{\beta}+\phi_{2}^{-}\cos{\beta}
 \end{equation}
 In the supersymmetric model the standard model and supersymmetric particles are arranged
 into supermultiplets. These supermultiplets must contain both the fermion
-and the boson superpartner. In the simplest approach, a spin spin $\frac{1}{2} 
-weyl fermion ($for example, e$) must have %%%check this
+and the boson superpartner. In the simplest approach, a  spin $\frac{1}{2}$
+weyl fermion (for example, $e$) must have %%%check this
 a spin-0 superpartner $\tilde{e}$, likewise, a supermultiplet with a spin-1 vector boson would have
  a spin $\frac{1}{2}$ weyl fermion superpartner.
  If supersymmetry remained unbroken
@@ -140,5 +149,16 @@ then $m_{e}=m_{\tilde{e}}$, as sparticles like $\tilde{e}$ have not
 yet been discovered this implies that supersymmetry must be a broken
 symmetry.
 
+The MSSM the number of independent parameters can be reduced to 
+$\tan{\beta}$ and the mass of the pseudoscalar, $m_{A}$. The masses of the other
+neutral bosons are given by,
+\begin{equation}
+m_{h}^{2}=\frac{1}{2}\left(m_{A}^{2}+M_{Z}^{2}+\left[(m_{A}^{2}+
+M_{Z}^{2})^{2}-4M_{Z}^{2}m_{A}^{2}\cos^{2}{(2\beta)}\right]^{\frac{1}{2}}\right).
+\end{equation}
+While the masses of the two charged bosons are,
+\begin{equation}
+m_{H^{\pm}}^{2}=m_{A}^{2}+M_{W}^{2}.
+\end{equation}
 
 \section{MSSM Higgs Production}
