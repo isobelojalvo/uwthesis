@@ -1,50 +1,58 @@
 \chapter{Supersymmetry and MSSM}
 
-We have already seen that the the standard model 
-performs fantastically well in describing experimental observations. The
-recent discovery of a standard model-like higgs boson brings with it
+In recent years it has already been seen that the standard model 
+performs well in describing experimental observations at energies around
+the electroweak scale of $O(246 \GeV)$.
+The recent discovery of a standard model-like higgs boson brings with it
 more confidence of the model. Questions arise when this model is seen as 
-a part of a grand unified theory.
-As seen in the previous chapter, the potential of the standard model higgs 
-field (now written in terms of the higgs mass, $m_{h}$) is,
+a part of a grand unified theory, for example, what happens when we probe
+regions between the electroweak and planck scales $O(1.22 \times10^{19} \GeV)$? 
+The standard model encounters difficulties in renormalization, this is known
+as the Hierarchy Problem.
+
+To illustrate these divergences we consider the radiative corrections to the higgs mass
+from a fermion loop.
+As seen in the previous chapter, the potential of the standard model higgs field can be
+written as, 
 \begin{equation}
-V=m_{h}^{2}(\phi)+\lambda(\phi)^{2}
+V= \mu^{2}|\phi|^{2}+\lambda|\phi|^{4}
 \end{equation}
-where $\phi$ is a complex scalar.
-The standard model higgs field must have a non-vanishing vacuum expectation 
-value of $246 \GeV$ to derive the masses of the W/Z and h.
-True problems arise when
-considering higher order radiative corrections to the mass of the higgs. For example, 
-considering a fermion loop correction seen in figure \ref{fig:fermionLoop}. 
-If a fermion couples to the higgs with a term in the Lagrangian $-\lambda_{f}\phi \bar{f}f$
-then figure \ref{fig:fermionLoop} 
-yields a correction the the higgs mass,
+where $\phi$ is a complex scalar field.
+A non-vanishing vacuum expectation value of $246 \GeV$ is required to derive the masses of the $W/Z$
+and the mass of the higgs which is defined as, $m_{h}=\sqrt{2\lambda v^{2}}$.
+
+%When considering, for example, higher order radiative corrections to the mass of the higgs. For example, 
+A fermion loop correction, seen in figure \ref{fig:fermionLoop}, 
+adds the term $-\lambda_{f}\phi \bar{f}f$ to the Lagrangian.
+This manifests as a correction to the higgs mass, namely,
 \begin{equation}
 \Delta m_{H}^{2}=-\frac{|\lambda_{f}|^{2}}{8\pi^{2}}\Lambda_{UV}^{2}+...
 \label{eq:SUS1}
 \end{equation}
-The loops represent terms which are proportional to $m_{f}^{2}$.
-Since the standard model is a renormalizable theory, $\lambda_{f}^{2}$ can
-be picked so that $\Lambda_{UV}$ is an ultraviolet cutoff to regulate the loop. 
+%The loops represent terms which are proportional to $m_{f}^{2}$.
+Where $\Lambda_{UV}$ is the ultraviolet cutoff. %%define UV cutoff
+Then what happens when higher energy scales are considered and $\Lambda_{UV}\rightarrow \inf$?
+Since the standard model is a renormalizable theory one could simply
+pick $\Lambda_{UV}$ so that it regulates the loop. However, this would imply
+that $\Lambda_{UV}$ is the energy scale at which new physics should enter.
+To make matters worse, there are quantum corrections from the radiative
+effects of every particle that couples to the higgs. If each of these 
+particles gain their mass through the higgs mechanism then the entire standard model 
+mass spectrum is sensitive to $\Lambda_{UV}$!
 
-$\Lambda_{UV}$ is also the energy scale at which new physics should enter.
-Accordingly, there are quantum corrections from the radiative
-effects of every particle that couples to the higgs. Furthermore if each of these 
-particles gain their mass through the higgs mechanism the entire standard model 
-mass spectrum is sensitive to the ultraviolet cutoff.
-
-%Since the electroweak gauge bosons, and possibly the quarks and leptons gain their
-%mass from the Higgs Mechanism 
-However, suppose there exists a massive scalar particle S, mass $m_{S}$, that couples
-to the higgs with a term $-\lambda_{S}\phi^{2} S^{2}$
-figure \ref{fig:scalarLoop} would give a correction of,
+\section{MSSM}
+To solve the Hierarchy Problem suppose there exists a massive scalar particle S, 
+of mass $m_{S}$, that couples
+to the higgs with a term $-\lambda_{S}\phi^{2} S^{2}$ as seen is 
+figure \ref{fig:scalarLoop}. This massive scalar would give a correction of,
 \begin{equation}
 \Delta m_{H}^{2}=\frac{\lambda_{s}}{16\pi^{2}}\left[\Lambda_{UV}^{2}-2m_{s}^{2}ln(\Lambda_{UV}/m_{S})+... \right].
 \label{eq:SUS2}
 \end{equation}
-By examining (\ref{eq:SUS1}) and the second term of (\ref{eq:SUS2}) it is apparent that if each of the quarks
-and leptons is accompanied by 2 complex scalars the $\Lambda_{UV}^{2}$ terms will cancel.
-%This problem is known as the Hierarchy Problem. %%cite
+By examining (\ref{eq:SUS1}) and (\ref{eq:SUS2}) it is apparent that if each of the quarks
+and leptons is accompanied by a complex scalar with $\lambda_{S}=|\lambda_{f}|^{2}$  %OR TWO??
+then the $\Lambda_{UV}^{2}$ terms will cancel. This model of symmetry between bosons
+and fermions is known as Supersymmetry.
 
 \begin{figure}[hb]
   \centering
@@ -64,23 +72,29 @@ and leptons is accompanied by 2 complex scalars the $\Lambda_{UV}^{2}$ terms wil
    \caption[]{One loop quantum corrections for a fermion (\ref{fig:scalarLoop}) and a scalar (\ref{fig:scalarLoop}). }
 \end{figure}
 
-A supersymmetry transformation changes a fermionic state into a bosonic state and vice versa,
+To define supersymmetry one needs a set of generators which 
+transforms a fermionic state into a bosonic state and vice versa. The simplest 
+operator which can perform these operations is a 2 component Weyl spinor $Q$
+such that,
 \begin{equation}
 Q|\mathrm{Boson}\rangle=|\mathrm{Fermion}\rangle \qquad Q|\mathrm{Fermion}\rangle=|\mathrm{Boson}\rangle
-\end{equation}
-
+\end{equation}.
+The generators $Q$ and $Q^{\dagger}$ must obey the anticommutation
+and commutation algebra,
 \begin{equation}
-\{Q,Q^{\dagger}\}=p^{\mu}
+\{Q,Q^{\dagger}\}=P^{\mu}
 \end{equation}
 \begin{equation}
 \{Q,Q\}=\{Q^{\dagger},Q^{\dagger}\}=0
 \end{equation}
 \begin{equation}
-[p^{\mu},Q ]=[p^{\mu},Q^{\dagger}]=0
-\end{equation}
+[P^{\mu},Q ]=[P^{\mu},Q^{\dagger}]=0
+\end{equation}.
+where $P^{\mu}$ is the generator of space-time translations.
 
-In the simplest supersymmetric extension of the standard model,
-this hierarchy problem could be solved by having two higgs doublet 
+\section{Higgs Sector of the MSSM}
+In the most simple supersymmetric extension of the standard model,
+a two higgs doublet 
 with an $SU(2)_{L}$ symmetry,
 \begin{equation}
 \Phi_{1}=
@@ -106,7 +120,7 @@ $H_{1}^{0}$ and $H_{2}^{0}$ acquire vacuum expectation values $v_{1}$ and $v_{2}
 \begin{equation}
 v = \sqrt{2}(v_{1}^{2}+v_{2}^{2})^{\frac{1}{2}}.
 \end{equation}
-The ratios of $v_{1}$ and $v_{2}$ is traditionally written as,
+The ratios of $v_{1}$ and $v_{2}$ is written as,
 \begin{equation}
 \tan(\beta)=\frac{v_{2}}{v_{1}}
 \end{equation}
@@ -138,6 +152,7 @@ H_{3}^{0}=\sqrt{2}(\sin{\beta}Im\phi_{1}^{0*}+\cos{\beta}Im\phi^{0}_{2})
 \begin{equation}
 H^{-}=(H^{+})^{*}=-\phi_{1}^{-}\sin{\beta}+\phi_{2}^{-}\cos{\beta}
 \end{equation}
+
 In the supersymmetric model the standard model and supersymmetric particles are arranged
 into supermultiplets. These supermultiplets must contain both the fermion
 and the boson superpartner. In the simplest approach, a  spin $\frac{1}{2}$
@@ -149,7 +164,7 @@ then $m_{e}=m_{\tilde{e}}$, as sparticles like $\tilde{e}$ have not
 yet been discovered this implies that supersymmetry must be a broken
 symmetry.
 
-The MSSM the number of independent parameters can be reduced to 
+In the MSSM the number of independent parameters can be reduced to 
 $\tan{\beta}$ and the mass of the pseudoscalar, $m_{A}$. The masses of the other
 neutral bosons are given by,
 \begin{equation}
@@ -160,5 +175,51 @@ While the masses of the two charged bosons are,
 \begin{equation}
 m_{H^{\pm}}^{2}=m_{A}^{2}+M_{W}^{2}.
 \end{equation}
+Traditionally, searches for MSSM Higgs bosons are expressed in terms of benchmark scenarios where 
+the lowest-order parameters tan$\beta$ and $M_A$ are varied, while fixing the other parameters that 
+enter through radiative corrections to certain benchmark values. 
+In this study, the $m_{h}^{\rm max}$ scenario~\cite{MHMAX-Carena,MHMAX-Carena-2002} is used as it 
+yields conservative expected limits in the tan$\beta$ and $M_A$ plane. \\
+%In order to make reliable phenomelogical predictions loop corrections must be included
+%which depend on the masses of the supersymmetric particles. Accordingly, specific
+%benchmark scenarios must be defined; this thesis uses the $m_{h}^{max}$ scenario
+%referenced here \cite{}:\\
+%\begin{equation}
+\linebreak[4]
+\begin{center}
+$
+M_{SUSY} = 1 \mathrm{TeV},
+\mu=-200 \mathrm{GeV},
+m_{\tilde{g}}=0.8 M_{SUSY}, $
+\linebreak[4]
+$
+M_{A} \leq 1000 \mathrm{GeV},
+X_{t}=2M_{SUSY},
+A_{b} = A_{t}
+$
+%\linebreak[4]
+\end{center}
+Results in this thesis are interpreted both in the context of the MSSM 
+$m_{h}^{\rm max}$ scenario and also in a model independent way, 
+in terms of upper limits on $\sigma\cdot$BR($A\slash H\slash h\rightarrow\Pgt\Pgt$) for 
+gluon-fusion and b-associated neutral Higgs boson production.
 
 \section{MSSM Higgs Production}
+\begin{figure}[hb]
+\centering
+  \begin{subfigure}[b]{.4\textwidth}
+	\marginbox{-5mm 10pt 5mm 0pt}{\includegraphics[width=\textwidth]{images/ggA.png} }
+	\end{subfigure}	
+   \begin{subfigure}[b]{.4\textwidth}
+	\marginbox{5mm 0pt -5mm 0pt}{\includegraphics[width=\textwidth]{images/bbA.png}}
+    \end{subfigure}	
+  	\caption[]
+   	{MSSM Higgs Production diagrams}
+	\label{fig:MSSMdiagrams}
+\end{figure}
+
+The dominant neutral MSSM Higgs boson production mechanism is the gluon-fusion process, 
+$\Pg\Pg \to h, H, A$, for small and moderate values of tan$\beta$. At large values of tan$\beta$ 
+the b-associated production is the dominant contribution, due to the enhanced bottom Yukawa 
+coupling. In the region of large tan$\beta$ the branching ratio to tau leptons is enhanced, 
+making the search for neutral MSSM Higgs bosons in the di-$\Pgt$ final state of particular interest. 
