@@ -26,13 +26,16 @@
 \def\pt{p_\mathrm{T}}
 \def\GeV{\mathrm{GeV}}
 \def\TeV{$\mathrm{TeV}$}
+\def\tev{$\mathrm{TeV}$}
 \def\PYTHIA{$\mathtt{PYTHIA}$}
 \def\POWHEG{$\mathtt{POWHEG}$}
 \def\MADGRAPH{$\mathtt{MADGRAPH}$}
 \def\GEANTfour{$\mathtt{GEANT4}$}
 \def\TAUOLA{$\mathtt{TAUOLA}$}
+\def\La{\mathscr{L}}
 \def\fbinv{fb^\mathrm{-1}}
 \def\Pg{\mathrm{g}}
+\def\Pp{\mathrm{p}}
 \def\Pgt{\mathrm{\tau}}
 \def\Pgm{\mathrm{\mu}}
 \def\Pe{\mathrm{e}}
@@ -60,7 +63,7 @@
 
 
 
-
+\RequirePackage{lineno}
 \documentclass[oneside, letterpaper, 12pt, oldfontcommands]{memoir}
 
 %%%% Import uwthesis.sty to get official formatting, then set your variables.
@@ -71,10 +74,16 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{adjustbox}
 
 %Search for an MSSM Higgs Boson and Measurement of W+b b
 %with the CMS Detector at the LHC.
-\settitle{Search for an MSSM Higgs Boson and Measurement of W+$b\bar{b}$, an Important Electroweak Background Process}
+\settitle{
+Search for an MSSM Higgs Boson and Measurement of W+ $b\bar{b}$
+with the CMS Detector at the LHC}
 \setauthor{Isobel Rose Ojalvo}
 \setdepartment{Physics}
 \doctors % or \masters
@@ -89,12 +98,13 @@
 
 %%%% Your abstract, used for the UMI abstract and in your front matter
 \setabstract{%
-  An awesome study of important things is presented.  
-  I further describe my project here, but I will not exceed 350 words, 
-  for that is strictly forbidden for the abstract of this document.  
-  If you're submitting online, you can even put symbols 
-  in your abstract and title, but you'll have to find out the HTML 
-  character codes for the various symbols.
+Write an abstract...
+  %An awesome study of important things is presented.  
+  %I further describe my project here, but I will not exceed 350 words, 
+  %for that is strictly forbidden for the abstract of this document.  
+  %If you're submitting online, you can even put symbols 
+  %in your abstract and title, but you'll have to find out the HTML 
+  %character codes for the various symbols.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,7 +112,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-
+%%%%%%SETLINE NUMBERS
+%\setpagewiselinenumbers
+\modulolinenumbers[1]
+\linenumbers
+%%%%%%END SETLINE NUMBERS
 % Tell the memoir class to set up lowercase roman for pagination, etc.
 \frontmatter
 
@@ -144,18 +158,20 @@ This is where any acknowledgements would go.
 
 \chapter{The Standard Model}
 \include{History}
-\section{Quarks, Leptons and Gauge Bosons}
-\section{The Standard Model Higgs Boson}
-\section{\bbbar Production at the LHC}
+\include{StandardModel}
+%\section{Quarks, Leptons and Gauge Bosons}
+%\section{The Standard Model}
+%\section{\bbbar Production at the LHC}
 
-\chapter{Supersymmetry and MSSM}
-\section{Minimally Supersymmetric Standard Model}
-\section{MSSM Higgs Production}
+\include{SusyAndMSSM}
+%\chapter{Supersymmetry and MSSM}
+%\section{Minimally Supersymmetric Standard Model}
+%\section{MSSM Higgs Production}
 
-\chapter{Experimental Setup}
-\section{The Large Hadron Collider}
-\section{Layout and Operation}
-\section{Operating Conditions 2011 and 2012 Runs}
+%\chapter{Experimental Setup}
+%\section{The Large Hadron Collider}
+%\section{Layout and Operation}
+%\section{Operating Conditions 2011 and 2012 Runs}
 
 \include{CMS}
  \include{CoordinateSystem}
@@ -171,7 +187,7 @@ This is where any acknowledgements would go.
   %\subsection{Level 1 Trigger}
   %\subsection{Regional Calorimeter Trigger}
   %\subsection{High Level Trigger}
-\chapter{Event Reconstruction}
+\chapter{Event Reconstruction and Event Simulation}
  \section{Tracks and Vertices}
  \section{Electron Reconstruction and ID}
  \section{Muon Reconstruction and ID}
@@ -180,7 +196,7 @@ This is where any acknowledgements would go.
   \subsection{Identification of Jets Originating from b-Quarks}
  \section{Missing Transverse Energy}
 
-\chapter{Event Simulation}
+%\chapter{Event Simulation}
 
 \include{Wbb/SMP-12-026}
 %\chapter{Measurement of W plus \bbbar Pair Production}
@@ -201,6 +217,9 @@ This is where any acknowledgements would go.
 
 \chapter{Conclusions}
 \section{Future Outlook}
+
+\bibliographystyle{plain}
+\bibliography{Wbb/Wbb,MSSM/MSSM}
 
 \end{document}
 
