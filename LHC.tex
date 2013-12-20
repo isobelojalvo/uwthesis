@@ -18,15 +18,22 @@ center of mass energy is to expose the physics beyond the standard model.
 %%try not to start every sentence with "THE LHC"
 \section{Layout}
 The LHC follows the LEP tunnel geometry,
-a schematic layout of the LHC is shown in figure %%ref figure
+a schematic layout of the LHC is shown in figure \ref{fig:LHCring}.
 The tunnel is 2.7 m in diameter and houses a twin-bore magnet 
 which provides both rings in the same structure.
-As can be seen in figure%%ref figure
-, the LHC can be schematically divided%%find better word
+As can be seen in figure \ref{fig:LHCring},
+the LHC can be schematically divided 
 into 8 octants. At the center of each octant is a straight section and between
 each of the 8 straight section there are 8 arcs. Each straight section
 is 528 m long and can serve as an experimental point, where a beam
 crossing occurs or as a utility insertion point.
+\begin{figure}[t]
+  \centering
+	\includegraphics[width=0.6\textwidth]{images/LHCring.jpg}
+  	\caption[LHCring]
+   	{LHC Experimental and Utility Insertion Layout}
+	\label{fig:LHCring}
+\end{figure}
 ATLAS and CMS are both high luminosity experiments;
 the ATLAS experiment is located at Point 1 and, on the opposite side
 of the ring, CMS is located at Point 5. 
@@ -40,8 +47,46 @@ are made of 23 arc cells. Each arc cell is 106.9 m in length
 and is comprised of two half cells each of which are 53.45 m long.
 
 \section{Performance Goals and Constraints}
-\section{Operation}
+The purpose of the LHC is to be
+capable of exposing physics processes that are beyond the standard
+model. This can be achieved with beams %%fix wording
+that have both high energies and high intensities.
+The number of events, N, delivered per second as a function
+of machine luminosity, L, is,
+\begin{equation}
+N=L\sigma_{event}
+\end{equation}
+where $\sigma_{event}$ is the cross section of the event.
+The machine luminosity itself depends on the beam parameters,
+\begin{equation}
+L=\frac{N_{b}^{2}n_{b}f_{rev}\gamma_{r}}{4\pi \epsilon_{n}\beta^{*}}F
+\end{equation}
+Here, $N_{b}$ is the number of particles per bunch, $n_{b}$
+is the number of bunches per beam, $f_{rev}$ is the
+revolution frequency, $\gamma_{r}$ is the relativistic factor, 
+$\epsilon_{n}$ is the normalized transverse beam
+emittance, $\beta^{*}$ is the a function of the collision point
+and F is the geometric luminosity reduction factor due to the crossing
+angle at the collision point. 
+
+A number of factors constrain the luminosity that the LHC is capable
+of delivering. $N_{b}$ is limited by the
+non-linear beam interaction that occurs when beams collide. This
+beam-beam interaction is measured by a linear tune shift, $\xi$, where,
+\begin{equation}
+\end{equation}
+%Beam-Beam Limit
+%Mechanical Aperture
+%Energy stored in the circulating beams and in magnetic fields
+%Heat Load
 %Magnets
+To collide two counter-rotating proton beams requires magnetic fields
+with opposite dipoles. Due to the space constraint in the LEP/LHC
+tunnel twin bore magnets are used that consist of two sets of 
+two sets of coils and beam channels within the same structure and
+sharing the same cooling. 
+
+\section{Operation}
 %RF System
 
 \section{Operating Conditions in 2011 and 2012}
