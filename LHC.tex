@@ -49,7 +49,7 @@ and is comprised of two half cells each of which are 53.45 m long.
 \section{Performance Goals and Constraints}
 The purpose of the LHC is to be
 capable of exposing physics processes that are beyond the standard
-model. This can be achieved with beams %%fix wording
+model. This can be achieved with proton beams %%fix wording
 that have both high energies and high intensities.
 The number of events, N, delivered per second as a function
 of machine luminosity, L, is,
@@ -70,10 +70,53 @@ and F is the geometric luminosity reduction factor due to the crossing
 angle at the collision point. 
 
 A number of factors constrain the luminosity that the LHC is capable
-of delivering: $N_{b}/\epsilon_{n}$ is limited by the%%new paragraph?
+of delivering, the most obvious of which is the Luminosity Lifetime.
+The primary cause of luminosity decay during nominal operation
+is due to collisions which will cause a decrease in bunch intensity.
+Initially, the decay time of the bunch intensity is,
+\begin{equation}
+\tau_{nuclear}=\frac{N_{tot,0}}{L\sigma_{tot}k},
+\end{equation}
+where $N_{tot,0}$ is the initial beam intensity, L is the initial
+luminosity and $\sigma_{tot}$ is the total cross section and 
+k the number of IPs.
+The luminosity as a function of time is then,
+\begin{equation}
+L(t)=\frac{L_{0}}{(1+t/\tau_{nuclear})^{2}}
+\end{equation}
+In addition to intensity loss due to collisions there are also
+losses due to a gradual increase in bunch emittance. This
+results in a net luminosity lifetime of 
+\begin{equation}
+\tau_{L} = 14.9 h .
+\end{equation}
+This further implies that it takes only $\approx$10h for the
+beam the beam to reach $1/e$ of its initial intensity.
+
+Finally, it is desired that each of the high luminosity experiments
+are delivered a large amount of integrated luminosity per year. %%don't like this sentence
+The total amount of integrated luminosity that can be delivered
+per run is,
+\begin{equation}
+L_{int}=L_{0}\tau_{L}\left[ 1-e^{-T_{run}/\tau_{L}}\right]
+\end{equation}
+After a run has been ended it is expected the turnaround time
+needed between the end of the run and the start of a new run
+to be $\approx$7 hours. Therefore, if the machine is operated for 200 days
+per year and an optimum run time of 12 hours this leads to a 
+total maximal delivered integrated luminosity per year of 80 fb$^{-1}$
+to 120 fb$^{-1}$. The operating conditions for 2011 and 2012
+are outlined in section \ref{sec:Conditions}.
+
+%%%fix this:
+A number of factors constrain the luminosity that the LHC is capable
+of delivering: 
+Refering to equation %%ref equation
+$N_{b}/\epsilon_{n}$ is limited by the %%new paragraph?
 non-linear beam interaction that occurs when beams collide. This
 beam-beam interaction is measured by a linear tune shift, $\xi$, where,
 \begin{equation}
+\xi=\frac{N_{b}r_{p}}{4\pi\epsilon_{n}}
 %write in equation
 \end{equation}
 Data from previous hadron colliders show that when summed over
@@ -97,8 +140,10 @@ is smaller than that of electrons the heat generated in this process,
  from luminosity-induced losses and interaction with a resistive wall
 must still be absorbed by the cryogenic system. 
 %Magnets
-To collide two counter-rotating proton beams requires magnetic fields
-with opposite dipoles. Due to the space constraint in the LEP/LHC
+In order to collide two counter-rotating proton beams separate magnetic fields
+with opposite dipoles are needed. To maintain good operating conditions
+the magnets must be identical in field strength. 
+Due to the space constraint in the LEP/LHC
 tunnel twin bore magnets are used that consist of two sets of 
 coils and beam channels within the same structure and
 sharing the same cooling. 
@@ -124,8 +169,11 @@ and heat dissipation in the cables is required.
 %which punched through the Helium enclosure and released
 %Helium from the cell and with it the Helium from connect
 %cells. 
+
+Finally, in order to deliver as many interactions as possible
+it is desired that the 
 \section{Operation}
 %RF System
 
 \section{Operating Conditions in 2011 and 2012}
-
+\label{sec:Conditions}
