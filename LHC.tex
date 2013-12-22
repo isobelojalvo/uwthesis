@@ -60,7 +60,7 @@ N=L\sigma_{event}
 where $\sigma_{event}$ is the cross section of the event.
 The machine luminosity itself depends on the beam parameters,
 \begin{equation}
-L=\frac{N_{b}^{2}n_{b}f_{rev}\gamma_{r}}{4\pi \epsilon_{n}\beta^{*}}F
+L=\frac{N_{b}^{2}n_{b}f_{rev}\gamma_{r}}{4\pi \epsilon_{n}\beta*}F
 \end{equation}
 Here, $N_{b}$ is the number of particles per bunch, $n_{b}$
 is the number of bunches per beam, $f_{rev}$ is the
@@ -73,11 +73,18 @@ angle at the collision point. %In addition to intensity loss from collisions, th
 The normalized transverse beam emittance, $\epsilon_{n}$, is a measure of the
 beams cross sectional size and $\epsilon_{n}\pi$ is the 
 total cross sectional area occupied by beam particles. 
-
+F is the geometric luminosity reduction factor due to the crossing angle
+at the interaction point (IP),
+\begin{equation}
+F=\left(1+\left(\frac{\theta_{c}\sigma_{z}}{2\sigma*}\right)^{2}\right)^{-1/2}.
+\end{equation}
+Here, $\theta_{c}$ is the full crossing angle at the IP, $\sigma_{z}$ is the
+RMS bunch length, and $\sigma*$ is the transverse RMS beam size
+at the IP.
 A number of factors constrain the luminosity that the LHC is capable
 of delivering:%, the most obvious of which is the Luminosity Lifetime.
 During nominal operation a decrease in bunch intensity occurs
-due to collisions in the Interaction Points (IPs).
+due to collisions in the IPs.
 %Collisions are the primary cause of luminosity lifetime decay during nominal operation.
 %is collisions which cause a decrease in bunch intensity.
 Initially, the decay time of the bunch intensity is,
