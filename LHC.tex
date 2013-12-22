@@ -5,10 +5,9 @@ and France to the northwest of the metropolitan area of Geneva.
 The LHC is installed in a 26.7 km long tunnel which was originally constructed
 from 1984 to 1989 for the Large Electron Positron (LEP) experiment. 
 While a hadron hadron collider does not have the same limitations
-due to synchroton radiation as an electron positron collider does, %%fix wording
+due to synchrotron radiation as an electron positron collider does, %%fix wording
 the financial benefits of building the LHC in an existing collider tunnel 
 warranted this decision. 
-%
 %The LHC uses superconducting magnets that operate at 2 K
 The LHC is designed to operate at a center of mass energy of 14 TeV.
 The overall purpose of constructing a hadron collider with such a high
@@ -47,10 +46,12 @@ are made of 23 arc cells. Each arc cell is 106.9 m in length
 and is comprised of two half cells each of which are 53.45 m long.
 
 \section{Performance Goals and Constraints}
-The purpose of the LHC is to be
-capable of exposing physics processes that are beyond the standard
-model. This can be achieved with proton beams %%fix wording
-that have both high energies and high intensities.
+The LHC was designed with the purpose of
+exposing the physics that lies beyond the standard
+model. To achieve this, proton collisions must 
+have high energies to explore regions of phase space that 
+have remained out of reach at particle colliders and high 
+intensities to search for rare processes.
 The number of events, N, delivered per second as a function
 of machine luminosity, L, is,
 \begin{equation}
@@ -64,15 +65,21 @@ L=\frac{N_{b}^{2}n_{b}f_{rev}\gamma_{r}}{4\pi \epsilon_{n}\beta^{*}}F
 Here, $N_{b}$ is the number of particles per bunch, $n_{b}$
 is the number of bunches per beam, $f_{rev}$ is the
 revolution frequency, $\gamma_{r}$ is the relativistic factor, 
-$\epsilon_{n}$ is the normalized transverse beam
-emittance, $\beta^{*}$ is the a function of the collision point
+%$\epsilon_{n}$ is the normalized transverse beam emittance, 
+%$\beta^{*}$ is the a function of the collision point fix
 and F is the geometric luminosity reduction factor due to the crossing
-angle at the collision point. 
+angle at the collision point. %In addition to intensity loss from collisions, there are also
+%losses due to a gradual increase in bunch emittance, $\epsilon_{n}$.
+The normalized transverse beam emittance, $\epsilon_{n}$, is a measure of the
+beams cross sectional size and $\epsilon_{n}\pi$ is the 
+total cross sectional area occupied by beam particles. 
 
 A number of factors constrain the luminosity that the LHC is capable
-of delivering, the most obvious of which is the Luminosity Lifetime.
-The primary cause of luminosity decay during nominal operation
-is due to collisions which will cause a decrease in bunch intensity.
+of delivering:%, the most obvious of which is the Luminosity Lifetime.
+During nominal operation a decrease in bunch intensity occurs
+due to collisions in the Interaction Points (IPs).
+%Collisions are the primary cause of luminosity lifetime decay during nominal operation.
+%is collisions which cause a decrease in bunch intensity.
 Initially, the decay time of the bunch intensity is,
 \begin{equation}
 \tau_{nuclear}=\frac{N_{tot,0}}{L\sigma_{tot}k},
@@ -82,19 +89,21 @@ luminosity and $\sigma_{tot}$ is the total cross section and
 k the number of IPs.
 The luminosity as a function of time is then,
 \begin{equation}
-L(t)=\frac{L_{0}}{(1+t/\tau_{nuclear})^{2}}
+L(t)=\frac{L_{0}}{(1+t/\tau_{nuclear})^{2}},
 \end{equation}
-In addition to intensity loss due to collisions there are also
-losses due to a gradual increase in bunch emittance. This
-results in a net luminosity lifetime of 
+here, $L_{0}$ is the initial luminosity.
+%$\epsilon_{n}$
+When also accounting for effects due to a gradual increase in
+ $\epsilon_{n}$ and friction between protons and the 
+ beam shield, this results in a net luminosity lifetime of 
 \begin{equation}
 \tau_{L} = 14.9 h .
 \end{equation}
 This further implies that it takes only $\approx$10h for the
 beam the beam to reach $1/e$ of its initial intensity.
 
-Finally, it is desired that each of the high luminosity experiments
-are delivered a large amount of integrated luminosity per year. %%don't like this sentence
+%Finally, it is desired that each of the high luminosity experiments
+%are delivered a large amount of integrated luminosity per year. %%don't like this sentence
 The total amount of integrated luminosity that can be delivered
 per run is,
 \begin{equation}
@@ -134,7 +143,7 @@ energy in the beam needs to be dumped. Therefore, the beam
 and magnet dumping systems lead to additional constraints
 on the maximum allowed energies and intensities.
 %%new paragraph?
-%define synchrotron radiaton and larmour's formula
+%define synchrotron radiation and larmour's formula
 Examining the formula
 While synchrotron radiation due to particle acceleration of protons%%double check all of this, i'm tired
 is smaller than that of electrons the heat generated in this process,
@@ -172,8 +181,16 @@ and heat dissipation in the cables is required.
 %cells. 
 
 \section{Operation}
+
+\begin{figure}[t]
+  \centering
+	\includegraphics[width=0.75\textwidth]{images/LHCLayout.png}
+  	\caption[e/$\gamma$ LHC Layout]
+   	{LHC and Experiments Layout}
+	\label{fig:LHCRings}
+\end{figure}
 The beams transverse a great distance of accelerator complex %%better word
-before they reach the final LHC energies as shown in figure .%%figure
+before they reach the final LHC energies as shown in figure \ref{fig:LHCRings}.%%figure
 Initially, hydrogen atoms are stripped of their electrons by passing them
 through an electric field. These protons
 then undergo their first round of acceleration in Linear Accelerator 2 (LINAC 2).
@@ -202,4 +219,38 @@ detailed in the next section.
 
 \section{Operating Conditions in 2011 and 2012}
 \label{sec:Conditions}
+\begin{figure}[hb]
+  \centering
+	\includegraphics[width=0.5\textwidth]{images/int_lumi_cumulative_pp_2.png}
+  	\caption[Total Integrated Luminosity]
+   	{CMS Integrated Luminosity}
+	\label{fig:deliveredLumi}
+\end{figure}
 In 2011 the LHC was operated with a center of mass energy of 7 TeV
+and a peak luminosity of $2\times10^33 cm^{-2}s^{-1}$ 
+While in 2012 the center of mass energy was 8 TeV and the peak luminosity
+was also increased to $7.7\times10^33 cm^{-2}s^{-1}$.
+In both 2011 and 2012 the bunch spacing was 50 ns and the
+total number of bunches was 1380. 
+The total integrated luminosity delivered by the LHC detector
+as a function of time is shown in figure \ref{fig:deliveredLumi}.
+%The LHC was designed to operate
+%at 14TeV with a peak luminosity of $10^34 cm^{-2}s^{-1}$ and a bunch 
+%crossing rate of 25 ns; this scenario is planned for subsequent runs.
+%%%finish describing 
+
+The average event rate is,
+\begin{equation}
+R=L\sigma_{T}
+\end{equation}
+The average rate of events from collisions of a bunch is given by
+\begin{equation}
+N=\frac{R}{R_{B}}
+\end{equation}
+where $R_{B}$ is the LHC crossing rate. 
+
+\begin{equation}
+\mu=\frac{L\sigma_{T}}{R_{B}f_{B}}
+\end{equation}
+
+The high 
