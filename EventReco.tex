@@ -56,8 +56,34 @@ tracks and pixel vertices, respectively. The performance of the track reconstruc
 offline software is shown here %%add tracking plots
 %Kalman filter [32] 
 \subsection{Primary Vertex Reconstrucion}
+Primary vertices (PVs) are reconstruct in order to locate and determine the associated uncertainty of all
+proton-proton interaction vertices regardless of whether it is a 'signal' or 'background' vertex.
+Primary vertex reconstruction proceeds in three steps.
+
+The first step is to select tracks based on their association with a primary interaction region.
+To do this, a number of quality selections are imposed: they are based upon the significance of the
+transverse impact parameter ($d_{xy}$), the number of strip and pixel hits that are 
+associated with a track and the normalized $\chi^{2}$ from the fit to the
+trajectory. In selecting tracks their is no requirement on the $p_{T}$ of the track; 
+this is important so that all PVs including ones from minimum bias events will be reconstructed.
+
+The second step is to cluster the selected tracks based on their $z$ coodinate at their
+point of closest approach to the beam spot. This is done using a Deterministic Annealing (DA)
+algorithm which finds a global minimum given many degrees of freedom.%%ref DA, More on DA?
+
+The third and final step is to take candidate vertices based on DA clustering in $z$ and use
+an 'adaptive vertex fitter' %ref
+to compute vertex parameters. These parameters include the 3-D position and covariance matrix,
+as well as indicators for the success of the fit such as the number of degrees ($n_{dof}$) of freedom for
+each vertex and weights of the track used in each vertex. The adaptive vertex fitter
+uses a modified definition of $n_{dof}$ where,
+\begin{equation}
+n_{dof} = -3+2\sum^{nTracks}_{i=1} w_{i},
+\end{equation}
+Here, $w_{i}$ is the weight of the $i^{th}$ track. This implies that $n_{dof}$ is strongly
+correlated with the number of tracks that are compatible with arising from the interaction
+region which means that $n_{dof}$ can be also be used to select true proton-proton interactions.
 %Vertex reconstruction [33], [34] 
-%Deterministic Annealing
 \section{Electron ID and Reconstruction}
 %Ecal Seeding or track seeding??
 
