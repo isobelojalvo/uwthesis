@@ -5,6 +5,10 @@ At this stage %particles
 
 \section{Track and Primary Vertex Reconstruction}
 %%%%%%%%%%%%%%%%Track Reconstruction [31] %TRK-11-001
+
+%write an intro
+%Track selection involves selection of tracks which are consistent with being produced promptly in the primary interaction region by imposing requirements on the maximum value of significance of the transverse impact parameter relative to the beam spot
+\subsection{Track Reconstrucion}
 In a technique known as Combined Track Finding (CTF),
 the collection of reconstructed tracks is produced via
 multiple iterations of the CTF track reconstruction sequence.
@@ -13,12 +17,12 @@ lower $p_{T}$ and quality tracks.%%not quite right actually...
 while iterations four through six recover any tracks 
 not found by previous iterations.
 
+After each iteration the CTF track reconstruction sequence, the hits
+associated with tracks are removed; this reduces the combinatorial complexity
+and simplifies subsequent iterations in a search for more difficult classes of track (for example,
+low $p_{t}$ or which are greatly displaced).
 The CTF track reconstruction proceeds as follows:
-%seed generation
-%many electrons lose a significant fraction of their energy to bremsstrahlung radiation in the tracker
-%Therefore, to ensure high efficiency, track finding begins with trajectory seeds created in the inner region of the tracker
-%Seed generation requires information on the reconstructed beam spot position
-%The tracks and primary vertices found with this algorithm are known as pixel tracks and pixel vertices, respectively.
+\begin{itemize}
 \item First, seeds are generated which provides the initial track candidates.
 Charged particles follow helical paths in the magnetic field therefore five parameters (including curvature)
 are needed to define a trajectory; to determine these five parameters at least
@@ -39,11 +43,19 @@ finding stage. The trajectory is therefore refitted using a Kalman filter and sm
 a Runge-Kutta propagator that takes into account both material effect and accomodates
 for a inhomogeneous magnetic field.
 %track selection sets quality flags and discards tracks that fail certain criteria
-\item
-
+\item The final step is track selection where tracks are required to pass a number of quality
+based selection criteria. 
+The selection criteria puts a requirement on a track's number of layers %fix
+with valid hits, the fit-based $\chi^{2}/dof$, and the track's compatibility
+with a primary vertex (PV). In addition to these, several requirements are
+imposed as a function of track $p_{T}$, $\eta$, and the number of layers
+with valid hits. 
+\end{itemize}
+The tracks and primary vertices found with this algorithm are known as pixel 
+tracks and pixel vertices, respectively. The performance of the track reconstruction
+offline software is shown here %%add tracking plots
 %Kalman filter [32] 
-
-%Iterative tracking?? maybe move to b-Jet ID
+\subsection{Primary Vertex Reconstrucion}
 %Vertex reconstruction [33], [34] 
 %Deterministic Annealing
 \section{Electron ID and Reconstruction}
@@ -68,7 +80,7 @@ for a inhomogeneous magnetic field.
 %\section on PF??
 % section on lepton isolation?
 
-\section{\tau ID and Reconstruction}
+\section{$\tau$ ID and Reconstruction}
 %Tau ID 
 %Tau Isolation
 
