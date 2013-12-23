@@ -3,10 +3,83 @@ After data is collected it undergoes 'Event Reconstruction'.
 At this stage %particles
 %a series of algorithm to identify and particles and event variables
 
-\section{Primary Vertex Reconstruction}
+\section{Track and Primary Vertex Reconstruction}
+%%%%%%%%%%%%%%%%Track Reconstruction [31] %TRK-11-001
+In a technique known as Combined Track Finding (CTF),
+the collection of reconstructed tracks is produced via
+multiple iterations of the CTF track reconstruction sequence.
+The first three iterations are meant to reconstruct successively
+lower $p_{T}$ and quality tracks.%%not quite right actually...
+while iterations four through six recover any tracks 
+not found by previous iterations.
+
+The CTF track reconstruction proceeds as follows:
+%seed generation
+%many electrons lose a significant fraction of their energy to bremsstrahlung radiation in the tracker
+%Therefore, to ensure high efficiency, track finding begins with trajectory seeds created in the inner region of the tracker
+%Seed generation requires information on the reconstructed beam spot position
+%The tracks and primary vertices found with this algorithm are known as pixel tracks and pixel vertices, respectively.
+\item First, seeds are generated which provides the initial track candidates.
+Charged particles follow helical paths in the magnetic field therefore five parameters (including curvature)
+are needed to define a trajectory; to determine these five parameters at least
+3 hits or 2 hits in the pixel detector and a constraint on the origin of the track trajectory from the beam
+spot is required. Seeds are built in the inner part of the tracker
+and track candidates are reconstructed outwards. This is due to a higher finer granularity 
+and hence lower occupancy in the center of the pixel detector. Each iteration of CTF
+uses independent quality parameters for seeding layers. %%input table?
+%
+\item Next, track finding is performed based on the Kalman filter method. %%need reference TRK-11-011 [42]
+Track finding starts by using the seed trajectories to define and then search
+for adjacent layers of the detector with a hit. The next step provides the possibility
+of adding an invalid hit in the case where the particle failed to produce a hit.
+Finally the track finding algorithm updates the trajectories of the tracks. 
+%track fitting by means of kalman filter and smoother
+\item Track fitting then is used to adjust for the possibility of bias added during the track
+finding stage. The trajectory is therefore refitted using a Kalman filter and smoother with
+a Runge-Kutta propagator that takes into account both material effect and accomodates
+for a inhomogeneous magnetic field.
+%track selection sets quality flags and discards tracks that fail certain criteria
+\item
+
+%Kalman filter [32] 
+
+%Iterative tracking?? maybe move to b-Jet ID
+%Vertex reconstruction [33], [34] 
+%Deterministic Annealing
 \section{Electron ID and Reconstruction}
+%Ecal Seeding or track seeding??
+
+%GSF[38]
+
+% Rejection of Electrons from converted photons [39]
+
+%electron ID ---twiki table
+
+%Electron trigger?? maybe
 \section{Muon ID and Reconstruction}
+%Muon reco [40]
+
+%standalone, global, tracker
+
+%Muon ID (use old muon plots?) mention muon veto in analysis
+
+%Muon trigger
+
+%\section on PF??
+% section on lepton isolation?
+
 \section{\tau ID and Reconstruction}
+%Tau ID 
+%Tau Isolation
+
 \section{Jet ID and Reconstruction}
+%Particle flow
+%Anti-Kt algo [43]
+
+%Jet energy corrections [44]
 \subsection{b-Jet ID}
+%CSV algorithm
+%SV in jets
 \section{Missing Transverse Energy}
+%met 
+%any documentation
