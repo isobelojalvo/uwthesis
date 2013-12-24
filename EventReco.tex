@@ -208,12 +208,26 @@ are finally combined with the charged hadrons to reconstruct individual
 $\tau_{h}$ decay modes.
 
 The following decay topologies are considered by the HPS $\tau$ ID algorithm:%%write list
-%\item Single Hadron reconstructs the $h^{-}$ and $h^{-}\pi^{0}$
-%\item
-%\item
-%\item
+\begin{itemize}
+\item{\bf Single hadron}
+      corresponds to $ h^{-} \nu_{\tau}$
+      and $ h^{-} \pi^{0} \nu_{\tau}$ decays
+      in which the neutral pions have too little energy to be reconstructed as strips.
+\item{\bf One hadron $+$ one strip}
+      reconstructs the decay mode $ h^{-} \pi^{0} \nu_{\tau}$
+      in events in which the photons from $\pi^{0}$ decay
+      are close together on the calorimeter surface.
+\item{\bf One hadron $+$ two strips}
+      corresponds to the decay mode $ h^{-} \pi^{0} \nu_{\tau}$
+      in events in which photons from $\pi^{0}$ decays are well separated.
+\item{\bf Three hadrons}
+      corresponds to the decay mode $ h^{-} h^{+} h^{-} \nu_{\tau}$.
+      The three charged hadrons are required                                                                                                      
+      to come from the same secondary vertex.
+\end {itemize}
+
 Charged hadrons and strips are required to be contained within a cone
-of size $\delta R=(2.8\GeV/p_{T}^{\tau_{h}})$ where $p_{T}^{\tau_{h}}$ is 
+of size $\Delta R=(2.8\GeV/p_{T}^{\tau_{h}})$ where $p_{T}^{\tau_{h}}$ is 
 the transverse momentum of the $\tau$ hadron $p_{T}^{\tau_{h}}$ is 
 required to match the $(\eta,\phi)$ direction of the original PF jet within
 a radius of $\delta R=0.1$. 
