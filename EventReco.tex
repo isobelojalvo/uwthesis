@@ -132,7 +132,22 @@ working from outside in and finally the track is extrapolated to the
 beam-spot and a vertex-constrained fit to the track
 parameters is performed.
 \subsection{Global Muon Reconstruction}
-
+Global muon reconstruction matches standalone tracks to tracks in the tracking
+system. 
+Tracks are selected which roughly correspond in momentum and position to 
+the standalone muon tracks. This is performed in two steps: First,
+tracks are selected in a defined $\eta\times\phi$ region which is centered
+on the standalone track. Next, spatial and momentum matching is 
+used to select the best matching track. Compatibility of the standalone track and tracker tarck with the
+primary vertex is also required. Finally a new 'global track' is created combining
+tracker and muon hits; at this stage, no new hits are selected, instead, 
+the selected hits are refitted as a global track. If more than one candidate
+track pair is matched then the candidate with the best $\chi^{2}$ value
+is selected. 
+For muons with $p_{T}<200\GeV$ the $p_{T}$ measurement is driven
+by the fantastic tracker resoluion.
+%In muons with a higher $p_{T}$, as might be found
+%in the boosted topology of $\Wbb$ it is useful to requir
 \subsection{Tracker Muon Reconstruction}
 
 %Muon ID (use old muon plots?) mention muon veto in analysis
