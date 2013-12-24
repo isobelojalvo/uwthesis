@@ -145,9 +145,12 @@ the selected hits are refitted as a global track. If more than one candidate
 track pair is matched then the candidate with the best $\chi^{2}$ value
 is selected. 
 For muons with $p_{T}<200\GeV$ the $p_{T}$ measurement is driven
-by the fantastic tracker resoluion.
-%In muons with a higher $p_{T}$, as might be found
-%in the boosted topology of $\Wbb$ it is useful to requir
+by the fantastic tracker resoluion, for muons with $p_{T}>200\GeV$,
+the global-muon fit can improve the momentum resolution compared
+to the tracker-only fit.
+In muons with a higher $p_{T}$, as might be found
+in the boosted topology of $\Wbb$ it is useful to require that muons
+are globally reconstructed.
 \subsection{Tracker Muon Reconstruction}
 
 %Muon ID (use old muon plots?) mention muon veto in analysis
@@ -164,10 +167,32 @@ The life time of the $\tau$ is short enough that they decay before reaching the 
 most detector. This short lifetime makes $\tau$ reconstruction particularly challenging;
 the solution is to reconstruct the decay products of the $\tau$. 
 
-The dominant hadronic $\tau$ decays ($\tau_{h}$) are outlined in table %%%insert table.
+The dominant hadronic $\tau$ decays ($\tau_{h}$) 
+and intermediate any intermediate resonances are 
+outlined in Table \ref{tab:decay_modes}. 
 These decays consist of one or three charged $\pi$ mesons and up to two $\pi^{0}$ mesons.
-This thesis uses the hadron plus strips (HPS) algorithm for the reconstruction of
-hadronic $\tau$'s. %%%%ref tau id paper
+This thesis uses the hadron plus strips (HPS) algorithm for the reconstruction of 
+$\tau_{h}$'s. %%%%ref tau id paper
+\begin{table}[b]
+\begin{center}
+%\tablesize
+\begin{tabular}{|l|c|c|c|}
+\hline
+Decay mode & Resonance & Mass (MeV) &  Branching fraction (\%) \\
+\hline
+$\tau^{-}$  $\rightarrow $  $h^{-} \nu_{\tau}$ &  &  & $11.6\%$ \\
+$\tau^{-}$  $\rightarrow $  $h^{-} \pi^{0}  \nu_{\tau}$ & $\rho^{-}$ & 770 & $26.0\%$ \\
+$\tau^{-}$  $\rightarrow $  $h^{-} \pi^{0}\pi^{0}  \nu_{\tau}$ & $a_{\rm{1}}^{-}$ & 1200 & $9.5\%$ \\
+$\tau^{-}$  $\rightarrow $  $h^{-} h^{+} h^{-} \nu_{\tau}$ & $a_{\rm{1}}^{-}$  & 1200 & $9.8\%$ \\
+$\tau^{-}$  $\rightarrow $  $h^{-} h^{+} h^{-}\pi^{0}  \nu_{\tau}$ & & & $4.8\%$ \\
+      \hline
+\end{tabular}
+\caption{
+   Branching fractions of dominant hadronic $\tau$ decays and mass of any intermediate resonance. 
+   }
+\label{tab:decay_modes}
+\end{center}
+\end{table}
 The HPS algorithm takes into account photon conversions in the CMS tracker
 material. %the electron positron decays will bend in the magnetic field
 therefore %the HPS algorithm, say something about PF particles
@@ -178,18 +203,18 @@ most energetic electromagnetic particle within the PF jet, next it searches
 for other electromagnetic particles within the window. If another electromagnetic
 particle is found then the object gets associated with the strip and
 the four-momentum is recalculated. This procedure is repeated until no other
-particles are found. Strips which satisfy the requirement of $\p_{t}^{strip}>1GeV/c$
+particles are found. Strips which satisfy the requirement of $p_{t}^{strip}>1GeV/c$
 are finally combined with the charged hadrons to reconstruct individual
 $\tau_{h}$ decay modes.
 
 The following decay topologies are considered by the HPS $\tau$ ID algorithm:%%write list
-\item Single Hadron reconstructs the $h^{-}$ and $h^{-}\pi^{0}$
-\item
-\item
-\item
+%\item Single Hadron reconstructs the $h^{-}$ and $h^{-}\pi^{0}$
+%\item
+%\item
+%\item
 Charged hadrons and strips are required to be contained within a cone
-of size $\delta R=(2.8\GeV/p_{T}^{\tau_{h}})$ where $p_{T}^{\tau_{h}$ is 
-the transverse momentum of the $\tau$ hadron $p_{T}^{\tau_{h}$ is 
+of size $\delta R=(2.8\GeV/p_{T}^{\tau_{h}})$ where $p_{T}^{\tau_{h}}$ is 
+the transverse momentum of the $\tau$ hadron $p_{T}^{\tau_{h}}$ is 
 required to match the $(\eta,\phi)$ direction of the original PF jet within
 a radius of $\delta R=0.1$. 
 %%four momenta must match decay modes
