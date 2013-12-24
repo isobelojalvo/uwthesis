@@ -115,9 +115,20 @@ region which means that $n_{dof}$ can be also be used to select true proton-prot
 
 %Electron trigger?? maybe
 \section{Muon ID and Reconstruction}
-
+Muons at CMS are reconstructed using information from both the 
+tracker and the muon detectors. 
 %Muon reco [40]
-
+\subsection{Standalone Muon Reconstruction}
+Standalone $\mu$ reconstruction uses only tracks from the muon system
+to reconstruct tracks using a kalman filter technique which is seeded
+by track segments or Level-1 trigger electronics. Tracks are propagated
+in iterative steps taking into account the magnetic field, muon energy loss in the material,
+multiple scattering and missing hits in the muon system.
+Next a suitable $\chi^{2}$ cut is applied to reject bad hits due to showering,
+delta rays and pair production. A backward Kalman filter is then applied,
+working from outside in and finally the track is extrapolated to the 
+beam-spot and a vertex-constrained fit to the track
+parameters is performed.
 %standalone, global, tracker
 
 %Muon ID (use old muon plots?) mention muon veto in analysis
@@ -165,7 +176,9 @@ a radius of $\delta R=0.1$.
 %%four momenta must match decay modes
 %50-200 MeV for pi0, 0.3 to 1.3 GeV for \rho
 %and 0.8 to 1.5 GeV for $a_{1}$
+
 %%%%Tau Isolation from paper
+%%%Tau performance plots
 
 \section{Jet ID and Reconstruction}
 %Particle flow
