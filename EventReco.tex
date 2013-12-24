@@ -128,12 +128,50 @@ region which means that $n_{dof}$ can be also be used to select true proton-prot
 % section on lepton isolation?
 
 \section{$\tau$ ID and Reconstruction}
-%Tau ID 
-%Tau Isolation
+The $\tau$ lepton's high mass means that the $\tau$ plays a very important
+roll in search for the SM higgs boson, and MSSM higgs bosons.
+The life time of the $\tau$ is short enough that they decay before reaching the inner
+most detector. This short lifetime makes $\tau$ reconstruction particularly challenging;
+the solution is to reconstruct the decay products of the $\tau$. 
+
+The dominant hadronic $\tau$ decays ($\tau_{h}$) are outlined in table %%%insert table.
+These decays consist of one or three charged $\pi$ mesons and up to two $\pi^{0}$ mesons.
+This thesis uses the hadron plus strips (HPS) algorithm for the reconstruction of
+hadronic $\tau$'s. %%%%ref tau id paper
+The HPS algorithm takes into account photon conversions in the CMS tracker
+material. %the electron positron decays will bend in the magnetic field
+therefore %the HPS algorithm, say something about PF particles
+reconstructs photons into 'strips' which are objects which are built%fix
+out of electromagnetic particle particles within a window of size $\delta\eta=0.05$
+and $\delta\phi=0.20$. The algorithm starts by centering a strip on the
+most energetic electromagnetic particle within the PF jet, next it searches
+for other electromagnetic particles within the window. If another electromagnetic
+particle is found then the object gets associated with the strip and
+the four-momentum is recalculated. This procedure is repeated until no other
+particles are found. Strips which satisfy the requirement of $\p_{t}^{strip}>1GeV/c$
+are finally combined with the charged hadrons to reconstruct individual
+$\tau_{h}$ decay modes.
+
+The following decay topologies are considered by the HPS $\tau$ ID algorithm:%%write list
+\item Single Hadron reconstructs the $h^{-}$ and $h^{-}\pi^{0}$
+\item
+\item
+\item
+Charged hadrons and strips are required to be contained within a cone
+of size $\delta R=(2.8\GeV/p_{T}^{\tau_{h}})$ where $p_{T}^{\tau_{h}$ is 
+the transverse momentum of the $\tau$ hadron $p_{T}^{\tau_{h}$ is 
+required to match the $(\eta,\phi)$ direction of the original PF jet within
+a radius of $\delta R=0.1$. 
+%%four momenta must match decay modes
+%50-200 MeV for pi0, 0.3 to 1.3 GeV for \rho
+%and 0.8 to 1.5 GeV for $a_{1}$
+%%%%Tau Isolation from paper
 
 \section{Jet ID and Reconstruction}
 %Particle flow
 %Anti-Kt algo [43]
+The primary motive behind choosing the Anti-$k_{T}$ algorithm is that it is both
+
 
 %Jet energy corrections [44]
 \subsection{b-Jet ID}
