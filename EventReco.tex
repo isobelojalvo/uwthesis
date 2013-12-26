@@ -149,7 +149,7 @@ Finally, a trajectory smoother is applied.
 
 To improve the electron identification in the MSSM analysis a Boosted Decision Tree (BDT) based %Ref BDT
 approach is used. The training has been performed in two
-bins of \pt and three bins of $\eta$ of the electron as shown in Table~\ref{tab:ElectronID-Thresholds}\@.
+bins of $p_{T}$ and three bins of $\eta$ of the electron as shown in Table~\ref{tab:ElectronID-Thresholds}\@.
 The BDT has the following $19$ variables as input:
 
 %been trained on data selecting genuine electron candidates from well reconstructed $Z\to ee$ events and
@@ -192,7 +192,6 @@ decay channel. Further there should be no missing hits in the inner layers of th
 hits before the selected primary vertex and a vertex fit probability of more than $P>10^{-6}$ to minimize the probability that the electron candidate originates from a photon conversion.
 %%%%%%%%%%%%%%%%FIX ME
 
-
 \begin{table}[!ht]
 \begin{center}
 \begin{tabular}{|l|c|c|c|}
@@ -201,14 +200,12 @@ hits before the selected primary vertex and a vertex fit probability of more tha
 \cline{2-4}
 \multicolumn{1}{c|}{ }     & $|\eta|<0.8$      & $0.8 \leq |\eta| < 1.479$  & $1.479 \leq |\eta|$  \\
 \hline
-$\pt\leq 20$~\GeV          & $0.925$           & $0.915$                    & $0.965$              \\
-$\pt>    20$~\GeV          & $0.925$ & $0.975$          & $0.985$    \\
+$\pt\leq 20$ GeV          & $0.925$           & $0.915$                    & $0.965$              \\
+$\pt>    20$ GeV          & $0.925$ & $0.975$          & $0.985$    \\
 \hline
 \end{tabular}
 \caption{
-  Thresholds for the BDT discriminator to identify electrons. For electrons with $\pt>20$~\GeV the values in braces
-  correspond to the \emph{TightID} working points as recommended by the \emph{EgammaPOG}.
-}
+  Thresholds for the BDT discriminator to identify electrons. For electrons with $\pt>20$ GeV the values in braces correspond to the Tight ID working point.}
 \label{tab:ElectronID-Thresholds}
 \end{center}
 \end{table}
@@ -352,7 +349,7 @@ a radius of $\Delta R=0.1$.
 %%%%Tau Isolation from paper
 %%%Tau performance plots
 
-\section{Particle Flow Algorithm}
+\section{Particle Flow Reconstruction}
 In proton-proton collisions, even at energies on the order of a few TeV, 
 most stable particles produced have a low $p_{T}$.
 At CMS, to identify and reconstruct these stable particles a particle flow (PF) event 
@@ -401,12 +398,12 @@ than a PF photon or a PF neutral hadron might also be created. If the energy in
 the calorimeters is too small then a relaxed search for hits in the muon system
 is performed. Finally, remaining clusters of ECAL and HCAL clusters give rise
 to PF photons and PF neutral hadrons. Figure %insert PFjet figure
-shows relative  fractions 
-
+shows relative fractions of charged hadrons, photons, neutral hadrons, electrons,
+hf hadrons and em particles in jets.
 
 \section{Jet ID and Reconstruction}
-%Particle flow
 %Anti-Kt algo [43]
+
 The primary motive behind choosing the Anti-$k_{T}$ algorithm is that it is both
 
 \begin{equation}
