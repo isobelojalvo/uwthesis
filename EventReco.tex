@@ -403,9 +403,25 @@ hf hadrons and em particles in jets.
 
 \section{Jet ID and Reconstruction}
 %Anti-Kt algo [43]
+Jet clustering algorithms have become a crucial part of %%finish  this
 
-The primary motive behind choosing the Anti-$k_{T}$ algorithm is that it is both
+Jet clustering in this thesis is performed using the anti-$k_{T}$ jet clustering algorithm.
+%The primary motive behind choosing the Anti-$k_{T}$ algorithm is that it is 
+In order to perform %new word
+comparisons with perturbative effects in theoretical calculations jet clustering algorithm
+must be both infrared and collinear (IRC) safe. %check/expand
+The development and subsequent choice of the anti-$k_{T}$ jet clustering algorithm
+was stimulated by questions of sensitivity to non-perturbative effects like hadronization
+and underlying event contamination. Previously used jet clustering algorithms
+such as the $k_{T}$ %ref
+and Cambridge/Aachen %ref
+jet clustering algorithms were IRC safe, however, they
+had the property that soft radiation could provoke irregularities in the boundaries
+of final jets. 
+Algorithms such as SIScone %ref
+that were soft-resilient were not %%% IRC safe?
 
+The 
 \begin{equation}
 d_{ij}=\mathrm{min}(k_{ti}^{2p},k_{tj}^{2p})\frac{\Delta^{2}_{ij}}{R^{2}}
 \end{equation}
