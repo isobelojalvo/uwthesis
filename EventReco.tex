@@ -145,9 +145,72 @@ The electron trajectory builder constructs all possible trajectories
 for a given seed and the best fit is chosen using a $\chi^{2}$ approach.
 Finally, a trajectory smoother is applied.
 
-To improve the electron identification in the MSSM analysis a BDT based %Ref BDT
-approach is used which is trained on the following 19 variables:
-%%list variables.
+To improve the electron identification in the MSSM analysis a Boosted Decision Tree (BDT) based %Ref BDT
+approach is used. The training has been performed in two
+bins of \pt and three bins of $\eta$ of the electron as shown in Table~\ref{tab:ElectronID-Thresholds}\@.
+The BDT has the following $19$ variables as input:
+
+%been trained on data selecting genuine electron candidates from well reconstructed $Z\to ee$ events and
+%mis-identified (fake) electron candidates from $Z$+jets events, from which the electrons, which have
+%been used to reconstruct the $Z$ boson candidate have been excluded. 
+
+\begin{itemize}
+\item
+The normalized $\chi^{2}$ of the common track fit, the number of valid hits in the track fit, the normalized
+$\chi^{2}$ of the {\it GSFTrack} fit.
+\item
+The distance in $\eta$ ($\Delta\eta_{SC}({\rm Track}_{vtx})$) and $\phi$ ($\Delta\phi_{SC}({\rm Track}_{vtx})$)
+between the reconstructed super cluster in the calorimeter and the track evaluated at the primary vertex
+position, the distance in $\eta$ between the super cluster seed and the track evaluated at the calorimeter
+surface.
+\item
+The cluster shape variables $\sigma_{i\eta,i\eta}$ and $\sigma_{i\phi, i\phi}$, where $i\eta$ ($i\phi$)
+indicate the integer label of the electromagnetic calorimeter cell in $\eta$ ($\phi$), the cluster shape
+variable $f_{e}=1-e1X5/e5X5$, where $e1X5$ ($e5X5$) indicate the energy deposition in an array of $1 \times 5$
+($5 \times 5$) cells in the vicinity of the super cluster seed, the cluster shape variable $R9 = e3x3/E_{SC}$,
+where $e3x3$ and $E_{SC}$ indicate the energy in an array of $3 \times 3$ cells in the vicinity of the
+super cluster seed and the raw energy of the reconstructed super cluster.
+\item
+The ratio of the hadronic energy over electromagnetic energy of the super cluster ($H/E$), the ratio of
+the super cluster energy over the momentum of the associated track evaluated at the selected primary vertex
+($E/P$), the variable $1/E_{e}-1/p_{e}$, where $E_{e}$ and $p_{e}$ indicate the reconstructed energy and
+momentum of the electron candidate, the ratio of the electron cluster over the momentum of the associated
+track and the ratio of the seed cluster over the associated track, where each time the track momentum
+has been evaluated at the surface of the calorimeter.
+\item
+The ratio of the energy that has been reconstructed in the pre-shower detector over the raw energy of
+the reconstructed super cluster. The momentum and $\eta$ of the reconstructed electron candidate.
+\end{itemize}
+
+An electron is considered as well identified if the BDT discriminator falls above the thresholds shown
+in Table~\ref{tab:ElectronID-Thresholds}\@. In addition the electron candidate is required to have a
+distance from the selected primary vertex of $d_{z}<0.1$~cm along the $z$ direction of the experiment
+ and $d_{0}<0.02 (0.045)$~cm in the plane perpendicular to $z$ in the $e\mu$ ($\mu\tau_{h}$ / $e\tau_{h}$)
+decay channel. Further there should be no missing hits in the inner layers of the pixel detector, no
+hits before the selected primary vertex and a vertex fit probability of more than $P>10^{-6}$ to minimize
+the probability that the electron candidate originates from a photon conversion.
+%%%%%%%%%%%%%%%%FIX ME
+
+
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+%\cline{2-4}                                                                                                                                                                
+\multicolumn{1}{c}{ }      & \multicolumn{3}{c}{\bf BDT Discriminator Value ($>$)}                 \\
+\cline{2-4}
+\multicolumn{1}{c|}{ }     & $|\eta|<0.8$      & $0.8 \leq |\eta| < 1.479$  & $1.479 \leq |\eta|$  \\
+\hline
+$\pt\leq 20$~\GeV          & $0.925$           & $0.915$                    & $0.965$              \\
+$\pt>    20$~\GeV          & $0.925$ & $0.975$          & $0.985$    \\
+\hline
+\end{tabular}
+\caption{
+  Thresholds for the BDT discriminator to identify electrons. For electrons with $\pt>20$~\GeV the values in braces
+  correspond to the \emph{TightID} working points as recommended by the \emph{EgammaPOG}.
+}
+\label{tab:ElectronID-Thresholds}
+\end{center}
+\end{table}
 
 % Rejection of Electrons from converted photons [39]
 
