@@ -19,6 +19,7 @@ inner silicon pixel detector and a lower granularity silicon strip detector.
 %write an intro
 %Track selection involves selection of tracks which are consistent with being produced promptly in the primary interaction region by imposing requirements on the maximum value of significance of the transverse impact parameter relative to the beam spot
 \subsection{Track Reconstruction}
+\label{sec:TrackReco}
 In a technique known as Combined Track Finding (CTF),
 the collection of reconstructed tracks is produced via
 multiple iterations of the CTF track reconstruction sequence.
@@ -105,9 +106,48 @@ correlated with the number of tracks that are compatible with arising from the i
 region which means that $n_{dof}$ can be also be used to select true proton-proton interactions.
 %Vertex reconstruction [33], [34] 
 \section{Electron ID and Reconstruction}
-%Ecal Seeding or track seeding??
+%%%This whole section sucks, fix it.
+Electrons traversing the tracker pass through 
+material equivalent to 0.4-0.8 $X_{0}$ %fix wording
+causing electrons to lose a significant amount of 
+energy to radiating photons. %more explanation
+This causes a spread in $\phi$. %rewrite this
+Accurate measurement of electron energy 
+at the initial interaction point
+requires collection of photons produced via bremstrahlung.
+Electron reconstruction is also spread across $\phi$
 
-%GSF[38]
+First, clusters are formed in the ECAL, these clusters are then 
+extended in $\phi$ to form super clusters.
+Electrons are seeded using either an ECAL driven or a tracker driven approach.
+The ECAL driven approach is more efficient for electrons with $E_{T}>4 GeV$;
+in this method, super clusters are selected and then matched back to 
+tracks in the inner tracker layers. 
+For low energy electrons the energy deposit in the calorimeter
+is very broad; in this case the tracker driven approach for electron seeding is used.
+In the tracker driven approach all reconstructed tracks are considered
+and the bremstrahlung hypothesis is tested
+by extrapolating a straight line from the track position to the
+corresponding ECAL cluster. The process is 
+repeated for all layers and a supercluster is defined
+by summing all linked electromagnetic cluster deposits. 
+Next, trajectories are reconstructed using a dedicated
+model of the electron energy loss and fitted using a Gaussian Sum Filter (GSF) algorithm. %%cite GSF
+The GSF algorithm is preferred over the typical Kalman Filter algorithm.
+This is because bremsstrahlung energy loss, %don't like this phrase either
+as described by Bethe and Heitler, 
+does not following a Gaussian distribution. 
+So, while the Kalman Filter algorithm is optimal in cases where all probability
+densities encountered during track the reconstruction procedure are Gaussian
+the GSF algorithm distributions are weighted sums of Gaussians and
+appropriately describes electron energy loss as described in the Bethe and Heitler model.
+The electron trajectory builder constructs all possible trajectories
+for a given seed and the best fit is chosen using a $\chi^{2}$ approach.
+Finally, a trajectory smoother is applied.
+
+To improve the electron identification in the MSSM analysis a BDT based %Ref BDT
+approach is used which is trained on the following 19 variables:
+%%list variables.
 
 % Rejection of Electrons from converted photons [39]
 
@@ -122,7 +162,7 @@ tracker and the muon detectors.
 %Muon reco [40]
 \subsection{Standalone Muon Reconstruction}
 Standalone $\mu$ reconstruction uses only tracks from the muon system
-to reconstruct tracks using a kalman filter technique which is seeded
+to reconstruct tracks using a Kalman filter technique which is seeded
 by track segments or Level-1 trigger electronics. Tracks are propagated
 in iterative steps taking into account the magnetic field, muon energy loss in the material,
 multiple scattering and missing hits in the muon system.
@@ -152,14 +192,24 @@ In muons with a higher $p_{T}$, as might be found
 in the boosted topology of $\Wbb$ it is useful to require that muons
 are globally reconstructed.
 \subsection{Tracker Muon Reconstruction}
-
+In tracker muon reconstruction, all tracks with $p_{T}>0.5$ GeV
+and $p>2.5$ GeV are considered as possible muon candidates. 
+Track reconstruction is outlined in Section \ref{sec:TrackReco},
+after tracks are reconstructed they are extrapolated to the muon
+system taking into account effects due to the magnetic field.
+If one muon segment matches the extrapolated track then 
+it is defined as a tracker muon.  Where matching requires
+the the distance in local $x$ between the segment and the extrapolated
+track is less than 3 cm or the pull for local x is less than 4 where
+the pull is defined as the difference in the position of the matched segment
+and the position of the extrapolated track divided by the sum of 
+the uncertainties on the position of the matched segment
+and the position of the extrapolated track.
 %Muon ID (use old muon plots?) mention muon veto in analysis
-
 %Muon trigger
 
 %\section on PF??
 % section on lepton isolation?
-
 \section{$\tau$ ID and Reconstruction}
 The $\tau$ lepton's high mass means that the $\tau$ plays a very important
 roll in search for the SM higgs boson, and MSSM higgs bosons.
@@ -203,11 +253,11 @@ most energetic electromagnetic particle within the PF jet, next it searches
 for other electromagnetic particles within the window. If another electromagnetic
 particle is found then the object gets associated with the strip and
 the four-momentum is recalculated. This procedure is repeated until no other
-particles are found. Strips which satisfy the requirement of $p_{t}^{strip}>1GeV/c$
+particles are found. Strips which satisfy the requirement of $p_{T}^{strip}>1GeV/c$
 are finally combined with the charged hadrons to reconstruct individual
 $\tau_{h}$ decay modes.
 
-The following decay topologies are considered by the HPS $\tau$ ID algorithm:%%write list
+The following decay topologies are considered by the HPS $\tau$ ID algorithm:
 \begin{itemize}
 \item{\bf Single hadron}
       corresponds to $ h^{-} \nu_{\tau}$
@@ -230,7 +280,7 @@ Charged hadrons and strips are required to be contained within a cone
 of size $\Delta R=(2.8\GeV/p_{T}^{\tau_{h}})$ where $p_{T}^{\tau_{h}}$ is 
 the transverse momentum of the $\tau$ hadron $p_{T}^{\tau_{h}}$ is 
 required to match the $(\eta,\phi)$ direction of the original PF jet within
-a radius of $\delta R=0.1$. 
+a radius of $\Delta R=0.1$. 
 %%four momenta must match decay modes
 %50-200 MeV for pi0, 0.3 to 1.3 GeV for \rho
 %and 0.8 to 1.5 GeV for $a_{1}$
@@ -243,8 +293,20 @@ a radius of $\delta R=0.1$.
 %Anti-Kt algo [43]
 The primary motive behind choosing the Anti-$k_{T}$ algorithm is that it is both
 
+\begin{equation}
+d_{ij}=\mathrm{min}(k_{ti}^{2p},k_{tj}^{2p})\frac{\Delta^{2}_{ij}}{R^{2}}
+\end{equation}
+\begin{equation}
+d_{iB}=k_{ti}^{2p}
+\end{equation}
+where $\Delta_{ij}^{2}=(y_{i}-y_{j})^{2}+(\phi_{i}-\phi_{j})^{2}$, $k_{ti}$ is the 
+transverse momentum, $y_{i}$ is the rapidity and $\phi_{i}$ is the azimuthal angle of 
+the particle $i$.
+The key feature is that soft particle do not modify the shape of the jet while hard particles do.
 
 %Jet energy corrections [44]
+
+%Pileup ID
 \subsection{b-Jet ID}
 %CSV algorithm
 %SV in jets
