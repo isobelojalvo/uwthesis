@@ -107,6 +107,7 @@ region which means that $n_{dof}$ can be also be used to select true proton-prot
 %Vertex reconstruction [33], [34] 
 
 \section{Electron ID and Reconstruction}
+\label{sec:electronReco}
 %%%This whole section sucks, fix it.
 Electrons traversing the tracker pass through 
 material equivalent to 0.4-0.8 $X_{0}$ %fix wording
@@ -388,8 +389,21 @@ bremsstrahlung or pair production. Finally, a link between a charged-particle
 track in the tracker and a muon track in the muon system is established
 when a global fit returns an acceptable $\chi^{2}$ value.
 
-After these links have been established
-%talk about PF reconstruction
+After these links have been established PF reconstruction is performed which
+can be summarized into three steps. First, Electrons are created using GSF filter,
+this is further described in section \ref{sec:electronReco}. After electrons
+are reconstructed their tracks and calorimetric deposits are removed. Next, 
+PF charged hadrons are constructed by identifying links between tracks in the 
+tracker and clusters in the ECAL. If the energy deposit in the ECAL is 
+the same as the total $p_{T}$ in the tracker within calorimetric uncertainty a 
+PF charged hadron is created. If the energy in the calorimeters is much higher
+than a PF photon or a PF neutral hadron might also be created. If the energy in 
+the calorimeters is too small then a relaxed search for hits in the muon system
+is performed. Finally, remaining clusters of ECAL and HCAL clusters give rise
+to PF photons and PF neutral hadrons. Figure %insert PFjet figure
+shows relative  fractions 
+
+
 \section{Jet ID and Reconstruction}
 %Particle flow
 %Anti-Kt algo [43]
