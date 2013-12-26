@@ -421,7 +421,12 @@ of final jets.
 Algorithms such as SIScone %ref
 that were soft-resilient were not %%% IRC safe?
 
-The 
+To perform jet clustering in the anti-$k_{T}$, $k_{T}$ and Cambridge/Aachen jet algorithm
+a distance $d_{ij}$ is introduced between PF particles $i$ and $j$ and $d_{iB}$ between
+the entitiy and the beam (B). The clustering proceeds by identifying the smallest distances.
+If it is $d_{ij}$ the entities $i$ and $j$ are combined. However if it is $d_{iB}$ then $i$ 
+is considered a jet and all its entities are removed from the list of PF particles. The procedure
+is repeated until no entities are left. The definition of $d_{ij}$ and $d_{iB}$ are,
 \begin{equation}
 d_{ij}=\mathrm{min}(k_{ti}^{2p},k_{tj}^{2p})\frac{\Delta^{2}_{ij}}{R^{2}}
 \end{equation}
@@ -430,7 +435,10 @@ d_{iB}=k_{ti}^{2p}
 \end{equation}
 where $\Delta_{ij}^{2}=(y_{i}-y_{j})^{2}+(\phi_{i}-\phi_{j})^{2}$, $k_{ti}$ is the 
 transverse momentum, $y_{i}$ is the rapidity and $\phi_{i}$ is the azimuthal angle of 
-the particle $i$.
+the particle $i$. 
+$k_{T}$ is %%write this in
+The case where $p=1$ is the $k_{T}$ algorithm, $p=0$ corresponds to the Cambridge/Aachen
+algorithm and $p=-1$ is the anti-$k_{T}$ algorithm.
 The key feature is that soft particle do not modify the shape of the jet while hard particles do.
 
 %Jet energy corrections [44]
