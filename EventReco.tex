@@ -2,7 +2,7 @@
 After data is collected it undergoes 'Event Reconstruction'.
 At this stage %particles
 %a series of algorithm to identify and particles and event variables
-
+%reconstruction estimates the trajectory and momentum of the particle
 \section{Track and Primary Vertex Reconstruction}
 %%%%%%%%%%%%%%%%Track Reconstruction [31] %TRK-11-001
 One of the central design motivations to CMS%fix
@@ -105,6 +105,7 @@ Here, $w_{i}$ is the weight of the $i^{th}$ track. This implies that $n_{dof}$ i
 correlated with the number of tracks that are compatible with arising from the interaction
 region which means that $n_{dof}$ can be also be used to select true proton-proton interactions.
 %Vertex reconstruction [33], [34] 
+
 \section{Electron ID and Reconstruction}
 %%%This whole section sucks, fix it.
 Electrons traversing the tracker pass through 
@@ -187,8 +188,7 @@ in Table~\ref{tab:ElectronID-Thresholds}\@. In addition the electron candidate i
 distance from the selected primary vertex of $d_{z}<0.1$~cm along the $z$ direction of the experiment
  and $d_{0}<0.02 (0.045)$~cm in the plane perpendicular to $z$ in the $e\mu$ ($\mu\tau_{h}$ / $e\tau_{h}$)
 decay channel. Further there should be no missing hits in the inner layers of the pixel detector, no
-hits before the selected primary vertex and a vertex fit probability of more than $P>10^{-6}$ to minimize
-the probability that the electron candidate originates from a photon conversion.
+hits before the selected primary vertex and a vertex fit probability of more than $P>10^{-6}$ to minimize the probability that the electron candidate originates from a photon conversion.
 %%%%%%%%%%%%%%%%FIX ME
 
 
@@ -351,6 +351,45 @@ a radius of $\Delta R=0.1$.
 %%%%Tau Isolation from paper
 %%%Tau performance plots
 
+\section{Particle Flow Algorithm}
+In proton-proton collisions, even at energies on the order of a few TeV, 
+most stable particles produced have a low $p_{T}$.
+At CMS, to identify and reconstruct these stable particles a particle flow (PF) event 
+reconstruction technique has been developed. PF event reconstruction links 
+information %find a better word
+about reconstructed tracks and calorimeter deposits
+to form object collections of 
+electrons, muons, photons, charged and neutral hadrons, HF hadrons and HF EM particles
+for each event. These collections can then be used to build taus, Jets, $E_{T}^{miss}$
+and to quantify lepton isolation and tag jets originating from heavy quarks.
+
+The first step of PF reconstruction is to perform
+iterative tracking. Here, tracks are first seeded and reconstructed with tight criteria
+where the emphasis is on achieving a low fake rate. 
+After a track has been identified its hits in the tracker are removed and successive iterative steps
+then loosen track identification criteria.
+
+The second step of PF reconstruction is to produce clusters in the ECAL and the HCAL. 
+In this step cluster seeds are produced from local calorimeter cell energy maxima
+then topological clusters are grown by combining cells with at least one common side
+with a cell already in a cluster. 
+
+The final step in PF reconstruction, is to apply a link algorithm which links
+hits in the ECAL, HCAL, tracker and muon system. The link algorithm
+begins with the outer most hit in the tracker and extrapolates
+first to the 2 layers of the ECAL pre-shower. Next, it searches for topological clusters
+in the ECAL that correspond to a maximal depth expected of a typical
+electron energy deposit profile. Then, A search for topological clusters in the
+HCAL is performed at a depth corresponding to 1 $X_{0}$.
+The track is linked to any given depth if the extrapolated position in 
+the calorimeter is within cluster boundaries. The cluster can be enlarged by up 
+to once cell to account for discontinuities in the detector elements, radiation via
+bremsstrahlung or pair production. Finally, a link between a charged-particle
+track in the tracker and a muon track in the muon system is established
+when a global fit returns an acceptable $\chi^{2}$ value.
+
+After these links have been established
+%talk about PF reconstruction
 \section{Jet ID and Reconstruction}
 %Particle flow
 %Anti-Kt algo [43]
