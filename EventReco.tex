@@ -441,6 +441,7 @@ The case where $p=1$ is the $k_{T}$ algorithm, $p=0$ corresponds to the Cambridg
 algorithm and $p=-1$ is the anti-$k_{T}$ algorithm.
 The effects of each of these algorithms on an event with a few well-separated hard particles
 and many soft particles is shown in figure%%%insert antikt figure.
+%Jets used in this analysis use R=0.5
 %The key feature is that soft particle do not modify the shape of the jet while hard particles do.
 
 %Jet energy corrections [44]
@@ -450,8 +451,20 @@ and many soft particles is shown in figure%%%insert antikt figure.
 %CSV algorithm
 %SV in jets
 \section{Missing Transverse Energy}
-
+Missing transverse energy is defined using PF candidates as.
+\begin{equation}%%%add vectors above everywhere
+MVA $E_{T}^{miss} = -\sum_{i} p_{T}
+\end{equation}
+where $i$ runs over all reconstructed PF candidates. 
 \subsection{Recoil Correction}
 \subsection{MVA $E_{T}^{miss}$}
-%met 
-%any documentation
+MVA PF $E_{T}^{miss}$ is based on a set of multivariate regressions.
+The purpose of the multivariate regression is to improve measurement of the $E_{T}^{miss}$
+in the presence of high pileup.
+MVA $E_{T}^{miss}$ is computed as a correction to $u_{T}$. This correction
+is performed in two steps: %using two bdts
+first, compute a correction to the azimuthal angle
+of $u_{T}$ by training a BDT with the true hadronic recoil, $-q_{T}$, as the target. Next
+ a separate BDT is trained to predict the magnitude of $u_{T}$. This corrected
+ $u_{T}$ is then used in equation %%%cite equation with recoil
+ to calculate a new MVA $E_{T}^{miss}$. %list variables? Do I care? it's an f*ing BDT.
