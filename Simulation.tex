@@ -1,0 +1,41 @@
+\chapter{Event Simulation}
+\section{Physics Event Generation}
+\section{Hard Scattering Process}
+%Say something about simulation of hard processes
+We wish to use an event generator which produces hypothetical events with a distribution
+that is predicted by theory.
+%list issues
+It is easiest to address these issues by considering the simulation of 
+the process $W\rightarrow\mu\nu$. 
+\begin{equation}
+d\sigma(u\bar{d}\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})
+=\frac{1}{2\hat{s}}|\mathcal{M}(u\bar{d}\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})|^{2}
+\frac{d\cos\theta d\phi}{8(2\pi)^{2}}
+\label{eq:matrixEle}
+\end{equation}
+where the decay angles $(\theta,\phi)$ of the $W^{-}$ are the two degrees of
+freedom of the problem. $\mathcal{M}$ is the relevant matrix element and $\hat{s}$
+is the center of mass energy squared.
+%In typical event generators which simulate hard processes 
+%ref equation
+Equation (\ref{eq:matrixEle}) is used to write an event generator. 
+To do this first a sampling of the relevant phase
+space must be done using a random number generator, next the events must
+be unweighted using the hit-and-miss technique to produce events with observables. %%this is terrible
+The relevant phase space for this process is two dimensional: -1 < $cos\theta$ < 1,
+0 < $\phi$<2$\pi$. The values of $cos\theta$ and $\phi$ can be chosen using
+a uniform random number generator. 
+Evaluating the equation (\ref{eq:matrixEle}) at $d\sigma(\theta_{i},\phi_{i})$ gives
+that candidate event's differential cross section which is equivalent to the 
+probability of this event occurring. The average of many candidate event's differential
+cross section, $\langle d\sigma\rangle$, is an approximation to $\int d\sigma$ and converges
+to the measured cross section.
+
+
+%Parton Distribution Functions
+%Parton Showering and Hadronization
+%Monte Carlo Generator Programs
+%K-factors
+
+%Detector Simulation
+\subsection{Detector Simulation}
