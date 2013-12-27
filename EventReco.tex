@@ -50,7 +50,7 @@ Finally the track finding algorithm updates the trajectories of the tracks.
 %track fitting by means of kalman filter and smoother
 \item Track fitting then is used to adjust for the possibility of bias added during the track
 finding stage. The trajectory is therefore refitted using a Kalman filter and smoother with
-a Runge-Kutta propagator that takes into account both material effect and accomodates
+a Runge-Kutta propagator that takes into account both material effect and accommodates
 for a inhomogeneous magnetic field.
 %track selection sets quality flags and discards tracks that fail certain criteria
 \item The final step is track selection where tracks are required to pass a number of quality
@@ -76,7 +76,7 @@ offline software is shown in figure \ref{fig:TrackerPerformance}.
    	{Tracker efficiency of muons in $Z\rightarrow\mu\mu$ decays. Measured using Tag and Probe as a function of $\eta$ (left) and number of vertices (right)}
 	\label{fig:TrackerPerformance}
 \end{figure}
-\subsection{Primary Vertex Reconstrucion}
+\subsection{Primary Vertex Reconstruction}
 Primary vertices (PVs) are reconstruct in order to locate and determine the associated uncertainty of all
 proton-proton interaction vertices regardless of whether it is a 'signal' or 'background' vertex.
 Primary vertex reconstruction proceeds in three steps.
@@ -88,12 +88,13 @@ associated with a track and the normalized $\chi^{2}$ from the fit to the
 trajectory. In selecting tracks their is no requirement on the $p_{T}$ of the track; 
 this is important so that all PVs including ones from minimum bias events will be reconstructed.
 
-The second step is to cluster the selected tracks based on their $z$ coodinate at their
+The second step is to cluster the selected tracks based on their $z$ coordinate at their
 point of closest approach to the beam spot. This is done using a Deterministic Annealing (DA)
-algorithm which finds a global minimum given many degrees of freedom.%%ref DA, More on DA?
+algorithm which finds a global minimum given many degrees of freedom \cite{DAAnnealing}.
+%%More on DA?
 
 The third and final step is to take candidate vertices based on DA clustering in $z$ and use
-an 'adaptive vertex fitter' %ref
+an 'adaptive vertex fitter' \cite{KalmanFilter} 
 to compute vertex parameters. These parameters include the 3-D position and covariance matrix,
 as well as indicators for the success of the fit such as the number of degrees ($n_{dof}$) of freedom for
 each vertex and weights of the track used in each vertex. The adaptive vertex fitter
@@ -104,7 +105,6 @@ n_{dof} = -3+2\sum^{nTracks}_{i=1} w_{i},
 Here, $w_{i}$ is the weight of the $i^{th}$ track. This implies that $n_{dof}$ is strongly
 correlated with the number of tracks that are compatible with arising from the interaction
 region which means that $n_{dof}$ can be also be used to select true proton-proton interactions.
-%Vertex reconstruction [33], [34] 
 
 \section{Electron ID and Reconstruction}
 \label{sec:electronReco}
@@ -116,25 +116,25 @@ energy to radiating photons. %more explanation
 This causes a spread in $\phi$. %rewrite this
 Accurate measurement of electron energy 
 at the initial interaction point
-requires collection of photons produced via bremstrahlung.
+requires collection of photons produced via bremmstrahlung.
 Electron reconstruction is also spread across $\phi$
 
 First, clusters are formed in the ECAL, these clusters are then 
 extended in $\phi$ to form super clusters.
 Electrons are seeded using either an ECAL driven or a tracker driven approach.
-The ECAL driven approach is more efficient for electrons with $E_{T}>4 GeV$;
+The ECAL driven approach is more efficient for electrons with $E_{T}>4$ GeV;
 in this method, super clusters are selected and then matched back to 
 tracks in the inner tracker layers. 
 For low energy electrons the energy deposit in the calorimeter
 is very broad; in this case the tracker driven approach for electron seeding is used.
 In the tracker driven approach all reconstructed tracks are considered
-and the bremstrahlung hypothesis is tested
+and the bremmstrahlung hypothesis is tested
 by extrapolating a straight line from the track position to the
 corresponding ECAL cluster. The process is 
 repeated for all layers and a supercluster is defined
 by summing all linked electromagnetic cluster deposits. 
 Next, trajectories are reconstructed using a dedicated
-model of the electron energy loss and fitted using a Gaussian Sum Filter (GSF) algorithm. %%cite GSF
+model of the electron energy loss and fitted using a Gaussian Sum Filter (GSF) algorithm \cite{GSF}. 
 The GSF algorithm is preferred over the typical Kalman Filter algorithm.
 This is because bremsstrahlung energy loss, %don't like this phrase either
 as described by Bethe and Heitler, 
@@ -353,12 +353,12 @@ a radius of $\Delta R=0.1$.
 In proton-proton collisions, even at energies on the order of a few TeV, 
 most stable particles produced have a low $p_{T}$.
 At CMS, to identify and reconstruct these stable particles a particle flow (PF) event 
-reconstruction technique has been developed. PF event reconstruction links 
+reconstruction technique has been developed \cite{PFT09001}\cite{PFT10003}. PF event reconstruction links 
 information %find a better word
 about reconstructed tracks and calorimeter deposits
 to form object collections of 
 electrons, muons, photons, charged and neutral hadrons, HF hadrons and HF EM particles
-for each event. These collections can then be used to build taus, Jets, $E_{T}^{miss}$
+for each event. These collections can then be used to build taus, Jets, $\MET$
 and to quantify lepton isolation and tag jets originating from heavy quarks.
 
 The first step of PF reconstruction is to perform
@@ -405,7 +405,7 @@ hf hadrons and em particles in jets.
 %Anti-Kt algo [43]
 Jet clustering algorithms have become a crucial part of %%finish  this
 
-Jet clustering in this thesis is performed using the anti-$k_{T}$ jet clustering algorithm.
+Jet clustering in this thesis is performed using the anti-$k_{T}$ jet clustering algorithm \cite{Cacciari:2008gp}.
 %The primary motive behind choosing the Anti-$k_{T}$ algorithm is that it is 
 In order to perform %new word
 comparisons with perturbative effects in theoretical calculations jet clustering algorithm
@@ -445,48 +445,76 @@ and many soft particles is shown in figure%%%insert antikt figure.
 %The key feature is that soft particle do not modify the shape of the jet while hard particles do.
 
 %Jet energy corrections [44]
+\subsection{Jet Energy Corrections}
+Jet energy corrections (JEC)
+are applied to improve the accuracy of the jet $p_{T}$ measurement
+and to flatten the jet energy response as a function
+of~$\eta$ and $p_{T}$~\cite{jme-10-010}.
+Jets are required to pass identification
+criteria that eliminate jets originating or being seeded by
+noisy channels in the calorimeter~\cite{Chatrchyan:2009hy}.
+Jets which fall within $\Delta R < 0.5$ from a lepton candidate
+are not included in the jet collection.
 
 %Pileup ID
 \subsection{b-Jet ID}
-%CSV algorithm
-%SV in jets
+%%
+The Combined Secondary Vertex (CSV) b-tagging algorithm makes use
+of the long lifetime and heavy-flavour of the b-hadrons.
+%for both b-jets, it is also required that both b-Jets have atleast one secondary vertex.                                                                                   
+The CSV b-tagging algorithm combines the following variables into a single discriminating
+variable using a Likelihood ratio technique: secondary vertex mass, multiplicity of charged
+particles associated to the secondary vertex, the flight significance associated to the
+secondary vertex, the energy of charged particles associated to the SV divided by the energy
+of all charged particles associated to the jet, the rapidities of charged particle tracks associated
+to the secondary vertex, and the track impact parameter significance exceeding the charm threshold.
+This algorithm was tuned
+using b, c and non-heavy flavour jets from QCD and top samples and provides extreme discrimination
+of heavy and udsg jets. At a b-tagging efficiency of 60$\%$, jets from light quarks can be reduced
+by a factor of 100!~\cite{refCSV}.
+
+Secondary vertices are reconstructed inside the jet using the Trimmed Kalman Vertex Finder.
+This algorithm begins by taking as input all tracks that are inside of the jet and performing a compatibility fit. It then removes the least compatible track and refits the vertex; this procedure is repeated until
+the fit is below a given threshold. The secondary vertex studied in this note is that which has
+the greatest significance of flight distance.
+
 \section{Missing Transverse Energy}
 Missing transverse energy is defined using PF candidates as.
 \begin{equation}%%%add vectors above everywhere
-E_{T}^{miss} = -\sum_{i} p_{T}
+\MET = -\sum_{i} p_{T}
 \end{equation}
 where $i$ runs over all reconstructed PF candidates. 
-To improve the $E_{T}^{miss}$ resolution in 
+To improve the $\MET$ resolution in 
 events with jets and neutrinos in the decay products 
-which are expected to have a high $E_{T}^{miss}$, such as $\Wbb$,
-recoil corrections are applied to the $E_{T}^{miss}$. MVA 
-$E_{T}^{miss}$ is used in the search for a MSSM $h\rightarrow\tau\tau$;
-MVA $E_{T}^{miss}$ aims at improving further the $E_{T}^{miss}$
-through use of recoil corrections and an MVA which targets the true value of the $E_{T}^{miss}$.
+which are expected to have a high $\MET$, such as $\Wbb$,
+recoil corrections are applied to the $\MET$. MVA 
+$\MET$ is used in the search for a MSSM $h\rightarrow\tau\tau$;
+MVA $\MET$ aims at improving further the $\MET$
+through use of recoil corrections and an MVA which targets the true value of the $\MET$.
 These procedures are described in the next sections.
 \subsection{Recoil Correction}
 Momentum conservation in the transverse plane requires,
 \begin{equation}
-E_{T}^{miss}+q_{T}+u_{T}=0
+\MET+q_{T}+u_{T}=0
 \end{equation}
-where E_{T}^{miss} is the missing transverse energy,
-$q_{T}$ is the vector boson transverse momentum which is measured
+%where $\MET$ is the missing transverse energy,
+where $q_{T}$ is the vector boson transverse momentum which is measured
 in $Z\rightarrow\mu\mu$ events and matched to simulation in $W\rightarrow\mu\nu$.
-Finally, u_{T} is the transverse momentum of the hadronic recoil.
+Finally, $u_{T}$ is the transverse momentum of the hadronic recoil.
 \begin{equation}
 u_{T}\equiv\sum_{j} p_{j,T},
 \end{equation}
 where the index $j$ runs over all particles initiating at the interaction point excluding
 the vector boson. 
 
-\subsection{MVA $E_{T}^{miss}$}
-MVA PF $E_{T}^{miss}$ is based on a set of multivariate regressions.
-The purpose of the multivariate regression is to improve measurement of the $E_{T}^{miss}$
+\subsection{MVA MET}
+MVA PF $\MET$ is based on a set of multivariate regressions.
+The purpose of the multivariate regression is to improve measurement of the $\MET$
 in the presence of high pileup.
-MVA $E_{T}^{miss}$ is computed as a correction to $u_{T}$. This correction
+MVA $\MET$ is computed as a correction to $u_{T}$. This correction
 is performed in two steps: %using two bdts
 first, compute a correction to the azimuthal angle
 of $u_{T}$ by training a BDT with the true hadronic recoil, $-q_{T}$, as the target. Next
  a separate BDT is trained to predict the magnitude of $u_{T}$. This corrected
  $u_{T}$ is then used in equation %%%cite equation with recoil
- to calculate a new MVA $E_{T}^{miss}$. %list variables? Do I care? it's an f*ing BDT.
+ to calculate a new MVA $\MET$. %list variables? Do I care? it's an f*ing BDT.
