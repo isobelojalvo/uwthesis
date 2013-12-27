@@ -453,10 +453,32 @@ and many soft particles is shown in figure%%%insert antikt figure.
 \section{Missing Transverse Energy}
 Missing transverse energy is defined using PF candidates as.
 \begin{equation}%%%add vectors above everywhere
-MVA $E_{T}^{miss} = -\sum_{i} p_{T}
+E_{T}^{miss} = -\sum_{i} p_{T}
 \end{equation}
 where $i$ runs over all reconstructed PF candidates. 
+To improve the $E_{T}^{miss}$ resolution in 
+events with jets and neutrinos in the decay products 
+which are expected to have a high $E_{T}^{miss}$, such as $\Wbb$,
+recoil corrections are applied to the $E_{T}^{miss}$. MVA 
+$E_{T}^{miss}$ is used in the search for a MSSM $h\rightarrow\tau\tau$;
+MVA $E_{T}^{miss}$ aims at improving further the $E_{T}^{miss}$
+through use of recoil corrections and an MVA which targets the true value of the $E_{T}^{miss}$.
+These procedures are described in the next sections.
 \subsection{Recoil Correction}
+Momentum conservation in the transverse plane requires,
+\begin{equation}
+E_{T}^{miss}+q_{T}+u_{T}=0
+\end{equation}
+where E_{T}^{miss} is the missing transverse energy,
+$q_{T}$ is the vector boson transverse momentum which is measured
+in $Z\rightarrow\mu\mu$ events and matched to simulation in $W\rightarrow\mu\nu$.
+Finally, u_{T} is the transverse momentum of the hadronic recoil.
+\begin{equation}
+u_{T}\equiv\sum_{j} p_{j,T},
+\end{equation}
+where the index $j$ runs over all particles initiating at the interaction point excluding
+the vector boson. 
+
 \subsection{MVA $E_{T}^{miss}$}
 MVA PF $E_{T}^{miss}$ is based on a set of multivariate regressions.
 The purpose of the multivariate regression is to improve measurement of the $E_{T}^{miss}$
