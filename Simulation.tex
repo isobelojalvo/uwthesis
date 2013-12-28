@@ -1,5 +1,5 @@
 \chapter{Event Simulation}
-\section{Physics Event Generation}
+%\section{Physics Event Generation}
 \section{Hard Scattering Process}
 %Say something about simulation of hard processes
 We wish to use an event generator which produces hypothetical events with a distribution
@@ -30,7 +30,6 @@ that candidate event's differential cross section which is equivalent to the
 probability of this event occurring. The average of many candidate event's differential
 cross section, $\langle d\sigma\rangle$, is an approximation to $\int d\sigma$ and converges
 to the measured cross section.
-
 So far the candidate events are distributed flat in phase space and there is 
 no physics information in the distributions.
 The next step then is to unweight the event using the 'hit-and-miss' technique
@@ -41,8 +40,28 @@ trial experiment.
 
 %Parton Distribution Functions
 %Parton Showering and Hadronization
+\subsection{Parton Showering, Hadronization and the Underlying Event}
+
+Parton showering and hadronization is a form of correction to the hard scattering subprocess
+where it is not feasible to calculate these processes exactly.
+
+After the hard processes are generated
+%1.)
+partons undergo showering 
+Parton showers provide an %%exclusive?
+description of the event: at leading order the transverse momentum
+for the $W$ will always be zero since there is nothing for the $W$
+to recoil against.
+The beam remnants are the colored remains of the proton which
+are left behind when the parton which participates in the hard subprocess
+is pulled out. As the beam remnants are color connected to the hard
+subprocess they should be included in the hadronization system. 
+Multiple parton interactions (MPI) where more than one pair
+of beam partons interact are also simulated. In the $\Wbb$ analysis
+MPI agreement between data and simulation is tested 
+by observing the ratio of $(p_{T,j_{1}}+p_{T,j_{2}})/p_{T,j_{1},j_{2}}$
+Finally, pileup from other proton-proton collisions are added to the event.
 %Monte Carlo Generator Programs
 %K-factors
 
-%Detector Simulation
 \subsection{Detector Simulation}
