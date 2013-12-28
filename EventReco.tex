@@ -1,68 +1,79 @@
 \chapter{Event Reconstruction and Monte Carlo Simulations}
-After data is collected it undergoes 'Event Reconstruction'.
-At this stage %particles
-%a series of algorithm to identify and particles and event variables
-%reconstruction estimates the trajectory and momentum of the particle
+After data is collected it is stored in a raw data format.
+It can then be used for online reconstruction in the high level trigger
+or offline reconstruction. 
+In the following section we describe offline event reconstruction;
+during this stage a number of algorithms are used to identify and
+construct the kinematic properties %%rephrase
+of tracks, track vertices,  electrons, muons, taus, jets, missing transverse energy and 
+event variables which aid in physics analysis.  
 \section{Track and Primary Vertex Reconstruction}
 %%%%%%%%%%%%%%%%Track Reconstruction [31] %TRK-11-001
-One of the central design motivations to CMS%fix
-is a multi-layer tracker with a low occupancy, high granularity
-inner silicon pixel detector and a lower granularity silicon strip detector.
-%For the Wbb cross section measurement each event is associated
-%to a primary vertex, muons are
-%and each jet is required to contain a secondary vertex.
-%In the search for a MSSM higgs it is association with a primary vertex
-%is also required and tracks are used to identify taus, muons, jets, whatelse?
-%These characteristics %cause
-%complex algorithms to be developed primarily based on Kalman
-%Filter algorithms and 
-%write an intro
-%Track selection involves selection of tracks which are consistent with being produced promptly in the primary interaction region by imposing requirements on the maximum value of significance of the transverse impact parameter relative to the beam spot
+%One of the central design motivations to CMS 
+%is a multi-layer tracker with a low occupancy, high granularity
+%inner silicon pixel detector and a lower granularity silicon strip detector.
+Good track reconstruction provides a means for very accurately determining
+the momentum of charged particles.
+Identification of the primary vertex, the vertex from
+which the signal originates, provides discrimination of the hard scattering process
+from pileup vertices.
+Furthermore, using tracker tracks to search for secondary vertices
+is crucial for accurate identification of heavy flavored jets.
+Tracking and vertexing of charged particles is a crucial part of CMS reconstruction
+and physics analysis.
 \subsection{Track Reconstruction}
 \label{sec:TrackReco}
-In a technique known as Combined Track Finding (CTF),
-the collection of reconstructed tracks is produced via
-multiple iterations of the CTF track reconstruction sequence.
-The first three iterations are meant to reconstruct successively
-lower $p_{T}$ and quality tracks.%%not quite right actually...
-%while iterations four through six recover any tracks 
-%not found by previous iterations.
+%Track selection involves selection of tracks which are 
+%consistent with being produced promptly in the primary 
+%interaction region by imposing requirements on the 
+%maximum value of significance of the transverse impact 
+%parameter relative to the beam spot.
+Track reconstruction at CMS follows multiple iterations of a track finding sequence.
+The sequence consists of seed generation through hit clustering,
+track finding via a filtering technique, track trajectory fitting and finally
+selection of tracks that pass quality requirements. 
+This technique is known as Combined Track Finding (CTF).
+In CTF, the first iteration reconstructs tracks that
+have the highest quality. Subsequent iterations reconstruct
+tracks with gradually less stringent requirements 
+to reconstruct tracks which are lower $p_{t}$, have missing hits or which are greatly displaced.
+After each iteration of the CTF track reconstruction sequence, the hits
+associated with tracks are removed this reduces the combinatorial complexity
+and simplifies subsequent iterations in a search for .
 
-After each iteration the CTF track reconstruction sequence, the hits
-associated with tracks are removed; this reduces the combinatorial complexity
-and simplifies subsequent iterations in a search for more difficult classes of track (for example,
-low $p_{t}$ or which are greatly displaced).
 The CTF track reconstruction proceeds as follows:
 \begin{itemize}
 \item First, seeds are generated which provides the initial track candidates.
-Charged particles follow helical paths in the magnetic field therefore five parameters (including curvature)
-are needed to define a trajectory; to determine these five parameters at least
+Charged particles follow helical paths in the magnetic field, therefore, five parameters (including curvature)
+are needed to define a trajectory. To determine these five parameters at least
 3 hits or 2 hits in the pixel detector and a constraint on the origin of the track trajectory from the beam
 spot is required. Seeds are built in the inner part of the tracker
-and track candidates are reconstructed outwards. This is due to a higher finer granularity 
+and track candidates are reconstructed outwards. This is due to a finer granularity 
 and hence lower occupancy in the center of the pixel detector. Each iteration of CTF
 uses independent quality parameters for seeding layers. 
 \item Next, track finding is performed based on the Kalman filter method \cite{KalmanFilter}.
 Track finding starts by using the seed trajectories to define and then search
-for adjacent layers of the detector with a hit. The next step provides the possibility
-of adding an invalid hit in the case where the particle failed to produce a hit.
-Finally the track finding algorithm updates the trajectories of the tracks. 
-%track fitting by means of kalman filter and smoother
+for adjacent layers of the detector with a hit. 
+%The next step provides the possibility
+%of adding an invalid hit in the case where the particle failed to produce a hit.
+After successful identification of adjacent layers with valid hits 
+the track finding algorithm updates the trajectories of the tracks. 
 \item Track fitting then is used to adjust for the possibility of bias added during the track
-finding stage. The trajectory is therefore refitted using a Kalman filter and smoother with
+finding stage. The trajectory is refitted using a Kalman filter and smoother with
 a Runge-Kutta propagator that takes into account both material effect and accommodates
 for a inhomogeneous magnetic field.
 %track selection sets quality flags and discards tracks that fail certain criteria
 \item The final step is track selection where tracks are required to pass a number of quality
 based selection criteria. 
-The selection criteria puts a requirement on a track's number of layers %fix
+The selection criteria puts a requirement on a track's number of layers 
 with valid hits, the fit-based $\chi^{2}/dof$, and the track's compatibility
-with a primary vertex (PV). In addition to these, several requirements are
+with a primary vertex. In addition to these, several requirements are
 imposed as a function of track $p_{T}$, $\eta$, and the number of layers
 with valid hits. 
 \end{itemize}
-The tracks and primary vertices found with this algorithm are known as pixel 
-tracks and pixel vertices, respectively. The performance of the track reconstruction
+%The tracks and primary vertices found with this algorithm are known as pixel 
+%tracks and pixel vertices, respectively. 
+The performance of the track reconstruction
 offline software is shown in figure \ref{fig:TrackerPerformance}.
 \begin{figure}[t]
   \centering
@@ -77,22 +88,19 @@ offline software is shown in figure \ref{fig:TrackerPerformance}.
 	\label{fig:TrackerPerformance}
 \end{figure}
 \subsection{Primary Vertex Reconstruction}
-Primary vertices (PVs) are reconstruct in order to locate and determine the associated uncertainty of all
+Primary vertices (PVs) are reconstructed in order to locate and determine the associated uncertainty of all
 proton-proton interaction vertices regardless of whether it is a 'signal' or 'background' vertex.
-Primary vertex reconstruction proceeds in three steps.
-
+Primary vertex reconstruction proceeds in three steps:
 The first step is to select tracks based on their association with a primary interaction region.
 To do this, a number of quality selections are imposed: they are based upon the significance of the
 transverse impact parameter ($d_{xy}$), the number of strip and pixel hits that are 
 associated with a track and the normalized $\chi^{2}$ from the fit to the
-trajectory. In selecting tracks their is no requirement on the $p_{T}$ of the track; 
-this is important so that all PVs including ones from minimum bias events will be reconstructed.
-
+trajectory. In selecting tracks, there is no requirement on the $p_{T}$ of the track; 
+this is important so that all PVs including ones from minimum bias events are reconstructed.
 The second step is to cluster the selected tracks based on their $z$ coordinate at their
 point of closest approach to the beam spot. This is done using a Deterministic Annealing (DA)
 algorithm which finds a global minimum given many degrees of freedom \cite{DAAnnealing}.
 %%More on DA?
-
 The third and final step is to take candidate vertices based on DA clustering in $z$ and use
 an 'adaptive vertex fitter' \cite{KalmanFilter} 
 to compute vertex parameters. These parameters include the 3-D position and covariance matrix,
@@ -105,10 +113,19 @@ n_{dof} = -3+2\sum^{nTracks}_{i=1} w_{i},
 Here, $w_{i}$ is the weight of the $i^{th}$ track. This implies that $n_{dof}$ is strongly
 correlated with the number of tracks that are compatible with arising from the interaction
 region which means that $n_{dof}$ can be also be used to select true proton-proton interactions.
-
+For a vertex to be selected at the analysis level, it is required to have a $z$ position
+smaller than 24 cm with respected to the origin of the detector, a $\rho$ position
+less than 2 cm from the IP and more than 4 degrees of freedom. Of the vertices
+that pass this criteria the primary vertex is defined as the one that maximizes
+\begin{equation}
+\sum_{i} p_{T,i}^{2},
+\end{equation}
+where the sum extends over all associated tracks and $p_{T,i}$ is the transverse momentum
+of the $i^{th}$ track.
 \section{Electron ID and Reconstruction}
 \label{sec:electronReco}
-%%%This whole section sucks, fix it.
+Electrons in CMS are reconstructed using tracker or ECAL seeds.
+Depending on the electrons initial transverse energy
 Electrons traversing the tracker pass through 
 material equivalent to 0.4-0.8 $X_{0}$ %fix wording
 causing electrons to lose a significant amount of 
@@ -116,7 +133,7 @@ energy to radiating photons. %more explanation
 This causes a spread in $\phi$. %rewrite this
 Accurate measurement of electron energy 
 at the initial interaction point
-requires collection of photons produced via bremmstrahlung.
+requires collection of photons produced via bremsstrahlung.
 Electron reconstruction is also spread across $\phi$
 
 First, clusters are formed in the ECAL, these clusters are then 
