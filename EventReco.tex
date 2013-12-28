@@ -234,16 +234,33 @@ $\pt>    20$ GeV          & $0.925$ & $0.975$          & $0.985$    \\
 \end{table}
 
 \subsection{Rejection of Electrons from converted photons} %[39]
-
+In the di-tau analysis a non-negligible background contribution 
+is due to $\gamma$ + jets production where a high energy
+photon converts to an electron-positron pair and a jet is
+misidentified as a hadronic tau. To reject this background
+electrons from photon conversions are identified and then 
+a veto is placed on these electrons.
+Photon conversions %ref [39]
+are reconstructed by combining opposite sign track pairs and performing
+a vertex fit of those tracks to identify conversions.
+To reject electrons coming from conversions, a requirement is placed
+on the minimum number of hits in the pixel detector given the
+track position and direction.
 %Electron trigger?? maybe
+
 \section{Muon ID and Reconstruction}
 Muons at CMS are reconstructed using information from both the 
-tracker and the muon detectors. 
-%In Wbb high pt muons
-%in h to tautau soft muons used.
+tracker and the muon detectors. Muons which come from the decay
+of an on shell $W$ boson are typically higher in transverse momentum
+than muons which are from tau semi-leptonic decays.
+Three muon reconstruction approaches are used: standalone,
+global and tracker muon reconstruction. Depending on the 
+energy of the muon the reconstructed trajectory is either
+solely dependent on the tracker or dependent on the tracker
+and the muon system.
 %Muon reco [40]
 \subsection{Standalone Muon Reconstruction}
-Standalone $\mu$ reconstruction uses only tracks from the muon system
+Standalone muon reconstruction uses only tracks from the muon system
 to reconstruct tracks using a Kalman filter technique which is seeded
 by track segments or Level-1 trigger electronics. Tracks are propagated
 in iterative steps taking into account the magnetic field, muon energy loss in the material,
@@ -254,8 +271,8 @@ working from outside in and finally the track is extrapolated to the
 beam-spot and a vertex-constrained fit to the track
 parameters is performed.
 \subsection{Global Muon Reconstruction}
-Global muon reconstruction matches standalone tracks to tracks in the tracking
-system. 
+Global muon reconstruction matches standalone 
+tracks to tracks in the tracking system. 
 Tracks are selected which roughly correspond in momentum and position to 
 the standalone muon tracks. This is performed in two steps: First,
 tracks are selected in a defined $\eta\times\phi$ region which is centered
@@ -267,7 +284,7 @@ the selected hits are refitted as a global track. If more than one candidate
 track pair is matched then the candidate with the best $\chi^{2}$ value
 is selected. 
 For muons with $p_{T}<200\GeV$ the $p_{T}$ measurement is driven
-by the fantastic tracker resoluion, for muons with $p_{T}>200\GeV$,
+by the fantastic tracker resolution, for muons with $p_{T}>200\GeV$,
 the global-muon fit can improve the momentum resolution compared
 to the tracker-only fit.
 In muons with a higher $p_{T}$, as might be found
@@ -289,9 +306,40 @@ the uncertainties on the position of the matched segment
 and the position of the extrapolated track.
 %Muon ID (use old muon plots?) mention muon veto in analysis
 %Muon trigger
-
-%\section on PF??
 % section on lepton isolation?
+\section{Electron and Muon Isolation}
+To discriminate signal muons and electrons from leptons
+which are created in QCD interactions isolation is essential. %fix
+%is based on particle-flow candidates, of which all photon and neutral hadron candidates and all charged particle-flow
+As pileup of interactions in the detector increases, the performance of standard
+combined relative isolation degrades. Charged PF particles are associated to
+a vertex using the deterministic annealing algorithm; non charged PF particles
+are not associated with any vertex by the vertex algorithm, instead,
+they are associated with vertices by using their closest distance in the
+$z$ axis after they are extrapolated to the beam line. Using this separation algorithm,
+charged particles can be properly associated to a given primary vertex
+and used to calculate isolation. However, this algorithm does not
+properly account for neutral particles produced in pile-up interactions. 
+Therefore, a specific correction, known as a $\Delta \beta$ correction, is
+used to account for the neutral energy from other interactions.
+A charged particle transverse momentum sum is created by summing over
+the charged particles inside the isolation cone of the lepton but by
+requiring that those charged particles do not originate from the primary vertex.
+The charged particle sum is converted into an expected neutral deposit by
+assuming that the average charged to neutral particle ratio is 2:1.
+A relative combined isolation variable is then defined as:
+\begin{equation}
+I_{\rm rel} = \frac{\sum{\pt({\rm charged})} + \max\left(\sum{\et({\rm neutral})} + \sum{\et({\rm photon})}
+- \Delta\beta, 0\right)}{\pt(\mu \, \, {\rm or} \,\, e)}
+\label{eq:relIso}
+\end{equation}
+
+where $\pt({\rm charged})$ corresponds of the \pt of all charged particle candidates, $\pt({\rm photon}$
+and $\pt({\rm neutral}$ correspond to the transverse energy of the photon and neutral hadron candidates
+and $\Delta\beta$ corresponds to the energy estimate of neutral particles due to pile-up.
+In the $\mu\tau_{h}$- ($e\tau_{h}$-)channels of the d-tau 
+analysis $I_{\rm rel}<0.1$ is required, both for muons and electrons. 
+
 \section{$\tau$ ID and Reconstruction}
 The $\tau$ lepton's high mass means that the $\tau$ plays a very important
 roll in search for the SM higgs boson, and MSSM higgs bosons.
@@ -325,11 +373,10 @@ $\tau^{-}$  $\rightarrow $  $h^{-} h^{+} h^{-}\pi^{0}  \nu_{\tau}$ & & & $4.8\%$
 \label{tab:decay_modes}
 \end{center}
 \end{table}
-The HPS algorithm takes into account photon conversions in the CMS tracker
-material. %the electron positron decays will bend in the magnetic field
-therefore %the HPS algorithm, say something about PF particles
-reconstructs photons into 'strips' which are objects which are built%fix
-out of electromagnetic particle particles within a window of size $\delta\eta=0.05$
+
+The HPS algorithm 
+reconstructs photons into 'strips': these are objects which are built
+out of charged particles within a window of size $\delta\eta=0.05$
 and $\delta\phi=0.20$. The algorithm starts by centering a strip on the
 most energetic electromagnetic particle within the PF jet, next it searches
 for other electromagnetic particles within the window. If another electromagnetic
@@ -369,12 +416,39 @@ a radius of $\Delta R=0.1$.
 
 %%%%Tau Isolation from paper
 %%%Tau performance plots
+\subsection{Tau Isolation}
+The isolation of $\tau_{had}$ candidates is computed
+by summing the transverse momenta of charged particles 
+of $P_{T} > 0.5$ GeV plus photons of $E_{T} > 0.5$ GeV 
+reconstructed by the PF algorithm
+within a cone of size $\Delta R = 0.5$ centered on the $\tau_{had}$.
+Charged hadrons considered in the isolation $p_{T}$ sum 
+are required to satisfy $\Delta z < 2$ mm with respect to the 
+$\tau_{had}$ primary vertex.
+Charged hadrons and photons used to build the $\tau_{had}$ candidate 
+are excluded from the isolation $p_{T}$ sum.
+The contribution of pileup to the $\tau_{had}$ isolation 
+is accounted for by applying $\Delta \beta$ corrections:
+\begin{equation*}
+I_{\tau_{had}} = \sum P_{T}^{charged} (\Delta z < 2\mbox{~mm}) + \max \left( P_{T}^{\gamma} - \Delta \beta, 0 \right).
+\end{equation*}
+The $\Delta \beta$ corrections are computed by summing the transverse
+momenta of charged particles that have a longitudinal impact 
+parameters $\Delta z > 2$~mm with respect to the 
+$\tau_{had}$ production vertex
+and are within a cone of size $\Delta R = 0.8$ around the $\tau_{had}$.
+The sum is scaled by a factor $0.4576$, which is chosen to 
+make the $\tau_{had}$ identification pileup insensitive:
+\begin{equation*}
+\Delta \beta = 0.4576 \cdot \sum P_{T}^{charged} (\Delta z > 2\mbox{~mm}).
+\end{equation*}
 
 \section{Particle Flow Reconstruction}
 In proton-proton collisions, even at energies on the order of a few TeV, 
 most stable particles produced have a low $p_{T}$.
 At CMS, to identify and reconstruct these stable particles a particle flow (PF) event 
-reconstruction technique has been developed \cite{PFT09001}\cite{PFT10003}. PF event reconstruction links 
+reconstruction technique has been developed \cite{PFT09001}\cite{PFT10003}. 
+PF event reconstruction links 
 information %find a better word
 about reconstructed tracks and calorimeter deposits
 to form object collections of 
@@ -424,10 +498,16 @@ hf hadrons and em particles in jets.
 
 \section{Jet ID and Reconstruction}
 %Anti-Kt algo [43]
-Jet clustering algorithms have become a crucial part of %%finish  this
-
-Jet clustering in this thesis is performed using the anti-$k_{T}$ jet clustering algorithm \cite{Cacciari:2008gp}.
-%The primary motive behind choosing the Anti-$k_{T}$ algorithm is that it is 
+Jet identification and reconstruction is of central importance to the understanding
+and identification of many physics processes. Furthermore, efficient b jet 
+identification is of central importance
+in the measurement of the $\Wbb$ cross section.  
+In the search for a MSSM higgs boson, production in association with b jets
+is enhanced. Therefore, efficient jet and b jet identification is crucial.
+\subsection{Jet Reconstruction}
+Jet clustering algorithms have become a crucial part of physics analysis.
+Jet clustering in this thesis is performed using 
+the anti-$k_{T}$ jet clustering algorithm \cite{Cacciari:2008gp}.
 In order to perform %new word
 comparisons with perturbative effects in theoretical calculations jet clustering algorithm
 must be both infrared and collinear (IRC) safe. %check/expand
