@@ -125,48 +125,56 @@ of the $i^{th}$ track.
 \section{Electron ID and Reconstruction}
 \label{sec:electronReco}
 Electrons in CMS are reconstructed using tracker or ECAL seeds.
-Depending on the electrons initial transverse energy
-Electrons traversing the tracker pass through 
-material equivalent to 0.4-0.8 $X_{0}$ %fix wording
-causing electrons to lose a significant amount of 
-energy to radiating photons. %more explanation
-This causes a spread in $\phi$. %rewrite this
+Electrons with a low transverse momentum have a higher efficiency
+for reconstruction using tracker seeds; whereas electrons with a
+higher transverse momentum have a higher efficiency if reconstructed
+using ECAL seeds. When traversing the tracker, electrons pass through 
+material equivalent to 0.4-0.8 $X_{0}$ 
+this causes them to lose a significant portion of 
+energy to radiating bremsstrahlung photons. 
+This will in turn cause the electron energy deposit to spread in $\phi$. 
 Accurate measurement of electron energy 
-at the initial interaction point
+at the initial interaction point, therefore,
 requires collection of photons produced via bremsstrahlung.
-Electron reconstruction is also spread across $\phi$
+%Electron reconstruction is also spread across $\phi$
 
-First, clusters are formed in the ECAL, these clusters are then 
-extended in $\phi$ to form super clusters.
-Electrons are seeded using either an ECAL driven or a tracker driven approach.
-The ECAL driven approach is more efficient for electrons with $E_{T}>4$ GeV;
-in this method, super clusters are selected and then matched back to 
-tracks in the inner tracker layers. 
-For low energy electrons the energy deposit in the calorimeter
-is very broad; in this case the tracker driven approach for electron seeding is used.
-In the tracker driven approach all reconstructed tracks are considered
-and the bremmstrahlung hypothesis is tested
+To begin reconstruction, 
+clusters are formed in the ECAL.%, these clusters are then 
+%extended in $\phi$ to form super clusters.
+Next, electron reconstruction requires
+seeds to be produced using either an ECAL driven (1) or a tracker driven approach (2).
+(1) is more efficient for electrons with $E_{T}>4$ GeV;
+in this method, the clusters produced in the ECAL are
+extended in $\phi$ to form super clusters (SCs). 
+SCs are then selected and matched back to tracks in the inner tracker layers. 
+%The tracker driven approach for electron seeding 
+Approach (2) is used to seed
+low energy electrons; in this case the energy deposit in the calorimeter
+is very broad. All reconstructed tracks are considered as seeds
+and the bremsstrahlung hypothesis is tested
 by extrapolating a straight line from the track position to the
 corresponding ECAL cluster. The process is 
 repeated for all layers and a supercluster is defined
 by summing all linked electromagnetic cluster deposits. 
+
 Next, trajectories are reconstructed using a dedicated
 model of the electron energy loss and fitted using a Gaussian Sum Filter (GSF) algorithm \cite{GSF}. 
 The GSF algorithm is preferred over the typical Kalman Filter algorithm.
-This is because bremsstrahlung energy loss, %don't like this phrase either
+This choice is motivated by the fact that bremsstrahlung energy loss, 
 as described by Bethe and Heitler, 
 does not following a Gaussian distribution. 
 So, while the Kalman Filter algorithm is optimal in cases where all probability
-densities encountered during track the reconstruction procedure are Gaussian
+densities encountered during track reconstruction are Gaussian,
 the GSF algorithm distributions are weighted sums of Gaussians and
-appropriately describes electron energy loss as described in the Bethe and Heitler model.
+appropriately describes electron energy loss.
 The electron trajectory builder constructs all possible trajectories
 for a given seed and the best fit is chosen using a $\chi^{2}$ approach.
 Finally, a trajectory smoother is applied.
 
-To improve the electron identification in the MSSM analysis a Boosted Decision Tree (BDT) based %Ref BDT
+To improve the electron selection and reject the large QCD backgrounds in the di-tau analysis a 
+Boosted Decision Tree (BDT) based %Ref BDT
 approach is used. The training has been performed in two
-bins of $p_{T}$ and three bins of $\eta$ of the electron as shown in Table~\ref{tab:ElectronID-Thresholds}\@.
+bins of $p_{T}$ and three bins of $\eta$ as shown in Table~\ref{tab:ElectronID-Thresholds}\@.
 The BDT has the following $19$ variables as input:
 
 %been trained on data selecting genuine electron candidates from well reconstructed $Z\to ee$ events and
