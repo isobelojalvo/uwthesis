@@ -1,20 +1,22 @@
 \chapter{Event Simulation}
+
 %\section{Physics Event Generation}
 \section{Hard Scattering Process}
 %Say something about simulation of hard processes
+In order to 
 We wish to use an event generator which produces hypothetical events with a distribution
 that is predicted by theory.
 %list issues
 It is easiest to address these issues by considering the simulation of 
 the process $W\rightarrow\mu\nu$. 
 \begin{equation}
-d\sigma(u\bar{d}\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})
+d\sigma(\bar{u}d\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})
 =\frac{1}{2\hat{s}}|\mathcal{M}(u\bar{d}\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})|^{2}
 \frac{d\cos\theta d\phi}{8(2\pi)^{2}}
 \label{eq:matrixEle}
 \end{equation}
 where the decay angles $(\theta,\phi)$ of the $W^{-}$ are the two degrees of
-freedom of the problem. $\mathcal{M}$ is the relevant matrix element and $\hat{s}$
+freedom. $\mathcal{M}$ is the relevant matrix element and $\hat{s}$
 is the center of mass energy squared.
 %In typical event generators which simulate hard processes 
 %ref equation
@@ -22,8 +24,8 @@ Equation (\ref{eq:matrixEle}) is used to write an event generator.
 To do this first a sampling of the relevant phase
 space must be done using a random number generator, next the events must
 be unweighted using the hit-and-miss technique to produce events with observables. %%this is terrible
-The relevant phase space for this process is two dimensional: -1 < $cos\theta$ < 1,
-0 < $\phi$<2$\pi$. The values of $cos\theta$ and $\phi$ can be chosen using
+The relevant phase space for this process is two dimensional: -1 \< $cos\theta$ \< 1,
+0 \< $\phi$ \< 2$\pi$. The values of $cos\theta$ and $\phi$ can be chosen using
 a uniform random number generator. 
 Evaluating the equation (\ref{eq:matrixEle}) at $d\sigma(\theta_{i},\phi_{i})$ gives
 that candidate event's differential cross section which is equivalent to the 
@@ -42,16 +44,31 @@ trial experiment.
 %Parton Showering and Hadronization
 \subsection{Parton Showering, Hadronization and the Underlying Event}
 
-Parton showering and hadronization is a form of correction to the hard scattering subprocess
+Parton showering is a form of correction to the hard scattering subprocess
 where it is not feasible to calculate these processes exactly.
-
-After the hard processes are generated
-%1.)
-partons undergo showering 
-Parton showers provide an %%exclusive?
+Programs that use the parton shower approach are also
+able to simulate a wide variety of initial and final state processes.
+%%Lund String Model
+In a proton-proton interaction a parton is resolved
+at scale $Q$ and momentum fraction $x$ from each
+proton. Figure %%insert figure of event evolution
+shows a proton-proton collision where a valence quark
+is separated from one of the colliding protons and a 
+a sea anti-quark is separated from the other of the colliding protons.
+The phenomenology of the parton interaction is encoded
+in the parton distribution function $f(x,Q^{2})$. 
+The parton distribution function represents the probability
+densities to find a parton carrying
+a momentum faction $x$ at a squared energy
+scale $Q^{2}$. 
+Since the hadronization scale is much smaller than the hard scale the impact
+of the hadronization model choice on the final state is typically
+small for most physics analyses. 
+Parton showers are essential in providing a %%exclusive?
 description of the event: at leading order the transverse momentum
 for the $W$ will always be zero since there is nothing for the $W$
 to recoil against.
+
 The beam remnants are the colored remains of the proton which
 are left behind when the parton which participates in the hard subprocess
 is pulled out. As the beam remnants are color connected to the hard
@@ -61,8 +78,32 @@ of beam partons interact are also simulated. In the $\Wbb$ analysis
 MPI agreement between data and simulation is tested 
 by observing the ratio of $(p_{T,j_{1}}+p_{T,j_{2}})/p_{T,j_{1},j_{2}}$
 Finally, pileup from other proton-proton collisions are added to the event.
+%b quarks are not expected to be
+%produced at any signiÞcant rate in nonperturbative processes [1], and they do not occur
+%as valence ßavours of the commonly used beam particles. A priori, they are therefore
+%excellent probes of the underlying hard dynamics, whether that involves standard QCD
+%processes or various kinds of new physics
 \section{Monte Carlo Generator Programs}
-
+A number of monte carlo (MC) generators are used to simulate
+physics processes. 
+The choice of MC generator is largely dependent on the 
+type of process to be simulated. %fix
 %K-factors
+\subsection{}
+\subsection{Tauloa}
 
-\subsection{Detector Simulation}
+\subsection{PYTHIA}
+At leading order \PYTHIA contains approximately 240 different $2\rightarrow n$ subprocesses.
+The initial state shower is based on backwards evolution whereby the 
+hard scattering process is simulated and is evolved backwards in time to the shower
+initiators. Partons radiated in the initial state can initiate final-state showers
+of their own. The Lund string model is used in hadronization; it is based on linear confinement
+where quarks  are located at the ends of the string and gluons
+are energy and momentum carrying kinds in the string. The production of a new $q\bar{q}$
+pair causes the string to break. A quark from one break can combine with an antiquark
+from an adjacent quark to form a meson. 
+\section{Detector Simulation}
+\GEANT4 is a toolkit for simulating the passage of particles through matter.
+In particular it provides tracking of particles taking account of the geometry, fields and physics processes.
+\GEANT4 uses decay tables for particles such as $\pi$, $\K$ mesons
+and resonant baryons based on data from the Particle Data Group.
