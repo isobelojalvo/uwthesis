@@ -173,10 +173,9 @@ Finally, a trajectory smoother is applied.
 
 To improve the electron selection and reject the large QCD backgrounds in the di-tau analysis a 
 Boosted Decision Tree (BDT) based %Ref BDT
-approach is used. The training has been performed in two
+discriminator is used. The training has been performed in two
 bins of $p_{T}$ and three bins of $\eta$ as shown in Table~\ref{tab:ElectronID-Thresholds}\@.
 The BDT has the following $19$ variables as input:
-
 %been trained on data selecting genuine electron candidates from well reconstructed $Z\to ee$ events and
 %mis-identified (fake) electron candidates from $Z$+jets events, from which the electrons, which have
 %been used to reconstruct the $Z$ boson candidate have been excluded. 
@@ -213,9 +212,8 @@ An electron is considered as well identified if the BDT discriminator falls abov
 in Table~\ref{tab:ElectronID-Thresholds}\@. In addition the electron candidate is required to have a
 distance from the selected primary vertex of $d_{z}<0.1$~cm along the $z$ direction of the experiment
  and $d_{0}<0.02 (0.045)$~cm in the plane perpendicular to $z$ in the $e\mu$ ($\mu\tau_{h}$ / $e\tau_{h}$)
-decay channel. Further there should be no missing hits in the inner layers of the pixel detector, no
+decay channel. Furthermore, there should be no missing hits in the inner layers of the pixel detector, no
 hits before the selected primary vertex and a vertex fit probability of more than $P>10^{-6}$ to minimize the probability that the electron candidate originates from a photon conversion.
-%%%%%%%%%%%%%%%%FIX ME
 
 \begin{table}[!ht]
 \begin{center}
@@ -235,9 +233,7 @@ $\pt>    20$ GeV          & $0.925$ & $0.975$          & $0.985$    \\
 \end{center}
 \end{table}
 
-% Rejection of Electrons from converted photons [39]
-
-%electron ID ---twiki table
+\subsection{Rejection of Electrons from converted photons} %[39]
 
 %Electron trigger?? maybe
 \section{Muon ID and Reconstruction}
