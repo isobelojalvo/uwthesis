@@ -24,8 +24,8 @@ Equation (\ref{eq:matrixEle}) is used to write an event generator.
 To do this first a sampling of the relevant phase
 space must be done using a random number generator, next the events must
 be unweighted using the hit-and-miss technique to produce events with observables. %%this is terrible
-The relevant phase space for this process is two dimensional: -1 \< $cos\theta$ \< 1,
-0 \< $\phi$ \< 2$\pi$. The values of $cos\theta$ and $\phi$ can be chosen using
+The relevant phase space for this process is two dimensional: -1 $< \cos\theta <$ 1,
+0 $< \phi < $ 2$\pi$. The values of $cos\theta$ and $\phi$ can be chosen using
 a uniform random number generator. 
 Evaluating the equation (\ref{eq:matrixEle}) at $d\sigma(\theta_{i},\phi_{i})$ gives
 that candidate event's differential cross section which is equivalent to the 
@@ -89,9 +89,20 @@ physics processes.
 The choice of MC generator is largely dependent on the 
 type of process to be simulated. %fix
 %K-factors
-\subsection{}
+\subsection{MadGraph}
+MadGraph is is a matrix element generator for SM processes at
+any collider. It provides a computation of tree-level matrix elements
+with a fixed number of partons in the final state. 
+For a user-specified process MadGraph generates
+the amplitudes for all relevant subprocesses and produces
+the mappings for the integration over the phase space. 
+The final state only 
+Events may be passed directly to a shower MC program.
 \subsection{Tauloa}
-
+Tauloa is a package which is used for generation of tau lepton decays including
+spin polarization. For each tau decay mode there is a individual phase space generator,
+modeling of the weak decay including first order QED corrections for leptonic decays
+and a part describing the hadronic current.
 \subsection{PYTHIA}
 At leading order \PYTHIA contains approximately 240 different $2\rightarrow n$ subprocesses.
 The initial state shower is based on backwards evolution whereby the 
@@ -103,7 +114,7 @@ are energy and momentum carrying kinds in the string. The production of a new $q
 pair causes the string to break. A quark from one break can combine with an antiquark
 from an adjacent quark to form a meson. 
 \section{Detector Simulation}
-\GEANT4 is a toolkit for simulating the passage of particles through matter.
+\GEANTfour is a toolkit for simulating the passage of particles through matter.
 In particular it provides tracking of particles taking account of the geometry, fields and physics processes.
-\GEANT4 uses decay tables for particles such as $\pi$, $\K$ mesons
+\GEANTfour uses decay tables for particles such as $\pi$, $K$ mesons
 and resonant baryons based on data from the Particle Data Group.
