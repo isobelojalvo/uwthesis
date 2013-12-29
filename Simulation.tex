@@ -1,5 +1,11 @@
 \chapter{Event Simulation}
 
+The purpose of event simulation is to 
+%give physicists an idea of what events one can expect to find and at what rates
+%help plan new detectors
+%devise analysis strategies
+%as a framework in which to interpret the significance of observed phenomena
+%Do not trust a single generator
 %\section{Physics Event Generation}
 \section{Hard Scattering Process}
 %Say something about simulation of hard processes
@@ -49,6 +55,16 @@ where it is not feasible to calculate these processes exactly.
 Programs that use the parton shower approach are also
 able to simulate a wide variety of initial and final state processes.
 %%Lund String Model
+The Lund String is based on the idea that %fix from lattice QCD simulations
+that at large distance the potential energy of color sources increases
+linearly with their separation: Considering the production of a quark-anti-quark pair,
+at first the quark and anti-quark are 
+moving apart very quickly. A gluonic string is stretched between them,
+its potential energy grows causing a reduction in the kinetic energy of the
+quark-anti-quark system. When the gluon's potential energy reaches
+the order of a hadron mass the gluon string breaks apart and a quark-anti-quark
+pair is produced.
+
 In a proton-proton interaction a parton is resolved
 at scale $Q$ and momentum fraction $x$ from each
 proton. Figure %%insert figure of event evolution
@@ -64,7 +80,7 @@ scale $Q^{2}$.
 Since the hadronization scale is much smaller than the hard scale the impact
 of the hadronization model choice on the final state is typically
 small for most physics analyses. 
-Parton showers are essential in providing a %%exclusive?
+Parton showers are essential in providing the %%exclusive?
 description of the event: at leading order the transverse momentum
 for the $W$ will always be zero since there is nothing for the $W$
 to recoil against.
@@ -74,7 +90,12 @@ are left behind when the parton which participates in the hard subprocess
 is pulled out. As the beam remnants are color connected to the hard
 subprocess they should be included in the hadronization system. 
 Multiple parton interactions (MPI) where more than one pair
-of beam partons interact are also simulated. In the $\Wbb$ analysis
+of beam partons interact are also simulated. 
+Due to the composite nature of hadrons and the low impact
+parameter of spectator partons MPI
+have an increase rate of occurrence in the presence of a 
+hard scattering process. 
+In the $\Wbb$ analysis
 MPI agreement between data and simulation is tested 
 by observing the ratio of $(p_{T,j_{1}}+p_{T,j_{2}})/p_{T,j_{1},j_{2}}$
 Finally, pileup from other proton-proton collisions are added to the event.
@@ -85,7 +106,10 @@ Finally, pileup from other proton-proton collisions are added to the event.
 %processes or various kinds of new physics
 \section{Monte Carlo Generator Programs}
 A number of monte carlo (MC) generators are used to simulate
-physics processes. 
+physics processes. The MC method makes use of a random
+number generator to simulate event to event fluctuations
+which are %%%intrinsic
+to quantum processes. 
 The choice of MC generator is largely dependent on the 
 type of process to be simulated. %fix
 %K-factors
