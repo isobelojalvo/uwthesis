@@ -5,19 +5,19 @@ and France to the northwest of the metropolitan area of Geneva.
 The LHC is installed in a 26.7 km long tunnel which was originally constructed
 from 1984 to 1989 for the Large Electron Positron (LEP) experiment. 
 While a hadron hadron collider does not have the same limitations
-due to synchrotron radiation as an electron positron collider does, %%fix wording
+due to synchrotron radiation as an electron positron collider, 
 the financial benefits of building the LHC in an existing collider tunnel 
-warranted this decision. 
+provided a strong motivation. 
 %The LHC uses superconducting magnets that operate at 2 K
-The LHC is designed to operate at a center of mass energy of 14 TeV.
+The LHC is designed to collide protons at a center of mass energy of 14 TeV.
 The overall purpose of constructing a hadron collider with such a high
 center of mass energy is to expose the physics beyond the standard model.  
 
 %The LHC is the product of an international collaboration and funded by a large number of country member states.
 %%try not to start every sentence with "THE LHC"
 \section{Layout}
-The LHC follows the LEP tunnel geometry,
-a schematic layout of the LHC is shown in figure \ref{fig:LHCring}.
+A schematic layout of the LHC is shown in figure \ref{fig:LHCring};
+the LHC follows the LEP tunnel geometry.
 The tunnel is 2.7 m in diameter and houses a twin-bore magnet 
 which provides both rings in the same structure.
 As can be seen in figure \ref{fig:LHCring},
@@ -25,7 +25,7 @@ the LHC can be schematically divided
 into 8 octants. At the center of each octant is a straight section and between
 each of the 8 straight section there are 8 arcs. Each straight section
 is 528 m long and can serve as an experimental point, where a beam
-crossing occurs or as a utility insertion point.
+crossing occurs, or as a utility insertion point.
 \begin{figure}[t]
   \centering
 	\includegraphics[width=0.6\textwidth]{images/LHCring.jpg}
@@ -33,32 +33,47 @@ crossing occurs or as a utility insertion point.
    	{LHC Experimental and Utility Insertion Layout}
 	\label{fig:LHCring}
 \end{figure}
+The LHC is host to five experiments: ALICE is a dedicated ion
+experiment, LHCB is designed to study B-physics,
+TOTEM detects protons from elastic scattering at small angles,
+and two detectors designed to study a wide range of 
+physics processes, ATLAS and CMS.
 ATLAS and CMS are both high luminosity experiments;
 the ATLAS experiment is located at Point 1 and, on the opposite side
 of the ring, CMS is located at Point 5. 
 %%some info about LHCb and ALICE
 % the LHC-B experiment at Point 2, ALICE experiment is at Point 8. 
 Located at points 3 and 7 are collimation systems for beam cleaning,
-the beam dump is at point 6 and point 4 contains to RF systems.
+the beam dump is at point 6 and point 4 houses an RF system for acceleration.
 
 Each of the arcs that stretch between the straight sections
 are made of 23 arc cells. Each arc cell is 106.9 m in length
 and is comprised of two half cells each of which are 53.45 m long.
+A schematic of the interior of the arcs showing the dipole magnets,
+cryogenic system and overall layout can be see in figure \ref{LHCdipolemagnets}
+
+\begin{figure}[t]
+  \centering
+	\includegraphics[width=0.6\textwidth]{images/LHCdipolemagnets.jpg}
+  	\caption[LHCCell]
+   	{Cross section of cryodipole}
+	\label{fig:LHCdipolemagnets}
+\end{figure}
 
 \section{Performance Goals and Constraints}
-The LHC was designed with the purpose of
-exposing the physics that lies beyond the standard
-model. To achieve this, proton collisions must 
-have high energies to explore regions of phase space that 
-have remained out of reach at particle colliders and high 
-intensities to search for rare processes.
-The number of events, N, delivered per second as a function
+The LHC was designed with the purpose of exposing the physics that lies beyond the standard
+model. To achieve this, proton collisions must have high energies, 
+to explore regions of phase space that 
+had remained out of reach at previous particle colliders, and high 
+intensities, to search for rare processes.
+Considering a process with an event cross section of
+ $\sigma_{event}$
+the number of events, N, delivered per second as a function
 of machine luminosity, L, is,
 \begin{equation}
-N=L\sigma_{event}
+N=L\sigma_{event}.
 \end{equation}
-where $\sigma_{event}$ is the cross section of the event.
-The machine luminosity itself depends on the beam parameters,
+The machine luminosity itself depends on optimization of the beam parameters,
 \begin{equation}
 L=\frac{N_{b}^{2}n_{b}f_{rev}\gamma_{r}}{4\pi \epsilon_{n}\beta*}F
 \end{equation}
@@ -77,8 +92,9 @@ F is the geometric luminosity reduction factor due to the crossing angle
 at the interaction point (IP),
 \begin{equation}
 F=\left(1+\left(\frac{\theta_{c}\sigma_{z}}{2\sigma*}\right)^{2}\right)^{-1/2}.
+\label{eq:F}
 \end{equation}
-Here, $\theta_{c}$ is the full crossing angle at the IP, $\sigma_{z}$ is the
+In (\ref{eq:F}), $\theta_{c}$ is the full crossing angle at the IP, $\sigma_{z}$ is the
 RMS bunch length, and $\sigma*$ is the transverse RMS beam size
 at the IP.
 A number of factors constrain the luminosity that the LHC is capable
