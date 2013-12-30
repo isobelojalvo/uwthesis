@@ -1,35 +1,72 @@
-\chapter{Event Simulation}
-
-The purpose of event simulation is to 
-%give physicists an idea of what events one can expect to find and at what rates
-%help plan new detectors
-%devise analysis strategies
-%as a framework in which to interpret the significance of observed phenomena
-%Do not trust a single generator
+\chapter{Event and Detector Simulation}
+Event simulation is crucial 
+to the success of the CMS experiment. 
+The output of simulation should be similar if not the same as
+the output of the detector; in this way the simulation and data can undergo the
+same analytical processes.
+Simulations are initiated using a program called 'event generator'.
+The purpose of an event generator is to produce hypothetical
+events with a distribution of observables as predicted by theory.
+%simulated in geant4
+%They can then be handed to a detector simulator such as Geantfour
+%what is an event generator
+%need more here
+Event simulation can be used for the following:
+\begin{itemize}
+\item Aid in the design of detectors and experiments.
+\item Provide a prediction 
+of what physics processes can be expected and at what rates
+\item As a tool for devising analysis strategies to optimize signal significance and
+reduce unwanted backgrounds.
+\item As a framework to in which to test signal significance.
+\item As a means to test current physics theory/model and aid in the confirmation of new physics discovery.
+\end{itemize}
+In the study of particle physics it is important to not 
+trust completely a single generator; if particle physics where perfectly
+understood and well modeled then there would be no point in building a detector! 
+Instead, it is important to understand the ingredients that go into 
+a simulation and choose a generator which fits the desired observables. 
+A number of physics generators
+are in common use; a few of these are outline in section \ref{sec:MCGenerators}.
+Physics simulation can be divided into a few key components:
+The hard scattering matrix elements, which define the process(es) under study.
+%The structure function
+Final and initial state radiation
 %\section{Physics Event Generation}
 \section{Hard Scattering Process}
 %Say something about simulation of hard processes
-In order to 
-We wish to use an event generator which produces hypothetical events with a distribution
-that is predicted by theory.
+Hard scattering matrix element generation begins typically with a well defined subprocess.
+%We wish to use an event generator which produces hypothetical events with a distribution
+%that is predicted by theory.
 %list issues
-It is easiest to address these issues by considering the simulation of 
+%It is easiest to address these issues 
+Considering the simulation of 
 the process $W\rightarrow\mu\nu$. 
 \begin{equation}
-d\sigma(\bar{u}d\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})
-=\frac{1}{2\hat{s}}|\mathcal{M}(u\bar{d}\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})|^{2}
+d\sigma(\bar{q}q'\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})
+=f(x,\mu_{F})f'(x',\mu_{F})\frac{1}{2\hat{s}}|\mathcal{M}(\bar{q}q'\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})|^{2}
 \frac{d\cos\theta d\phi}{8(2\pi)^{2}}
 \label{eq:matrixEle}
 \end{equation}
-where the decay angles $(\theta,\phi)$ of the $W^{-}$ are the two degrees of
-freedom. $\mathcal{M}$ is the relevant matrix element and $\hat{s}$
-is the center of mass energy squared.
+%subject to the kinematic constraint that x1x2S=s where S 
+%and s are the collider and subprocess centre of-mass energies-squared respectively
+where the decay angles $(\theta,\phi)$ of the $W^{-}$ are two degrees of
+freedom. $\mathcal{M}$ is the relevant matrix element, 
+$q$ and $q'$ are the initial partons,
+$1/(2\hat{s})$ is the parton flux and
+ $\hat{s}=xx's$ where $s$ is the center of mass energy squared.
+The factorization scale is $\mu_{F}$. 
 %In typical event generators which simulate hard processes 
 %ref equation
 Equation (\ref{eq:matrixEle}) is used to write an event generator. 
 To do this first a sampling of the relevant phase
-space must be done using a random number generator, next the events must
-be unweighted using the hit-and-miss technique to produce events with observables. %%this is terrible
+space must be done using a random number generator and
+momenta of the colliding constituents are selected by sampling
+the parton distribution function of the proton at the energy scale
+of the subprocess.
+
+Next, the events must be unweighted using the hit-and-miss 
+technique to produce events with observables. %%this is terrible
 The relevant phase space for this process is two dimensional: -1 $< \cos\theta <$ 1,
 0 $< \phi < $ 2$\pi$. The values of $cos\theta$ and $\phi$ can be chosen using
 a uniform random number generator. 
@@ -38,7 +75,7 @@ that candidate event's differential cross section which is equivalent to the
 probability of this event occurring. The average of many candidate event's differential
 cross section, $\langle d\sigma\rangle$, is an approximation to $\int d\sigma$ and converges
 to the measured cross section.
-So far the candidate events are distributed flat in phase space and there is 
+So far, the candidate events are distributed flat in phase space and there is 
 no physics information in the distributions.
 The next step then is to unweight the event using the 'hit-and-miss' technique
 so that they are distributed according to theoretical prediction. By unweighting
@@ -49,15 +86,26 @@ trial experiment.
 %Parton Distribution Functions
 %Parton Showering and Hadronization
 \subsection{Parton Showering, Hadronization and the Underlying Event}
-
+To successfully simulate an process in a hadron hadron collider the simulated event must undergo
+parton showering, hadronization and simulation of the underlying event.
 Parton showering is a form of correction to the hard scattering subprocess
 where it is not feasible to calculate these processes exactly.
 Programs that use the parton shower approach are also
 able to simulate a wide variety of initial and final state processes.
-%%Lund String Model
-The Lund String is based on the idea that %fix from lattice QCD simulations
-that at large distance the potential energy of color sources increases
-linearly with their separation: Considering the production of a quark-anti-quark pair,
+
+\begin{figure}[hb]
+  \centering
+	\includegraphics[width=0.5\textwidth]{images/stringModel.png}
+  	\caption[Lund String Model for Parton Showering]
+   	{Lund String Model for Parton Showering}
+	\label{fig:StringModel}
+\end{figure}
+The Lund String model for parton showering is based on models from lattice QCD simulations
+which shows that at large distance the potential energy of color sources increases
+linearly with their separation. 
+A schematic showing parton showering using the Lund String model is 
+shown in figure \ref{fig:StringModel}. 
+Considering the production of a quark-anti-quark pair,
 at first the quark and anti-quark are 
 moving apart very quickly. A gluonic string is stretched between them,
 its potential energy grows causing a reduction in the kinetic energy of the
@@ -105,6 +153,8 @@ Finally, pileup from other proton-proton collisions are added to the event.
 %excellent probes of the underlying hard dynamics, whether that involves standard QCD
 %processes or various kinds of new physics
 \section{Monte Carlo Generator Programs}
+
+\label{sec:MCGenerators}
 A number of monte carlo (MC) generators are used to simulate
 physics processes. The MC method makes use of a random
 number generator to simulate event to event fluctuations
@@ -137,8 +187,24 @@ where quarks  are located at the ends of the string and gluons
 are energy and momentum carrying kinds in the string. The production of a new $q\bar{q}$
 pair causes the string to break. A quark from one break can combine with an antiquark
 from an adjacent quark to form a meson. 
+\subsection{MCFM}%reread carefully
+Monte Carlo for FeMtobarn (MCFM) processes at hadron colliders is a parton-level Monte Carlo
+program which gives NLO predictions for a range of processes at hadron colliders. MCFM
+produces weighted events and therefore can
+give very accurate predictions for event rates at NLO with cuts included, 
+however it gives very little information about regions of phase space which are 
+dominated by multiple parton interactions. 
+Since the final state contains partons rather than hadrons, full detector simulation cannot
+be performed using the MCFM output. Furthermore, a parton to hadron correction factor
+must be included when comparing (for instance) with \PYTHIA, a generator which does
+include hadrons in the final state.
+%ref http://mcfm.fnal.gov/mcfm.pdf
 \section{Detector Simulation}
 \GEANTfour is a toolkit for simulating the passage of particles through matter.
 In particular it provides tracking of particles taking account of the geometry, fields and physics processes.
+Geometry simulation includes a detailed model of the experiment
+including layout of the detectors and the location of absorbers (cables, cooling systems, ect.)
+Run management for recording details of each run as well as
+a number of options for the visualization of the simulation output.
 \GEANTfour uses decay tables for particles such as $\pi$, $K$ mesons
 and resonant baryons based on data from the Particle Data Group.

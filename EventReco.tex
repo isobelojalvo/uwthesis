@@ -329,16 +329,17 @@ The charged particle sum is converted into an expected neutral deposit by
 assuming that the average charged to neutral particle ratio is 2:1.
 A relative combined isolation variable is then defined as:
 \begin{equation}
-I_{\rm rel} = \frac{\sum{\pt({\rm charged})} + \max\left(\sum{\et({\rm neutral})} + \sum{\et({\rm photon})}
-- \Delta\beta, 0\right)}{\pt(\mu \, \, {\rm or} \,\, e)}
+I_{\rm rel} = \frac{\sum{\pt(\mathrm{charged})} + \max\left(\sum{E_{T}(\mathrm{neutral})} + \sum{E_{T}(\mathrm{photon})} - \Delta\beta, 0\right)}{\pt(\mu \, \, \mathrm{or} \,\, e)}
 \label{eq:relIso}
 \end{equation}
 
-where $\pt({\rm charged})$ corresponds of the \pt of all charged particle candidates, $\pt({\rm photon}$
-and $\pt({\rm neutral}$ correspond to the transverse energy of the photon and neutral hadron candidates
+where $p_{T}(\mathrm{charged})$ corresponds of the $p_{T}$ 
+of all charged particle candidates, $p_{T}(\mathrm{photon}$
+and $p_{T}(\mathrm{neutral}$ correspond to the transverse 
+energy of the photon and neutral hadron candidates
 and $\Delta\beta$ corresponds to the energy estimate of neutral particles due to pile-up.
 In the $\mu\tau_{h}$- ($e\tau_{h}$-)channels of the d-tau 
-analysis $I_{\rm rel}<0.1$ is required, both for muons and electrons. 
+analysis $I_{\mathrm{rel}}<0.1$ is required, both for muons and electrons. 
 
 \section{$\tau$ ID and Reconstruction}
 The $\tau$ lepton's high mass means that the $\tau$ plays a very important
@@ -521,7 +522,7 @@ had the property that soft radiation could provoke irregularities in the boundar
 of final jets. 
 Algorithms such as SIScone %ref
 that were soft-resilient were not %%% IRC safe?
-
+%%%%%%%%%%%%%%Paused editting here Dec 28 5:54pm
 To perform jet clustering in the anti-$k_{T}$, $k_{T}$ and Cambridge/Aachen jet algorithm
 a distance $d_{ij}$ is introduced between PF particles $i$ and $j$ and $d_{iB}$ between
 the entitiy and the beam (B). The clustering proceeds by identifying the smallest distances.

@@ -76,6 +76,7 @@ N=L\sigma_{event}.
 The machine luminosity itself depends on optimization of the beam parameters,
 \begin{equation}
 L=\frac{N_{b}^{2}n_{b}f_{rev}\gamma_{r}}{4\pi \epsilon_{n}\beta*}F
+\label{eq:MachineLumi}
 \end{equation}
 Here, $N_{b}$ is the number of particles per bunch, $n_{b}$
 is the number of bunches per beam, $f_{rev}$ is the
@@ -116,7 +117,7 @@ L(t)=\frac{L_{0}}{(1+t/\tau_{nuclear})^{2}},
 \end{equation}
 here, $L_{0}$ is the initial luminosity.
 %$\epsilon_{n}$
-When also accounting for effects due to a gradual increase in
+When accounting for effects due to a gradual increase in
  $\epsilon_{n}$ and friction between protons and the 
  beam shield, this results in a net luminosity lifetime of 
 \begin{equation}
@@ -127,13 +128,15 @@ beam the beam to reach $1/e$ of its initial intensity.
 
 %Finally, it is desired that each of the high luminosity experiments
 %are delivered a large amount of integrated luminosity per year. %%don't like this sentence
-The total amount of integrated luminosity that can be delivered
-per run is,
+The maximum total integrated luminosity is then,
+per fill is,
 \begin{equation}
 L_{int}=L_{0}\tau_{L}\left[ 1-e^{-T_{run}/\tau_{L}}\right]
 \end{equation}
-After a run has been ended it is expected the turnaround time
-needed between the end of the run and the start of a new run
+Another factor which effects the integrated luminosity that can
+be delivered per year is turnaround time between fills.
+After a fill has been ended it is expected the turnaround time
+needed between the end of the fill and the start of a new fill
 to be $\approx$7 hours. Therefore, if the machine is operated for 200 days
 per year and an optimum run time of 12 hours this leads to a 
 total maximal delivered integrated luminosity per year of 80 fb$^{-1}$
@@ -143,10 +146,10 @@ are outlined in section \ref{sec:Conditions}.
 %%%fix this:
 %A number of factors constrain the luminosity that the LHC is capable
 %of delivering: 
-Refering to equation %%ref equation
+Refering to equation (\ref{eq:MachineLumi}) 
 $N_{b}/\epsilon_{n}$ is limited by the %%new paragraph?
-non-linear beam interaction that occurs when beams collide. This
-beam-beam interaction is measured by a linear tune shift, $\xi$, where,
+non-linear beam-beam interaction that occurs when beams collide. This
+beam-beam interaction is parameterized by a linear tune shift, $\xi$, 
 \begin{equation}
 \xi=\frac{N_{b}r_{p}}{4\pi\epsilon_{n}}
 \end{equation}
@@ -154,24 +157,40 @@ where $r_{p}$ is the classical radius of the proton
 and $\epsilon_{n}$ is the beam emittance.
 Data from previous hadron colliders show that when summed over
 all IPs $\xi$ should not exceed 0.015. %new paragraph?
-Furthermore, the %%% beam width ?? is affected due to
-The transverse beam emittance $\epsilon_{n}$ is limited by.... 
-%Beam-Beam Limit
+%Furthermore, the %%% beam width ?? is affected due to
+The transverse beam emittance $\epsilon_{n}$ is limited by the 
+mechanical aperture of the LHC arcs which is given by the beam screen dimensions.
+The beam screen has a height of $2 \times 17.3$ mm and a total width
+of $2 \times 22$ mm. In terms of the RMS beam size 
+the beam requires a minimum aperture of 10 $\sigma$ this corresponds to a 
+nominal beam size of 1.2 mm. Finally, if this is combined with a
+peak $\beta$ function of 180 m in the LHC arcs, the maximum acceptable
+transverse beam emittance is $\epsilon_{n}=3.75 \mu m$ and a 
+maximum bunch intensity of $N_{b}=1.15 \times 10^{11}$.
+
 %Mechanical Aperture
 A total beam current of 0.584 A corresponds to a stored energy
 of approximately 362 MJ; the LHC magnet system has a stored
 electromagnetic energy of more than 1 GJ.
-At the end of a run or in the case of a malfunction the stored
+At the end of a fill or in case of a malfunction the stored
 energy in the beam needs to be dumped. Therefore, the beam
 and magnet dumping systems lead to additional constraints
 on the maximum allowed energies and intensities.
-%%new paragraph?
 %define synchrotron radiation and larmour's formula
-Examining the formula
-While synchrotron radiation due to particle acceleration of protons%%double check all of this, i'm tired
-is smaller than that of electrons the heat generated in this process,
- from luminosity-induced losses and interaction with a resistive wall
-must still be absorbed by the cryogenic system. 
+
+Power loss due to synchrotron radiation is given by larmor's formula,
+\begin{equation}
+P=\frac{\mu_{0}q^{2}a^{2}\gamma^{4}}{6\pi c}
+\end{equation}
+%While synchrotron radiation due to particle acceleration of protons%%double check all of this, i'm tired
+%is smaller than that of electrons 
+Where $\mu_{0}$ is vacuum permeability, 
+$q$ is the charge of the proton, 
+a is the centripetal acceleration, 
+and $\gamma=(1-(v/c)^{2})^{-1/2}$.
+This puts further requirements on the LHC design as the heat generated in this process and
+ from luminosity-induced losses and interaction with a resistive wall 
+must be absorbed by the cryogenic system.
 
 In order to collide two counter-rotating proton beams separate magnetic fields
 with opposite dipoles are needed. To maintain good operating conditions
@@ -183,13 +202,13 @@ sharing the same cooling.
 The superconducting magnet is at the leading edge of technology.
 At the Tevatron, HERA and RHIC experiments, Niobium Titanium (NbTi)
 was used in the Rutherford cables and cooled to $\approx$4K. 
-The LHC dipole magnets use NbTi as well but were cooled
+The LHC dipole magnets use NbTi as well but are cooled
 to a temperature of less than 2K. 
-The cooling of the magnetic field is done%%new word
-by a cryogenic system that makes use of liquid He.
 This decrease in temperature
 by a factor of two allows the dipole magnets to be operated 
-at a much higher magnetic field, up to 8T. With the lowering of
+at a much higher magnetic field, up to 8T. 
+The cooling of the magnetic field is done 
+by a cryogenic system that makes use of liquid He. With the lowering of
 temperature comes a reduced heat capacity of the cables themselves.
 Therefore, the energy deposition threshold that can raise the 
 temperature of the windings above their critical temperature and
@@ -200,11 +219,11 @@ and heat dissipation in the cables is required.
 %The quench and successive rapid loss of current
 %cause a short in the joint of a busbar. This caused an arc
 %which punched through the Helium enclosure and released
-%Helium from the cell and with it the Helium from connect
-%cells. 
+%Helium from the cell and with it the Helium from connecting
+%cells. No one was injured due to this incident, however, 
+%
 
 \section{Operation}
-
 \begin{figure}[t]
   \centering
 	\includegraphics[width=0.75\textwidth]{images/LHCLayout.png}
@@ -212,27 +231,31 @@ and heat dissipation in the cables is required.
    	{LHC and Experiments Layout}
 	\label{fig:LHCRings}
 \end{figure}
-The beams transverse a great distance of accelerator complex %%better word
-before they reach the final LHC energies as shown in figure \ref{fig:LHCRings}.%%figure
+
+From their creation in Linear Accelerator 2 until they reached
+a final energy per proton of 3.5 TeV (4 TeV) in 2011 (2012),
+the proton beams transverse a great distance of accelerator complex %%better word
+%before they reach the final LHC energies 
+as shown in figure \ref{fig:LHCRings}.%%figure
 Initially, hydrogen atoms are stripped of their electrons by passing them
 through an electric field. These protons
 then undergo their first round of acceleration in Linear Accelerator 2 (LINAC 2).
-In LINAC2 the protons are passed through conductors which
+In LINAC2 the protons are accelerated in conductors which
 are alternately charged positive or negative by radiofrequency (RF) cavities;
 %that alternate the charge on cylindrical conductors be
 this brings the protons up to 50 MeV and forms the initial bunches. 
 After this the protons are
 fed into the Proton Synchrotron Booster (PSB) which is made up 
-of four superimposed synchrotron rings; here their energy
-is increased to 1.4 GeV this is also done by RF cavities. In
+of four superimposed synchrotron rings; here the energy
+is increased to 1.4 GeV by RF cavities. In
 the PSB the beams start to get squeezed and each bunch is 
 split into 3. 
 Next, they are injected into the Proton
 Synchrotron (PS) where they are accelerated to 26 GeV; each
 bunch is split into 4 here and, using an 80 MHz RF system,
 bunches are shortened so they can fit into the 200 MHz brackets
-of the next RF system. The final
-stage of acceleration, before reaching the LHC, is done in the
+of the next RF system. Before reaching the LHC, the final
+stage of acceleration, takes place in the
 Super Proton Synchrotron where they are brought up to 450 GeV.
 Finally, the beam is injected into the LHC where protons are ramped
 up until they reached a final energy of 3.5 TeV 
@@ -250,9 +273,9 @@ detailed in the next section.
 	\label{fig:deliveredLumi}
 \end{figure}
 In 2011 the LHC was operated with a center of mass energy of 7 TeV
-and a peak luminosity of $2\times10^33 cm^{-2}s^{-1}$ 
+and a peak luminosity of $2\times10^{33} cm^{-2}s^{-1}$ 
 While in 2012 the center of mass energy was 8 TeV and the peak luminosity
-was also increased to $7.7\times10^33 cm^{-2}s^{-1}$.
+was also increased to $7.7\times10^{33} cm^{-2}s^{-1}$.
 In both 2011 and 2012 the bunch spacing was 50 ns and the
 total number of bunches was 1380. 
 The total integrated luminosity delivered by the LHC detector
@@ -262,18 +285,18 @@ as a function of time is shown in figure \ref{fig:deliveredLumi}.
 %crossing rate of 25 ns; this scenario is planned for subsequent runs.
 %%%finish describing 
 
-The average event rate is,
-\begin{equation}
-R=L\sigma_{T}
-\end{equation}
-The average rate of events from collisions of a bunch is given by
-\begin{equation}
-N=\frac{R}{R_{B}}
-\end{equation}
-where $R_{B}$ is the LHC crossing rate. 
+%The average event rate is,
+%\begin{equation}
+%R=L\sigma_{T}
+%\end{equation}
+%The average rate of events from collisions of a bunch is given by
+%\begin{equation}
+%N=\frac{R}{R_{B}}
+%\end{equation}
+%where $R_{B}$ is the LHC crossing rate. 
 
-\begin{equation}
-\mu=\frac{L\sigma_{T}}{R_{B}f_{B}}
-\end{equation}
-
-The high 
+%\begin{equation}
+%\mu=\frac{L\sigma_{T}}{R_{B}f_{B}}
+%\end{equation}
+%
+%The high 
