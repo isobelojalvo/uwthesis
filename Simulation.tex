@@ -200,11 +200,28 @@ must be included when comparing (for instance) with \PYTHIA, a generator which d
 include hadrons in the final state.
 %ref http://mcfm.fnal.gov/mcfm.pdf
 \section{Detector Simulation}
-\GEANTfour is a toolkit for simulating the passage of particles through matter.
-In particular it provides tracking of particles taking account of the geometry, fields and physics processes.
+\GEANTfour is a toolkit for simulating the passage of
+photons, muons, electrons, hadrons and ions through matter at energies from 250 eV to 
+several PeV. The simulation package models the 
+detector geometry, electric and magnetic fields and a wide range 
+of initial to final state physics processes.
 Geometry simulation includes a detailed model of the experiment
 including layout of the detectors and the location of absorbers (cables, cooling systems, ect.)
 Run management for recording details of each run as well as
 a number of options for the visualization of the simulation output.
+Magnetic field simulation makes use of detailed measurements of 
+the magnetic field throughout the CMS detector.
 \GEANTfour uses decay tables for particles such as $\pi$, $K$ mesons
 and resonant baryons based on data from the Particle Data Group.
+The models used for decay of various physics processes are either
+theory or data driven and the toolkit offers a large variety of complementary
+and sometimes alternative physics models. 
+%need transition sentencce
+The probability of a particle surviving a distance $l$ 
+\begin{equation}
+P(l)=e^{-\eta_{\lambda}}
+\end{equation}
+where $\eta_{\lambda}$ is an exponential distribution which is independent of 
+material and energy; therefore, $\eta_{\lambda}=-\ln(\eta)$ and $\eta$ is
+a random number on the interval $(0,1)$. \GEANTfour has been an essential and 
+very successful tool in the simulation of detector effects at CMS.
