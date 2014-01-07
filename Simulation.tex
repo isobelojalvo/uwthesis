@@ -29,9 +29,9 @@ a simulation and choose a generator which fits the desired observables.
 A number of physics generators
 are in common use; a few of these are outline in section \ref{sec:MCGenerators}.
 Physics simulation can be divided into a few key components:
-The hard scattering matrix elements, which define the process(es) under study.
-%The structure function
-Final and initial state radiation
+The hard scattering matrix elements, which define the process(es) under study,
+the structure function, which models the energy distributions of the partons
+which are involved in the collision and final and initial state radiation.
 %\section{Physics Event Generation}
 \section{Hard Scattering Process}
 %Say something about simulation of hard processes
@@ -189,7 +189,8 @@ pair causes the string to break. A quark from one break can combine with an anti
 from an adjacent quark to form a meson. 
 \subsection{MCFM}%reread carefully
 Monte Carlo for FeMtobarn (MCFM) processes at hadron colliders is a parton-level Monte Carlo
-program which gives NLO predictions for a range of processes at hadron colliders. MCFM
+program which gives next to leading order predictions for 
+a range of processes at hadron colliders. MCFM
 produces weighted events and therefore can
 give very accurate predictions for event rates at NLO with cuts included, 
 however it gives very little information about regions of phase space which are 
@@ -197,7 +198,9 @@ dominated by multiple parton interactions.
 Since the final state contains partons rather than hadrons, full detector simulation cannot
 be performed using the MCFM output. Furthermore, a parton to hadron correction factor
 must be included when comparing (for instance) with \PYTHIA, a generator which does
-include hadrons in the final state.
+include hadrons in the final state. The parton to hadron correction factor is estimated
+for the $\Wbb$ cross section measurement detailed later in this thesis and is shown to give significant
+correction to the overall simulated cross section. 
 %ref http://mcfm.fnal.gov/mcfm.pdf
 \section{Detector Simulation}
 \GEANTfour is a toolkit for simulating the passage of
