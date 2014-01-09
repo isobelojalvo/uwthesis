@@ -1,10 +1,18 @@
 \chapter{Event and Detector Simulation}
 Event simulation is crucial 
-to the success of the CMS experiment. 
+to the success of the CMS experiment. %%fix
+Event simulation requires
+prediction of a physics process expected at the LHC, production
+of physics final states and distribution in phase space of final state particles
+and then simulation of particle interactions within the detector. %%fix
+The physics process is simulated using a monte carlo (MC) generator
+while the simulation of the detector is performed using a dedicated
+software package which specializes in interactions of particles
+in their passage through matter.  
 The output of simulation should be similar if not the same as
 the output of the detector; in this way the simulation and data can undergo the
 same analytical processes.
-Simulations are initiated using a program called 'event generator'.
+Simulations are initiated using a program called an 'event generator'.
 The purpose of an event generator is to produce hypothetical
 events with a distribution of observables as predicted by theory.
 %simulated in geant4
@@ -25,23 +33,20 @@ In the study of particle physics it is important to not
 trust completely a single generator; if particle physics where perfectly
 understood and well modeled then there would be no point in building a detector! 
 Instead, it is important to understand the ingredients that go into 
-a simulation and choose a generator which fits the desired observables. 
+a simulation and choose a generator which describes well the desired process. 
 A number of physics generators
 are in common use; a few of these are outline in section \ref{sec:MCGenerators}.
 Physics simulation can be divided into a few key components:
 The hard scattering matrix elements, which define the process(es) under study,
 the structure function, which models the energy distributions of the partons
-which are involved in the collision and final and initial state radiation.
+which are involved in the collision, final and initial state radiation and underlying
+event processes including multiple interactions in the detector.
 %\section{Physics Event Generation}
 \section{Hard Scattering Process}
-%Say something about simulation of hard processes
-Hard scattering matrix element generation begins typically with a well defined subprocess.
-%We wish to use an event generator which produces hypothetical events with a distribution
-%that is predicted by theory.
-%list issues
-%It is easiest to address these issues 
+Hard scattering matrix element generation of a hard scattering process 
+begins typically with a well defined subprocess.
 Considering the simulation of 
-the process $W\rightarrow\mu\nu$. 
+the process $W\rightarrow\mu\nu$ we start with the leading order differential cross section defined as,  
 \begin{equation}
 d\sigma(\bar{q}q'\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})
 =f(x,\mu_{F})f'(x',\mu_{F})\frac{1}{2\hat{s}}|\mathcal{M}(\bar{q}q'\rightarrow W^{-}\rightarrow \mu^{-}\bar{\nu_{\mu}})|^{2}
@@ -66,7 +71,7 @@ the parton distribution function of the proton at the energy scale
 of the subprocess.
 
 Next, the events must be unweighted using the hit-and-miss 
-technique to produce events with observables. %%this is terrible
+technique to produce events with observables. %%this is terrible, fix later? jan 8th
 The relevant phase space for this process is two dimensional: -1 $< \cos\theta <$ 1,
 0 $< \phi < $ 2$\pi$. The values of $cos\theta$ and $\phi$ can be chosen using
 a uniform random number generator. 
@@ -86,7 +91,7 @@ trial experiment.
 %Parton Distribution Functions
 %Parton Showering and Hadronization
 \subsection{Parton Showering, Hadronization and the Underlying Event}
-To successfully simulate an process in a hadron hadron collider the simulated event must undergo
+To successfully simulate a process in a hadron hadron collider the simulated event must include 
 parton showering, hadronization and simulation of the underlying event.
 Parton showering is a form of correction to the hard scattering subprocess
 where it is not feasible to calculate these processes exactly.
@@ -100,6 +105,7 @@ able to simulate a wide variety of initial and final state processes.
    	{Lund String Model for Parton Showering}
 	\label{fig:StringModel}
 \end{figure}
+
 The Lund String model for parton showering is based on models from lattice QCD simulations
 which shows that at large distance the potential energy of color sources increases
 linearly with their separation. 
@@ -128,10 +134,10 @@ scale $Q^{2}$.
 Since the hadronization scale is much smaller than the hard scale the impact
 of the hadronization model choice on the final state is typically
 small for most physics analyses. 
-Parton showers are essential in providing the %%exclusive?
-description of the event: at leading order the transverse momentum
-for the $W$ will always be zero since there is nothing for the $W$
-to recoil against.
+%Parton showers are essential in providing the %%exclusive?
+%description of the event: at leading order the transverse momentum
+%for the $W$ will always be zero since there is nothing for the $W$
+%to recoil against.
 
 The beam remnants are the colored remains of the proton which
 are left behind when the parton which participates in the hard subprocess
@@ -146,7 +152,8 @@ hard scattering process.
 In the $\Wbb$ analysis
 MPI agreement between data and simulation is tested 
 by observing the ratio of $(p_{T,j_{1}}+p_{T,j_{2}})/p_{T,j_{1},j_{2}}$
-Finally, pileup from other proton-proton collisions are added to the event.
+Finally, proton-proton interactions which 
+pileup from other proton-proton collisions are added to the event.
 %b quarks are not expected to be
 %produced at any signiÞcant rate in nonperturbative processes [1], and they do not occur
 %as valence ßavours of the commonly used beam particles. A priori, they are therefore
