@@ -41,20 +41,21 @@ have the highest quality. Subsequent iterations reconstruct
 tracks with gradually less stringent requirements 
 to reconstruct tracks which are lower $p_{t}$, have missing hits or which are greatly displaced.
 After each iteration of the CTF track reconstruction sequence, the hits
-associated with tracks are removed this reduces the combinatorial complexity
+associated with tracks are removed. This reduces the combinatorial complexity
 and simplifies subsequent iterations.% in a search for .
 
 The CTF track reconstruction proceeds as follows:
 \begin{itemize}
-\item First, seeds are generated which provides the initial track candidates.
-Charged particles follow helical paths in the magnetic field, therefore, five parameters (including curvature)
+\item First, seeds are generated which provide the initial track candidates.
+Charged particles follow helical paths in the magnetic field. 
+Therefore, five parameters (including curvature)
 are needed to define a trajectory. To determine these five parameters at least
 3 hits (or 2 hits in the pixel detector and a constraint on the origin of the track trajectory from the beam
-spot) is required. Seeds are built in the inner part of the tracker
+spot) are required. Seeds are built in the inner part of the tracker
 and track candidates are reconstructed outwards. 
 The choice to begin seeding in the central region of the tracker and
 then move outwards towards the endcaps is due to a finer granularity 
-and hence lower occupancy in the center of the pixel detector. Each iteration of CTF
+and hence lower occupancy per sensor in the center of the pixel detector. Each iteration of CTF
 uses independent quality parameters for seeding layers. 
 \item Next, track finding is performed based on the Kalman filter method \cite{KalmanFilter}.
 Track finding starts by using the seed trajectories to define and then search
@@ -66,11 +67,11 @@ the track finding algorithm updates the trajectories of the tracks.
 \item Track fitting is then used to adjust for the possibility of bias added during the track
 finding stage. The trajectory is refitted using a Kalman filter and smoother with
 a Runge-Kutta propagator that takes into account both material effects and accommodates
-for a inhomogeneous magnetic field.
+the inhomogeneous magnetic field.
 %track selection sets quality flags and discards tracks that fail certain criteria
-\item The final step is track selection where tracks are required to pass a number of quality
+\item The final step is track selection, where tracks are required to pass a number of quality
 based selection criteria. 
-The selection criteria puts a requirement on a track's number of layers 
+The selection criteria is placed on a track's number of layers 
 with valid hits, the fit-based $\chi^{2}/dof$, and the track's compatibility
 with a primary vertex. In addition to these, several requirements are
 imposed as a function of track $p_{T}$, $\eta$, and the number of layers
@@ -93,9 +94,10 @@ offline software is shown in figure \ref{fig:TrackerPerformance}.
 	\label{fig:TrackerPerformance}
 \end{figure}
 \subsection{Primary Vertex Reconstruction}
-Primary vertices (PVs) are reconstructed in order to locate and determine the associated uncertainty of all
+Primary vertices (PVs) are reconstructed in order to 
+locate and determine the associated uncertainty of each
 proton-proton interaction vertices regardless of whether it is a 'signal' or 'background' vertex.
-Primary vertex reconstruction proceeds in three steps:
+Primary vertex reconstruction proceeds in three steps.
 The first step is to select tracks based on their association with a primary interaction region.
 To do this, a number of quality selections are imposed: they are based upon the significance of the
 transverse impact parameter ($d_{xy}$), the number of strip and pixel hits that are 
