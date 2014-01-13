@@ -31,7 +31,7 @@ and physics analysis and is described in the following sections.
 %maximum value of significance of the transverse impact 
 %parameter relative to the beam spot.
 Track reconstruction at CMS follows multiple iterations of a track finding sequence
-called the Combined Track Finding (CTF) sequence. 
+called the Combined Track Finding (CTF) sequence \cite{CMSTDRPhysics}. 
 The CTF sequence consists of seed generation through hit clustering,
 track finding via a filtering technique, track trajectory fitting and finally
 selection of tracks that pass quality requirements. 
@@ -64,8 +64,10 @@ for adjacent layers of the detector with a hit.
 %of adding an invalid hit in the case where the particle failed to produce a hit.
 After successful identification of adjacent layers with valid hits 
 the track finding algorithm updates the trajectories of the tracks. 
-\item Track fitting is then used to adjust for the possibility of bias added during the track
-finding stage. The trajectory is refitted using a Kalman filter and smoother with
+\item Track fitting is then performed. Constraints, such as a beam spot matching requirement, 
+applied during the track finding stage can introduce bias to the track trajectory. Track
+fitting removes bias and provides full information about the track kinematic trajectory\cite{TRK11001}.  
+ The trajectory is refitted using a Kalman filter and smoother with
 a Runge-Kutta propagator that takes into account both material effects and accommodates
 the inhomogeneous magnetic field.
 %track selection sets quality flags and discards tracks that fail certain criteria
@@ -79,8 +81,12 @@ with valid hits.
 \end{itemize}
 %The tracks and primary vertices found with this algorithm are known as pixel 
 %tracks and pixel vertices, respectively. 
-The performance of the track reconstruction
-offline software is shown in figure \ref{fig:TrackerPerformance}.
+The performance of the track reconstruction is evaluated in 
+$Z\rightarrow \mu\mu$ events using a 'tag and probe'
+method whereby a well identified 'tag' muon track is found
+and the efficiency of reconstructing a second 'probe' muon is measured; 
+the reconstruction efficiency of the 'probe' muon is shown 
+in figure \ref{fig:TrackerPerformance}.
 \begin{figure}[t]
   \centering
  \begin{subfigure}[b]{.4\textwidth}
@@ -90,7 +96,7 @@ offline software is shown in figure \ref{fig:TrackerPerformance}.
 	\includegraphics[width=\textwidth]{images/TrackerEffVtx.pdf}
   \end{subfigure}
   	\caption[Tracker Performance]
-   	{Tracker efficiency of muons in $Z\rightarrow\mu\mu$ decays. Measured using Tag and Probe as a function of $\eta$ (left) and number of vertices (right)}
+   	{Tracker efficiency of muons in $Z\rightarrow\mu\mu$ decays. Measured using Tag and Probe as a function of $\eta$ (left) and number of vertices (right)\cite{TRK11001}}
 	\label{fig:TrackerPerformance}
 \end{figure}
 \subsection{Primary Vertex Reconstruction}
@@ -99,7 +105,7 @@ locate and determine the associated uncertainty of each
 proton-proton interaction vertices regardless of whether it is a 'signal' or 'background' vertex.
 Primary vertex reconstruction proceeds in three steps.
 The first step is to select tracks based on their association with a primary interaction region.
-To do this, a number of quality selections are imposed: they are based upon the significance of the
+To do this, a number of quality selections are imposed, based upon the significance of the
 transverse impact parameter ($d_{xy}$), the number of strip and pixel hits that are 
 associated with a track and the normalized $\chi^{2}$ from the fit to the
 trajectory. In selecting tracks, there is no requirement on the $p_{T}$ of the track; 
@@ -107,7 +113,10 @@ this is important so that all PVs including ones from minimum bias events are re
 The second step is to cluster the selected tracks based on their $z$ coordinate at their
 point of closest approach to the beam spot. This is done using a Deterministic Annealing (DA)
 algorithm which finds a global minimum given many degrees of freedom \cite{DAAnnealing}.
-%%More on DA?
+The DA algorithm is based upon the %fix new and doesn't make sense
+an annealing algorithm for physical chemistry processes whereby
+a system can be driven to its lowest energy state by a gradual reduction
+of temperature, or annealing. %fix
 The third and final step is to take candidate vertices based on DA clustering in $z$ and use
 an 'adaptive vertex fitter'  
 to compute vertex parameters \cite{KalmanFilter}. These parameters include the 3-D position and covariance matrix,
@@ -286,14 +295,14 @@ the standalone muon tracks. This is performed in two steps: First,
 tracks are selected in a defined $\eta\times\phi$ region which is centered
 on the standalone track. Next, spatial and momentum matching is 
 used to select the best matching track. Compatibility of the 
-standalone track and tracker track with the 
+standalone muon track and tracker track with the 
 primary vertex is also required. Finally a new 'global track' is created combining
 tracker and muon hits; at this stage, no new hits are selected, instead, 
 the selected hits are refitted as a global track. If more than one candidate
 track pair is matched then the candidate with the best $\chi^{2}$ value
 is selected. 
 For muons with $p_{T}<200\GeV$ the $p_{T}$ measurement is driven
-by the fantastic tracker resolution, for muons with $p_{T}>200\GeV$,
+by the tracker resolution, for muons with $p_{T}>200\GeV$,
 the global-muon fit can improve the momentum resolution compared
 to the tracker-only fit.
 In muons with a higher $p_{T}$, as might be found
@@ -302,8 +311,8 @@ are globally reconstructed.
 \subsection{Tracker Muon Reconstruction}
 In tracker muon reconstruction, all tracks with $p_{T}>0.5$ GeV
 and $p>2.5$ GeV are considered as possible muon candidates. 
-Track reconstruction is outlined in Section \ref{sec:TrackReco},
-after tracks are reconstructed they are extrapolated to the muon
+Track reconstruction is outlined in Section \ref{sec:TrackReco}.
+After tracks are reconstructed they are extrapolated to the muon
 system taking into account effects due to the magnetic field.
 If one muon segment matches the extrapolated track then 
 it is defined as a tracker muon.  Where matching requires
@@ -325,18 +334,18 @@ As pileup of interactions in the detector increases, the performance of standard
 combined relative isolation, which sums the 
 energy deposited by all PF candidates in a cone of $\Delta R = 0.4$ around the central
 lepton and divides the sum by the $p_{T}$ of 
-the candidate, degrades. Charged PF particles are associated to
+the candidate, degrades. Charged PF particles are associated with 
 a vertex using the deterministic annealing algorithm; non charged PF particles
 are not associated with any vertex by the vertex algorithm, instead,
 they are associated with vertices by using their closest distance in the
 $z$ axis after they are extrapolated to the beam line. Using this separation algorithm,
-charged particles can be properly associated to a given primary vertex
+charged particles can be properly associated with a given primary vertex
 and used to calculate isolation. However, this algorithm does not
 properly account for neutral particles produced in pile-up interactions. 
 Therefore, a specific correction, known as a $\Delta \beta$ correction, is
 used to account for the neutral energy from other interactions.
-A charged particle transverse momentum sum is created by summing over
-the charged particles inside the isolation cone of the lepton but by
+A charged particle's transverse momentum sum is created by summing over
+the charged particles inside the isolation cone of the lepton while %reread
 requiring that those charged particles do not originate from the primary vertex.
 The charged particle sum is converted into an expected neutral deposit by
 assuming that the average charged to neutral particle ratio is 2:1.
