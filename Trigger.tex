@@ -1,26 +1,26 @@
-\section{Trigger}
+\section{Trigger}%%%finish fixing trigger portion, stopped at P.24
 The LHC delivers proton-proton collisions at the beam crossing 
 interval of 25 ns, this corresponds to a crossing frequency of 40 MHz.
-Each interaction, or event, requires 0.5 to 1 megabytes of storage space.
-%%%%%%%%%fix here
-As it is responsible for all data acquisition, %%fix
+The data for each crossing occupies 0.5 to 1 megabytes of storage space.
+As it is responsible for all data acquisition, 
 the trigger system is the most important subsystem of CMS. 
 
 The CMS trigger system is divided into two parts: the Level 1 trigger 
 and the High Level Trigger (HLT). 
 The Level 1 trigger uses coarsely segmented
-data from only the calorimeters and the muon system to make initial
+data from only the calorimeters and the muon systems to make initial
 data selections while holding high resolution data in pipelined memories
 in front-end electronics. The Level 1 Trigger hardware is implemented in customized
-programmable memory look up tables (LUTs), FPGAs and asics.
-The Level 1 trigger must reduce rates by at least a factor of 10$^{6}$, 
+programmable memory look up tables (LUTs), FPGAs and ASICs.
+The Level 1 trigger must reduce the maximum proton interaction rate of $10^{9}$ Hz 
+by at least a factor of 10$^{6}$, 
 resulting in a final output of approximately 30kHz,
 before high resolution data is passed to the HLT.
-The HLT has access to the complete readout of the event and can use
+The HLT has access to the complete readout data of the event and can use
 complex algorithms to filter events. For particularly interesting events, 
 the algorithms used in this process are often similar to what is done in 
 offline analysis. 
-  \subsection{Level 1 Trigger}
+  \subsection{Level 1 Trigger} %%%More on LEVEL 1 MUON TRIGGER!!!!
 The purpose of the Level 1 trigger is to reduce rates from the input
 crossing rate of 40MHz to a maximum output rate of 100kHz. 
 The first step in this process is to create
