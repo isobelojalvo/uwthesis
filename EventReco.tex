@@ -355,17 +355,18 @@ I_{\rm rel} = \frac{\sum{\pt(\mathrm{charged})} + \max\left(\sum{E_{T}(\mathrm{n
 \label{eq:relIso}
 \end{equation}
 where $p_{T}(\mathrm{charged})$ corresponds of the $p_{T}$ 
-of all charged particle candidates, $p_{T}(\mathrm{photon}$
-and $p_{T}(\mathrm{neutral}$ correspond to the transverse 
+of all charged particle candidates, $p_{T}(\mathrm{photon}$)
+and $p_{T}(\mathrm{neutral}$) correspond to the transverse 
 energy of the photon and neutral hadron candidates
 and $\Delta\beta$ corresponds to the energy estimate of neutral particles due to pile-up.
-In the $\mu\tau_{h}$- ($e\tau_{h}$-)channels of the d-tau 
-analysis $I_{\mathrm{rel}}<0.1$ is required, both for muons and electrons. 
+In the $\mu\tau_{h}$ and $e\tau_{h}$ channels of the di-tau 
+analysis $I_{\mathrm{rel}}<0.1$ is required, both for muons and electrons. In the $\Wbb$
+analysis $I_{\mathrm{rel}}<0.12$ is required. 
 
 \section{$\tau$ ID and Reconstruction}
 The $\tau$ lepton's high mass means that the $\tau$ plays a very important
-roll the in search for the SM higgs boson, and MSSM higgs bosons.
-The life time of the $\tau$ is short enough that they decay before reaching the inner
+roll in the search for the SM higgs boson, and MSSM higgs bosons.
+The lifetime of the $\tau$ is short enough that it decays before reaching the inner
 most detector. This short lifetime makes $\tau$ reconstruction particularly challenging;
 the solution is to reconstruct the decay products of the $\tau$. 
 The dominant hadronic $\tau$ decays ($\tau_{h}$) 
@@ -376,7 +377,6 @@ This thesis uses the hadron plus strips (HPS) algorithm for the reconstruction o
 $\tau_{h}$'s. %%%%ref tau id paper
 \begin{table}[b]
 \begin{center}
-%\tablesize
 \begin{tabular}{|l|c|c|c|}
 \hline
 Decay mode & Resonance & Mass (MeV) &  Branching fraction (\%) \\
@@ -399,7 +399,7 @@ The HPS algorithm
 reconstructs photons into 'strips': these are objects which are built
 out of charged particles within a window of size $\Delta\eta=0.05$
 and $\Delta\phi=0.20$. The algorithm starts by centering a strip on the
-most energetic electromagnetic particle within the PF jet, next it searches
+most energetic electromagnetic particle within the PF jet and then it searches
 for other electromagnetic particles within the window. If another electromagnetic
 particle is found then the object gets associated with the strip and
 the four-momentum is recalculated. This procedure is repeated until no other
@@ -429,7 +429,7 @@ h stands for a charged hadron:
 
 Charged hadrons and strips are required to be contained within a cone
 of size $\Delta R=(2.8\GeV/p_{T}^{\tau_{h}})$ where $p_{T}^{\tau_{h}}$ is 
-the transverse momentum of the $\tau$ hadron $p_{T}^{\tau_{h}}$ is 
+the transverse momentum of the $\tau$ hadron $p_{T}^{\tau_{h}}$ and is 
 required to match the $(\eta,\phi)$ direction of the original PF jet within
 a radius of $\Delta R=0.1$. 
 %%four momenta must match decay modes
@@ -539,20 +539,23 @@ is enhanced. Therefore, efficient jet and b jet identification is crucial.
 
 Jet clustering algorithms have become a crucial part of physics analysis.
 Jet clustering in this thesis is performed using 
-the anti-$k_{T}$ jet clustering algorithms \cite{Cacciari:2008gp}.
-In order to perform %new word
+the anti-$k_{T}$ jet clustering algorithm \cite{Cacciari:2008gp}.
+In order to perform 
 comparisons with perturbative effects in theoretical calculations jet clustering algorithm
-must be both infrared and collinear (IRC) safe. %check/expand
+must be both infrared and collinear (IRC) safe. 
+When applied at particle level, an algorithm is collinear safe if the hardest particle
+will not be easily changed by the presence of another collinear particle. %check/expand
+%next describe infrared safe
 The development and subsequent choice of the anti-$k_{T}$ jet clustering algorithm
 was stimulated by questions of sensitivity to non-perturbative effects like hadronization
 and underlying event contamination. Previously used jet clustering algorithms
-such as the $k_{T}$ \ref{} %ref
-and Cambridge/Aachen \ref{} %ref
+such as the $k_{T}$ \cite{ktAlgo} %ref 1
+and Cambridge/Aachen \cite{cambAachen} %ref 2
 jet clustering algorithms were IRC safe, however, they
 had the property that soft radiation could provoke irregularities in the boundaries
 of final jets. 
-Algorithms such as SIScone \ref{} %ref
-that were soft-resilient were not %%% IRC safe?
+Algorithms such as SIScone \cite{SISCone} %ref 4
+that were soft-resilient were not IRC safe.
 %%%%%%%%%%%%%%Paused editting here Dec 28 5:54pm
 To perform jet clustering in the anti-$k_{T}$, $k_{T}$ and Cambridge/Aachen jet algorithm
 a distance $d_{ij}$ is introduced between PF particles $i$ and $j$ and $d_{iB}$ between
@@ -607,13 +610,13 @@ using b, c and non-heavy flavour jets from QCD and top samples and provides extr
 of heavy and udsg jets. At a b-tagging efficiency of 60$\%$, jets from light quarks can be reduced
 by a factor of 100!~\cite{refCSV}.
 
-Secondary vertices are reconstructed inside the jet using the Trimmed Kalman Vertex Finder.
+Secondary vertices are reconstructed inside the jet using the Trimmed Kalman Vertex Finder \cite{}.
 This algorithm begins by taking as input all tracks that are inside of the jet and performing a compatibility fit. It then removes the least compatible track and refits the vertex; this procedure is repeated until
 the fit is below a given threshold. The secondary vertex studied in this thesis is that which has
 the greatest significance of flight distance.
 
-\section{Missing Transverse Energy}
-Missing transverse energy is defined using PF candidates as.
+\section{Missing Transverse Energy, Recoil Corrections and MVA $\MET$}
+Missing transverse energy is defined using PF candidates as,
 \begin{equation}%%%add vectors above everywhere
 \MET = -\sum_{i} p_{T}
 \end{equation}
@@ -621,13 +624,9 @@ where $i$ runs over all reconstructed PF candidates.
 To improve the $\MET$ resolution in 
 events with jets and neutrinos in the decay products 
 which are expected to have a high $\MET$, such as $\Wbb$,
-recoil corrections are applied to the $\MET$. MVA 
-$\MET$ is used in the search for a MSSM $h\rightarrow\tau\tau$;
-MVA $\MET$ aims at improving further the $\MET$
-through use of recoil corrections and an MVA which targets the true value of the $\MET$.
-These procedures are described in the next sections.
-\subsection{Recoil Correction}
-To improve $\MET$ resolution recoil corrections are applied. 
+recoil corrections are applied to the $\MET$. 
+
+To improve the $\MET$ resolution a correction to the recoil of the generated bosons is applied. 
 Momentum conservation in the transverse plane requires,
 \begin{equation}
 \MET+q_{T}+u_{T}=0
@@ -642,9 +641,15 @@ u_{T}\equiv\sum_{j} p_{j,T},
 where the index $j$ runs over all particles initiating at the interaction point excluding
 the vector boson. 
 
-\subsection{MVA MET}
-MVA PF $\MET$ is based on a set of multivariate regressions.
-The purpose of the multivariate regression is to improve measurement of the $\MET$
+Multivariate Analysis (MVA) 
+$\MET$ is used in the search for a MSSM $h\rightarrow\tau\tau$;
+MVA $\MET$ aims at improving further the $\MET$
+%through use of recoil corrections and an MVA which targets the true value of the $\MET$.
+%These procedures are described in the next sections.
+%\subsection{Recoil Correction}
+%\subsection{MVA MET}
+and is based on a series of multivariate regressions.
+In particular, MVA $\MET$ improves measurement of the $\MET$
 in the presence of high pileup.
 MVA $\MET$ is computed as a correction to $u_{T}$. This correction
 is performed in two steps: %using two bdts
