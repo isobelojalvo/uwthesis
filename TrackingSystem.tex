@@ -110,3 +110,26 @@ nine disks which are populated with up to seven rings of radial-strip silicon de
 The combined layouts of the pixel detector and silicon strip detector
 result in 8 to 14 high precision measurements of track impact points for 
 $|\eta|<2.4$.
+
+The tracker resolution of muon $p_{T}$ as a function of $p_{T}$ and pseudorapidity are 
+shown in figure \ref{fig:TrackerResolution}.
+At high momentum (100 GeV), the $p_{T}$ resolution is approximately 2-3\%. The degradation at
+$|\eta|\approx 1$ and beyond is due to the gap between barrel and the end-cap disks
+and due to inferior hit resolution of the last hits of the track measured in TEC ring 7. 
+In the barrel, tracker resolution ranges from $\approx$1-2\% from 1 to 100 GeV while
+in the endcap tracker resolution ranges from $\approx$2-7\% from 1 to 100 GeV. High
+$p_{T}$ muons benefit from a combined fit between tracks found in the tracker and
+ tracks found in the muon system for an improved $p_{T}$ resolution.
+
+\begin{figure}[hb]
+\centering
+  \begin{subfigure}[b]{.475\textwidth}
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,width=\textwidth]{images/resolutionPtVsPt.png}
+	\end{subfigure}	
+   \begin{subfigure}[b]{.475\textwidth}
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,width=\textwidth]{images/resolutionPtVsEta.png}
+    \end{subfigure}	
+  \caption[]
+   	{Tracker $p_{T}$ resolution as a function of $p_{T}$ and $\eta$. The sold (open) markers correspond to the half-widths for the 68\% (90\%) intervals centered on the peak of the distribution \cite{TRK11001}.}
+    \label{fig:TrackerResolution}
+\end{figure}

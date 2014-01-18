@@ -102,47 +102,57 @@ in figure \ref{fig:TrackerPerformance}.
 \end{figure}
 \subsection{Primary Vertex Reconstruction}
 Primary vertices (PVs) are reconstructed in order to 
-locate and determine the associated uncertainty of each
-proton-proton interaction vertices regardless of whether it is a 'signal' or 'background' vertex.
-Primary vertex reconstruction proceeds in three steps.
-The first step is to select tracks based on their association with a primary interaction region.
-To do this, a number of quality selections are imposed, based upon the significance of the
+locate and determine the associated uncertainty of each 
+proton-proton interaction vertices regardless of whether it is a 'signal' or 'background' vertex. 
+Primary vertex reconstruction proceeds in three steps. 
+The first step is to select tracks based on their association with a primary interaction region. 
+To do this, a number of quality selections are imposed, based upon the significance of the 
 transverse impact parameter ($d_{xy}$), the number of strip and pixel hits that are 
-associated with a track and the normalized $\chi^{2}$ from the fit to the
+associated with a track and the normalized $\chi^{2}$ from the fit to the 
 trajectory. In selecting tracks, there is no requirement on the $p_{T}$ of the track; 
-this is important so that all PVs including ones from minimum bias events are reconstructed.
-The second step is to cluster the selected tracks based on their $z$ coordinate at their
-point of closest approach to the beam spot. This is done using a Deterministic Annealing (DA)
-algorithm which finds a global minimum given many degrees of freedom \cite{DAAnnealing}.
-The DA algorithm is based upon the %fix new and doesn't make sense
-an annealing algorithm for physical chemistry processes whereby
-a system can be driven to its lowest energy state by a gradual reduction
-of temperature, or annealing. %fix
+this is important so that all PVs including ones from minimum bias events are reconstructed. 
+The second step is to cluster the selected tracks based on their $z$ coordinate at their 
+point of closest approach to the beam spot. This is done using a Deterministic Annealing (DA) 
+algorithm which finds a global minimum given many degrees of freedom \cite{DAAnnealing}. 
+The DA algorithm is based upon %fix new and doesn't make sense
+an algorithm developed for physical chemistry processes whereby 
+a system can be driven to its lowest energy state by a gradual reduction 
+of temperature, or annealing. The DA algorithm begins by 
+calculating a global $\chi^{2}$ whereby each reconstructed 
+track is assigned to a vertex prototype. The assignment of track to vertex is given 
+a weight between 0 and 1 based on the compatibility of vertex and track. This assignment 
+is controlled by a temperature parameter where an infinite temperature means 
+all weights are equal and T=0 means all the weights are 0 or 1. The clustering 
+starts with a single prototype vertex at high T and in subsequent iterations 
+the prototype vertex is split into multiple vertices. If all tracks are compatible with 
+a single vertex then two prototype vertices will become one. Each 
+prototype vertex becomes a vertex candidate with all 
+associated tracks that have a weight greater than 0.5. 
 The third and final step is to take candidate vertices based on DA clustering in $z$ and use
 an 'adaptive vertex fitter'  
-to compute vertex parameters \cite{KalmanFilter}. These parameters include the 3-D position and covariance matrix,
-as well as indicators for the success of the fit such as the number of degrees ($n_{dof}$) of freedom for
-each vertex and weights of the track used in each vertex. The adaptive vertex fitter
-uses a modified definition of $n_{dof}$ where,
-\begin{equation}
+to compute vertex parameters \cite{KalmanFilter}. These parameters include the 3-D position and  covariance matrix, 
+as well as indicators for the success of the fit such as the number of degrees ($n_{dof}$) of freedom for 
+each vertex and weights of the track used in each vertex. The adaptive vertex fitter 
+uses a modified definition of $n_{dof}$ where, 
+\begin{equation} 
 n_{dof} = -3+2\sum^{nTracks}_{i=1} w_{i},
 \end{equation}
-Here, $w_{i}$ is the weight of the $i^{th}$ track. This implies that $n_{dof}$ is strongly
-correlated with the number of tracks that are compatible with arising from the interaction
-region which means that $n_{dof}$ can also be used to select true proton-proton interactions.
-For a vertex to be selected at the analysis level, it is required to have a $z$ position
-smaller than 24 cm with respected to the origin of the detector, a $\rho$ position
-less than 2 cm from the IP and more than 4 degrees of freedom. Of the vertices
-that pass this criteria the signal primary vertex is defined as the one that maximizes
+Here, $w_{i}$ is the weight of the $i^{th}$ track. This implies that $n_{dof}$ is strongly 
+correlated with the number of tracks that are compatible with arising from the interaction 
+region which means that $n_{dof}$ can also be used to select true proton-proton interactions. 
+For a vertex to be selected at the analysis level, it is required to have a $z$ position 
+smaller than 24 cm with respected to the origin of the detector, a $\rho$ position 
+less than 2 cm from the IP and more than 4 degrees of freedom. Of the vertices 
+that pass this criteria the signal primary vertex is defined as the one that maximizes 
 \begin{equation}
 \sum_{i} p_{T,i}^{2},
 \end{equation}
-where the sum extends over all associated tracks and $p_{T,i}$ is the transverse momentum
+where the sum extends over all associated tracks and $p_{T,i}$ is the transverse momentum 
 of the $i^{th}$ track.
 \section{Electron ID and Reconstruction}
 \label{sec:electronReco}
-Electrons in CMS are reconstructed using tracker or ECAL seeds.
-Electrons with a low transverse momentum have a higher efficiency
+Electrons in CMS are reconstructed using tracker or ECAL seeds. 
+Electrons with a low transverse momentum have a higher efficiency 
 for reconstruction using tracker seeds; whereas electrons with a
 higher transverse momentum have a higher efficiency if reconstructed
 using ECAL seeds. When traversing the tracker, electrons pass through 
