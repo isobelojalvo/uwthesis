@@ -1,5 +1,5 @@
-\chapter{Measurement of W plus \bbbar Pair Production}
-This document describes a study of W boson production
+\chapter{Measurement of $\Wbb$ Production}
+This chapter describes a study of W boson production
 in association with two b quarks, where W bosons are observed via their decays to muons, and
 b quarks are identified as two separated jets.
 This production channel provides an important testing ground for 
@@ -19,38 +19,38 @@ the search for the standard model Higgs boson (H) decaying to $\bbbar$
 when produced in association with a weak vector boson.
 
 The analysis uses a sample of proton-proton collisions 
-at a center-of-mass energy of $\sqrt{s}$=7 TeV collected in 2011 with the CMS experiment at the LHC, 
+at a center-of-mass energy of $\sqrt{s}$=7 \TeV collected in 2011 with the CMS experiment at the LHC, 
 corresponding to an 
 integrated luminosity of $5.0\fbinv$.
-While the CMS detector is described in detail elsewhere~\cite{CMSExperiment}, the
-key components for this analysis are summarized here.
-The CMS experiment uses a right-handed coordinate system, with the
-origin at the nominal interaction point, the x-axis
-pointing to the center of the LHC ring, the y-axis pointing
-up (perpendicular to the plane of the LHC ring), and the z-axis
-along the counterclockwise-beam direction. The polar angle
-$\theta$ is measured from the positive z-axis and the
-azimuthal angle $\phi$ is measured in the x-y plane.
-The absolute value of the transverse
-momentum ($\pt$) is calculated as 
-$\pt = \sqrt{p_{\rm{x}}^2 + p_{\rm{y}}^2}$.
-%%%
-A superconducting solenoid occupies the
-central region of the CMS detector, providing an axial magnetic
-field of 3.8~T parallel to the beam direction.
-The silicon pixel and strip
-tracker, the crystal electromagnetic calorimeter, and the brass/scintillator hadron
-calorimeter are located within the solenoid. A quartz-fiber
-Cherenkov calorimeter extends the coverage to $|\eta| <$ 5.0, where pseudorapidity
-is defined as $\eta=-{\rm ln}[\tan{(\theta/2)}]$.
-Muons are measured in gas ionization detectors embedded 
-in the steel flux return yoke outside the solenoid.
-The first level of the CMS trigger system, composed of custom
-hardware processors, is designed to select the most interesting events
-in less than 3 $\mu$s using information from the calorimeters and muon
-detectors. 
-The high-level-trigger processor farm decreases the event rate from 100 kHz
-delivered by the first level trigger to a few hundred hertz, before data storage.
+%While the CMS detector is described in detail elsewhere~\cite{CMSExperiment}, the
+%key components for this analysis are summarized here.
+%The CMS experiment uses a right-handed coordinate system, with the
+%origin at the nominal interaction point, the x-axis
+%pointing to the center of the LHC ring, the y-axis pointing
+%up (perpendicular to the plane of the LHC ring), and the z-axis
+%along the counterclockwise-beam direction. The polar angle
+%$\theta$ is measured from the positive z-axis and the
+%azimuthal angle $\phi$ is measured in the x-y plane.
+%The absolute value of the transverse
+%momentum ($\pt$) is calculated as 
+%$\pt = \sqrt{p_{\rm{x}}^2 + p_{\rm{y}}^2}$.
+%%%%
+%A superconducting solenoid occupies the
+%central region of the CMS detector, providing an axial magnetic
+%field of 3.8~T parallel to the beam direction.
+%The silicon pixel and strip
+%tracker, the crystal electromagnetic calorimeter, and the brass/scintillator hadron
+%calorimeter are located within the solenoid. A quartz-fiber
+%Cherenkov calorimeter extends the coverage to $|\eta| <$ 5.0, where pseudorapidity
+%is defined as $\eta=-{\rm ln}[\tan{(\theta/2)}]$.
+%Muons are measured in gas ionization detectors embedded 
+%in the steel flux return yoke outside the solenoid.
+%The first level of the CMS trigger system, composed of custom
+%hardware processors, is designed to select the most interesting events
+%in less than 3 $\mu$s using information from the calorimeters and muon
+%detectors. 
+%The high-level-trigger processor farm decreases the event rate from 100 kHz
+%delivered by the first level trigger to a few hundred hertz, before data storage.
 
 A number of Monte Carlo (MC) event generators are used to simulate the signal and
 backgrounds. 
@@ -94,8 +94,43 @@ within a cone around the muon direction
 defined by  $\Delta R  < \Delta R_{\rm max} = 0.4$,
 where
 $\Delta R = \sqrt { (\Delta \eta)^2 + (\Delta \phi)^2 }$, and
-\ET stands for the
+$E_{T}$ is 
 transverse energy.
+Figure \ref{fig:muonvariables} show the
+
+\begin{figure}[hb]
+\centering
+  \begin{subfigure}[b]{.45\textwidth}
+	\includegraphics[trim = 0mm 52mm 0mm 0mm, clip,width=\textwidth]{images/muonPt.pdf}
+	\caption[]{$\mu$    $p_{T}$ [GeV]}
+	\end{subfigure}	
+   \begin{subfigure}[b]{.45\textwidth}
+	\includegraphics[trim = 0mm 52mm 0mm 0mm, clip,width=\textwidth]{images/muonEta.pdf}
+	\caption[]{$\mu$    $\eta$}
+    \end{subfigure}	
+       \begin{subfigure}[b]{.45\textwidth}
+	\includegraphics[trim = 0mm 52mm 0mm 0mm, clip,width=\textwidth]{images/muNuRelPFIso.pdf}
+	\caption[]{$\mu$    $I^{\marhrm{rel}}$}
+    \end{subfigure}
+  \caption[]
+   	{Muon $p_{T}$, $\eta$, and  Isolation ($I^\marhrm{rel}$) are shown above.}
+    \label{fig:muonvariables}
+\end{figure}
+
+\begin{figure}[hb]
+\centering
+  \begin{subfigure}[b]{.45\textwidth}
+	\includegraphics[trim = 0mm 52mm 0mm 0mm, clip,width=\textwidth]{images/met.pdf}
+	\caption[]{$E_{T}^{miss}$ [GeV]}
+	\end{subfigure}	
+   \begin{subfigure}[b]{.45\textwidth}
+	\includegraphics[trim = 0mm 52mm 0mm 0mm, clip,width=\textwidth]{images/MtCal.pdf}
+	\caption[]{$M_{T}(\mu,E_{T}^{miss})$ [GeV]}
+    \end{subfigure}	
+  \caption[]
+   	{The missing transverse energy ($E_{T}^{miss}$) and transverse momentum of muon and $E_{T}^{miss}$ ($M_{T}$) are shown above.}
+    \label{fig:metVariables}
+\end{figure}
 %A muon isolation variable, $I^{\rm{rel}}$, is calculated as a 
 %sum of the transverse energies  momenta of reconstructed PF particles in a 
 %around the direction of the muon, normalized to the muon momentum,
@@ -121,7 +156,8 @@ $\Delta \phi$
 is the difference in azimuth between $\vecEtm$ and $\vecPtmu$. In $\Wln$ decays the $M_T$ distribution presents a Jacobian peak 
 with an edge at the W mass. Therefore it is a natural topological discriminator against non-W final states which yield a lepton candidate and
 missing transverse energy, such as QCD multijet processes, 
-in which the events concentrate at low values of the $M_T$ variable. 
+in which the events concentrate at low values of the $M_T$ variable. The 
+$M_\mathrm{T}$ and $M_{T}$ variables are shown in figure \ref{fig:metVariables}.
 
 Jets are reconstructed from the PF candidates.
 The anti-$\mathrm{k_T}$
@@ -504,23 +540,23 @@ The observed distributions  are well described by the simulation.
 
 % No quoting MCFM until we fix the C(parton, hadron) factor
 
-In summary, we have presented a measurement of the $\Wbb$ production
-cross section in proton-proton collisions at 7\TeV. The W+$\bbbar$ events
-have been  selected in the W $\to \mu\nu$ decay mode with a 
-muon of $\pt>25\GeV$ and $|\eta|<2.1$, and two b jets with $\pt>25\GeV$ and $|\eta|<2.4$. 
-The data sample corresponds to an integrated luminosity of $5.0\fbinv$.
-%The measured cross section
-%$\sigma ( \Wbb) =  0.98 \pm 0.12 \stat \pm0.20 \syst \pm 0.07 \theo \pm 0.02\lumi pb.$
-%is consistent with the SM prediction.
-The measured cross section 
-%$\sigma ( \Wbb) =  0.98 \pm 0.12 \stat \pm0.20 \syst \pm 0.07 \theo \pm 0.02\lumi \unit{pb}$
-%$\sigma ( \Wbb) = 1.17\pm  0.10\stat ^{+0.21}_{-0.17}\syst \pm 0.18 \theo \pm 0.03\lumi \unit{pb.}$
-$\sigma(pp\rightarrow \mathrm{W} + \bbbar, p_T^{\mathrm{b}}>25~\GeV, |\eta^{\mathrm{b}}|<2.4)\times {\cal{B}}(\Wmn, p_T^{\mu}>25~\GeV, |\eta^{\mu}|<2.1) =0.53\pm  0.05\stat \pm 0.09 \syst \pm 0.06 \theo \pm 0.01\lumi pb.$
-for production of a W boson in association with two b jets is in agreement with
-the SM predictions.
-This result is approaching the precision of theoretical predictions at NNLO, 
-allowing a sensitive test of perturbative calculations
-in the SM.
+%In summary, we have presented a measurement of the $\Wbb$ production
+%cross section in proton-proton collisions at 7\TeV. The W+$\bbbar$ events
+%have been  selected in the W $\to \mu\nu$ decay mode with a 
+%muon of $\pt>25\GeV$ and $|\eta|<2.1$, and two b jets with $\pt>25\GeV$ and $|\eta|<2.4$. 
+%The data sample corresponds to an integrated luminosity of $5.0\fbinv$.
+%%The measured cross section
+%%$\sigma ( \Wbb) =  0.98 \pm 0.12 \stat \pm0.20 \syst \pm 0.07 \theo \pm 0.02\lumi pb.$
+%%is consistent with the SM prediction.
+%The measured cross section 
+%%$\sigma ( \Wbb) =  0.98 \pm 0.12 \stat \pm0.20 \syst \pm 0.07 \theo \pm 0.02\lumi \unit{pb}$
+%%$\sigma ( \Wbb) = 1.17\pm  0.10\stat ^{+0.21}_{-0.17}\syst \pm 0.18 \theo \pm 0.03\lumi \unit{pb.}$
+%$\sigma(pp\rightarrow \mathrm{W} + \bbbar, p_T^{\mathrm{b}}>25~\GeV, |\eta^{\mathrm{b}}|<2.4)\times {\cal{B}}(\Wmn, p_T^{\mu}>25~\GeV, |\eta^{\mu}|<2.1) =0.53\pm  0.05\stat \pm 0.09 \syst \pm 0.06 \theo \pm 0.01\lumi pb.$
+%for production of a W boson in association with two b jets is in agreement with
+%the SM predictions.
+%This result is approaching the precision of theoretical predictions at NNLO, 
+%allowing a sensitive test of perturbative calculations
+%in the SM.
 
 
 \begin{figure}
