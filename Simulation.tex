@@ -121,9 +121,17 @@ quark-anti-quark system. When the gluon's potential energy reaches
 the order of a hadron mass the gluon string breaks apart and a quark-anti-quark
 pair is produced.
 
+\begin{figure}[t]
+  \centering
+	\includegraphics[width=0.75\textwidth]{images/EventProcess.png}
+  	\caption[Event Process in a Hadron Collision]
+   	{The basic simulation structure for an event in a hadron collision including parton distribution, hard subprocess, parton showering, hadronization, final decay and pileup (Minimum Bias Collisions) \cite{GuidebookOfMcGenerators}.}
+	\label{fig:EventProcess}
+\end{figure}
+
 In a proton-proton interaction a parton is resolved
 at scale $Q$ and momentum fraction $x$ from each
-proton. Figure %%insert figure of event evolution
+proton. Figure \ref{fig:EventProcess} 
 shows a proton-proton collision where a valence quark
 is separated from one of the colliding protons and a 
 a sea anti-quark is separated from the other of the colliding protons.
@@ -167,7 +175,7 @@ pileup from other proton-proton collisions are added to the event.
 A number of monte carlo (MC) generators are used to simulate
 physics processes. The MC method makes use of a random
 number generator to simulate event to event fluctuations
-which are %%%intrinsic
+which are intrinsic
 to quantum processes. 
 The choice of MC generator is largely dependent on the 
 type of process to be simulated. %fix
@@ -187,7 +195,7 @@ spin polarization. For each tau decay mode there is a individual phase space gen
 modeling of the weak decay including first order QED corrections for leptonic decays
 and a part describing the hadronic current.
 \subsection{PYTHIA}
-At leading order \PYTHIA contains approximately 240 different $2\rightarrow n$ subprocesses.
+At leading order $\mathtt{PYTHIA}$ contains approximately 240 different $2\rightarrow n$ subprocesses.
 The initial state shower is based on backwards evolution whereby the 
 hard scattering process is simulated and is evolved backwards in time to the shower
 initiators. Partons radiated in the initial state can initiate final-state showers
@@ -212,7 +220,7 @@ for the $\Wbb$ cross section measurement detailed later in this thesis and is sh
 correction to the overall simulated cross section. 
 %ref http://mcfm.fnal.gov/mcfm.pdf
 \section{Detector Simulation}
-\GEANTfour is a toolkit for simulating the passage of
+$\mathtt{GEANT4}$ is a toolkit for simulating the passage of
 photons, muons, electrons, hadrons and ions through matter at energies from 250 eV to 
 several PeV. The simulation package models the 
 detector geometry, electric and magnetic fields and a wide range 
@@ -223,7 +231,8 @@ Run management for recording details of each run as well as
 a number of options for the visualization of the simulation output.
 Magnetic field simulation makes use of detailed measurements of 
 the magnetic field throughout the CMS detector.
-\GEANTfour uses decay tables for particles such as $\pi$, $K$ mesons
+$\mathtt{GEANT4}$ uses decay tables for to properly simulate decay rates 
+for particles such as $\pi$, $K$ mesons
 and resonant baryons based on data from the Particle Data Group.
 The models used for decay of various physics processes are either
 theory or data driven and the toolkit offers a large variety of complementary

@@ -1,3 +1,9 @@
+%To Do
+%%Explain why JEC are used
+%%Explain what IRC means
+%%Insert figure for Particle Flow
+%%Better Explanation for Recoil
+%%Lengthen 
 \chapter{Event Reconstruction}
 The raw data format 
 is used for online reconstruction in the high level trigger
@@ -515,9 +521,9 @@ track in the tracker and a muon track in the muon system is established
 when a global fit returns an acceptable $\chi^{2}$ value.
 
 After links have been established PF reconstruction is performed which
-can be summarized into three steps: First, electrons are created using GSF filter,
-this is further described in section \ref{sec:electronReco}. After, electrons
-are reconstructed their tracks and calorimetric deposits are removed. Next, 
+can be summarized into three steps: First, a collection of electrons is created using GSF filter,
+this is further described in section \ref{sec:electronReco}. Electron
+ tracks and calorimetric deposits are then removed. Next, 
 PF charged hadrons are constructed by identifying links between tracks in the 
 tracker and clusters in the ECAL. If the energy deposit in the ECAL is 
 the same as the total $p_{T}$ in the tracker within calorimetric uncertainty a 
@@ -621,7 +627,7 @@ using b, c and non-heavy flavour jets from QCD and top samples and provides extr
 of heavy and udsg jets. At a b-tagging efficiency of 60$\%$, jets from light quarks can be reduced
 by a factor of 100!~\cite{refCSV}.
 
-Secondary vertices are reconstructed inside the jet using the Trimmed Kalman Vertex Finder \cite{}.
+Secondary vertices are reconstructed inside the jet using the Trimmed Kalman Vertex Finder \cite{KalmanFilter}.
 This algorithm begins by taking as input all tracks that are inside of the jet and performing a compatibility fit. It then removes the least compatible track and refits the vertex; this procedure is repeated until
 the fit is below a given threshold. The secondary vertex studied in this thesis is that which has
 the greatest significance of flight distance.

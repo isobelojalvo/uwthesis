@@ -14,7 +14,7 @@ in front-end electronics. The Level 1 Trigger hardware is implemented in customi
 programmable memory look up tables (LUTs), FPGAs and ASICs.
 The Level 1 trigger must reduce the maximum proton interaction rate of $10^{9}$ Hz 
 by at least a factor of 10$^{6}$, 
-resulting in a final output of approximately 30kHz,
+resulting in a final output of approximately 100kHz,
 before high resolution data is passed to the HLT.
 The HLT has access to the complete readout data of the event and can use
 complex algorithms to filter events. For particularly interesting events, 
@@ -36,7 +36,7 @@ are passed to the Regional Calorimeter Trigger (RCT) using
 high-speed serial links.
 An electron or photon candidate is expected to be narrow in $\eta$
 and broader in $\phi$ therefore, an additional bit is used to indicate whether 
-an electron candidate  
+an electron candidate %%%%finish this 
 After that, the RCT combines tower information to form electron and 
 photon candidates. The RCT also sums ECAL and HCAL towers into broader
 regions which are used in the GCT to form jets. These regions also have a 
@@ -53,15 +53,16 @@ LUTs. All regional information from the three muon systems are then forwarded
 to the Global Muon Trigger (GMT) where it is then combined to proved track
 information with equal or better resolution than the regional systems. The tracks
 are then ranked and forwarded to the Global Trigger (GT).
+
   \subsection{Regional Calorimeter Trigger}
-The Regional Calorimeter Trigger is responsible for level 1 triggering of the 
+The Regional Calorimeter Trigger is responsible for processing the level 1 trigger data of the 
 Electromagnetic and Hadronic calorimeters in barrel, endcap and the HF forward detector.
 The RCT consists of 18 crates installed in nine racks in the CMS underground 
 counting room, which is adjacent to and shielded from the CMS cavern.
 For triggering purposes, the HCAL and ECAL are subdivided into regions in 
 $(\eta,\phi)$. As illustrated in figure \ref{fig:rctTowerIetaIphi}
 a region consists of of 4$\times$4 trigger towers; 
-the RCT has 7 receiver cards per crate and one jet summary card for the 18 crates. 
+the RCT has 7 receiver cards per crate and one jet summary card for each of the 18 crates. 
 A total of 24 bits is received from each trigger tower: 
 two 8-bit calorimeter energies each from the ECAL and the HCAL,
 two energy characterization bits, 5 bits of error detection and 1 LHC bunch crossing bit.
