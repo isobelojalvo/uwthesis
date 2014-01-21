@@ -158,7 +158,8 @@ After events pass the Level 1 trigger they are sent to the High Level Trigger (H
 HLT uses a filter farm of processors to reduce rates by a factor of 10$^{6}$ from 
 100 kHz to a final output rate of less than 300 Hz. This filter farm takes as input
 data that is processed by the Data Acquisition (DAQ) system. The DAQ system is responsible
-for taking data which is pushed into the DAQ by Front-End Drivers (FEDs) at a maximum input 
+for taking data which is pushed into the DAQ by Front-End Drivers (FEDs),
+which are responsible for data digitization, at a maximum input 
 rate of 100kHz which corresponds to a data flow of $\approx$100 GByte/s from approximately
 650 data sources. An event builder assembles the event fragments from all FEDs %%%FIX
 which belong to the same Level 1 output; this data is then sent from underground to the surface %%%change

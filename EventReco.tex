@@ -684,6 +684,7 @@ To improve the $\MET$ resolution a correction to the recoil of the generated bos
 Momentum conservation in the transverse plane requires,
 \begin{equation}
 \MET+q_{T}+u_{T}=0
+\label{eq:recoilEq}
 \end{equation}
 %where $\MET$ is the missing transverse energy,
 where $q_{T}$ is the vector boson transverse momentum which is measured
@@ -696,19 +697,38 @@ where the index $j$ runs over all particles initiating at the interaction point 
 the vector boson. 
 
 Multivariate Analysis (MVA) 
-$\MET$ is used in the search for a MSSM $h\rightarrow\tau\tau$;
-MVA $\MET$ aims at improving further the $\MET$
+$\MET$ is used in the search for a MSSM $h\rightarrow\tau\tau$.
+MVA $\MET$ aims at improving further the $\MET$ and makes use of a series of multivariate regressions
+based on a boosted decision tree (BDT) \cite{BDT}.
+%A decision tree is trained on dedicated signal and background samples 
+A decision tree requires as input both a signal and background monte carlo sample.
+These samples are split into two parts: one part is used for training (creation of the decision tree)
+the second part is used for testing (to test the final classifier after training).
+Using the training sample, a decision tree is created by defining a number 
+of discriminatory variables from
+an event and then splitting each variable by some value which optimizes
+the separation of signal and background. 
+If the final 
+variable selection has a purity of signal over signal plus background above a given threshold
+then it is considered a 'leaf' and used in the selection of a signal and background events.
+A score of 1 is assigned if the event falls on a signal leaf and 0 if it falls on a background leaf.  
+Boosting is then performed by taking all signal events that were misclassified as
+background or background events misclassified as signal and increasing the weight of
+that event (boosting). A new tree is built using the new weights and the final score
+is calculated using these weights. A similar method is used to determine a BDT regression
+scale factor. 
+
 %through use of recoil corrections and an MVA which targets the true value of the $\MET$.
 %These procedures are described in the next sections.
 %\subsection{Recoil Correction}
 %\subsection{MVA MET}
-and is based on a series of multivariate regressions.
-In particular, MVA $\MET$ improves measurement of the $\MET$
-in the presence of high pileup.
-MVA $\MET$ is computed as a correction to $u_{T}$. This correction
+%In particular, MVA $\MET$ improves measurement of the $\MET$
+%in the presence of high pileup.
+The MVA $\MET$ uses the BDT regression model 
+to determine correction factors to $u_{T}$. This correction
 is performed in two steps: %using two bdts
 first, compute a correction to the azimuthal angle
 of $u_{T}$ by training a BDT with the true hadronic recoil, $-q_{T}$, as the target. Next
  a separate BDT is trained to predict the magnitude of $u_{T}$. This corrected
- $u_{T}$ is then used in equation %%%cite equation with recoil
+ $u_{T}$ is then used in equation \ref{eq:recoilEq} %%%cite equation with recoil
  to calculate a new MVA $\MET$. %list variables? Do I care? it's an f*ing BDT.
