@@ -329,13 +329,13 @@ are globally reconstructed.
 In tracker muon reconstruction, all tracks with $p_{T}>0.5$ GeV
 and $p>2.5$ GeV are considered as possible muon candidates. 
 Track reconstruction is outlined in Section \ref{sec:TrackReco}.
-After tracks are reconstructed they are extrapolated to the muon
-system taking into account effects due to the magnetic field.
-If one muon segment matches the extrapolated track then 
-it is defined as a tracker muon.  Where matching requires
-the the distance in local $x$ between the segment and the extrapolated
-track is less than 3 cm or the pull for local x is less than 4 where
-the pull is defined as the difference in the position of the matched segment
+After tracks are reconstructed their trajectories are extrapolated to the muon
+system. % taking into account effects due to the magnetic field.
+If there exists one hit in the muon system which 'matches' the extrapolated track then 
+that track is defined as a tracker muon. A 'match' requires
+the distance in $x$ between the segment and the extrapolated
+track is less than 3 cm or that the pull for $x$ is less than 4. 
+The pull is defined as the difference in the position of the matched segment
 and the position of the extrapolated track divided by the sum of 
 the uncertainties on the position of the matched segment
 and the position of the extrapolated track.
@@ -376,7 +376,7 @@ of all charged particle candidates, $p_{T}(\mathrm{photon}$)
 and $p_{T}(\mathrm{neutral}$) correspond to the transverse 
 energy of the photon and neutral hadron candidates
 and $\Delta\beta$ corresponds to the energy estimate of neutral particles due to pile-up.
-In the $\mu\tau_{h}$ and $e\tau_{h}$ channels of the di-tau 
+In the $\mu\tau_{h}$ and $e\tau_{h}$ channels of the MSSM di-tau 
 analysis $I_{\mathrm{rel}}<0.1$ is required, both for muons and electrons. In the $\Wbb$
 analysis $I_{\mathrm{rel}}<0.12$ is required. 
 
@@ -422,7 +422,7 @@ particle is found then the object gets associated with the strip and
 the four-momentum is recalculated. This procedure is repeated until no other
 particles are found. Strips which satisfy the requirement of $p_{T}^{strip}>$ 1 GeV 
 are finally combined with the charged hadrons to reconstruct individual
-$\tau_{h}$ decay modes.
+$\tau_{h}$ decay modes \cite{CMS-PAS-TAU-11-001}.
 
 The following decay topologies are considered by the HPS $\tau$ ID algorithm where
 h stands for a charged hadron:
@@ -487,32 +487,31 @@ In proton-proton collisions, even at energies on the order of a few TeV,
 most stable decay products have a low $p_{T}$.
 At CMS, to identify and reconstruct these stable particles a particle flow (PF) event 
 reconstruction technique has been developed \cite{PFT09001}\cite{PFT10003}. 
-PF event reconstruction links 
-information %find a better word
-about reconstructed tracks and calorimeter deposits
+PF event reconstruction combines 
+reconstructed tracks with calorimeter deposits
 to form object collections of 
 electrons, muons, photons, charged and neutral hadrons, HF hadrons and HF EM particles
 for each event. These collections can then be used to build taus, Jets, $\MET$
 and to quantify lepton isolation and tag jets originating from heavy quarks.
 
 The first step of PF reconstruction is to perform
-iterative tracking. Here, tracks are first seeded and reconstructed with tight criteria
+iterative tracking. Here, tracks are seeded and then reconstructed with tight criteria
 where the emphasis is on achieving a low fake rate. 
 After a track has been identified its hits in the tracker are removed and successive iterative steps
 then loosen track identification criteria.
 
 The second step of PF reconstruction is to produce clusters in the ECAL and the HCAL. 
-In this step cluster seeds are produced from local calorimeter cell energy maxima
+In this step, cluster seeds are produced from local calorimeter cell energy maxima, 
 then topological clusters are grown by combining cells with at least one common side
 with a cell already in a cluster. 
 
 The final step in PF reconstruction, is to apply a 'link algorithm' which links
-hits in the ECAL, HCAL, tracker and muon system. The link algorithm
+hits in the ECAL, HCAL, tracker and muon system. In the end-cap the link algorithm
 begins with the outer most hit in the tracker and extrapolates
 first to the 2 layers of the ECAL pre-shower. Next, it searches for topological clusters
-in the ECAL that correspond to a maximal depth expected of a typical
-electron energy deposit profile. Then, a search for topological clusters in the
-HCAL is performed at a depth corresponding to 1 $X_{0}$.
+in the ECAL barrel and end-cap that correspond to a maximal depth expected of a typical
+electron energy deposit profile. A search for topological clusters in the
+HCAL is then performed at a depth corresponding to 1 $X_{0}$.
 The track is linked to any given depth if the extrapolated position in 
 the calorimeter is within cluster boundaries. The cluster can be enlarged by up 
 to one cell to account for discontinuities in the detector elements, radiation via
@@ -531,9 +530,18 @@ PF charged hadron is created. If the energy in the calorimeters is much higher
 than a PF photon or a PF neutral hadron might also be created. If the energy in 
 the calorimeters is too small then a relaxed search for hits in the muon system
 is performed. Finally, remaining clusters of ECAL and HCAL clusters give rise
-to PF photons and PF neutral hadrons. Figure %insert PFjet figure
+to PF photons and PF neutral hadrons. Figure \ref{fig:ParticleFlowJet} %insert PFjet figure
 shows relative fractions of charged hadrons, photons, neutral hadrons, electrons,
 hf hadrons and em particles in jets.
+
+\subsection{Particle Flow Jet Reconstruction}
+\begin{figure}[ht]
+  \centering
+	\includegraphics[width=0.5\textwidth]{images/ParticleFlowJet.png}
+  	\caption[PF Jet]
+   	{Particle Flow jet composition}
+	\label{fig:ParticleFlowJet}
+\end{figure}
 
 \section{Jet ID and Reconstruction}
 
@@ -550,7 +558,7 @@ is enhanced. Therefore, efficient jet and b jet identification is crucial.
   \centering
 	\includegraphics[width=0.8\textwidth]{images/AntiKTAlgo.png}
   	\caption[Comparison of Jet Clustering Algorithms]
-   	{Comparison of Jet Clustering Algorithms}
+   	{Comparison of Jet Clustering Algorithms \cite{Cacciari:2008gp}}
 	\label{fig:antiKt}
 \end{figure}
 
@@ -562,7 +570,16 @@ comparisons with perturbative effects in theoretical calculations jet clustering
 must be both infrared and collinear (IRC) safe. 
 When applied at particle level, an algorithm is collinear safe if the hardest particle
 will not be easily changed by the presence of another collinear particle. %check/expand
-%next describe infrared safe
+Two illustrate infrared safety, consider
+ two hard particles on opposite edges of a jet cone with no particles between them; in this case
+two cones are formed, each centered on a hard particle. An algorithm is infrared unsafe
+if the added presence of a soft particle between the two hard particles causes a third jet 
+to be formed. The difference with and without the soft particle results in non-cancellation
+of divergent real soft production and corresponding virtual contributions \cite{InfraredUnsafe}.
+A jet clustering algorithm is infrared unsafe if the number of jets created through clustering
+increases when including an additional soft particle within the cone of a previously formed jet. 
+A jet clustering algorithm is considered collinear safe if a hard particle is able to split 
+collinearly and that splitting does not influence the shape of stable jet cone \cite{CollinearSafe}. 
 The development and subsequent choice of the anti-$k_{T}$ jet clustering algorithm
 was stimulated by questions of sensitivity to non-perturbative effects like hadronization
 and underlying event contamination. Previously used jet clustering algorithms
@@ -578,8 +595,9 @@ To perform jet clustering in the anti-$k_{T}$, $k_{T}$ and Cambridge/Aachen jet 
 a distance $d_{ij}$ is introduced between PF particles $i$ and $j$ and $d_{iB}$ between
 the particle entity and the beam (B). The clustering proceeds by identifying the smallest distances
 between candidate particles in the cluster.
-If it is $d_{ij}$ the entities $i$ and $j$ are combined. However if it is $d_{iB}$ then $i$ 
-is considered a jet and all its entities are removed from the list of PF particles. The procedure
+If the minimum distance is $d_{ij}$ the entities $i$ and $j$ are combined. 
+When the minimum distance is $d_{iB}$ then $i$ 
+is considered a jet and all its entities in the jet are removed from the list of PF particles. The procedure
 is repeated until no entities are left. The definition of $d_{ij}$ and $d_{iB}$ are,
 \begin{equation}
 d_{ij}=\mathrm{min}(k_{ti}^{2p},k_{tj}^{2p})\frac{\Delta^{2}_{ij}}{R^{2}}
@@ -590,13 +608,14 @@ d_{iB}=k_{ti}^{2p}
 where $\Delta_{ij}^{2}=(y_{i}-y_{j})^{2}+(\phi_{i}-\phi_{j})^{2}$, $k_{ti}$ is the 
 transverse momentum, $y_{i}$ is the rapidity and $\phi_{i}$ is the azimuthal angle of 
 the particle $i$. 
-$k_{T}$ is %%write this in
 The case where $p=1$ is the $k_{T}$ algorithm, $p=0$ corresponds to the Cambridge/Aachen
 algorithm and $p=-1$ is the anti-$k_{T}$ algorithm.
 The effects of each of these algorithms on an event with a few well-separated hard particles
-and many soft particles is shown in figure \ref{fig:antiKt}.%%%insert antikt figure.
-%Jets used in this analysis use R=0.5
-%The key feature is that soft particle do not modify the shape of the jet while hard particles do.
+and many soft particles is shown in figure \ref{fig:antiKt}.
+As can be seen in the figure, the key feature of the anti-$k_{T}$ algorithm is 
+that soft particle do not modify the shape of the jet while hard particles do.
+The anti-$k_{T}$ clustered jets in this thesis use R=0.5. 
+%
 
 %Jet energy corrections [44]
 \subsection{Jet Energy Corrections}
@@ -604,6 +623,24 @@ Jet energy corrections (JEC)
 are applied to improve the accuracy of the jet $p_{T}$ measurement
 and to flatten the jet energy response as a function
 of~$\eta$ and $p_{T}$~\cite{jme-10-010}.
+JEC are applied by taking the dot product of a vector-factor, $C$, to each component of the jet four-momentum,
+\begin{equation}
+p_{\mu}^{cor}=C\cdot p_{\mu}^{raw}
+\end{equation}
+where $p_{\mu}^{cor}$ is the corrected jet four-momentum vector and
+$p_{\mu}^{raw}$ is the raw jet four-momentum\cite{ApplyJEC}.
+$C$ itself is composed of an offset correction $C_{offset}$, the MC
+calibration factor $C_{MC}$, and the residual calibrations $C_{rel}$ and $C_{abs}$
+for the relative and absolute energy scales. The correction $C_{offset}$ 
+removes the extra energy due to noise and pile-up, factor $C_{MC}$ removes
+the non-uniformity in $\eta$ and the non-linearity in $p_{T}$ and the
+residual corrections account for the small differences between data and simulation. These
+are combined into the overall correction factor $C$ by,
+\begin{equation}
+C=C_{offset}(p_{T}^{raw})\cdot C_{MC}(p_{T}',\eta)\cdot C_{rel}(\eta)\cdot C_{abs}(p_{T}'').
+\end{equation}
+Here, $p_{T}'$ is the jet $p_{T}$ after applying the offset correction and  
+$p_{T}''$ is the jet $p_{T}$ after applying all previous corrections.
 Jets are required to pass identification
 criteria that eliminate jets originating or being seeded by
 noisy channels in the calorimeter~\cite{Chatrchyan:2009hy}.

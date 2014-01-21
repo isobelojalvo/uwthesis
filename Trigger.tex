@@ -23,8 +23,22 @@ offline analysis.
   \subsection{Level 1 Trigger} %%%More on LEVEL 1 MUON TRIGGER!!!!
 The purpose of the Level 1 trigger is to reduce rates from the input
 crossing rate of 40MHz to a maximum output rate of 100kHz. 
-The first step in this process is to create
-calorimeter trigger primitives using a calorimeter trigger primitive generator (TPG).
+%A diagram of the Level 1 trigger system can be seen in 
+As can be seen in figure \ref{fig:Level1TriggerArchitecture} information from the muon trigger remains separate from the calorimeter trigger
+until it is combined in the Global Trigger. The level 1 trigger is described in more detail below.
+%undergoes a series of selections in the Regional Calorimeter Trigger
+%and then the Global Calorimeter Trigger while the muons are undergo local
+
+\begin{figure}[t]
+  \centering
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip, width=0.6\textwidth]{images/Level1TriggerArchitecture.png}
+  	\caption[Level 1 Layout]
+   	{Level 1 Trigger Architecture}
+	\label{fig:Level1TriggerArchitecture}
+\end{figure}
+
+The first step in the calorimeter trigger process is to create
+calorimeter trigger primitives using a trigger primitive generator (TPG).
 For the purpose of providing compact, fast information the calorimeters
 are divided into trigger towers; the TPG sums the transverse energy the
 ECAL crystals or HCAL read-out towers to obtain a trigger tower E$_{T}$.
@@ -35,8 +49,11 @@ The TPG electronics are integrated with the calorimeter readout and the trigger 
 are passed to the Regional Calorimeter Trigger (RCT) using
 high-speed serial links.
 An electron or photon candidate is expected to be narrow in $\eta$
-and broader in $\phi$ therefore, an additional bit is used to indicate whether 
-an electron candidate %%%%finish this 
+and broader in $\phi$. An additional bit,
+known as a fine-grain veto bit, is set for each trigger tower to indicate whether 
+an electron candidate's  
+highest two adjacent strips in the tower contain less than 90\% of the total
+$E_{T}$. 
 After that, the RCT combines tower information to form electron and 
 photon candidates. The RCT also sums ECAL and HCAL towers into broader
 regions which are used in the GCT to form jets. These regions also have a 
@@ -46,7 +63,7 @@ then sorts the electron/photon candidates and jets and passes them onto
 the Global Trigger.
 
 The Muon Trigger uses all three muon systems (DTs,RPCs,CSCs) for triggering.
-The DT system has excellent timing resolution and is used to reconstruct tracks
+The DT system has fairly good timing resolution and is used to reconstruct tracks
 and associate tracks to bunch crossings. At a regional level, the DT and CSC track finders
 combine segments to build muon tracks and assign transverse momentum using
 LUTs. All regional information from the three muon systems are then forwarded
@@ -66,7 +83,7 @@ the RCT has 7 receiver cards per crate and one jet summary card for each of the 
 A total of 24 bits is received from each trigger tower: 
 two 8-bit calorimeter energies each from the ECAL and the HCAL,
 two energy characterization bits, 5 bits of error detection and 1 LHC bunch crossing bit.
-\begin{figure}[hb]
+\begin{figure}[t]
   \centering
 	\includegraphics[trim = 0mm 80mm 0mm 42mm, clip, width=0.75\textwidth]{images/towers_ieta_iphi.png}
   	\caption[RCT Layout]
@@ -126,12 +143,13 @@ most 2$\times$2 contiguous towers. The patterns are detailed in figure \ref{fig:
 This $\tau$ veto bit is included when the jet transverse energy is sent to the GCT.
 The RCT is an essential system for data acquisition at a high efficiency and
 a low rate, therefore good performance must be continually monitored during and
-between runs.
+between runs. The RCT emulator as a high level software package designed
+to emulate RCT hardware response given any online input. 
 Using the RCT emulator, the performance of the RCT is monitored during 
 and after data-taking by constantly comparing the trigger 
 output with the expected output from the RCT Emulator. The RCT data quality monitoring 
 software package runs the RCT emulator on a subset of events and compares
-the emulator response with the hardware response for each event.
+the emulator response. %with the hardware response for each event.
 
 %A calibration factor that is measured offline as a function of 
 %$\eta$ is stored in the Look-Up tables and applied to the electron/photon candidates.
@@ -142,7 +160,7 @@ HLT uses a filter farm of processors to reduce rates by a factor of 10$^{6}$ fro
 data that is processed by the Data Acquisition (DAQ) system. The DAQ system is responsible
 for taking data which is pushed into the DAQ by Front-End Drivers (FEDs) at a maximum input 
 rate of 100kHz which corresponds to a data flow of $\approx$100 GByte/s from approximately
-650 data sources. An event builder assembles the event fragments from all FEDs
+650 data sources. An event builder assembles the event fragments from all FEDs %%%FIX
 which belong to the same Level 1 output; this data is then sent from underground to the surface %%%change
 building, SCX where the HLT is located.
 Algorithms for data selection are implemented in the HLT are written in
