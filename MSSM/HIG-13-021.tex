@@ -116,7 +116,191 @@ be less than 30~$\GeV$, where $\pt$ is the lepton transverse momentum and $\Delt
 %where $p_\mathrm{T, 1}$ and $p_\mathrm{T, 2}$ indicate the transverse momentum
 %of two reconstructed leptons.  $\Pe\Pgm$ events are selected with $P_\zeta - 1.85 \cdot P_\zeta^{\mathrm{vis}} > -20 $~$\GeV$.
 
+The light lepton $p_{T}$ and $\eta$ distributions for 
+7 and 8 TeV are shown in figure \ref{figure:eKinematics} 
+and figure \ref{figure:muKinematics}. The $\tau$ $p_{T}$ 
+and $\eta$ distributions for $\Pe\Pgt_h$ and $\Pgm\Pgt_h$ 
+final states are shown in figure \ref{figure:MTauKinematics} 
+and figure \ref{figure:ETauKinematics}.
+Figure \ref{figure:MET} shows the $\MET$ distribution and 
+figure \ref{figure:MT} shows the $M_{T}$ distribution.
+Figure \ref{figure:mVis} shows the visible mass distribution 
+which is the invariant mass of the light lepton and the visible decay products of the $\tau$.
+The $m_{\tau,\tau}$ distribution using the SVFit algorithm is shown in
+figure \ref{figure:svFit} for the inclusive selection, figure \ref{figure:svFitNoBTag}
+for the no b-tag selection and \ref{figure:svFitBTag} for the b-tag selection.
 
+%%%%%%%%%%%%%%%Adding Figures Reference these
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/pt_1_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/pt_1_eTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/eta_1_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/eta_1_eTau_2012.pdf}
+    \caption{
+      Distribution of the electron transverse momentum and psuedorapidity.    }
+    \label{figure:eKinematics}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/pt_1_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/pt_1_muTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/eta_1_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/eta_1_muTau_2012.pdf}
+    \caption{
+      Distribution of the muon transverse momentum and psuedorapidity.    }
+    \label{figure:muKinematics}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/pt_2_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/pt_2_muTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/eta_2_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/eta_2_muTau_2012.pdf}
+    \caption{
+      Distribution of the $\tau_{h}$ transverse momentum and psuedorapidity.
+    }
+    \label{figure:MTauKinematics}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/pt_2_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/pt_2_eTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/eta_2_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/eta_2_eTau_2012.pdf}
+    \caption{
+      Distribution of the $\tau_{h}$ transverse momentum and psuedorapidity.}
+    \label{figure:ETauKinematics}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/met_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/met_muTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/met_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/met_eTau_2012.pdf}
+    \caption{
+      Distribution of the missing transverse momentum from the $\tau_{\mu}\tau_{h}$ (top) and  $\tau_{e}\tau_{h}$ (bottom) channels.}
+    \label{figure:MET}
+  \end{center}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mt_1_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mt_1_muTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mt_1_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mt_1_eTau_2012.pdf}
+    \caption{
+      Distribution of the transverse mass from the $\tau_{\mu}\tau_{h}$ (top) and  $\tau_{e}\tau_{h}$ (bottom) channels.}
+    \label{figure:MT}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mvis_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mvis_muTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mvis_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mvis_eTau_2012.pdf}
+    \caption{
+      Distribution of the Visible Mass for inclusive selection.
+    }
+    \label{figure:mVis}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/m_sv_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/m_sv_muTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/m_sv_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/m_sv_eTau_2012.pdf}
+    \caption{
+      Distribution of the SVFit Mass for inclusive selection.
+    }
+    \label{figure:svFit}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/ControlPlotsForThesis/muTau/nobtag/m_sv_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/ControlPlotsForThesis/muTau/nobtag/m_sv_muTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/ControlPlotsForThesis/eleTau/nobtag/m_sv_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/ControlPlotsForThesis/eleTau/nobtag/m_sv_eTau_2012.pdf}
+    \caption{
+      Distribution of the SVFit Mass for the no b-Tag selection.
+    }
+    \label{figure:svFitNoBTag}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/ControlPlotsForThesis/muTau/btag/m_sv_muTau_2011_log.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/ControlPlotsForThesis/muTau/btag/m_sv_muTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/ControlPlotsForThesis/eleTau/btag/m_sv_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/ControlPlotsForThesis/eleTau/btag/m_sv_eTau_2012.pdf}
+    \caption{
+      Distribution of the SVFit Mass for the b-Tag selection.
+    }
+    \label{figure:svFitBTag}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/njets_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/njets_muTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/njets_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/njets_eTau_2012.pdf}
+    \caption{
+      Distribution of the number of identified jets in the sample of selected events.
+    }
+    \label{figure:njets}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/hjetpt_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/hjetpt_muTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/hjeteta_muTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/hjeteta_muTau_2012.pdf}
+    \caption{
+      Distribution of the leading jet transverse momentum and psuedorapidity.
+    }
+    \label{figure:mtJetKinematics}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/hjetpt_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/hjetpt_eTau_2012.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/hjeteta_eTau_2011.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/hjeteta_eTau_2012.pdf}
+    \caption{
+      Distribution of the leading jet transverse momentum and psuedorapidity.
+    }
+    \label{figure:etJetKinematics}
+  \end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%Adding figures
 
 To further enhance the sensitivity of the search for Higgs bosons, the sample of selected events is split into
 two mutually exclusive categories:
@@ -125,6 +309,28 @@ two mutually exclusive categories:
 which is enhanced in the MSSM. At least one $b$-tagged jet with $\pt>20$~$\GeV$ is required  and not more than one jet with $\pt>30$~$\GeV$. 
 \item {\bf No-B-Tag:} This event category is mainly sensitive to the gluon-fusion Higgs production mechanism. Events are required to have no b-tagged jets with $\pt>20$~$\GeV$. 
 \end{itemize}
+The number of $b$-tagged jets in the $\tau_{\mu}\tau_{h}$ and $\tau_{e}\tau_{h}$
+channels for both 7 and 8 TeV can be seen in figure (\ref{fig:nbjets}). Figures \ref{figure:mtJetKinematics}
+and \ref{figure:etJetKinematics} show the highest jet $p_{T}$ and $\eta$ distributions
+for the $\tau_{\mu}\tau_{h}$ and $\tau_{e}\tau_{h}$ channels respectively. 
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/nbtags_muTau_2011_log.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/nbtags_muTau_2012_log.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/nbtags_eTau_2011_log.pdf}
+    \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/nbtags_eTau_2012_log.pdf}
+    \caption{
+      Distribution of the number of identified b-quark jets in the sample of
+selected events from $\tau_{\mu}\tau_{h}$ (top) and  $\tau_{e}\tau_{h}$ (bottom)
+channels.  The background components are scaled relative to the results of a fit
+to the inclusive mass distribution.  The uncertainty on the background is represented
+in the shaded region and comes from the fitted nuisances.
+    }
+    \label{fig:nbjets}
+  \end{center}
+\end{figure}
+
 
 %All categories are split in two regions of reconstructed transverse momentum. For the $\Pe\Pgt_h$ and $\Pgm\Pgt_h$% final states the $\pt$ threshold on the hadronic tau is 40~$\GeV$. For $\Pe\Pgm$ final state the threshold on the muon is 35~$\GeV$ and for the $\Pgm\Pgm$ the threshold of the leading muon is 30~$\GeV$.
 
@@ -144,6 +350,8 @@ and $\cPZ\to \Pe\Pe/\Pgm\Pgm$ events, particularly in the $\Pe\Pgt_h$ channel,
 as the the probability for electrons to be misidentified as $\Pgt_h$ amounts to 1--2\%.
 The shape of the \ttbar  and di-boson backgrounds are estimated from simulation 
 using \MADGRAPH~\cite{Alwall:2007st} and \PYTHIA~\cite{Pythia}, respectively. The event yields are determined from measurements in background-enriched regions.
+The number of jets is shown in figure \ref{figure:njets}, in particular, good agreement
+between signal and background is seen for high jet multiplicity where \ttbar dominates.
 
 The event generator \PYTHIA is used to model the MSSM Higgs boson signal.
 Taus are decayed by the \TAUOLA~\cite{TAUOLA} package.
