@@ -1,3 +1,4 @@
+%%%evan/s comparison plot 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Preamble
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -79,6 +80,7 @@
 \usepackage{mathrsfs}
 \usepackage{amsmath}
 \usepackage{adjustbox}
+%\usepackage[sorting=none]{biblatex}
 
 %Search for an MSSM Higgs Boson and Measurement of W+b b
 %with the CMS Detector at the LHC.
@@ -96,14 +98,47 @@ with the CMS Detector at the LHC}
 %%%% 
 \setfoca{Wesley Smith}{Bjorn Wiik Professor}{Physics} % <- Your advisor
 \setfocb{Sridhara Dasu}{Professor}{Physics}
-\setfocb{Lisa Everett}{Professor}{Physics}
-\setfocb{Matthew Herndon}{Professor}{Physics}
-\setfocb{Terry Millar}{Professor}{Mathematics}
+\setfocc{Lisa Everett}{Professor}{Physics}
+\setfocd{Matthew Herndon}{Professor}{Physics}
+\setfoce{Terry Millar}{Professor}{Mathematics}
 
 
 %%%% Your abstract, used for the UMI abstract and in your front matter
 \setabstract{%
-This thesis describes a cross section measurement of  
+This thesis describes a standard model cross section measurement of $\Wbb$ 
+as well as a search for neutral Higgs bosons in the minimal supersymmetric 
+extension of the standard model (MSSM) decaying to tau pairs.
+
+The measurement of $\Wbb$ was performed
+using proton-proton
+collisions at $\sqrt{s} = 7~\mathrm{TeV}$ in a data sample collected
+with the CMS experiment at the LHC corresponding to
+an integrated luminosity of  $5.0~\mathrm{fb}^{-1}.$
+The $\mathrm{W+b\bar{b}}$
+events are selected in the $\mathrm{W}\rightarrow\mu\nu$ decay mode by requiring a
+muon with transverse momentum $p_{\mathrm{T}}>25~\mathrm{GeV}$ and pseudorapidity
+$|\eta|<2.1$, and exactly two b-tagged jets with $p_{\mathrm{T}}>25~\mathrm{GeV}$ and $|\eta|<2.4$.
+The measured $\mathrm{W+b\bar{b}}$ production cross section in the fiducial region, calculated at the level of final-state particles, is
+$0.53\pm 0.05~(\textrm{stat.}) \pm 0.09~(\textrm{syst.}) \pm 0.06~(\textrm{th.}) \pm 0.01~(\textrm{lum.}) ~\textrm{pb}$,
+in agreement with the standard model prediction. 
+This measurement serves as an important
+benchmark at the LHC especially to 
+searches which include a single, isolated lepton and one or more b jets in the final state,
+as $\Wbb$ is an irreducible background.
+
+The search for neutral Higgs bosons in their decay to tau pairs is performed 
+using events recorded by the CMS experiment at the LHC
+in 2011 and 2012 at a center-of-mass energy of 7 TeV and 8 TeV respectively. 
+The dataset corresponds to an integrated luminosity of 24.6~fb$^{-1}$, 
+with 4.9~fb$^{-1}$ at 7 TeV and 19.7 fb$^{-1}$ at 8 TeV. To enhance 
+the sensitivity to neutral MSSM Higgs bosons, the search
+ includes the case where the Higgs boson is produced in association 
+ with a b-quark jet. No excess is observed in the tau-pair invariant-mass 
+ spectrum. 
+ %Exclusion limits in the MSSM parameter space of $M_A$ 
+ %and tan$\beta$ in the $m_h^{\rm max}$ scenario are presented. 
+
+
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,7 +211,9 @@ This is where any acknowledgements would go.
 
 
 \bibliographystyle{plain}
-\bibliographystyle{unsrt}
+
+%\bibliographystyle{unsrt}
+%\bibliographystyle{ieeetr}
 \bibliography{Wbb/Wbb,MSSM/MSSM,Thesis}
 
 \end{document}

@@ -1,3 +1,5 @@
+%%DESCRIBE LO, NLO, ect
+%%DESCRIBE POWHEG
 \chapter{Event and Detector Simulation}
 Event simulation is crucial
 in order to measure detector acceptances and efficiencies 
@@ -9,11 +11,11 @@ of physics final states and distribution in phase space of final state particles
 and then simulation of particle interactions within the detector\cite{Buckley:2011ms}. %%fix
 The physics process is simulated using a monte carlo (MC) generator
 while the simulation of the detector is performed using a dedicated
-software package which specializes in interactions of particles
+software package which models in interactions of particles
 in their passage through matter.  
 The output of simulation should be similar if not the same as
 the output of the detector; in this way the simulation and data can undergo the
-same analytical processes.
+same reconstruction and analysis.
 Simulations are initiated using a program called an 'event generator'.
 The purpose of an event generator is to produce hypothetical
 events with a distribution of observables as predicted by theory.
@@ -37,10 +39,10 @@ understood and well modeled then there would be no point in building a detector!
 Instead, it is important to understand the ingredients that go into 
 a simulation and choose a generator which describes well the desired process. 
 A number of physics generators
-are in common use; a few of these are outline in section \ref{sec:MCGenerators}.
+are in common use; a few of these are outlined in section \ref{sec:MCGenerators}.
 Physics simulation can be divided into a few key components:
 The hard scattering matrix elements, which define the process(es) under study,
-the structure function, which models the energy distributions of the partons
+the structure function, which models the momentum distributions of the partons
 which are involved in the collision, final and initial state radiation and underlying
 event processes including multiple interactions in the detector.
 %\section{Physics Event Generation}
@@ -62,13 +64,14 @@ freedom. $\mathcal{M}$ is the relevant matrix element,
 $q$ and $q'$ are the initial partons,
 $1/(2\hat{s})$ is the parton flux and
  $\hat{s}=xx's$ where $s$ is the center of mass energy squared.
-The factorization scale is $\mu_{F}$. 
+The factorization scale is $\mu_{F}$ and has the physical 
+interpertation as a collinear cutoff\cite{Maltoni:2007tc}.  
 %In typical event generators which simulate hard processes 
 %ref equation
 Equation (\ref{eq:matrixEle}) is used to write an event generator. 
 To do this first a sampling of the relevant phase
-space must be done using a random number generator and
-momenta of the colliding constituents are selected by sampling
+space must be performed using a random number generator which selects
+momenta of the colliding constituents by sampling
 the parton distribution function of the proton at the energy scale
 of the subprocess.
 
@@ -109,14 +112,14 @@ able to simulate a wide variety of initial and final state processes.
 \end{figure}
 
 The Lund String model for parton showering is based on models from lattice QCD simulations
-which shows that at large distance the potential energy of color sources increases
+which show that at large distance the potential energy of color sources increases
 linearly with their separation. 
-A schematic showing parton showering using the Lund String model is 
+A schematic of parton showering using the Lund String model is 
 shown in figure \ref{fig:StringModel}. 
 Considering the production of a quark-anti-quark pair,
 at first the quark and anti-quark are 
-moving apart very quickly. A gluonic string is stretched between them,
-its potential energy grows causing a reduction in the kinetic energy of the
+moving apart very quickly. A gluonic string is stretched between them. 
+Its potential energy grows causing a reduction in the kinetic energy of the
 quark-anti-quark system. When the gluon's potential energy reaches
 the order of a hadron mass the gluon string breaks apart and a quark-anti-quark
 pair is produced.
@@ -129,9 +132,18 @@ pair is produced.
 	\label{fig:EventProcess}
 \end{figure}
 
-In a proton-proton interaction a parton is resolved
-at scale $Q$ and momentum fraction $x$ from each
-proton. Figure \ref{fig:EventProcess} 
+For a lepton-lepton collider, the energies of the initial state leptons
+is determined by the accelerator and is well known. For a
+hadron-hadron collider each hadron is regarded as a collection
+of quarks, antiquarks and gluons each of which carries
+some fraction $x$ of the hadron's momentum at a scale $Q$ with a 
+number density $f(x,Q^{2})$. $Q$ characterizes the hard scattering 
+($Q^{2}=M^{2}_{l^{+}l^{-}}, p_{T}^{2}$, ect.)
+and changes on the order of $O(1)$ are equivalent\cite{Campbell:2006wx}. 
+%In a proton-proton interaction a parton is resolved
+%at scale $Q$ and momentum fraction $x$ from each
+%proton. 
+Figure \ref{fig:EventProcess} 
 shows a proton-proton collision where a valence quark
 is separated from one of the colliding protons and a 
 a sea anti-quark is separated from the other of the colliding protons.
@@ -140,7 +152,7 @@ in the parton distribution function $f(x,Q^{2})$.
 The parton distribution function represents the probability
 densities to find a parton carrying
 a momentum faction $x$ at a squared energy
-scale $Q^{2}$. 
+scale $Q^{2}$\cite{Martin:2009iq}. 
 Since the hadronization scale is much smaller than the hard scale the impact
 of the hadronization model choice on the final state is typically
 small for most physics analyses. 
@@ -159,11 +171,31 @@ Due to the composite nature of hadrons and the low impact
 parameter of spectator partons MPI
 have an increase rate of occurrence in the presence of a 
 hard scattering process. 
-In the $\Wbb$ analysis
+Figure \ref{DPSandSPS} shows a comparison of feynman diagrams for W+jj interaction from 
+double parton scattering (an MPI interaction) and single parton scattering. 
+In the $\Wbb$ analysis the effects from double parton scattering must be taken into 
+account when calculating the measured cross section. 
 MPI agreement between data and simulation is tested 
-by observing the ratio of $(p_{T,j_{1}}+p_{T,j_{2}})/p_{T,j_{1},j_{2}}$
-Finally, proton-proton interactions which 
-pileup from other proton-proton collisions are added to the event.
+by observing the relative $p_{T}$ balance of the two 
+jets via the ratio of $(p_{T,j_{1}}+p_{T,j_{2}})/p_{T,j_{1},j_{2}}$ \cite{Chatrchyan:2013xxa}.
+
+\begin{figure}[hb]
+\centering
+  \begin{subfigure}[b]{.475\textwidth}
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,width=\textwidth]{images/figs_SPS_final.png}
+	\end{subfigure}	
+   \begin{subfigure}[b]{.475\textwidth}
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,width=\textwidth]{images/figs_DPS_final.png}
+    \end{subfigure}	
+  \caption[]
+   	{Single Parton Scattering and Double Parton Scattering in a W+jj event}
+    \label{fig:DPSandSPS}
+\end{figure}
+
+The LHC is a high luminosity experiment. Therefore, 
+an obseved event will have, as background, interactions from other colliding protons.
+Successful event simulation must include  
+pileup from other proton-proton collisions.
 %b quarks are not expected to be
 %produced at any signiﬁcant rate in nonperturbative processes [1], and they do not occur
 %as valence ﬂavours of the commonly used beam particles. A priori, they are therefore
@@ -175,27 +207,26 @@ pileup from other proton-proton collisions are added to the event.
 A number of monte carlo (MC) generators are used to simulate
 physics processes. The MC method makes use of a random
 number generator to simulate event to event fluctuations
-which are intrinsic
-to quantum processes. 
+which are intrinsic quantum processes. 
 The choice of MC generator is largely dependent on the 
 type of process to be simulated. %fix
 %K-factors
 \subsection{MadGraph}
-MadGraph is is a matrix element generator for SM processes at
+MadGraph\cite{Alwall:2007st} is is a matrix element generator for SM processes at
 any collider. It provides a computation of tree-level matrix elements
 with a fixed number of partons in the final state. 
 For a user-specified process MadGraph generates
 the amplitudes for all relevant subprocesses and produces
 the mappings for the integration over the phase space. 
-The final state only 
-Events may be passed directly to a shower MC program.
+The final state only events may be passed directly to a shower MC program.
 \subsection{Tauloa}
-Tauloa is a package which is used for generation of tau lepton decays including
+Tauloa\cite{TAUOLA} is a package which is used for generation of tau lepton decays including
 spin polarization. For each tau decay mode there is a individual phase space generator,
 modeling of the weak decay including first order QED corrections for leptonic decays
 and a part describing the hadronic current.
 \subsection{PYTHIA}
-At leading order $\mathtt{PYTHIA}$ contains approximately 240 different $2\rightarrow n$ subprocesses.
+At leading order $\mathtt{PYTHIA}$\cite{Pythia} 
+contains approximately 240 different $2\rightarrow n$ subprocesses.
 The initial state shower is based on backwards evolution whereby the 
 hard scattering process is simulated and is evolved backwards in time to the shower
 initiators. Partons radiated in the initial state can initiate final-state showers
@@ -205,9 +236,12 @@ are energy and momentum carrying kinds in the string. The production of a new $q
 pair causes the string to break. A quark from one break can combine with an antiquark
 from an adjacent quark to form a meson. 
 \subsection{MCFM}%reread carefully
-Monte Carlo for FeMtobarn (MCFM) processes at hadron colliders is a parton-level Monte Carlo
+Monte Carlo for FeMtobarn (MCFM)\cite{MCFM} processes at hadron 
+colliders is a parton-level Monte Carlo
 program which gives next to leading order predictions for 
-a range of processes at hadron colliders. MCFM
+a range of processes at hadron colliders. The difference between leading and 
+next to leading order is described in section \ref{sec:SMSection}.
+ MCFM
 produces weighted events and therefore can
 give very accurate predictions for event rates at NLO with cuts included, 
 however it gives very little information about regions of phase space which are 
@@ -220,7 +254,7 @@ for the $\Wbb$ cross section measurement detailed later in this thesis and is sh
 correction to the overall simulated cross section. 
 %ref http://mcfm.fnal.gov/mcfm.pdf
 \section{Detector Simulation}
-$\mathtt{GEANT4}$ is a toolkit for simulating the passage of
+$\mathtt{GEANT4}$\cite{GEANT4} is a toolkit for simulating the passage of
 photons, muons, electrons, hadrons and ions through matter at energies from 250 eV to 
 several PeV. The simulation package models the 
 detector geometry, electric and magnetic fields and a wide range 
@@ -233,7 +267,7 @@ Magnetic field simulation makes use of detailed measurements of
 the magnetic field throughout the CMS detector.
 $\mathtt{GEANT4}$ uses decay tables for to properly simulate decay rates 
 for particles such as $\pi$, $K$ mesons
-and resonant baryons based on data from the Particle Data Group.
+and resonant baryons based on data from the Particle Data Group\cite{PhysRevD.86.010001}.
 The models used for decay of various physics processes are either
 theory or data driven and the toolkit offers a large variety of complementary
 and sometimes alternative physics models. 
