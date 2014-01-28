@@ -156,6 +156,20 @@ scale $Q^{2}$\cite{Martin:2009iq}.
 Since the hadronization scale is much smaller than the hard scale the impact
 of the hadronization model choice on the final state is typically
 small for most physics analyses. 
+Parton distribution functions used in this thesis are $\mathtt{CTEQ6.6}$ 
+and $\mathtt{MSTWNNLO}$ .
+$\mathtt{CTEQ6.6}$ parton distribution functions are extracted
+from a global analysis of hard-scattering data from a variety of fixed-traget
+and collider experiments. In the 6.6 version of $\mathtt{CTEQ}$ has incorporated
+a comprehensive treatment of heavy-quark effects along with including recent
+$\mathtt{HERA}$ charm production cross sections. 
+$\mathtt{MSTWNNLO}$ also obtains parton distribution functions via a
+global analysis.
+The data sets fitted in $\mathtt{MSTWNNLO}$ include CCFR/NuTeV dimuon cross sections, 
+which constrain the strange quark and antiquark distributions. 
+They also include Tevatron Run II data on 
+inclusive jet production, the lepton charge asymmetry from W decays 
+and the Z rapidity distribution.
 %Parton showers are essential in providing the %%exclusive?
 %description of the event: at leading order the transverse momentum
 %for the $W$ will always be zero since there is nothing for the $W$
@@ -171,7 +185,7 @@ Due to the composite nature of hadrons and the low impact
 parameter of spectator partons MPI
 have an increase rate of occurrence in the presence of a 
 hard scattering process. 
-Figure \ref{DPSandSPS} shows a comparison of feynman diagrams for W+jj interaction from 
+Figure \ref{fig:DPSandSPS} shows a comparison of feynman diagrams for W+jj interaction from 
 double parton scattering (an MPI interaction) and single parton scattering. 
 In the $\Wbb$ analysis the effects from double parton scattering must be taken into 
 account when calculating the measured cross section. 
@@ -182,18 +196,18 @@ jets via the ratio of $(p_{T,j_{1}}+p_{T,j_{2}})/p_{T,j_{1},j_{2}}$ \cite{Chatrc
 \begin{figure}[hb]
 \centering
   \begin{subfigure}[b]{.475\textwidth}
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,width=\textwidth]{images/figs_SPS_final.png}
+	\includegraphics[trim = 80mm 0mm 0mm 0mm, clip,width=\textwidth]{images/figs_SPS_final.png}
 	\end{subfigure}	
    \begin{subfigure}[b]{.475\textwidth}
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,width=\textwidth]{images/figs_DPS_final.png}
+	\includegraphics[trim = 80mm 0mm 0mm 0mm, clip,width=\textwidth]{images/figs_DPS_final.png}
     \end{subfigure}	
   \caption[]
-   	{Single Parton Scattering and Double Parton Scattering in a W+jj event}
+   	{Single Parton Scattering and Double Parton Scattering in a W+jj event~\cite{Chatrchyan:2013xxa}}
     \label{fig:DPSandSPS}
 \end{figure}
 
 The LHC is a high luminosity experiment. Therefore, 
-an obseved event will have, as background, interactions from other colliding protons.
+an obseved event will have as background interactions from other colliding protons.
 Successful event simulation must include  
 pileup from other proton-proton collisions.
 %b quarks are not expected to be
@@ -231,20 +245,26 @@ The initial state shower is based on backwards evolution whereby the
 hard scattering process is simulated and is evolved backwards in time to the shower
 initiators. Partons radiated in the initial state can initiate final-state showers
 of their own. The Lund string model is used in hadronization; it is based on linear confinement
-where quarks  are located at the ends of the string and gluons
-are energy and momentum carrying kinds in the string. The production of a new $q\bar{q}$
+where quarks are located at the ends of the string and gluons
+are energy and momentum carrying strings. The production of a new $q\bar{q}$
 pair causes the string to break. A quark from one break can combine with an antiquark
 from an adjacent quark to form a meson. 
+\subsection{POWHEG}
+$\mathtt{POWHEG}$ (Positive Weight Hardest Emission Generator) \cite{Frixione:2007vw,Oleari:2011ey}
+generate the hardest radiation first and then feed the event to 
+a shower gnerator for subsequent softer radiation. For a shower generator
+the hardest emission with highest transverse momentum is always generated
+first; $\mathtt{POWHEG}$ simply replaces the hardest emission with its own
+NLO accurate emission. 
 \subsection{MCFM}%reread carefully
 Monte Carlo for FeMtobarn (MCFM)\cite{MCFM} processes at hadron 
 colliders is a parton-level Monte Carlo
 program which gives next to leading order predictions for 
 a range of processes at hadron colliders. The difference between leading and 
 next to leading order is described in section \ref{sec:SMSection}.
- MCFM
-produces weighted events and therefore can
-give very accurate predictions for event rates at NLO with cuts included, 
-however it gives very little information about regions of phase space which are 
+ MCFM produces weighted events and therefore can
+give very accurate predictions for event rates at NLO with cuts included; 
+however, it gives very little information about regions of phase space which are 
 dominated by multiple parton interactions. 
 Since the final state contains partons rather than hadrons, full detector simulation cannot
 be performed using the MCFM output. Furthermore, a parton to hadron correction factor
@@ -261,7 +281,7 @@ detector geometry, electric and magnetic fields and a wide range
 of initial to final state physics processes.
 Geometry simulation includes a detailed model of the experiment
 including layout of the detectors and the location of absorbers (cables, cooling systems, ect.)
-Run management for recording details of each run as well as
+Event management for recording details of each event as well as
 a number of options for the visualization of the simulation output.
 Magnetic field simulation makes use of detailed measurements of 
 the magnetic field throughout the CMS detector.
@@ -272,11 +292,12 @@ The models used for decay of various physics processes are either
 theory or data driven and the toolkit offers a large variety of complementary
 and sometimes alternative physics models. 
 %need transition sentencce
-The probability of a particle surviving a distance $l$ 
+$\mathtt{GEANT4}$ uses a simple model for simulating the lifetime of a particle whereby
+the probability of a particle surviving a distance $l$ is given as,
 \begin{equation}
-P(l)=e^{-\eta_{\lambda}}
+P(l)=e^{-\eta_{\lambda}}.
 \end{equation}
-where $\eta_{\lambda}$ is an exponential distribution which is independent of 
+In the above equation, $\eta_{\lambda}$ is an exponential distribution which is independent of 
 material and energy; therefore, $\eta_{\lambda}=-\ln(\eta)$ and $\eta$ is
-a random number on the interval $(0,1)$. \GEANTfour has been an essential and 
+a random number on the interval $(0,1)$. $\mathtt{GEANT4}$ has been an essential and 
 very successful tool in the simulation of detector effects at CMS.

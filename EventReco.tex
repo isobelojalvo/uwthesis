@@ -5,6 +5,7 @@
 %%Better Explanation for Recoil
 %%Lengthen 
 \chapter{Event Reconstruction}
+\label{chapter:EventReco}
 The raw data format 
 is used for online reconstruction in the high level trigger
 or offline reconstruction. 
@@ -343,6 +344,7 @@ and the position of the extrapolated track.
 %Muon trigger
 % section on lepton isolation?
 \section{Electron and Muon Isolation}
+\label{sec:Isolation}
 To discriminate signal muons and electrons from leptons
 which are created in QCD interactions an isolation requirement is essential. 
 %is based on particle-flow candidates, of which all photon 
@@ -482,6 +484,68 @@ make the $\tau_{had}$ identification pileup insensitive:
 \Delta \beta = 0.4576 \cdot \sum P_{T}^{charged} (\Delta z > 2\mbox{~mm}).
 \end{equation*}
 
+\section{$\mathtt{SVFit}$ Algorithm}
+\label{sec:SVFIT}
+The tau pair mass, $M_{\tau\tau}$, is reconstructed in a likelihood based algorithm, $\mathtt{SVFit}$\cite{CMS-PAPER-HIG-10-002}.
+The kinematics of tau lepton decays is underdetermined by experimental measurements.
+%Decays of tau leptons into hadrons are represented by a two--body phase--space model,
+%assuming all visible decay products of the tau to constitute one ``particle''.
+$5$ parameters are needed to specify hadronic tau decays in this model:
+momentum, polar and azimuthal angles of the tau lepton in the laboratory (CMS detector) frame,
+plus two decay angles in the rest--frame of the tau lepton.
+%In decays of tau leptons to electron or muons two neutrinos are produced
+%and the invariant mass of the di--neutrino system constitutes a $6$--th parameter.
+
+These parameters are chosen to be:
+\begin{itemize}
+\item $x$, the fraction of tau lepton energy (in the laboratory frame) carried by visible decay products.
+\item $\phi$, the azimuthal angle of the tau lepton in the laboratory frame.
+\item $m_{\nu\nu}$, the mass of the neutrino system.
+\end{itemize}
+$E_{x}^{miss}$ and $E_{y}^{miss}$, reconstructed in the plane transverse to the beam--axis
+provide 2 further constraints.
+
+%albeit of precision that is limited by the experimental resolution on $E_{x}^{miss}$ and $E_{y}^{miss}$,
+%amounting to typically $10$~\GeV in the $2011$ and $2012$ data--taking period~\cite{JME_12_002}.
+
+The reconstruction of tau decay kinematics is underconstrained by measured observables;
+this is addressed by the likelihood approach implemented in the SVfit algorithm.
+%$M_{\tau\tau}$ values are reconstructed by combining the measured observables $E_{x}^{miss}$ and $E_{y}^{miss}$ with a probability model,
+%which includes terms for tau decay kinematics and for the \MET resolution.
+The model makes a prediction for the probability density $p(\vec{x} \vert \vec{y}, \vec{a})$
+to observe the values $\vec{x} = (E_{x}^{miss}, E_{y}^{miss})$ measured in an event,
+given that the unknown parameters specifying the kinematics of the tau pair decay have values
+$\vec{a} = (x_{1}, \phi_{1}, m_{\nu\nu}^{1}, x_{2}, \phi_{2}, m_{\nu\nu}^{2})$
+and the momenta of the visible decay products are equal to the observed $\vec{y} = (p^{vis}_{1}, p^{vis}_{2})$.
+The following likelihood model is used to compute probabilities:
+\begin{equation}
+P(M_{\tau\tau}^{i}) = \int \delta \left( M_{\tau\tau}^{i} - M_{\tau\tau}(\vec{y}, \vec{a} \right) p(\vec{x} \vert \vec{y}, \vec{a}) d\vec{a}
+\end{equation}
+for a series of mass hypotheses $M_{\tau\tau}^{i}$.
+The best estimate $\hat{M}_{\tau\tau}$ for the tau pair mass is taken to be the maximum of $M_{\tau\tau}^{i}$ within the series.
+Lower (upper) limits on the reconstructed mass $\hat{M}_{\tau\tau}$ are determined for every event
+by the $0.16$ ($0.84$) quantiles of the series of mass hypotheses $M_{\tau\tau}^{i}$
+and associated probability values $P(M_{\tau\tau}^{i})$.
+
+\begin{figure}
+\setlength{\unitlength}{1mm}
+\begin{center}
+\begin{picture}(150,78)(0,0)
+\put(-5.5, 0.0){\mbox{\includegraphics*[width=78mm]
+  {images/svFitPerformance_aLaLorenzo_mutau_visMass.pdf}}}
+\put(78.0, 0.0){\mbox{\includegraphics*[width=78mm]
+  {images/svFitPerformance_aLaLorenzo_mutau_svFitMass.pdf}}}
+\end{picture}
+\caption{
+         Distribution of visible mass (left) and $M_{\tau\tau}$ reconstructed reconstructed by the SVfit algorithm (right)
+         %for simulated $Z \to \tau\tau \to \mu\tau_{had}$ background events
+         %and hypothetical MSSM Higgs$ \to \tau\tau \to \mu\tau_{had}$ signals of $m_{A} = 120$, $200$ and $300$~\GeV.
+}
+\label{fig:expectedSVfitMassDistributions}
+\end{center}
+\end{figure}
+
+
 \section{Particle Flow Reconstruction}
 In proton-proton collisions, even at energies on the order of a few TeV, 
 most stable decay products have a low $p_{T}$.
@@ -534,8 +598,8 @@ to PF photons and PF neutral hadrons. Figure \ref{fig:ParticleFlowJet} %insert P
 shows relative fractions of charged hadrons, photons, neutral hadrons, electrons,
 hf hadrons and em particles in jets.
 
-\subsection{Particle Flow Jet Reconstruction}
-\begin{figure}[ht]
+%\subsection{Particle Flow Jet Reconstruction}
+\begin{figure}[b]
   \centering
 	\includegraphics[width=0.5\textwidth]{images/ParticleFlowJet.png}
   	\caption[PF Jet]
@@ -554,6 +618,7 @@ In the search for an MSSM higgs boson, production in association with b jets
 is enhanced. Therefore, efficient jet and b jet identification is crucial.
 
 \subsection{Jet Reconstruction}
+\label{sec:JetReco}
 \begin{figure}[ht]
   \centering
 	\includegraphics[width=0.8\textwidth]{images/AntiKTAlgo.png}
@@ -648,8 +713,8 @@ Jets which fall within $\Delta R < 0.5$ from a lepton candidate
 are not included in the jet collection.
 
 %Pileup ID
-\subsection{b-Jet ID and Secondary Vertices}
-%%
+\section{b-Jet ID and Secondary Vertices}
+\label{sec:CSVAlgo}
 The Combined Secondary Vertex (CSV) b-tagging algorithm makes use
 of the long lifetime and heavy-flavor of b-hadrons.
 %for both b-jets, it is also required that both b-Jets have atleast one secondary vertex.                                                                                   
@@ -670,6 +735,8 @@ the fit is below a given threshold. The secondary vertex studied in this thesis 
 the greatest significance of flight distance.
 
 \section{Missing Transverse Energy, Recoil Corrections and MVA $\MET$}
+\label{sec:MET}
+
 Missing transverse energy is defined using PF candidates as,
 \begin{equation}%%%add vectors above everywhere
 \MET = -\sum_{i} p_{T}

@@ -80,6 +80,7 @@
 \usepackage{mathrsfs}
 \usepackage{amsmath}
 \usepackage{adjustbox}
+\usepackage{xr}
 %\usepackage[sorting=none]{biblatex}
 
 %Search for an MSSM Higgs Boson and Measurement of W+b b
@@ -102,6 +103,8 @@ with the CMS Detector at the LHC}
 \setfocd{Matthew Herndon}{Professor}{Physics}
 \setfoce{Terry Millar}{Professor}{Mathematics}
 
+%The places you're going to are never on the map.
+%-Jim Hensen
 
 %%%% Your abstract, used for the UMI abstract and in your front matter
 \setabstract{%
@@ -147,11 +150,11 @@ the sensitivity to neutral MSSM Higgs bosons, the search
 
 \begin{document}
 %%%%%%SETLINE NUMBERS
-%\setpagewiselinenumbers
+%%\setpagewiselinenumbers
 \modulolinenumbers[1]
 \linenumbers
-%%%%%%END SETLINE NUMBERS
-% Tell the memoir class to set up lowercase roman for pagination, etc.
+%%%%%%%END SETLINE NUMBERS
+%% Tell the memoir class to set up lowercase roman for pagination, etc.
 \frontmatter
 
 %%%% Uncomment this to create a UMI abstract page.
@@ -161,7 +164,9 @@ the sensitivity to neutral MSSM Higgs bosons, the search
 % The title page
 \thetitlepage
 \clearpage
+``The places you're going to are never on the map."
 
+Jim Henson
 % The copyright page, if you want to pay the fee and register copyright.
 \thecopyrightpage
 \cleardoublepage
@@ -214,6 +219,7 @@ This is where any acknowledgements would go.
 
 %\bibliographystyle{unsrt}
 %\bibliographystyle{ieeetr}
+
 \bibliography{Wbb/Wbb,MSSM/MSSM,Thesis}
 
 \end{document}
