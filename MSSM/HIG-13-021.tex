@@ -1,3 +1,5 @@
+%%%%%%%WRITE ABOUT RHO CORRECTIONS
+%%%%%%%WRITE ABOUT SVFIT
 \chapter{Search for an MSSM Higgs Boson}
 \section{Introduction}
 %Experimental evidence from a large number of high energy experiments has shown an 
@@ -22,22 +24,52 @@ the b-associated production is the dominant contribution, due to the enhanced bo
 coupling. In the region of large tan$\beta$ the branching ratio to tau leptons is enhanced, 
 making the search for neutral MSSM Higgs bosons in the di-$\Pgt$ final state of particular interest. 
 
-In this chapter, a search for neutral MSSM Higgs bosons in pp collisions at $\sqrt{s}=$ 7 \TeV 
-and 8 \TeV at the LHC. The data were recorded by the Compact Muon Solenoid experiment (CMS)~\cite{CMS-JINST} 
-in 2011 and 2012 and correspond to an integrated luminosity of 24.6 fb$^{-1}$, with 4.9~fb$^{-1}$ 
-at 7 \TeV and 19.7~fb$^{-1}$ at 8 \TeV. Five different $\Pgt\Pgt$ final states are studied: 
-$\Pe\Pgt_{h}, \Pgm\Pgt_{h}, \Pe\Pgm$, $\Pgm\Pgm$ and $\Pgt_{h}\Pgt_{h}$, where $\Pgt_{h}$ denotes a 
-hadronic decay of a $\tau$. These results are an extension of a previous search by the CMS 
+In this chapter, a search for neutral MSSM Higgs bosons in pp collisions %at $\sqrt{s}=$ 7 \TeV 
+%and 8 \TeV at the LHC  
+%The data were recorded by the Compact Muon Solenoid experiment (CMS)~\cite{CMS-JINST} 
+%in 2011 and 2012 
+ corresponding to an integrated luminosity of 24.6 fb$^{-1}$, with 4.9~fb$^{-1}$ 
+at 7 \TeV and 19.7~fb$^{-1}$ at 8 \TeV is presented. 
+The different $\Pgt\Pgt$ final states studied are: $\Pgm\Pgt_{h}$ and $\Pe\Pgt_{h}$
+%,  \Pe\Pgm$, $\Pgm\Pgm$ and $\Pgt_{h}\Pgt_{h}$, where $\Pgt_{h}$ denotes a 
+%hadronic decay of a $\tau$. 
+where $\mu$ indicates the muonic decay of the $\tau$,
+$\tau\rightarrow\mu+\bar{\nu_{\mu}}+\nu_{\tau}$, $e$ represents the electronic
+decay of the $\tau$, $\tau\rightarrow e+\bar{\nu_{e}}+\nu_{\tau}$, and $\Pgt_{h}$ denotes a 
+hadronic decay of a $\tau$. 
+The final states
+$\Pe\Pgm$, $\Pgm\Pgm$ and $\Pgt_{h}\Pgt_{h}$
+are reported elsewhere \cite{CMS-PAS-HIG-13-021}.
+These results are an extension of a previous search by the CMS 
 experiment~\cite{CMS-PAPER-HIG-10-002} and are similar to those performed by the the ATLAS 
 experiment~\cite{Atlas-MSSM}, the Tevatron~\cite{Tevatron-MSSM, D0-MSSM, CDF-MSSM}, and are 
 complimentary to the MSSM Higgs search at LEP~\cite{LEP2-MSSM}. 
+Figure \ref{fig:MSSMSummary} shows a summary of these results with exclusion at 95\% CL in the tan$\beta-M_{A}$.
+%In particular, LEP studied
+%while ATLAS focused on similar final state
+%D0 used
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{images/MSSMSummary.png}
+    \caption{
+ A comparison of exclusion at 95\% CL in the tan$\beta-M_{A}$
+    }
+    \label{fig:MSSMSummary}
+  \end{center}
+\end{figure}
 
 Traditionally, searches for MSSM Higgs bosons are expressed in terms of benchmark scenarios where 
 the lowest-order parameters tan$\beta$ and $M_A$ are varied, while fixing the other parameters that 
-enter through radiative corrections to certain benchmark values. 
-In this study, the $m_{h}^{\rm max}$ scenario~\cite{MHMAX-Carena,MHMAX-Carena-2002} is used as it 
+enter through radiative corrections to certain benchmark values, this is further detailed in section \ref{sec:HiggsMSSM}. 
+For one loop corrections the dominant contribution is the $O(\alpha_{t})$ term due to top and stop loops. 
+Where $\alpha_{t}$ is defined as $\alpha_{t}\equiv h_{t}^{2}/(4\pi)$ and $h_{t}$ is
+the top-quark Yukawa coupling. While for two loop corrections the dominant contributions are 
+the strong corrections and Yukawa corrections of $O(\alpha_{t}^{2})$ to the one loop $O(\alpha_{t})$
+term\cite{MHMAX-Carena}.
+In this study, the scenario $m_{h}^{\rm max}$ scenario~\cite{MHMAX-Carena,MHMAX-Carena-2002} is used as it 
 yields conservative expected limits in the tan$\beta$ and $M_A$ plane. 
-%In this scenario, the parameters are set to the following values: 
+In this scenario, the parameters are set to the following values: 
 $M_{\rm SUSY}$ = 1\TeV; $X_t$ =2$M_{\rm SUSY}$; $\Pgm$ =~200~$\GeV$; $M_{\tilde{g}}$ = 800~$\GeV$; 
 $M_2$ = 200~$\GeV$; and $A_b = A_t$, where $M_{\rm SUSY}$ is the common soft-SUSY-breaking squark 
 mass of the third generation; $X_t = A_t - \Pgm/\tan\beta$ is the stop mixing parameter; $A_t$ 
@@ -45,17 +77,23 @@ and $A_b$ are the stop and sbottom trilinear couplings, respectively; $\Pgm$ the
 parameter; $M_{\tilde{g}}$ the gluino mass; and $M_2$ is the SU(2)-gaugino mass parameter. 
 %The value of $M_1$ is fixed via the unification relation $M_1 =(5/3)M_2\sin\theta_{\rm W}/\cos\theta_{\rm W}$.
 
-Recently the CMS and ATLAS experiments have reported the observation of a new boson with mass 
-in the range 125-126~GeV~\cite{CMS-HIGGS-DISCOVERY,ATLAS-HIGGS-DISCOVERY}. 
-An indication that this new boson decays into tau pairs has recently been reported by 
+%Recently the CMS and ATLAS experiments have reported the observation of a new boson with mass 
+%in the range 125-126~GeV~\cite{CMS-HIGGS-DISCOVERY,ATLAS-HIGGS-DISCOVERY}. 
+An indication that the recently discovered higgs boson decays into tau pairs has been reported by 
 CMS~\cite{CMS-PAPER-HIG-13-004}.
-If the new boson is interpreted as the light scalar MSSM Higgs $h$, part of the tan$\beta$ a
-nd $M_A$ parameter space in the $m_{h}^{\rm max}$ scenario is excluded. 
+If the new boson is interpreted as the light scalar MSSM Higgs $h$, part of the tan$\beta$ 
+and $M_A$ parameter space in the $m_{h}^{\rm max}$ scenario is excluded. 
 However, changes in the stop mixing parameter open up a large region of the allowed parameter 
 space~\cite{Heinemeyer:2011aa,Carena:2013qia}. 
 
-The results are interpreted both in the context of the MSSM $m_{h}^{\rm max}$ scenario and also in a model independent way, 
-in terms of upper limits on $\sigma\cdot$BR($\Phi\to\Pgt\Pgt$) for gluon-fusion and b-associated neutral Higgs boson production,
+The results are interpreted both in the context of the MSSM 
+$m_{h}^{\rm max}$ scenario and also in a model independent way,
+As noted above, the $m_{h}^{\rm max}$ scenario fixes SUSY parameters
+in order to estimate higgs production cross sections as function of
+$M_{A}$ and $\tan\beta$. The model independent method simply 
+puts an exclusion at 95\% CL on the production cross section of $m(\phi)$
+This exclusion is performed in terms of upper limits on $\sigma\cdot$BR($\Phi\to\Pgt\Pgt$) 
+for gluon-fusion and b-associated neutral Higgs boson production,
 where we denote by $\Phi$ any of the three neutral MSSM Higgs bosons.
 %In this report, the result is interpreted in the context of the MSSM $m_{h}^{\rm max}$ scenario.
 
@@ -69,18 +107,81 @@ where we denote by $\Phi$ any of the three neutral MSSM Higgs bosons.
 %The analysis makes use of the four independent tau-pair final states, $\Pe\Pgt_h$+X, $\Pgm\Pgt_h$+X, $\Pe\Pgm$+X, and $\Pgm\Pgm$+X.
 %In all four channels, the reducible and irreducible backgrounds are substantial.
 
-The trigger selection requires a combination of electron, muon and tau trigger objects~\cite{CMS-PAS-EGM-10-004,CMS-PAS-MUO-10-002,CMS-EWK-TAU}. The identification criteria and transverse momentum thresholds of these objects were progressively tightened as the LHC instantaneous luminosity increased over the data-taking period.
+The trigger selection requires a combination of electron, muon and tau trigger 
+objects~\cite{CMS-PAS-EGM-10-004,CMS-PAS-MUO-10-002,CMS-EWK-TAU}. 
+The identification criteria and transverse momentum thresholds of these objects 
+were progressively tightened as the LHC instantaneous luminosity increased over the data-taking period.
 
-A particle-flow algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-002,CMS-PAS-PFT-10-003} is used to combine information from all CMS subdetectors to identify and reconstruct individual particles in the event, namely muons, electrons, photons, and charged and neutral hadrons. From the resulting particle list jets, hadronically decaying taus, and missing transverse energy ($\MET$), defined as the magnitude of the vector sum of the transverse momenta, are reconstructed. 
-The jets are reconstructed using the anti-$k_T$ jet algorithm~\cite{Cacciari:fastjet1,Cacciari:fastjet2} with a distance parameter of $R=0.5$. Hadronically-decaying taus are reconstructed using the hadron plus strips (HPS) algorithm, which considers candidates with one charged pion and up to two neutral pions or three charged pions~\cite{CMS-PAS-TAU-11-001}. To tag jets coming from b-quark decays the Combined Secondary Vertex (CSV) algorithm is used. This algorithm is based on the reconstruction of secondary vertices, together with track-based lifetime information~\cite{BTV-11-004}. 
+A particle-flow algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-002,CMS-PAS-PFT-10-003} 
+is used to combine information from all CMS subdetectors to identify and reconstruct individual 
+particles in the event, namely muons, electrons, photons, and charged and neutral hadrons. 
+From the resulting particle list jets, hadronically decaying taus, and missing transverse energy 
+($\MET$), defined as the magnitude of the vector sum of the transverse momenta, are reconstructed. 
+The jets are reconstructed using the anti-$k_T$ jet algorithm~\cite{Cacciari:fastjet1,Cacciari:fastjet2} 
+with a distance parameter of $R=0.5$. Hadronically-decaying taus are reconstructed using the hadron 
+plus strips (HPS)~\cite{CMS-PAS-TAU-11-001} algorithm, which considers candidates with one charged 
+pion and up to two neutral pions or three charged pions. To tag jets coming from b-quark decays the 
+Combined Secondary Vertex (CSV) algorithm is used, this is further detailed in section \ref{sec:CSVAlgo}. 
+This algorithm is based on the reconstruction of secondary vertices, together with track-based lifetime 
+information~\cite{BTV-11-004}. 
 
 Events in the $\Pe\Pgt_h$ ($\Pgm\Pgt_h$) final state are required to contain
-an electron of $\pt >$~20~$\GeV$ (muon $\pt >17~\GeV$) and $|\eta| < 2.1$ plus an oppositely charged $\Pgt_h$ of $\pt > 20~\GeV$ and $|\eta| < 2.3$.
+an electron of $\pt >$~20~$\GeV$ (muon $\pt >17~\GeV$) and $|\eta| < 2.1$ 
+plus an oppositely charged $\Pgt_h$ of $\pt > 20~\GeV$ and $|\eta| < 2.3$.
 The $\pt$ thresholds for electrons (muons) are increased to $24~\GeV$ ($20~\GeV$) in the 2012 dataset,
 following the raise in trigger thresholds at higher instantaneous luminosity.
-To reduce the contamination of $\cPZ\to\Pe\Pe, \Pgm\Pgm$ background, events with two electrons or muons of $\pt >15~\GeV$, opposite charge and passing loose isolation criteria are rejected.
+%To reduce the contamination of $\cPZ\to\Pe\Pe, \Pgm\Pgm$ background, events with two electrons 
+%or muons of $\pt >15~\GeV$, opposite charge and with a $I_{\rm rel}<0.15$ are rejected.
+%
+%The $\Pe\Pgm$ and $\Pgm\Pgm$ are reported in more detail elsewhere. 
+
+Events in the $\Pe\Pgt_h$ final state reject $\cPZ\to\Pe\Pe$ background by rejecting events with
+a second electron of opposite sign that passes the 'loose electron' requirement.
+To reject the $\ttbar$ background an event is rejected if a second electron of either opposite or same sign
+passing 'tight electron' selection requirements or if an event contains a muon with 'tight muon' selection.
 $\cPZ\to\Pe\Pe$ background in the $\Pe\Pgt_h$ final state is further suppressed by requiring $\MET > 25~\GeV$.
-The $\Pe\Pgm$ and $\Pgm\Pgm$ are reported in more detail elsewhere %%%REF MSSM note!!!
+Events in the $\Pgm\Pgt_h$ final state reject $\cPZ\to\Pgm\Pgm$ background by rejecting events with
+a second muon of opposite sign that passes the loose muon requirement.
+To reject the $\ttbar$ background an event is rejected if a second muon of either opposite or same sign
+passing 'tight muon' selection requirements or if an event contains a electron with 'tight electron' selection.
+Electron and muon definitions are described as:
+\begin{itemize}
+\item {\bf Tight Electron:} $P_{T}^{e}>10$ GeV and $\eta_{e}<$ 2.5, reconstructed with Electron ID
+criteria recommended by the EGamma POG \cite{cutBasedElectronId}
+'loose ID', with loose isolation requirements $I_{rel}<0.3$ with $I_{rel}$ computed as described
+in section \ref{sec:Isolation}.
+\item {\bf Loose Electron:} $P_{T}^{e}>15$ GeV and $\eta_{e}<$ 2.5, reconstructed with Electron ID
+criteria recommended by the EGamma POG \cite{cutBasedElectronId} 
+'Working Point 95 Veto' and with loose isolation requirements $I_{rel}<0.3$ with $I_{rel}$ computed as described
+in section \ref{sec:Isolation}.
+\item {\bf Tight Muon:} $P_{T}^{\mu}>10$ GeV and $\eta_{e}<$ 2.4, reconstructed with muon tight ID
+criteria recommended by the Muon POG 
+reconstructed as global and as tracker muon,
+  passing the particle--flow muon identification criteria~\cite{pfMuonID}
+and with loose isolation requirements $I_{rel}<0.3$ with $I_{rel}$ computed as described
+in section \ref{sec:Isolation}.
+\item {\bf Loose Muon:} $P_{T}^{\mu}>15$ GeV and $\eta_{\mu}<$ 2.4, 
+reconstructed as global and as tracker muon,
+  passing the particle--flow muon identification criteria~\cite{pfMuonID}
+ and with loose isolation requirements $I_{rel}<0.3$ with $I_{rel}$ computed as described
+in section \ref{sec:Isolation}.
+\end{itemize}
+
+%\begin{itemize}
+%\item {\bf Tight Muon:} $P_{T}^{\mu}>10$ GeV and $\eta_{e}<$ 2.4, reconstructed with muon tight ID
+%criteria recommended by the Muon POG 
+%reconstructed as global and as tracker muon,
+%  passing the particle--flow muon identification criteria~\cite{pfMuonID}
+%and with loose isolation requirements $I_{rel}<0.3$ with $I_{rel}$ computed as described
+%in section \ref{sec:Isolation}.
+
+%\item {\bf Tight Electron:} $P_{T}^{e}>10$ GeV and $\eta_{e}<$ 2.5, reconstructed with Electron ID
+%criteria recommended by the EGamma POG \cite{cutBasedElectronId}
+%'loose ID', with loose isolation requirements $I_{rel}<0.3$ with $I_{rel}$ computed as described
+%in section \ref{sec:Isolation}.
+%\end{itemize}
+
+%%%REF MSSM note!!!
 %In the $\Pe\Pgm$ and $\Pgm\Pgm$ final states events with two oppositely charged leptons are selected, where the highest-$\pt$ lepton is required to have $\pt >$ 20~$\GeV$ and the second-highest-$\pt$ lepton $\pt >10~\GeV$. Muons with $|\eta|<2.1$ and electrons
 % with  $|\eta|<2.3$ are used. 
 %The large background arising from $\cPZ\to \Pgm\Pgm$ events in the $\Pgm\Pgm$ channel
@@ -88,42 +189,50 @@ The $\Pe\Pgm$ and $\Pgm\Pgm$ are reported in more detail elsewhere %%%REF MSSM n
 %In the $\Pgt_h\Pgt_h$ final states events with two oppositely charged hadronic taus with $\pt > 45~\GeV$ and $|\eta| < 2.1$ are selected.
 %, where the highest-$\pt$ lepton is required to be more isolated than the second highest-$\pt$ one. 
 
-An average of 10 (20) proton-proton interactions occurred per LHC bunch crossing in 2011 (2012), making the reconstruction of physics objects challenging. For each reconstructed collision vertex the sum of the $\pt^2$ of all tracks associated to the vertex is computed and the one with the largest value is taken as the primary collision vertex. In order to mitigate the effects of pile--up on the reconstruction of $\MET$, a multivariate regression correction is used where the inputs are separated in those components coming from the primary vertex and those which are not~\cite{CMS-PAS-JME-12-002}. 
-The correction improves the $\MET$ resolution in $\cPZ\rightarrow\Pgm\Pgm$ events by roughly a factor of two in case 25 additional pile-up events are present. 
+An average of 10 (20) proton-proton interactions occurred per LHC bunch crossing in 2011 (2012), 
+making the reconstruction of physics objects challenging. For each reconstructed collision vertex the 
+sum of the $\pt^2$ of all tracks associated with the vertex is computed and the one with the largest 
+value is taken as the primary collision vertex. In order to mitigate the effects of pile--up on the 
+reconstruction of $\MET$, a multivariate regression correction (further detailed in section \ref{sec:MET}) 
+is used where the inputs are separated in those components coming from the primary vertex and those 
+which are not~\cite{CMS-PAS-JME-12-002}. 
+The correction improves the $\MET$ resolution in $\cPZ\rightarrow\Pgm\Pgm$ events by roughly a 
+factor of two in the case where 25 additional pile-up events are present. 
 
 Taus from Higgs boson decays are expected to be isolated in the detector, while leptons from 
-heavy-flavor (c and b) decays and decays in flight are expected to be found inside jets. A 
-measure of isolation is used to discriminate the signal from the QCD multijet background, 
+heavy-flavor (c and b) decays and decays in flight are expected to be found inside jets.  
+Lepton isolation (described in detail in section \ref{sec:Isolation}) 
+is used to discriminate the signal from the QCD multijet background, 
 based on the charged hadrons, photons, and neutral hadrons falling within a cone around the 
 lepton momentum direction.
-A correction is applied to the isolation to reduce the effects of pile-up. For charged particles, 
-only those associated with the primary vertex are considered and for neutral particles, a 
-correction is applied by subtracting the energy deposited in the isolation cone by charged 
-particles not associated with the primary vertex, multiplied by a factor of 0.5 which 
-approximately corresponds to the ratio of neutral to charged hadron production in the 
-hadronization process of pile-up interactions. An $\eta$, $\pt$, and lepton-flavor dependent 
-threshold on the isolation variable of less than roughly 10\% of the candidate $\pt$ is applied.
 
-To correct for the contribution to the jet energy due to pile-up, a median energy density ($\rho$) is determined event by event. The pile-up contribution to the jet energy is estimated as the product of $\rho$ and the area of the jet and subsequently subtracted from the jet transverse energy~\cite{Cacciari:subtraction}. In the fiducial region for jets of $|\eta| < 4.7$, jet energy corrections are also applied as a function of the jet \ET and $\eta$~\cite{cmsJEC}.
+To correct for the contribution to the jet energy due to pile-up, a median energy 
+density ($\rho$) is determined event by event. The pile-up contribution to the jet 
+energy is estimated as the product of $\rho$ and the area of the jet and subsequently 
+subtracted from the jet transverse energy~\cite{Cacciari:subtraction}. In the fiducial 
+region for jets of $|\eta| < 4.7$, jet energy corrections are also applied as a function 
+of the jet \ET and $\eta$~\cite{cmsJEC}.
+%%%%%%%WRITE ABOUT RHO CORRECTIONS
+%%%%%%%WRITE ABOUT SVFIT
 
 %For taus decaying hadronically, the isolation variable is calculated using a multivariate {\it Boosted Decision Tree} (BDT) technique based on the neighboring reconstructed particles. Rings of radius $\Delta R$ = $\sqrt{\Delta\phi^{2} + \Delta\eta^{2}}$ are formed in the vicinity of the identified $\tau_{h}$ candidate and the moments of the energy deposits in $\eta$ and $\phi$ and the energy density $\rho$ in the event is used to define the isolation variables.
 
 In order to reject events coming from $\PW$+jets background a dedicated selection is applied. 
 In the $\Pe\Pgt_h$ and $\Pgm\Pgt_h$ final states, the transverse mass of the electron 
-or muon and the $\MET$, $M_{T} = \sqrt{2 \pt \MET (1-\cos\Delta\phi)}$, is required to 
-be less than 30~$\GeV$, where $\pt$ is the lepton transverse momentum and $\Delta\phi$ is the difference in $\phi$ of the lepton and $\MET$ vector. 
+or muon and the $\MET$ (the $\MET$ distribution is shown in figure \ref{figure:MET}), 
+$M_{T} = \sqrt{2 \pt \MET (1-\cos\Delta\phi)}$, is required to 
+be less than 30~$\GeV$, where $\pt$ is the lepton transverse momentum and $\Delta\phi$ is the difference in $\phi$ of the lepton and $\MET$ vector. Figure \ref{figure:MT} shows the $M_{T}$ distribution.
 %In the $\Pe\Pgm$  final states, a discriminator is formed by considering the bisector of the directions of the visible tau decay products transverse to the beam direction, denoted as the $\zeta$ axis.  From the projections of the visible decay product momenta and the $\MET$ vector onto the $\zeta$ axis, two values are calculated: $ P_{\zeta} = \left( p_\mathrm{T,1} + p_\mathrm{T,2} + \MET \right) \cdot \zeta\;\;$; $\;\;P_{\zeta}^{\text{vis}} = \left( p_\mathrm{T,1} + p_\mathrm{T,2} \right) \cdot \zeta\;\;$, 
 %where $p_\mathrm{T, 1}$ and $p_\mathrm{T, 2}$ indicate the transverse momentum
 %of two reconstructed leptons.  $\Pe\Pgm$ events are selected with $P_\zeta - 1.85 \cdot P_\zeta^{\mathrm{vis}} > -20 $~$\GeV$.
 
-The light lepton $p_{T}$ and $\eta$ distributions for 
-7 and 8 TeV are shown in figure \ref{figure:eKinematics} 
-and figure \ref{figure:muKinematics}. The $\tau$ $p_{T}$ 
+The $\mu$ $p_{T}$ and $\eta$ distributions for 7 and 8 TeV are shown in figure \ref{figure:muKinematics},
+while the electron $p_{T}$ and $\eta$ distributions are shown in figure \ref{figure:eKinematics}.
+ The $\tau$ $p_{T}$ 
 and $\eta$ distributions for $\Pe\Pgt_h$ and $\Pgm\Pgt_h$ 
 final states are shown in figure \ref{figure:MTauKinematics} 
 and figure \ref{figure:ETauKinematics}.
-Figure \ref{figure:MET} shows the $\MET$ distribution and 
-figure \ref{figure:MT} shows the $M_{T}$ distribution.
+%%%%%%%%move things below???
 Figure \ref{figure:mVis} shows the visible mass distribution 
 which is the invariant mass of the light lepton and the visible decay products of the $\tau$.
 The $m_{\tau,\tau}$ distribution using the SVFit algorithm is shown in
@@ -334,62 +443,84 @@ in the shaded region and comes from the fitted nuisances.
 
 %All categories are split in two regions of reconstructed transverse momentum. For the $\Pe\Pgt_h$ and $\Pgm\Pgt_h$% final states the $\pt$ threshold on the hadronic tau is 40~$\GeV$. For $\Pe\Pgm$ final state the threshold on the muon is 35~$\GeV$ and for the $\Pgm\Pgm$ the threshold of the leading muon is 30~$\GeV$.
 
-The observed number of events for each category, as well as the expected number of events from various background processes, 
-are shown in Tables~\ref{table:events_mutau}--~\ref{table:events_mumu} together with expected signal yields and efficiencies.
+The observed number of events for each category, as well as the expected 
+number of events from various background processes, 
+are shown in Tables~\ref{table:events_mutau} and \ref{table:events_etau} %~\ref{table:events_mumu} 
+together with expected signal yields and efficiencies.
 
-The largest source of background events comes from $\cPZ\to\Pgt\Pgt$, which is estimated using a sample of $\cPZ\to\Pgm\Pgm$ events where the reconstructed muons are replaced by the reconstructed particles from simulated tau decays. The normalization for this process is determined from the measurement of the $\cPZ\to\Pgm\Pgm$ yield in data. 
+The largest source of background events comes from $\cPZ\to\Pgt\Pgt$, which 
+is modeled using a sample of $\cPZ\to\Pgm\Pgm$ events where the 
+reconstructed muons are replaced by the reconstructed particles from 
+simulated tau decays. The normalization for this process is determined 
+from the measurement of the $\cPZ\to\Pgm\Pgm$ yield in data. 
+
 Another significant source of background is QCD multijet events.
 QCD events may contribute to the $\Pe\Pgt_h$ and $\Pgm\Pgt_h$ channel
 in case one jet is misidentified as an isolated electron or muon, and a second jet as $\Pgt_h$.
-In the $\Pe\Pgt_h$ and $\Pgm\Pgt_h$ channels the rate of QCD background is estimated using the number of observed same-charge
+In the $\Pe\Pgt_h$ and $\Pgm\Pgt_h$ channels the rate of QCD 
+background is estimated using the number of observed same-sign
 tau pair events.
-Events from $\PW$+jets in which there is a jet misidentified as a $\Pgt_h$ are another sizeable source of background in the $\Pe\Pgt_h$ and $\Pgm\Pgt_h$ channels.
-The rate of this background is estimated using a control region of events with large transverse mass.
+
+Events from $\PW$+jets in which there is a jet misidentified as 
+a $\Pgt_h$ are another sizeable source of background in the 
+$\Pe\Pgt_h$ and $\Pgm\Pgt_h$ channels.
+The rate of this background is estimated using a control region 
+of events with large transverse mass, $m_{T}>70$ GeV. The
+pre-fit $\PW$+jets normalization 
 Other background processes include $\cPqt\cPaqt$ production
 and $\cPZ\to \Pe\Pe/\Pgm\Pgm$ events, particularly in the $\Pe\Pgt_h$ channel, 
-as the the probability for electrons to be misidentified as $\Pgt_h$ amounts to 1--2\%.
-The shape of the \ttbar  and di-boson backgrounds are estimated from simulation 
-using \MADGRAPH~\cite{Alwall:2007st} and \PYTHIA~\cite{Pythia}, respectively. The event yields are determined from measurements in background-enriched regions.
+as the probability for electrons to be misidentified as $\Pgt_h$ amounts to 1--2\%.
+The shape of the $t\bar{t}$  and di-boson backgrounds are estimated from simulation 
+using \MADGRAPH~\cite{Alwall:2007st} and \PYTHIA~\cite{Pythia}, respectively. 
+The event yield for $t\bar{t}$ is determined from measurements in a background-enriched region
+which exhibits high jet multiplicity. 
 The number of jets is shown in figure \ref{figure:njets}, in particular, good agreement
-between signal and background is seen for high jet multiplicity where \ttbar dominates.
+between signal and background is seen for high jet multiplicity where $t\bar{t}$ dominates.
 
-The event generator \PYTHIA is used to model the MSSM Higgs boson signal.
+The event generator $\mathtt{PYTHIA}$ is used to model the MSSM Higgs boson signal.
 Taus are decayed by the \TAUOLA~\cite{TAUOLA} package.
 In all Monte Carlo  samples, additional interactions are simulated and reweighted to the observed pile-up distribution.  
-The missing transverse energy in Monte Carlo simulated events is corrected for the difference between data and simulation 
+The missing transverse energy in Monte Carlo simulated events is 
+corrected for the difference between data and simulation 
 measured using a sample of $Z\rightarrow\mu\mu$ events~\cite{CMS-EWK-WZ}.
 
 
-\begin{table*}[!h]
-  \begin{center}
-    \caption{Number of expected events in the two event categories in the $\Pgm\Pgt_{\rm h}$ channel, where the combined statistical and systematic uncertainty is shown. 
-      The signal yields for the sum of all three neutral MSSM Higgs bosons, A+H+h, expected for $M_{A}$= 160 GeV and $\tan\beta$= 8 are given for comparison.
+
+\begin{table}
+\begin{center}
+\caption{Number of expected events in the two event categories in the 
+    $\Pgm\Pgt_{\rm h}$ channel, where the combined statistical and systematic uncertainty is shown. 
+      The signal yields for the sum of all three neutral MSSM Higgs bosons, A+H+h, 
+      expected for $M_{A}$= 160 GeV and $\tan\beta$= 8 are given for comparison.
       Also given are the products of signal efficiency times acceptance for $M_{\Phi}$= 160 GeV.}
-\begin{tabular}{|l|r@{$ \,\,\pm\,\, $}l|r@{$ \,\,\pm\,\, $}l|} 
-\hline 
-Process & \multicolumn{2}{c|}{\emph{B-Tag}} & \multicolumn{2}{c|}{\emph{No-B-Tag}}\\ 
-\hline 
-Z$\rightarrow \tau\tau$          &       1381    &       103     &       112024  &       7721    \\ 
-\hline 
-QCD                              &       685     &       113     &       22863   &       1858    \\ 
-\hline 
-W+jets                           &       291     &       74      &       15552   &       1299    \\ 
-\hline 
-Z+jets (l/jet faking $\tau$)     &       63      &       10      &       4232    &       638     \\ 
-\hline 
-t$\bar{\rm{t}}$                  &       222     &       36      &       678     &       85      \\ 
-\hline 
-Dibosons                         &       73      &       10      &       623     &       91      \\ 
-\hline 
-\hline 
-Total Background                 &       2715    &       175     &       155972  &       8073    \\ 
-\hline 
-A+H+h\,$\rightarrow\tau\tau$           &       85      &       6     &       1174     &       61      \\ 
-\hline 
-Data                             & \multicolumn{2}{|c|}{2761}    & \multicolumn{2}{|c|}{159294}  \\ 
-\hline 
-\multicolumn{5}{c}{ } \\
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{$\mu\tau_{had}$ channel} \\
+\hline
+\hline
+ & \multicolumn{2}{c|}{$\sqrt{s} = 7$~\TeV data} & \multicolumn{2}{c|}{$\sqrt{s} = 8$~\TeV data} \\
+\hline
+ & no--B--tag & B--tag & no--B--tag & B--tag \\
+\hline
+$\Pg\Pg \to \Phi$ + $\Pg\Pg \to \Phi b$         & $228 \pm 17$ & $17 \pm 2$ & $946 \pm 59$ & $68 \pm 6$ \\
+\hline
+$Z/\gamma^{*} \to \tau\tau$                     & $26424 \pm 2319$ & $278 \pm 26$ & $85600 \pm 7364$ & $1103 \pm 100$ \\
+$Z/\gamma^{*} \to \ell\ell$ ($\ell = e$, $\mu$) & $736 \pm 129$ & $11 \pm 2$ & $3496 \pm 625$ & $52 \pm 10$ \\
+$W$ + jets                                      & $2882 \pm 288$ & $51 \pm 15$ & $12670 \pm 1267$ & $240 \pm 72$ \\
+QCD                                             & $4950 \pm 495$ & $134 \pm 27$ & $17913 \pm 1791$ & $551 \pm 110$ \\
+$t \bar{t}$                                     & $86 \pm 12$ & $38 \pm 8$ & $592 \pm 84$ & $184 \pm 35$ \\
+Single top + di--boson                          & $107 \pm 20$ & $14 \pm 3$ & $516 \pm 89$ & $59 \pm 10$ \\
+\hline
+Total background                                & $35185 \pm 2392$ & $526 \pm 41$ & $120787 \pm 7710$ & $2189 \pm 170$ \\
+\hline
+Data                                            & $36055$ & $542$ & $123239$ & $2219$ \\
+\hline
+
+%\end{tabular}
+\multicolumn{7}{c}{ } \\
 \multicolumn{2}{l}{Signal Eff.} &  \multicolumn{3}{c}{ } \\
+\hline
+&\multicolumn{2}{|c|}{B--tag} &\multicolumn{2}{|c|}{ no--B--tag}\\ 
 \hline
 gg$\rightarrow\Phi$                &       \multicolumn{2}{|c|}{2.36 $\cdot 10^{-4}$}      &       \multicolumn{2}{|c|}{1.91 $\cdot 10^{-2}$}\\ 
 \hline 
@@ -398,7 +529,7 @@ bb$\rightarrow\Phi$                &       \multicolumn{2}{|c|}{2.82 $\cdot 10^{
 \end{tabular} 
 \label{table:events_mutau} 
 \end{center} 
-\end{table*} 
+\end{table} 
 
 \vspace*{-0.2cm}
 \begin{table*}[!h]
@@ -406,31 +537,32 @@ bb$\rightarrow\Phi$                &       \multicolumn{2}{|c|}{2.82 $\cdot 10^{
     \caption{Number of expected events in the two event categories in the $e\Pgt_{\rm h}$ channel, where the combined statistical and systematic uncertainty is shown. 
       The signal yields for the sum of all three neutral MSSM Higgs bosons, A+H+h, expected for $M_{A}$= 160 GeV and $\tan\beta$= 8 are given for comparison.
       Also given are the products of signal efficiency times acceptance for $M_{\Phi}$= 160 GeV.}
-\begin{tabular}{|l|r@{$ \,\,\pm\,\, $}l|r@{$ \,\,\pm\,\, $}l|} 
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{$e\tau_{had}$ channel} \\
 \hline 
-Process & \multicolumn{2}{c|}{\emph{B-Tag}} & \multicolumn{2}{c|}{\emph{No-B-Tag}}\\ 
-\hline 
-Z$\rightarrow \tau\tau$          &       580     &       43      &       41349   &       2797    \\ 
-\hline 
-QCD                              &       268     &       41      &       14817   &       1166    \\ 
-\hline 
-W+jets                           &       157     &       39      &       7534    &       630     \\ 
-\hline 
-Z+jets (l/jet faking $\tau$)     &       95      &       14      &       8035    &       1109    \\ 
-\hline 
-t$\bar{\rm{t}}$                  &       116     &       20      &       353     &       44      \\ 
-\hline 
-Dibosons                         &       37      &       5       &       283     &       41      \\ 
-\hline 
-\hline 
-Total Background                 &       1253    &       75      &       72371   &       3288    \\ 
-\hline 
-A+H+h\,$\rightarrow\tau\tau$       &       48      &       3     &       605     &       31       \\ 
-\hline 
-Data                             & \multicolumn{2}{|c|}{1249}    & \multicolumn{2}{|c|}{73332}   \\ 
+\hline
+ & \multicolumn{2}{c|}{$\sqrt{s} = 7$~\TeV data} & \multicolumn{2}{c|}{$\sqrt{s} = 8$~\TeV data} \\
+\hline
+  &no--B--tag & B--tag &  no--B--tag & B--tag \\
+\hline
+$\Pg\Pg \to \Phi$ + $\Pg\Pg \to \Phi b$    & $129 \pm 9$ & $10 \pm 1$ & $476 \pm 30$ & $38 \pm 3$ \\
+\hline
+$Z/\gamma^{*} \to \tau\tau$                     & $11712 \pm 1028$ & $135 \pm 13$ & $29637 \pm 2601$ & $445 \pm 41$ \\
+$Z/\gamma^{*} \to \ell\ell$ ($\ell = e$, $\mu$) & $1494 \pm 252$ & $9 \pm 1$ & $6541 \pm 1080$ & $86 \pm 14$ \\
+$W$ + jets                                      & $1384 \pm 138$ & $30 \pm 9$ & $6150 \pm 615$ & $127 \pm 38$ \\
+QCD                                             & $3789 \pm 379$ & $76 \pm 15$ & $11028 \pm 1103$ & $192 \pm 38$ \\
+$t \bar{t}$                                     & $46 \pm 6$ & $20 \pm 4$ & $307 \pm 44$ & $96 \pm 20$ \\
+Single top + di--boson                          & $53 \pm 10$ & $8 \pm 2$ & $230 \pm 40$ & $29 \pm 5$ \\
+\hline
+Total background                                & $18478 \pm 1133$ & $278 \pm 22$ & $53893 \pm 3087$ & $975 \pm 72$ \\
+\hline
+Data                                            & $18785$ & $274$ & $54547$ & $975$ \\
 \hline 
 \multicolumn{5}{c}{ } \\
 \multicolumn{2}{l}{Signal Eff.} &  \multicolumn{3}{c}{ } \\
+\hline
+&\multicolumn{2}{|c|}{B--tag} &\multicolumn{2}{|c|}{ no--B--tag}\\ 
 \hline
 gg$\rightarrow\Phi$                &       \multicolumn{2}{|c|}{1.16 $\cdot 10^{-4}$}      &       \multicolumn{2}{|c|}{1.04 $\cdot 10^{-2}$}\\ 
 \hline 
@@ -444,29 +576,74 @@ bb$\rightarrow\Phi$                &       \multicolumn{2}{|c|}{1.61 $\cdot 10^{
 \section{Tau-pair invariant mass reconstruction}
 
 To distinguish the signal of Higgs bosons from the background, 
-the tau-pair mass, $M_{\Pgt\Pgt}$, is reconstructed using a maximum likelihood technique~\cite{CMS-PAPER-HIG-10-002}. The algorithm computes the tau-pair mass that is most compatible with the observed momenta of visible tau decay products and the missing transverse energy reconstructed in the event. Free parameters, corresponding to the missing neutrino momenta, are subject to kinematic constraints and are eliminated by marginalization. The algorithm yields a tau-pair mass distribution consistent with the true value and a resolution of $15$-$20\%$.
+the tau-pair mass, $M_{\Pgt\Pgt}$, is reconstructed using a maximum 
+likelihood technique~\cite{CMS-PAPER-HIG-10-002} which is further detailed
+in section \ref{sec:SVFIT}. The algorithm 
+computes the tau-pair mass that is most compatible with the observed 
+momenta of visible tau decay products and the missing transverse energy 
+reconstructed in the event. Free parameters, corresponding to the missing 
+neutrino momenta, are subject to kinematic constraints and are eliminated 
+by performing a fit to determine a value for these parameters. The algorithm yields a tau-pair mass distribution consistent 
+with the true value and a resolution of $15$-$20\%$.
 
 \section{Systematic uncertainties}
 
-Various imperfectly known or simulated effects can alter the shape and normalization of the invariant mass spectrum. The main contributions to the normalization uncertainty include the uncertainty in the total integrated luminosity (4.5\% for 2011 and 2.6\% for 2012 data)~\cite{CMS-LUMI}, jet energy scale (2--5\% depending on $\eta$ and $\pt$), background normalization
-(Tables~\ref{table:events_mutau}--~\ref{table:events_mumu}), $\cPZ$ boson production cross section (2.5\%)~\cite{CMS-EWK-WZ}, lepton identification and isolation efficiency (1.0\%), and trigger efficiency (1.0\%). The tau-identification efficiency uncertainty is estimated to be 7\% from an independent study done using a tag-and-probe technique~\cite{CMS-EWK-WZ} including the uncertainty of the trigger efficiency. The lepton identification and isolation efficiencies are stable as a function of the number of additional interactions in the bunch crossing in data and in Monte Carlo simulation. The $b$-tagging efficiency has an uncertainty of 10\%, and the $b$-mistag rate is accurate to 30\%~\cite{BTV-11-004}. Uncertainties that contribute to mass spectrum shape variations include the tau (3\%), muon (1\%), and electron (1.5\%) energy scales.
-The effect of the uncertainty on the $\MET$ scale, mainly due to pile-up effects, is incorporated by varying the mass spectrum shape as described in the next section.
-The neutral MSSM Higgs production cross sections and the corresponding uncertainties are provided by the LHC Higgs Cross Section Group~\cite{LHCHiggsCrossSectionWorkingGroup:2011ti}. The cross sections have been obtained from the GGH@NNLO~\cite{Harlander:2002wh,Anastasiou:2002yz,Ravindran:2003um,Harlander:2002vv,Anastasiou:2002wq} and HIGLU~\cite{Spira:1995rr,Spira:1995mt} programs for the gluon-fusion process. For the $b\bar{b}\to\Phi$ process, the four-flavor calculation~\cite{Dittmaier:2003ej,Dawson:2003kb} and the five-flavor calculation as implemented in BBH@NNLO~\cite{Harlander:2003ai} have been combined using the Santander matching scheme~\cite{Santander}. 
-Yukawa couplings for the $m_{h}^{\rm max}$ MSSM benchmark scenario have been calculated by FeynHiggs~\cite{Heinemeyer:1998yj,Heinemeyer:1998np,Degrassi:2002fi}.
-The uncertainties for the MSSM signal depends on tan$\beta$ and $M_{A}$ and can amount up to 25\%. The MSTW2008 proton distribution function is used, and the associated uncertainties range from 2-10\%. The renormalization and factorization scale uncertainties amount to 5-25\% in the gluon-fusion process and 8-15\% in the associated-b process. 
+Various imperfectly known or simulated effects can alter the shape and 
+normalization of the invariant mass spectrum. The main contributions to 
+the normalization uncertainty include the uncertainty in the total integrated 
+luminosity (4.5\% for 2011 and 2.6\% for 2012 data)~\cite{CMS-LUMI}, jet 
+energy scale (2--5\% depending on $\eta$ and $\pt$)\cite{cmsPFJetResolution}, background normalization
+(Tables~\ref{table:events_mutau}--~\ref{table:events_etau}), $\cPZ$ boson 
+production cross section (2.5\%)~\cite{CMS-EWK-WZ}, lepton identification and 
+isolation efficiency (1.0\%), and trigger efficiency (1.0\%). The tau-identification 
+efficiency uncertainty is estimated to be 7\% from an independent study done 
+using a tag-and-probe technique~\cite{CMS-EWK-WZ} including the uncertainty 
+of the trigger efficiency. The lepton identification and isolation efficiencies are stable 
+as a function of the number of additional interactions in the bunch crossing in data 
+and in Monte Carlo simulation. The $b$-tagging efficiency has an uncertainty of 
+10\%, and the $b$-mistag rate is accurate to 30\%~\cite{BTV-11-004}. 
+Uncertainties that contribute to mass spectrum shape variations include the 
+tau (3\%), muon (1\%), and electron (1.5\%) energy scales\cite{TAU_En_Uncertainty,CMS-PAS-HIG-13-021}.
+The effect of the uncertainty on the $\MET$ scale, mainly due to pile-up effects, 
+is incorporated by varying the mass spectrum shape as described in the next section.
+The neutral MSSM Higgs production cross sections and the corresponding 
+uncertainties are provided by the LHC Higgs Cross Section 
+Group~\cite{LHCHiggsCrossSectionWorkingGroup:2011ti}. The cross sections have 
+been obtained from the 
+GGH@NNLO~\cite{Harlander:2002wh,Anastasiou:2002yz,Ravindran:2003um,Harlander:2002vv,Anastasiou:2002wq} and HIGLU~\cite{Spira:1995rr,Spira:1995mt} 
+programs for the gluon-fusion process. For the $b\bar{b}\to\Phi$ process, 
+the four-flavor calculation~\cite{Dittmaier:2003ej,Dawson:2003kb} and 
+the five-flavor calculation as implemented in BBH@NNLO~\cite{Harlander:2003ai} 
+have been combined using the Santander matching scheme~\cite{Santander}. 
+Yukawa couplings for the $m_{h}^{\rm max}$ MSSM benchmark scenario have 
+been calculated by FeynHiggs~\cite{Heinemeyer:1998yj,Heinemeyer:1998np,Degrassi:2002fi}.
+The uncertainties for the MSSM signal depends on tan$\beta$ and $M_{A}$ and can 
+amount up to 25\%. The MSTW2008 proton distribution function is used, and the 
+associated uncertainties range from 2-10\%. The renormalization and factorization 
+scale uncertainties amount to 5-25\% in the gluon-fusion process and 8-15\% in the associated-b process. 
 
 
 \section{Results}
 
 To search for the presence of a Higgs boson signal in the selected events, a binned maximum likelihood fit is performed.
-The tau-pair invariant-mass spectrum is used as input for the fit in the $\Pe\Pgt_{h}, \Pgm\Pgt_{h}, \Pe\Pgm$ and $\Pgt_{h}\Pgt_{h}$ final states.
-The sensitivity of the $\Pgm\Pgm$ channel is enhanced by fitting the two-dimensional distribution of tau-pair invariant-mass versus $M_{vis}$, the mass of the visible tau decay products,
-utilizing the fact that most of the large $\cPZ\to \Pgm\Pgm$ background contributing to this channel 
-is concentrated in the $M_{vis}$ distribution within a narrow peak around the Z-mass.
-The fit is performed simultaneously for the five final states $\Pe\Pgt_{h}, \Pgm\Pgt_{h}, \Pe\Pgm$, $\Pgm\Pgm$ and $\Pgt_{h}\Pgt_{h}$
+The tau-pair invariant-mass spectrum is used as input for the fit in 
+the $\Pe\Pgt_{h}, \Pgm\Pgt_{h}, \Pe\Pgm$ and $\Pgt_{h}\Pgt_{h}$ 
+final states. The $\Pe\Pgm$ and $\Pgt_{h}\Pgt_{h}$ final states 
+are detailed elsewhere \cite{CMS-PAS-HIG-13-021}.
+The fit is performed simultaneously for the five final states $\Pe\Pgt_{h}, 
+\Pgm\Pgt_{h}, \Pe\Pgm$, $\Pgm\Pgm$ and $\Pgt_{h}\Pgt_{h}$
 and the two event categories B-tag and no-B-tag.
-Systematic uncertainties are represented by nuisance parameters in the fitting process. Log-normal priors are assumed for the normalization parameters, and Gaussian priors for mass-spectrum shape uncertainties. The uncertainties that affect the shape of the mass spectrum, mainly those corresponding to the energy scales, are represented by nuisance parameters whose variation results in a continuous perturbation of the spectrum shape. 
-In the regions of $M_{\Pgt\Pgt} >$  150 $\GeV$, where the event statistic of the background templates is reduced, a fit of the form $f=\exp\left(-\frac{M_{\Pgt\Pgt}}{c_{0}+c_1\cdot M_{\Pgt\Pgt}}\right)$ is performed, and the uncertainties on the fit parameters $c_{0}$ and $c_{1}$ are propagated. 
+Systematic uncertainties are represented by nuisance parameters 
+in the fitting process. Log-normal priors are assumed for the 
+normalization parameters, and Gaussian priors for mass-spectrum 
+shape uncertainties. The uncertainties that affect the shape of the 
+mass spectrum, mainly those corresponding to the energy scales, are 
+represented by nuisance parameters whose variation results in a 
+continuous perturbation of the spectrum shape. 
+In the regions of $M_{\Pgt\Pgt} >$  150 $\GeV$, where the event 
+statistic of the background templates is reduced, a fit of the form 
+$f=\exp\left(-\frac{M_{\Pgt\Pgt}}{c_{0}+c_1\cdot M_{\Pgt\Pgt}}\right)$ 
+is performed, and the uncertainties on the fit parameters $c_{0}$ and $c_{1}$ are propagated. 
 
 The signal expectation is determined in each point of the parameter space as follows:
 \begin{itemize}
@@ -485,26 +662,34 @@ Fig.~\ref{fig:mass_b_tag} shows the distribution of the tau-pair mass for the fi
 \begin{figure*}[!h]\begin{center}
  \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/muTau_nobtag_postfit_7+8TeV_LOG.pdf}
  \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/eleTau_nobtag_postfit_7+8TeV_LOG.pdf}
- \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/emu_nobtag_postfit_7+8TeV_LOG.pdf}
- \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mumu_nobtag_postfit_7+8TeV_LOG.pdf}
- \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/tauTau_nobtag_postfit_8TeV_LOG.pdf}
- \caption{Reconstructed di-$\Pgt$ mass in the no-b-tag category for the $\Pgm\Pgt_{h}, \Pe\Pgt_{h}, \Pe\Pgm$, $\Pgm\Pgm$ and $\Pgt_{h}\Pgt_{h}$ channels.}
+ %\includegraphics[width=0.45\textwidth]{MSSM/PLOTS/emu_nobtag_postfit_7+8TeV_LOG.pdf}
+ %\includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mumu_nobtag_postfit_7+8TeV_LOG.pdf}
+ %\includegraphics[width=0.45\textwidth]{MSSM/PLOTS/tauTau_nobtag_postfit_8TeV_LOG.pdf}
+ \caption{Reconstructed di-$\Pgt$ mass in the no-b-tag category for the $\Pgm\Pgt_{h}$ STUFFF and $\Pe\Pgt_{h}$ channels.}
   \label{fig:mass_no_b_tag}\end{center}\end{figure*}
 
 
 \begin{figure*}[!h]\begin{center}
  \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/muTau_btag_postfit_7+8TeV_LOG.pdf}
  \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/eleTau_btag_postfit_7+8TeV_LOG.pdf}
- \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/emu_btag_postfit_7+8TeV_LOG.pdf}
- \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mumu_btag_postfit_7+8TeV_LOG.pdf}
- \includegraphics[width=0.45\textwidth]{MSSM/PLOTS/tauTau_btag_postfit_8TeV_LOG.pdf}
- \caption{Reconstructed di-$\Pgt$ mass in the b-tag category for the $\Pgm\Pgt_{h}, \Pe\Pgt_{h}, \Pe\Pgm$, $\Pgm\Pgm$ and $\Pgt_{h}\Pgt_{h}$  channels.}
+ %\includegraphics[width=0.45\textwidth]{MSSM/PLOTS/emu_btag_postfit_7+8TeV_LOG.pdf}
+ %\includegraphics[width=0.45\textwidth]{MSSM/PLOTS/mumu_btag_postfit_7+8TeV_LOG.pdf}
+ %\includegraphics[width=0.45\textwidth]{MSSM/PLOTS/tauTau_btag_postfit_8TeV_LOG.pdf}
+ \caption{Reconstructed di-$\Pgt$ mass in the b-tag category for the $\Pgm\Pgt_{h}$ and $\Pe\Pgt_{h}$ channels.}
   \label{fig:mass_b_tag}\end{center}\end{figure*}
-
 
 The invariant mass spectra show no clear evidence for the presence of a MSSM Higgs boson signal, 
 therefore 95\% CL upper bounds on tan$\beta$ as a function of the pseudoscalar Higgs boson mass $M_A$ are set.
 The limits are computed using the modified Frequentist method~\cite{Read}.
+Figure~\ref{fig:tanbeta_ma} shows the 95\% CL exclusion in the tan$\beta$-$M_{A}$ parameter space for the MSSM m$_{\rm h}^{\rm max}$ scenario. 
+The exclusion limit set by the LEP experiments~\cite{LEP2-MSSM} is also shown.
+Numerical values for the expected and observed exclusion limits are given in Tab.~\ref{tab-limits}. 
+The expected limit has been computed for the case that no Higgs signal, neither of SM nor of MSSM type, is present in the data.
+The limit expected in case a SM Higgs boson is present in the data is computed separately 
+and differs by 1-2 units in tan$\beta$ at low $M_{A}$.
+At high $M_{A}$ there is also some effect as the limit is mainly
+driven by the light scalar Higgs $h$, which has the largest expected cross section.
+
 %Exclusion limits obtained in the tan$\beta$ and $M_A$ plane for the $m_{h}^{\rm max}$ MSSM benchmark scenario are shown in Tab.~\ref{tab-limits}. 
 
 %Signal contributions from $h$, $H$ and $A$ production are considered in the limit setting procedure.
@@ -519,7 +704,7 @@ The limits are computed using the modified Frequentist method~\cite{Read}.
 
 
 
-\clearpage
+%\clearpage
 
 
 %Fig.~\ref{fig:tanbeta_ma} shows the 95\% CL exclusion in the tan$\beta$-$M_{A}$ parameter space for the MSSM m$_{\rm h}^{\rm max}$ scenario. 
@@ -531,14 +716,6 @@ The limits are computed using the modified Frequentist method~\cite{Read}.
 %The exclusion limits set by the LEP experiments are also shown.
 %Numerical values for the expected and observed exclusion limits are given in Tab.~\ref{tab-limits}. 
 
-Figure~\ref{fig:tanbeta_ma} shows the 95\% CL exclusion in the tan$\beta$-$M_{A}$ parameter space for the MSSM m$_{\rm h}^{\rm max}$ scenario. 
-The exclusion limit set by the LEP experiments~\cite{LEP2-MSSM} is also shown.
-Numerical values for the expected and observed exclusion limits are given in Tab.~\ref{tab-limits}. 
-The expected limit has been computed for the case that no Higgs signal, neither of SM nor of MSSM type, is present in the data.
-The limit expected in case a SM Higgs boson is present in the data is computed separately 
-and differs by 1-2 units in tan$\beta$ at low $M_{A}$.
-At high $M_{A}$ there is also some effect as the limit is mainly
-driven by the light scalar Higgs $h$, which has the largest expected cross section.
 
 \begin{figure}[!h]
 \setlength{\unitlength}{1mm}
@@ -629,7 +806,7 @@ Model independent limits on $\sigma\cdot$BR($\Phi\to\Pgt\Pgt$) for gluon-fusion 
 have been determined.
 The results for 8 \TeV center-of-mass energy are shown in Fig.~\ref{fig:ggH_bbH_limit}.
 In this case, a single resonance search (for a resonance of mass $m_{\Phi}$) is performed.  The results are also shown in Tables~\ref{ggH-limit} and~\ref{bbH-limit}.
-Figures~\ref{fig:contour1}-~\ref{fig:contour4} show the 2-dimensional 68\% and 95\% CL likelihood scans of $\sigma\cdot$BR($\Phi\to\Pgt\Pgt$) for gluon-fusion and b-associated Higgs production, for different Higgs masses.
+%Figures~\ref{fig:contour1}-~\ref{fig:contour4} show the 2-dimensional 68\% and 95\% CL likelihood scans of $\sigma\cdot$BR($\Phi\to\Pgt\Pgt$) for gluon-fusion and b-associated Higgs production, for different Higgs masses.
 
 
 
