@@ -85,9 +85,8 @@
 
 %Search for an MSSM Higgs Boson and Measurement of W+b b
 %with the CMS Detector at the LHC.
-\settitle{
-Search for an MSSM Higgs Boson and Measurement of W+ $b\bar{b}$
-with the CMS Detector at the LHC}
+\settitle{Search for an MSSM Higgs Boson and Measurement of W+ $b\bar{b}$ with the CMS Detector at the LHC}
+%\settitle{Measurement of W+ $b\bar{b}$ and a search for MSSM Higgs Bosons with the CMS Detector at the LHC}
 \setauthor{Isobel Rose Ojalvo}
 \setdepartment{Physics}
 \doctors % or \masters
@@ -123,11 +122,12 @@ muon with transverse momentum $p_{\mathrm{T}}>25~\mathrm{GeV}$ and pseudorapidit
 $|\eta|<2.1$, and exactly two b-tagged jets with $p_{\mathrm{T}}>25~\mathrm{GeV}$ and $|\eta|<2.4$.
 The measured $\mathrm{W+b\bar{b}}$ production cross section in the fiducial region, calculated at the level of final-state particles, is
 $0.53\pm 0.05~(\textrm{stat.}) \pm 0.09~(\textrm{syst.}) \pm 0.06~(\textrm{th.}) \pm 0.01~(\textrm{lum.}) ~\textrm{pb}$,
-in agreement with the standard model prediction. 
-This measurement serves as an important
-benchmark at the LHC especially to 
-searches which include a single, isolated lepton and one or more b jets in the final state,
-as $\Wbb$ is an irreducible background.
+in agreement with the standard model prediction. This measurement is a sensitive
+test of heavy quark production calculated with perturbative QCD. It also 
+serves as an important
+benchmark in new physics searches which include a 
+single isolated lepton and one or more b jets in the final state,
+as $\Wbb$ becomes an irreducible background.
 
 The search for neutral Higgs bosons in their decay to tau pairs is performed 
 using events recorded by the CMS experiment at the LHC
@@ -151,8 +151,8 @@ the sensitivity to neutral MSSM Higgs bosons, the search
 \begin{document}
 %%%%%%SETLINE NUMBERS
 %%\setpagewiselinenumbers
-\modulolinenumbers[1]
-\linenumbers
+%\modulolinenumbers[1]
+%\linenumbers
 %%%%%%%END SETLINE NUMBERS
 %% Tell the memoir class to set up lowercase roman for pagination, etc.
 \frontmatter
@@ -188,6 +188,10 @@ This is where any acknowledgements would go.
 \maxtocdepth{subsection}
 \tableofcontents* % the * means that there isn't an entry for the TOC itself
 % \clearpage
+
+\makeatletter
+     \renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
+\makeatother
  \listoffigures*  % if you have any figures
 % \clearpage
  \listoftables   % if you have any tables

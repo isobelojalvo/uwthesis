@@ -1,27 +1,27 @@
 %FIX jan 9th, references in this chapter as well as comments
 \chapter{Supersymmetry and the MSSM}
-
-In recent years it has already been seen that the standard model 
-performs well in describing experimental observations at energies around
+The standard model performs well in describing experimental observations at energies around
 the electroweak scale of $O(246 \GeV)$.
-The recent discovery of a standard model-like higgs boson brings with it
-more confidence of the model. However, questions arise when this model is seen as 
-a part of a grand unified theory, for example, what happens when we probe
-regions between the electroweak and planck scales $O(1.22 \times10^{19} \GeV)$? 
-The standard model encounters difficulties in renormalization, this is known
-as the Hierarchy Problem\cite{Martin:1997ns}.
-
-To illustrate these divergences we consider the radiative corrections to the higgs mass
-from a fermion loop.
+The recent discovery of a standard model-like higgs boson ($m_{h}=$125 GeV) brings with it
+more confidence in this theory. 
+However, one must explain why the mass of the Higgs boson is as low as 125 GeV whereas
+the planck scale is $O(1.22 \times10^{19} \GeV)$
+\cite{Martin:1997ns}.
+%However, questions arise when this model is seen as 
+%a part of a grand unified theory, for example, what happens when we probe
+%regions between the electroweak and planck scales $O(1.22 \times10^{19} \GeV)$? 
+%The standard model encounters difficulties in renormalization, this is known
+%as the Hierarchy Problem
+%To illustrate these divergences we consider the radiative corrections to the higgs mass
+%from a fermion loop.
 %As seen in the previous chapter, 
-The potential of the standard model higgs field can be
-written as, 
-\begin{equation}
-V= \mu^{2}|\phi|^{2}+\lambda|\phi|^{4}
-\end{equation}
-where $\phi$ is a complex scalar field.
-A non-vanishing vacuum expectation value of $246 \GeV$ is required to derive the masses of the $W/Z$
-and the mass of the higgs which is defined as, $m_{h}=\sqrt{2\lambda v^{2}}$.
+%The potential of the standard model higgs field can be written as, 
+%\begin{equation}
+%V= \mu^{2}|\phi|^{2}+\lambda|\phi|^{4}
+%\end{equation}
+%where $\phi$ is a complex scalar field.
+%A non-vanishing vacuum expectation value of $246 \GeV$ is required to derive the masses of the $W/Z$
+%and the mass of the higgs which is defined as, $m_{h}=\sqrt{2\lambda v^{2}}$.
 
 \begin{figure}[t]
   \centering
@@ -41,38 +41,48 @@ and the mass of the higgs which is defined as, $m_{h}=\sqrt{2\lambda v^{2}}$.
    \caption[]{One loop quantum corrections for a fermion (\ref{fig:scalarLoop}) and a scalar (\ref{fig:scalarLoop}). }
 \end{figure}
 
+\section{Motivations for SUSY}
 %When considering, for example, higher order radiative corrections to the mass of the higgs. For example, 
-A fermion loop correction, seen in figure \ref{fig:fermionLoop}, 
-adds the term $-\lambda_{f}\phi \bar{f}f$ to the Lagrangian.
-This manifests as a correction to the higgs mass, namely,
+A fermion loop correction to $m_{h}$, seen in figure \ref{fig:fermionLoop}, 
+%adds the term $-\lambda_{f}\phi \bar{f}f$ to the Lagrangian.
+%This 
+manifests as a negative-sign correction to the higgs mass, namely,
 \begin{equation}
-\Delta m_{H}^{2}=-\frac{|\lambda_{f}|^{2}}{8\pi^{2}}\Lambda_{UV}^{2}+...
+\Delta m_{H}^{2}=-\frac{|\lambda_{f}|^{2}}{8\pi^{2}}\Lambda_{UV}^{2}
 \label{eq:SUS1}
 \end{equation}
 %The loops represent terms which are proportional to $m_{f}^{2}$.
-Where $\Lambda_{UV}$ is the ultraviolet cutoff. %%define UV cutoff
-Then what happens when higher energy scales are considered and $\Lambda_{UV}\rightarrow \infty$?
-Since the standard model is a renormalizable theory one could simply
-pick $\Lambda_{UV}$ so that it regulates the loop. However, this would imply
-that $\Lambda_{UV}$ is the energy scale at which new physics should enter.
-To make matters worse, there are quantum corrections from the radiative
-effects of every particle that couples to the higgs. If each of these 
-particles gain their mass through the higgs mechanism then the entire standard model 
-mass spectrum is sensitive to $\Lambda_{UV}$!
+where $\Lambda_{UV}$ is the ultraviolet high-mass cutoff, %%define UV cutoff
+therefore, the correction to the higgs mass is large. 
+%Then what happens when higher energy scales are considered and $\Lambda_{UV}\rightarrow \infty$?
+%Since the standard model is a renormalizable theory one could simply
+%pick $\Lambda_{UV}$ so that it regulates the loop. However, this would imply
+%that $\Lambda_{UV}$ is the energy scale at which new physics should enter.
+%To make matters worse, there are quantum corrections from the radiative
+%effects of every particle that couples to the higgs. If each of these 
+%particles gain their mass through the higgs mechanism then the entire standard model 
+%mass spectrum is sensitive to $\Lambda_{UV}$!
+It turns out that the correction due to a scalar loop,
+as seen in figure \ref{fig:scalarLoop}, has an opposite sign to that of the fermion loop.
+It is quite unnatural that the difference of two large numbers has to be tuned
+carefully to obtain the 125 GeV observed Higgs boson mass. 
+Supersymmetry supposes that there exists a scalar particle
+for every fermion and vice versa. 
+Therefore, this theory of symmetry between bosons
+and fermions can naturally lead to a low mass higgs. 
 
-\section{Motivations for Supersymmetry}
-To solve the Hierarchy Problem suppose there exists a massive scalar particle S, 
-of mass $m_{S}$, that couples
-to the higgs with a term $-\lambda_{S}\phi^{2} S^{2}$ as seen is 
-figure \ref{fig:scalarLoop}. This massive scalar would give a correction of,
-\begin{equation}
-\Delta m_{H}^{2}=\frac{\lambda_{s}}{16\pi^{2}}\left[\Lambda_{UV}^{2}-2m_{s}^{2}ln(\Lambda_{UV}/m_{S})+... \right].
-\label{eq:SUS2}
-\end{equation}
-By examining (\ref{eq:SUS1}) and (\ref{eq:SUS2}) it is apparent that if each of the quarks
-and leptons is accompanied by a complex scalar with $\lambda_{S}=|\lambda_{f}|^{2}$  %OR TWO??
-then the $\Lambda_{UV}^{2}$ terms will cancel. This model of symmetry between bosons
-and fermions is known as supersymmetry (SUSY).
+%To solve the Hierarchy Problem suppose there exists a massive scalar particle S, 
+%of mass $m_{S}$, that couples
+%to the higgs with a term $-\lambda_{S}\phi^{2} S^{2}$ as seen is 
+%figure \ref{fig:scalarLoop}. This massive scalar would give a correction of,
+%\begin{equation}
+%\Delta m_{H}^{2}=+\frac{\lambda_{s}}{16\pi^{2}}\left[\Lambda_{UV}^{2} \right].
+%\label{eq:SUS2}
+%\end{equation}
+%By examining (\ref{eq:SUS1}) and (\ref{eq:SUS2}) it is apparent that if each of the quarks
+%and leptons is accompanied by a complex scalar with $\lambda_{S}=|\lambda_{f}|^{2}$  %OR TWO??
+%then the $\Lambda_{UV}^{2}$ terms will cancel. This model of symmetry between bosons
+%and fermions is known as supersymmetry (SUSY).
 
 
 To define SUSY a set of generators which 
@@ -109,52 +119,68 @@ with an '-ino', for example $\tilde{W}$ is known as a 'wino'. If SUSY remained u
 then $m_{e}$ must be equal to $m_{\tilde{e}}$. Since sparticles like $\tilde{e}$ have not 
 yet been discovered this implies that SUSY must be a broken
 symmetry.
+
 \section{Higgs Sector of the SM}
-%\subsection{The Higgs Mechanism and Electroweak Symmetry Breaking}
-In this section we illustrate the Higgs Mechanism and partially derive the
-Standard Model Lagrangian \cite{Halzen:1984mc}. 
-First we consider the Higgs Mechanism of a global gauge symmetry, 
-which is the mechanism that generates mass for the gauge bosons. 
-We start by writing the Lagrangian, 
+%%add in an introduction sentence
+
+Electroweak
+interactions happen on a very short range ($10^{-14}$ m).
+To confine weak interactions to this
+short range %fix?
+the $W^{\pm}$ and Z bosons must be massive. %%need a transition sentence
+However, the lagrangians governing fundamental interactions
+of particles are written in terms of gauge symmetries and %fix
+ in an unbroken gauge theory the gauge bosons must 
+be massless. If one were to simply break the symmetry by adding 
+in a mass term then the theory %%fix
+would no longer be renormalizeable. Spontaneous Symmetry Breaking (SSB)
+breaks the symmetry but still requires that the Lagrangian
+is invariant under gauge transformations.  
+This can done by introducing a complex $SU(2)_{L}$ doublet scalar
+higgs field,
 \begin{equation}
-\La=(\partial_{\mu}\phi)*(\partial^{\mu}\phi) - \mu^{2}\phi*\phi - \lambda (\phi*\phi)^{2}
-\label{eq:LU1}
+\Phi=\left(
+    \begin{array}{c}
+      \phi^{+} \\
+      \phi^{0}
+    \end{array}
+  \right)
 \end{equation}
-which describes the complex scalar field, $\phi=(\phi_{1}+i\phi_{2})/\sqrt{2}$.
-This Lagrangian is invariant under the phase transformation $\phi\rightarrow e^{i\alpha}\phi$
-(which is equivalent to stating that (\ref{eq:LU1}) possesses a $U(1)$ global gauge symmetry).
-Here, we consider the case where $\lambda>0$ and $\mu^{2}<0$. To illustrate the importance of (\ref{eq:LU1})
-this Lagrangian is rewritten in the form
+This two component complex scalar field has four degrees
+of freedom, three of them give mass to the $W^{\pm}$ and Z, the fourth
+appears as a massive physical particle, the Standard Model Higgs boson. 
+The Lagrangian describing interactions with this field is 
 \begin{equation}
-\La \equiv T-V = \frac{1}{2}(\partial_{\mu}\phi_{1})^{2}+\frac{1}{2}(\partial_{\mu}\phi_{2})^{2}-\frac{1}{2}\mu^{2}(\phi_{1}^{2}+\phi_{2}^{2})-\frac{1}{4}\lambda(\phi_{1}^{2}+\phi_{2}^{2})^{2}.
-\label{eq:LU2}
+\La=(D_{\mu}\Phi^{\dagger})(D^{\mu}\Phi) +V(\Phi)
 \end{equation}
-In (\ref{eq:LU2}) the potential term is
+where $D_{\mu}$ is a covariant derivative
+and the scalar potential has the form,
 \begin{equation}
-V=\frac{1}{2}\mu^{2}(\phi_{1}^{2}+\phi_{2}^{2})+\frac{1}{4}\lambda(\phi_{1}^{2}+\phi_{2}^{2})^{2}.
+V(\Phi)=\mu^{2}\Phi^{\dagger}\Phi+\frac{\lambda}{4}(\Phi^{\dagger}\Phi)^{2}.
 \end{equation}
-Evaluating $\partial V/ \partial \phi = 0$ it is seen that the local minima
-of the potential $V(\phi)$ is a circle in the $\phi_{1},\phi_{2}$ plane of radius $v$ where,
-$\phi_{1}^{2}+\phi_{2}^{2}=v^{2}$ with $v^{2}= - \mu^{2}/\lambda$. This 
-is of great importance as $(\phi_{1},\phi_{2})=(0,0)$ is not the ground state, as can be seen in figure \ref{fig:mexicanHat}.
-Particle physics uses perturbation theory to calculate fluctuations 
-about the minimum energy so, without loss of generality, the field $\phi$ is translated to a minimum
-energy position $\phi_{1}=v$, $\phi_{2}=0$. The Lagrangian (\ref{eq:LU2}) is
-expanded about the vacuum in terms of the fields $\eta$, $\xi$ by substituting
+If $\lambda>0$ and $\mu^{2}>0$ then the shape of the potential is symmetric, however,
+for  $\mu^{2}<0$ the minimum is a circle of radius $v$ where $v^{2}=-\mu^{2}/\lambda$.
+Figure \ref{fig:mexicanHat} illustrates the shape of this potential. This is interpreted as
+ a non-vanishing expectation value of the higgs field in the vacuum state.
+The mass of the higgs boson is $m_{h}=\sqrt{2\lambda v^{2}}$. 
+SSB generates mass for the both the gauge bosons and the fermions. Neglecting radiative corrections these are,
 \begin{equation}
-\phi(x)=\sqrt{\frac{1}{2}}[v+\eta(x)+i\xi(x)]
-\label{eq:VTerms}
+M_{W}=\frac{1}{2}gv, M_{Z}=\frac{\sqrt{g^{2}+g'^{2}}}{2} , m_{f}=\frac{G_{f}v}{\sqrt{2}}.
 \end{equation}
-into (\ref{eq:LU2}) and obtaining,
-\begin{equation}
-\La'=\frac{1}{2}(\partial_{\mu}\xi)^{2}+\frac{1}{2}(\partial_{\mu}\eta)^2+\mu^{2}+const.+\vartheta(\eta^{3},\xi^{3},\eta^{4},\xi^{4}).
-\label{eq:LU3}
-\end{equation}
-The third term of this new Lagrangian (\ref{eq:LU3}), is a mass term
-for the $\eta$-field, $m_{\eta}=\sqrt{-2\mu^{2}}$. The $\xi$-field has
-a kinetic term, the first term in (\ref{eq:LU3}), but no mass term
-for $\xi$. This is a consequence of the Goldstone theorem which states
-that whenever a symmetry is spontaneously broken, massless scalars occur.
+The coupling between the higgs field and the 
+massive gauge bosons is proportional to their mass squared while the coupling to the 
+massive fermions is proportional to $m_{f}/v$. 
+
+%To illustrate the Higgs mechanism 
+%Conventional perturbation theory expands about a local minimum, therefore, 
+%results in a massless Goldstone boson which has been converted to an
+%additional longitudinal polarization degree of freedom. This results
+%in a Lagrangian with a massive scalar particle, a massive field and interaction terms.
+%This procedure is known as the Higgs mechanism. 
+
+%Through couplings to the higgs field the gauge bosons a
+%Finally and perturbations are considered around the new minimum. 
+
 \begin{figure}[hb]
   \centering
 	\includegraphics[width=0.5\textwidth]{images/mexicanHat.jpg}
@@ -163,43 +189,95 @@ that whenever a symmetry is spontaneously broken, massless scalars occur.
 	\label{fig:mexicanHat}
 \end{figure}
 
-Now that we have evaluated spontaneous breaking of 
-a global gauge symmetry we can extend the formalism to the local $U(1)$ gauge symmetry.
-First, we make the Lagrangian (\ref{eq:LU1}) invariant under a $U(1)$ 
-local gauge transformation: $\phi\rightarrow e^{i\alpha(x)}\phi$
-This is done by choosing a modified derivative, $D_{\mu}$, which will
-transform covariantly under phase transformations, namely, 
-$D_{\mu}\rightarrow e^{i\alpha(x)}D_{\mu}\psi$. Thus $\partial_{\mu}$
-is replaced by $D_{\mu} = \partial_{\mu}-ieA_{\mu}$.
-The gauge invariant Lagrangian in this instance is thus,
-\begin{equation}
-\La=(\partial^{\mu}+ieA^{\mu})\phi*(\partial_{\mu}-ieA_{\mu})\phi - \mu^{2} \phi*\phi - \lambda(\phi*\phi)^{2}-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
-\end{equation}
-To avoid off diagonal terms, instead of making the transformation (\ref{eq:VTerms})
-we transform $\phi$ as,
-\begin{equation}
-\phi\rightarrow\sqrt{\frac{1}{2}}(\nu+h(x))e^{i\Theta(x)/\nu}
-\end{equation}
-and for the field $A_{\mu}$,
-\begin{equation}
-A_{\mu}\rightarrow A_{\mu}+\frac{1}{e\nu}\partial_{\mu}\Theta
-\end{equation}
-Then by translating this field to a true global minimum
-and, again, considering the solution where $\mu^{2}<0$ $\lambda>0$ this Lagrangian becomes 
-\begin{equation}
-\La'=\frac{1}{2}(\partial_{\mu}h)^{2}-\lambda \nu^{2}h^{2}+\frac{1}{2}e^{2}\nu^{2}A_{\mu}^{2}-\lambda\nu h^{3}-
-\frac{1}{4}\lambda h^{4} + \frac{1}{2}e^{2}A_{\mu}^{2}h^{2}+\nu e^{2}A_{\mu}^{2}h-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
-\end{equation}
-This equation describes the interaction between a vector gauge boson,
-$A_{\mu}$, and a massive scalar, h. 
-It is of importance to note that when examining this equation 
-we see that the second term relates the mass 
-of the higgs as $m_{h}=\sqrt{2\lambda v^{2}}$. 
-To summarize, this example of spontaneous breaking of a $U(1)$ gauge symmetry
-results in a massless Goldstone boson which has been converted to an
-additional longitudinal polarization degree of freedom. This results
-in a Lagrangian with a massive scalar particle, a massive field and interaction terms.
-This procedure is known as the Higgs mechanism. 
+%In this section we illustrate the Higgs Mechanism and partially derive the
+%Standard Model Lagrangian \cite{Halzen:1984mc}. 
+%First we consider the Higgs Mechanism of a global gauge symmetry, 
+%which is the mechanism that generates mass for the gauge bosons. 
+%We start by writing the Lagrangian, 
+%\begin{equation}
+%\La=(\partial_{\mu}\phi)*(\partial^{\mu}\phi) - \mu^{2}\phi*\phi - \lambda (\phi*\phi)^{2}
+%\label{eq:LU1}
+%\end{equation}
+%which describes the complex scalar field, $\phi=(\phi_{1}+i\phi_{2})/\sqrt{2}$.
+%This Lagrangian is invariant under the phase transformation $\phi\rightarrow e^{i\alpha}\phi$
+%(which is equivalent to stating that (\ref{eq:LU1}) possesses a $U(1)$ global gauge symmetry).
+%Here, we consider the case where $\lambda>0$ and $\mu^{2}<0$. To illustrate the importance of (\ref{eq:LU1})
+%this Lagrangian is rewritten in the form
+%\begin{equation}
+%\La \equiv T-V = \frac{1}{2}(\partial_{\mu}\phi_{1})^{2}+\frac{1}{2}(\partial_{\mu}\phi_{2})^{2}-\frac{1}{2}\mu^{2}(\phi_{1}^{2}+\phi_{2}^{2})-\frac{1}{4}\lambda(\phi_{1}^{2}+\phi_{2}^{2})^{2}.
+%\label{eq:LU2}
+%\end{equation}
+%In (\ref{eq:LU2}) the potential term is
+%\begin{equation}
+%V=\frac{1}{2}\mu^{2}(\phi_{1}^{2}+\phi_{2}^{2})+\frac{1}{4}\lambda(\phi_{1}^{2}+\phi_{2}^{2})^{2}.
+%\end{equation}
+%Evaluating $\partial V/ \partial \phi = 0$ it is seen that the local minima
+%of the potential $V(\phi)$ is a circle in the $\phi_{1},\phi_{2}$ plane of radius $v$ where,
+%$\phi_{1}^{2}+\phi_{2}^{2}=v^{2}$ with $v^{2}= - \mu^{2}/\lambda$. This 
+%is of great importance as $(\phi_{1},\phi_{2})=(0,0)$ is not the ground state, as can be seen in figure \ref{fig:mexicanHat}.
+%Particle physics uses perturbation theory to calculate fluctuations 
+%about the minimum energy so, without loss of generality, the field $\phi$ is translated to a minimum
+%energy position $\phi_{1}=v$, $\phi_{2}=0$. The Lagrangian (\ref{eq:LU2}) is
+%expanded about the vacuum in terms of the fields $\eta$, $\xi$ by substituting
+%\begin{equation}
+%\phi(x)=\sqrt{\frac{1}{2}}[v+\eta(x)+i\xi(x)]
+%\label{eq:VTerms}
+%\end{equation}
+%into (\ref{eq:LU2}) and obtaining,
+%\begin{equation}
+%\La'=\frac{1}{2}(\partial_{\mu}\xi)^{2}+\frac{1}{2}(\partial_{\mu}\eta)^2+\mu^{2}+const.+\vartheta(\eta^{3},\xi^{3},\eta^{4},\xi^{4}).
+%\label{eq:LU3}
+%\end{equation}
+%The third term of this new Lagrangian (\ref{eq:LU3}), is a mass term
+%for the $\eta$-field, $m_{\eta}=\sqrt{-2\mu^{2}}$. The $\xi$-field has
+%a kinetic term, the first term in (\ref{eq:LU3}), but no mass term
+%for $\xi$. This is a consequence of the Goldstone theorem which states
+%that whenever a symmetry is spontaneously broken, massless scalars occur.
+%\begin{figure}[hb]
+%  \centering
+%	\includegraphics[width=0.5\textwidth]{images/mexicanHat.jpg}
+%  	\caption[Potential]
+%   	{$V(\phi)$ potential with $\lambda>0$ and $\mu^{2}<0$}
+%	\label{fig:mexicanHat}
+%\end{figure}
+%
+%Now that we have evaluated spontaneous breaking of 
+%a global gauge symmetry we can extend the formalism to the local $U(1)$ gauge symmetry.
+%First, we make the Lagrangian (\ref{eq:LU1}) invariant under a $U(1)$ 
+%local gauge transformation: $\phi\rightarrow e^{i\alpha(x)}\phi$
+%This is done by choosing a modified derivative, $D_{\mu}$, which will
+%transform covariantly under phase transformations, namely, 
+%$D_{\mu}\rightarrow e^{i\alpha(x)}D_{\mu}\psi$. Thus $\partial_{\mu}$
+%is replaced by $D_{\mu} = \partial_{\mu}-ieA_{\mu}$.
+%The gauge invariant Lagrangian in this instance is thus,
+%\begin{equation}
+%\La=(\partial^{\mu}+ieA^{\mu})\phi*(\partial_{\mu}-ieA_{\mu})\phi - \mu^{2} \phi*\phi - \lambda(\phi*\phi)^{2}-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+%\end{equation}
+%To avoid off diagonal terms, instead of making the transformation (\ref{eq:VTerms})
+%we transform $\phi$ as,
+%\begin{equation}
+%\phi\rightarrow\sqrt{\frac{1}{2}}(\nu+h(x))e^{i\Theta(x)/\nu}
+%\end{equation}
+%and for the field $A_{\mu}$,
+%\begin{equation}
+%A_{\mu}\rightarrow A_{\mu}+\frac{1}{e\nu}\partial_{\mu}\Theta
+%\end{equation}
+%Then by translating this field to a true global minimum
+%and, again, considering the solution where $\mu^{2}<0$ $\lambda>0$ this Lagrangian becomes 
+%\begin{equation}
+%\La'=\frac{1}{2}(\partial_{\mu}h)^{2}-\lambda \nu^{2}h^{2}+\frac{1}{2}e^{2}\nu^{2}A_{\mu}^{2}-\lambda\nu h^{3}-
+%\frac{1}{4}\lambda h^{4} + \frac{1}{2}e^{2}A_{\mu}^{2}h^{2}+\nu e^{2}A_{\mu}^{2}h-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
+%\end{equation}
+%This equation describes the interaction between a vector gauge boson,
+%$A_{\mu}$, and a massive scalar, h. 
+%It is of importance to note that when examining this equation 
+%we see that the second term relates the mass 
+%of the higgs as $m_{h}=\sqrt{2\lambda v^{2}}$. 
+%To summarize, this example of spontaneous breaking of a $U(1)$ gauge symmetry
+%results in a massless Goldstone boson which has been converted to an
+%additional longitudinal polarization degree of freedom. This results
+%in a Lagrangian with a massive scalar particle, a massive field and interaction terms.
+%This procedure is known as the Higgs mechanism. 
 %
 %Next we consider spontaneous breaking of a $SU(2)$ gauge symmetry.
 %We begin with (\ref{eq:LU1}) and define $\phi$ as an $SU(2)$ doublet 
